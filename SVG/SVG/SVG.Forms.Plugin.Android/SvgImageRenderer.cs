@@ -16,8 +16,11 @@ namespace SVG.Forms.Plugin.Droid
 {
     public class SvgImageRenderer : ImageRenderer
     {
+        public static void Init() { }
+
         private bool _svgSourceSet;
         private Dictionary<string, Stream> _svgStreamByPath;
+        private SvgImage _formsControl;
 
         private Dictionary<string, Stream> SvgStreamByPath
         {
@@ -37,18 +40,18 @@ namespace SVG.Forms.Plugin.Droid
             base.OnElementPropertyChanged(sender, e);
 
             var imageView = Control as ImageView;
-            var formsControl = sender as SvgImage;
+            _formsControl = sender as SvgImage;
 
-            if (imageView != null && formsControl != null && !formsControl.IsLoading && !_svgSourceSet)
+            if (imageView != null && _formsControl != null && !_formsControl.IsLoading && !_svgSourceSet)
             {
                 try
                 {
                     _svgSourceSet = true;
 
-                    var width = (int) formsControl.WidthRequest <= 0 ? 100 : (int) formsControl.WidthRequest;
-                    var height = (int) formsControl.HeightRequest <= 0 ? 100 : (int) formsControl.HeightRequest;
+                    var width = (int) _formsControl.WidthRequest <= 0 ? 100 : (int) _formsControl.WidthRequest;
+                    var height = (int) _formsControl.HeightRequest <= 0 ? 100 : (int) _formsControl.HeightRequest;
 
-                    var svg = SvgFactory.GetBitmap(GetSvgStream(formsControl.SvgPath), width, height);
+                    var svg = SvgFactory.GetBitmap(GetSvgStream(_formsControl.SvgPath), width, height);
 
                     imageView.SetImageBitmap(svg);
                 }
@@ -65,8 +68,13 @@ namespace SVG.Forms.Plugin.Droid
             //Insert into Dictionary
             if (!SvgStreamByPath.ContainsKey(svgPath))
             {
-                var assembly = typeof (SvgImage).GetTypeInfo().Assembly;
-                stream = assembly.GetManifestResourceStream(svgPath);
+                if(_formsControl.SvgAssembly == null)
+                    throw new Exception("Svg Assembly not specified. Please specify assembly using the SvgImage Control SvgAssembly property.");
+
+                stream = _formsControl.SvgAssembly.GetManifestResourceStream(svgPath);
+
+                if (stream == null)
+                    throw new Exception(string.Format("Not able to retrieve svg from {0} make sure the svg is an Embedded Resource and the path is set up correctly",svgPath));
 
                 SvgStreamByPath.Add(svgPath, stream);
 

@@ -1,7 +1,9 @@
 ﻿using Android.App;
 using Android.Content.PM;
 using Android.OS;
+using SVG.Forms.Plugin.Droid;
 using Xamarin.Forms.Platform.Android;
+using XamSvg;
 
 namespace PluginSampleApp.Droid
 {
@@ -13,6 +15,7 @@ namespace PluginSampleApp.Droid
             base.OnCreate(bundle);
 
             global::Xamarin.Forms.Forms.Init(this, bundle);
+
             LoadApplication(new App());
         }
     }

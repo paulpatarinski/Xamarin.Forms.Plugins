@@ -4,7 +4,7 @@
     </assembly>
     <members>
         <member name="T:Xamarin.Forms.Xaml.ArrayExtension">
-            <summary>To be added.</summary>
+            <summary>Markup extension for parsing arrays.</summary>
             <remarks>To be added.</remarks>
         </member>
         <member name="C:Xamarin.Forms.Xaml.ArrayExtension">
@@ -25,6 +25,25 @@
         <member name="P:Xamarin.Forms.Xaml.ArrayExtension.Type">
             <summary>Gets or sets the type of the items that can be stored in the array.</summary>
             <value>To be added.</value>
+            <remarks>To be added.</remarks>
+        </member>
+        <member name="T:Xamarin.Forms.Xaml.DynamicResourceExtension">
+            <summary>Internal.</summary>
+            <remarks>To be added.</remarks>
+        </member>
+        <member name="C:Xamarin.Forms.Xaml.DynamicResourceExtension">
+            <summary>Internal.</summary>
+            <remarks>To be added.</remarks>
+        </member>
+        <member name="P:Xamarin.Forms.Xaml.DynamicResourceExtension.Key">
+            <summary>Internal.</summary>
+            <value>To be added.</value>
+            <remarks>To be added.</remarks>
+        </member>
+        <member name="M:Xamarin.Forms.Xaml.DynamicResourceExtension.ProvideValue(System.IServiceProvider)">
+            <param name="serviceProvider">To be added.</param>
+            <summary>Internal.</summary>
+            <returns>To be added.</returns>
             <remarks>To be added.</remarks>
         </member>
         <member name="T:Xamarin.Forms.Xaml.Extensions">
@@ -111,7 +130,7 @@
             <remarks>To be added.</remarks>
         </member>
         <member name="T:Xamarin.Forms.Xaml.XamlParseException">
-            <summary>To be added.</summary>
+            <summary>Exception that is raised when the XAML parser encounters a XAML error.</summary>
             <remarks>To be added.</remarks>
         </member>
     </members>

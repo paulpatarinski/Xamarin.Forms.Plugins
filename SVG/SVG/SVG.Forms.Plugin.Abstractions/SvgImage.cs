@@ -1,4 +1,5 @@
-﻿using Xamarin.Forms;
+﻿using System.Reflection;
+using Xamarin.Forms;
 
 namespace SVG.Forms.Plugin.Abstractions
 {
@@ -15,6 +16,19 @@ namespace SVG.Forms.Plugin.Abstractions
         {
             get { return (string) GetValue(SvgPathProperty); }
             set { SetValue(SvgPathProperty, value); }
+        }
+
+        public static readonly BindableProperty SvgAssemblyProperty =
+          BindableProperty.Create<SvgImage, Assembly>(
+              p => p.SvgAssembly, null);
+
+        /// <summary>
+        /// The assembly containing the svg file
+        /// </summary>
+        public Assembly SvgAssembly
+        {
+            get { return (Assembly)GetValue(SvgAssemblyProperty); }
+            set { SetValue(SvgAssemblyProperty, value); }
         }
     }
 }
