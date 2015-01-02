@@ -1,28 +1,20 @@
-﻿using System;
-using Xamarin.Forms;
+﻿using Xamarin.Forms;
 
 namespace SVG.Forms.Plugin.Abstractions
 {
-    /// <summary>
-    /// SVG Interface
-    /// </summary>
-    public class SVGControl //: Control type
+    public class SvgControl : Image
     {
-        //example of custom property
-        /// <summary>
-        /// Thickness property of border
-        /// </summary>
-        //public static readonly BindableProperty BorderThicknessProperty =
-        //  BindableProperty.Create<SVGImage, int>(
-        //    p => p.BorderThickness, 0);
+        public static readonly BindableProperty SvgPathProperty =
+            BindableProperty.Create<SvgControl, string>(
+                p => p.SvgPath, default(string));
 
         /// <summary>
-        /// Border thickness of circle image
+        /// The path to the svg file
         /// </summary>
-        //public int BorderThickness
-        //{
-        //  get { return (int)GetValue(BorderThicknessProperty); }
-        //  set { SetValue(BorderThicknessProperty, value); }
-        //}
+        public string SvgPath
+        {
+            get { return (string) GetValue(SvgPathProperty); }
+            set { SetValue(SvgPathProperty, value); }
+        }
     }
 }

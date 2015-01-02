@@ -4,7 +4,7 @@ using Xamarin.Forms;
 using SVG.Forms.Plugin.iOS;
 using Xamarin.Forms.Platform.iOS;
 
-[assembly: ExportRenderer(typeof(SVG.Forms.Plugin.Abstractions.SVGControl), typeof(SVGRenderer))]
+[assembly: ExportRenderer(typeof(SVG.Forms.Plugin.Abstractions.SvgControl), typeof(SVGRenderer))]
 namespace SVG.Forms.Plugin.iOS
 {
     /// <summary>

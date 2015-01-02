@@ -4,7 +4,7 @@ using Xamarin.Forms;
 using SVG.Forms.Plugin.WindowsPhone;
 using Xamarin.Forms.Platform.WinPhone;
 
-[assembly: ExportRenderer(typeof(SVG.Forms.Plugin.Abstractions.SVGControl), typeof(SVGRenderer))]
+[assembly: ExportRenderer(typeof(SVG.Forms.Plugin.Abstractions.SvgControl), typeof(SVGRenderer))]
 namespace SVG.Forms.Plugin.WindowsPhone
 {
     /// <summary>
