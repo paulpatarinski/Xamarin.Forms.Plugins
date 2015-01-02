@@ -1,11 +1,8 @@
-using SVG.Forms.Plugin.Abstractions;
-using System;
+using SVG.Forms.Plugin.Droid;
 using Xamarin.Forms;
-using SVG.Forms.Plugin.Android;
-using Xamarin.Forms.Platform.Android;
 
-[assembly: ExportRenderer(typeof(SVG.Forms.Plugin.Abstractions.SvgControl), typeof(SVGRenderer))]
-namespace SVG.Forms.Plugin.Android
+[assembly: ExportRenderer(typeof(SVG.Forms.Plugin.Abstractions.SvgImage), typeof(SVGRenderer))]
+namespace SVG.Forms.Plugin.Droid
 {
     /// <summary>
     /// SVG Renderer

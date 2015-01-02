@@ -2,10 +2,10 @@
 
 namespace SVG.Forms.Plugin.Abstractions
 {
-    public class SvgControl : Image
+    public class SvgImage : Image
     {
         public static readonly BindableProperty SvgPathProperty =
-            BindableProperty.Create<SvgControl, string>(
+            BindableProperty.Create<SvgImage, string>(
                 p => p.SvgPath, default(string));
 
         /// <summary>
