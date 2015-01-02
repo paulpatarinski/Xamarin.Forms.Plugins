@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
     <metadata>
         <id>Xam.Plugins.Forms.Svg</id>
-        <version>1.0.0.0</version>
+        <version>1.0.0.1</version>
         <title>Svg Control Plugin for Xamarin.Forms</title>
         <authors>Paul Patarinski</authors>
         <owners>Paul Patarinski</owners>

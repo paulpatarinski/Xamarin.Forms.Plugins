@@ -1,9 +1,7 @@
 ﻿using Android.App;
 using Android.Content.PM;
 using Android.OS;
-using SVG.Forms.Plugin.Droid;
 using Xamarin.Forms.Platform.Android;
-using XamSvg;
 
 namespace PluginSampleApp.Droid
 {
