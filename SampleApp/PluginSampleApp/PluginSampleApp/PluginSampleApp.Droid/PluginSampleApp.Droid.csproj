@@ -21,7 +21,7 @@
     <JavaMaximumHeapSize>
     </JavaMaximumHeapSize>
     <JavaOptions />
-    <NuGetPackageImportStamp>590dd8eb</NuGetPackageImportStamp>
+    <NuGetPackageImportStamp>8c2afc04</NuGetPackageImportStamp>
     <TargetFrameworkVersion>v4.4</TargetFrameworkVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -49,38 +49,47 @@
     <AndroidUseSharedRuntime>False</AndroidUseSharedRuntime>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="FormsViewGroup">
+    <Reference Include="FormsViewGroup, Version=1.3.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\packages\Xamarin.Forms.1.3.0.6292\lib\MonoAndroid10\FormsViewGroup.dll</HintPath>
     </Reference>
     <Reference Include="Mono.Android" />
     <Reference Include="mscorlib" />
-    <Reference Include="Svg.Forms.Plugin.Abstractions">
-      <HintPath>..\..\packages\Xam.Plugins.Forms.Svg.1.0.0.2\lib\MonoAndroid10\Svg.Forms.Plugin.Abstractions.dll</HintPath>
+    <Reference Include="Svg.Forms.Plugin.Abstractions, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\Xam.Plugins.Forms.Svg.1.0.0.3\lib\MonoAndroid10\Svg.Forms.Plugin.Abstractions.dll</HintPath>
     </Reference>
-    <Reference Include="Svg.Forms.Plugin.Android">
-      <HintPath>..\..\packages\Xam.Plugins.Forms.Svg.1.0.0.2\lib\MonoAndroid10\Svg.Forms.Plugin.Android.dll</HintPath>
+    <Reference Include="Svg.Forms.Plugin.Android, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\Xam.Plugins.Forms.Svg.1.0.0.3\lib\MonoAndroid10\Svg.Forms.Plugin.Android.dll</HintPath>
     </Reference>
-    <Reference Include="SvgAndroid">
-      <HintPath>..\..\packages\Xam.Plugins.Forms.Svg.1.0.0.2\lib\MonoAndroid10\SvgAndroid.dll</HintPath>
+    <Reference Include="SvgAndroid, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\Xam.Plugins.Forms.Svg.1.0.0.3\lib\MonoAndroid10\SvgAndroid.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Xml" />
-    <Reference Include="Xamarin.Android.Support.v4">
+    <Reference Include="Xamarin.Android.Support.v4, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\packages\Xamarin.Android.Support.v4.19.1.0\lib\MonoAndroid10\Xamarin.Android.Support.v4.dll</HintPath>
     </Reference>
-    <Reference Include="Xamarin.Forms.Core">
+    <Reference Include="Xamarin.Forms.Core, Version=1.3.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\packages\Xamarin.Forms.1.3.0.6292\lib\MonoAndroid10\Xamarin.Forms.Core.dll</HintPath>
     </Reference>
-    <Reference Include="Xamarin.Forms.Platform.Android">
+    <Reference Include="Xamarin.Forms.Platform.Android, Version=1.3.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\packages\Xamarin.Forms.1.3.0.6292\lib\MonoAndroid10\Xamarin.Forms.Platform.Android.dll</HintPath>
     </Reference>
-    <Reference Include="Xamarin.Forms.Xaml">
+    <Reference Include="Xamarin.Forms.Xaml, Version=1.3.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\packages\Xamarin.Forms.1.3.0.6292\lib\MonoAndroid10\Xamarin.Forms.Xaml.dll</HintPath>
     </Reference>
-    <Reference Include="XamSvg">
-      <HintPath>..\..\packages\Xam.Plugins.Forms.Svg.1.0.0.2\lib\MonoAndroid10\XamSvg.dll</HintPath>
+    <Reference Include="XamSvg, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\Xam.Plugins.Forms.Svg.1.0.0.3\lib\MonoAndroid10\XamSvg.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

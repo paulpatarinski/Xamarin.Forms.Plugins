@@ -1,6 +1,7 @@
 ﻿using Android.App;
 using Android.Content.PM;
 using Android.OS;
+using SVG.Forms.Plugin.Droid;
 using Xamarin.Forms.Platform.Android;
 
 namespace PluginSampleApp.Droid
@@ -14,6 +15,7 @@ namespace PluginSampleApp.Droid
 
             global::Xamarin.Forms.Forms.Init(this, bundle);
 
+            SvgImageRenderer.Init();
             LoadApplication(new App());
         }
     }
