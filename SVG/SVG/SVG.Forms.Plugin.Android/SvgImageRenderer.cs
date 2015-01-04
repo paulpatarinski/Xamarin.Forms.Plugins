@@ -35,31 +35,36 @@ namespace SVG.Forms.Plugin.Droid
             }
         }
 
-        protected override void OnElementPropertyChanged(object sender, PropertyChangedEventArgs e)
+        protected override void OnElementChanged(ElementChangedEventArgs<Image> e)
         {
-            base.OnElementPropertyChanged(sender, e);
+            base.OnElementChanged(e);
 
-            var imageView = Control as ImageView;
-            _formsControl = sender as SvgImage;
-
-            if (imageView != null && _formsControl != null && !_formsControl.IsLoading && !_svgSourceSet)
+            if (e.OldElement == null)
             {
                 try
                 {
-                    _svgSourceSet = true;
-
-                    var width = (int) _formsControl.WidthRequest <= 0 ? 100 : (int) _formsControl.WidthRequest;
-                    var height = (int) _formsControl.HeightRequest <= 0 ? 100 : (int) _formsControl.HeightRequest;
-
-                    var svg = SvgFactory.GetBitmap(GetSvgStream(_formsControl.SvgPath), width, height);
-
-                    imageView.SetImageBitmap(svg);
+                    UpdateBitmapFromSvg();
                 }
                 catch (Exception ex)
                 {
                     throw new Exception("Problem setting image source", ex);
                 }
             }
+        }
+
+        private void UpdateBitmapFromSvg()
+        {
+            var imageView = Control as ImageView;
+            _formsControl = Element as SvgImage;
+
+            _svgSourceSet = true;
+
+            var width = (int) _formsControl.WidthRequest <= 0 ? 100 : (int) _formsControl.WidthRequest;
+            var height = (int) _formsControl.HeightRequest <= 0 ? 100 : (int) _formsControl.HeightRequest;
+
+            var svg = SvgFactory.GetBitmap(GetSvgStream(_formsControl.SvgPath), width, height);
+
+            imageView.SetImageBitmap(svg);
         }
 
         private Stream GetSvgStream(string svgPath)
