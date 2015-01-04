@@ -29,8 +29,6 @@ namespace PluginSampleApp
                 "PluginSampleApp.Images.hipster.svg",
             };
 
-            stackLayout.Children.Add(new Label{Text = "test", TextColor = Color.White});
-
             foreach (var svgPath in svgPaths)
             {
                 var horizontalStackLayout = new StackLayout { Orientation = StackOrientation.Horizontal };
