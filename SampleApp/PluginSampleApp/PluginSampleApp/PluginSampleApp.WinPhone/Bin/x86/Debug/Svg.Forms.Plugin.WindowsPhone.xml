@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SVG.Forms.Plugin.WindowsPhone</name>
+    </assembly>
+    <members>
+        <member name="T:SVG.Forms.Plugin.WindowsPhone.SvgRenderer">
+            <summary>
+            SVG Renderer
+            </summary>
+        </member>
+        <member name="M:SVG.Forms.Plugin.WindowsPhone.SvgRenderer.Init">
+            <summary>
+            Used for registration with dependency service
+            </summary>
+        </member>
+    </members>
+</doc>

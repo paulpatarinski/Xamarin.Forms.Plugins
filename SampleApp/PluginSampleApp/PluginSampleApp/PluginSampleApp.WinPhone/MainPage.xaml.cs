@@ -1,4 +1,5 @@
-﻿using Xamarin.Forms;
+﻿using SVG.Forms.Plugin.WindowsPhone;
+using Xamarin.Forms;
 using Xamarin.Forms.Platform.WinPhone;
 
 namespace PluginSampleApp.WinPhone
@@ -11,6 +12,7 @@ namespace PluginSampleApp.WinPhone
             InitializeComponent();
 
             Forms.Init();
+            SvgRenderer.Init();
 
             LoadApplication(new PluginSampleApp.App());
         }
