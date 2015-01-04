@@ -1,0 +1,12 @@
+﻿<Deployment xmlns="http://schemas.microsoft.com/client/2007/deployment" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" EntryPointAssembly="PluginSampleApp.WinPhone" EntryPointType="PluginSampleApp.WinPhone.App" RuntimeVersion="4.7.50308.0">
+  <Deployment.Parts>
+    <AssemblyPart x:Name="PluginSampleApp.WinPhone" Source="PluginSampleApp.WinPhone.dll" />
+    <AssemblyPart x:Name="Microsoft.Phone.Controls.Toolkit" Source="Microsoft.Phone.Controls.Toolkit.dll" />
+    <AssemblyPart x:Name="PluginSampleApp" Source="PluginSampleApp.dll" />
+    <AssemblyPart x:Name="Xamarin.Forms.Core" Source="Xamarin.Forms.Core.dll" />
+    <AssemblyPart x:Name="Xamarin.Forms.Platform.WP8" Source="Xamarin.Forms.Platform.WP8.dll" />
+    <AssemblyPart x:Name="Xamarin.Forms.Xaml" Source="Xamarin.Forms.Xaml.dll" />
+    <AssemblyPart x:Name="SVG.Forms.Plugin.Abstractions" Source="SVG.Forms.Plugin.Abstractions.dll" />
+    <AssemblyPart x:Name="System.Windows.Interactivity" Source="System.Windows.Interactivity.dll" />
+  </Deployment.Parts>
+</Deployment>
