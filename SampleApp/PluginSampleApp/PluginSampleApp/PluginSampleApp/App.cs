@@ -29,14 +29,16 @@ namespace PluginSampleApp
                 "PluginSampleApp.Images.hipster.svg",
             };
 
+            stackLayout.Children.Add(new Label{Text = "test", TextColor = Color.White});
+
             foreach (var svgPath in svgPaths)
             {
-                var horizontalStackLayout = new StackLayout {Orientation = StackOrientation.Horizontal};
+                var horizontalStackLayout = new StackLayout { Orientation = StackOrientation.Horizontal };
 
                 for (var y = 1; y <= 4; y++)
                 {
                     //IMPORTANT Make sure you set both SvgPath and SvgAssembly
-                    var svgImage = new SvgImage {SvgPath = svgPath, SvgAssembly = typeof(App).GetTypeInfo().Assembly, HeightRequest = y*30, WidthRequest = y*30};
+                    var svgImage = new SvgImage { SvgPath = svgPath, SvgAssembly = typeof(App).GetTypeInfo().Assembly, HeightRequest = y * 30, WidthRequest = y * 30 };
 
                     if (svgPath.Contains("hipster"))
                         svgImage.BackgroundColor = Color.White;
