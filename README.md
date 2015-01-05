@@ -9,15 +9,15 @@ Controls:
 * **[SVG](https://github.com/paulpatarinski/Xamarin.Forms.Plugins/tree/master/SVG)** for Xamarin.Forms
  * Win Phone / Android
 
-
-
-The repo structure is courtesy of
-
-* [jamesmontemagno](https://github.com/jamesmontemagno)
-
 # How to?
 
 For example usage of the Plugins check out the Plugin READMEs or the [Sample App] (https://github.com/paulpatarinski/Xamarin.Forms.Plugins/tree/master/SampleApp/PluginSampleApp) 
+
+# Contributors
+The repo structure is courtesy of
+
+* [jamesmontemagno](https://github.com/jamesmontemagno)
+ 
 
 # License
 Licensed under MIT see License file
