@@ -21,7 +21,8 @@ You **MUST** :
 - Set Build Action to Embedded Resource 
 - SvgPath to {Project}.{Folder}.{FileName}.{Extension}
 - SvgAssembly to the assembly containing the file
-- For Win Phone make sure you include a XAML file corresponding to the SVG with the root element being a Viewbox
+- For Win Phone make sure you include a XAML file equivalent of the SVG with the root element being a Viewbox
+ - Example : If you have Sample.svg also add Sample.xaml under the same folder of the svg.(No need to specify anything else as long as the names match)	
 
 Here is a sample:
 ```
