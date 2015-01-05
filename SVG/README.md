@@ -21,7 +21,7 @@ You **MUST** :
 - Set Build Action to Embedded Resource 
 - SvgPath to {Project}.{Folder}.{FileName}.{Extension}
 - SvgAssembly to the assembly containing the file
-- For Win Phone make sure you include a XAML file of the SVG with the root element being a Viewbox
+- For Win Phone make sure you include a XAML file corresponding to the SVG with the root element being a Viewbox
 
 Here is a sample:
 ```
@@ -35,6 +35,8 @@ new SvgImage {
 
 In the example my SVG file is located under the Images folder in the PluginSampleApp project. The SvgAssembly is a reference to the assembly containing the svg/xaml file.
 
+# Where to get SVG/XAML?
+Win Phone does not support SVGs by default and there are no good SVG to Win Phone XAML libraries. Therefore the easiest way to get an SVG and it's XAML equivalent is download [Metro Studio](http://www.syncfusion.com/downloads/metrostudio).This software will give you a large selection of SVGs with the ability to export in Metro XAML format ALL FOR FREE.
 
 # License
 Licensed under main repo license
