@@ -8,7 +8,7 @@
         <owners>Paul Patarinski</owners>
         <licenseUrl>https://github.com/paulpatarinski/Xamarin.Forms.Plugins/blob/master/LICENSE.md</licenseUrl>
         <projectUrl>https://github.com/paulpatarinski/Xamarin.Forms.Plugins</projectUrl>
-        <iconUrl>https://raw.githubusercontent.com/paulpatarinski/Xamarin.Forms.Plugins/master/SampleApp/PluginSampleApp/PluginSampleApp/PluginSampleApp/Images/SampleImage.png</iconUrl>
+        <iconUrl>https://raw.githubusercontent.com/paulpatarinski/Xamarin.Forms.Plugins/master/SampleApp/Images/SvgNugetIcon.png</iconUrl>
         <requireLicenseAcceptance>false</requireLicenseAcceptance>
         <description>Custom control for your Xamarin.Forms project to allow you to use SVGs
           Ensure you call SvgImageRenderer.Init() on each platform!</description>
