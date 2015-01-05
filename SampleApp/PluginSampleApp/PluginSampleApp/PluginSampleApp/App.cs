@@ -21,12 +21,8 @@ namespace PluginSampleApp
             //Get SVGs from http://thenounproject.com/
             var svgPaths = new List<string>
             {
-                "PluginSampleApp.Images.tiger.svg",
-                "PluginSampleApp.Images.star_depressed.svg",
-                "PluginSampleApp.Images.star_off.svg",
-                "PluginSampleApp.Images.star_on.svg",
-                "PluginSampleApp.Images.pin.svg",
-                "PluginSampleApp.Images.hipster.svg",
+                "PluginSampleApp.Images.Animation.svg",
+                "PluginSampleApp.Images.SampleImage.svg",
             };
 
             foreach (var svgPath in svgPaths)
@@ -36,7 +32,11 @@ namespace PluginSampleApp
                 for (var y = 1; y <= 4; y++)
                 {
                     //IMPORTANT Make sure you set both SvgPath and SvgAssembly
-                    var svgImage = new SvgImage { SvgPath = svgPath, SvgAssembly = typeof(App).GetTypeInfo().Assembly, HeightRequest = y * 30, WidthRequest = y * 30 };
+                    var svgImage = new SvgImage { 
+                        SvgPath = svgPath,
+                        SvgAssembly = typeof(App).GetTypeInfo().Assembly, 
+                        HeightRequest = y * 50,
+                        WidthRequest = y * 50};
 
                     if (svgPath.Contains("hipster"))
                         svgImage.BackgroundColor = Color.White;

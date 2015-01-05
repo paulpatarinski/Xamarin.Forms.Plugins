@@ -12,7 +12,7 @@ namespace PluginSampleApp.WinPhone
             InitializeComponent();
 
             Forms.Init();
-            SvgRenderer.Init();
+            SvgImageRenderer.Init();
 
             LoadApplication(new PluginSampleApp.App());
         }
