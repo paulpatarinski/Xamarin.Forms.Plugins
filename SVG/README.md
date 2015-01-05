@@ -16,7 +16,14 @@ You must do this AFTER you call Xamarin.Forms.Init();
 # Usage
 Instead of using an Image simply use a SvgImage instead!
 
-You **MUST** set the WidthRequest, HeightRequest, SvgPath and SvgAssemblyProperties. Here is a sample:
+You **MUST** : 
+- Set Height and Width
+- Set Build Action to Embedded Resource 
+- SvgPath to {Project}.{Folder}.{FileName}.{Extension}
+- SvgAssembly to the assembly containing the file
+- For Win Phone make sure you include a XAML file of the SVG with the root element being a Viewbox
+
+Here is a sample:
 ```
 new SvgImage { 
 		SvgPath = "PluginSampleApp.Images.hipster.svg",
@@ -26,7 +33,8 @@ new SvgImage {
 		};
 ```
 
-In the example my svg source is located under the Images folder in the PluginSampleApp project.
+In the example my SVG file is located under the Images folder in the PluginSampleApp project. The SvgAssembly is a reference to the assembly containing the svg/xaml file.
+
 
 # License
 Licensed under main repo license
