@@ -7,14 +7,14 @@ using Xamarin.Forms;
 using SVG.Forms.Plugin.WindowsPhone;
 using Xamarin.Forms.Platform.WinPhone;
 
-[assembly: ExportRenderer(typeof(SvgImage), typeof(SvgRenderer))]
+[assembly: ExportRenderer(typeof(SvgImage), typeof(SvgImageRenderer))]
 
 namespace SVG.Forms.Plugin.WindowsPhone
 {
     /// <summary>
     /// SVG Renderer
     /// </summary>
-    public class SvgRenderer : ViewRenderer<SvgImage, Viewbox>
+    public class SvgImageRenderer : ViewRenderer<SvgImage, Viewbox>
     {
         /// <summary>
         /// Used for registration with dependency service

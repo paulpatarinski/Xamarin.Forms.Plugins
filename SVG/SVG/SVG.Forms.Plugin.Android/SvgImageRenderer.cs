@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.IO;
-using System.Reflection;
 using Android.Widget;
 using SVG.Forms.Plugin.Abstractions;
 using SVG.Forms.Plugin.Droid;
