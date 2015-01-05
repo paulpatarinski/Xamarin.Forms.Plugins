@@ -36,7 +36,7 @@
     <DocumentationFile>bin\iPhone\Release\SVG.Forms.Plugin.iOS.XML</DocumentationFile>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="SVGImplementation.cs" />
+    <Compile Include="SvgImageRenderer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
