@@ -26,7 +26,6 @@ namespace PluginSampleApp.Droid
 		
 		public static void UpdateIdValues()
 		{
-			global::XamSvg.Resource.String.library_name = global::PluginSampleApp.Droid.Resource.String.library_name;
 		}
 		
 		public partial class Attribute
@@ -54,22 +53,6 @@ namespace PluginSampleApp.Droid
 			}
 			
 			private Drawable()
-			{
-			}
-		}
-		
-		public partial class String
-		{
-			
-			// aapt resource value: 0x7f030000
-			public const int library_name = 2130903040;
-			
-			static String()
-			{
-				global::Android.Runtime.ResourceIdManager.UpdateIdValues();
-			}
-			
-			private String()
 			{
 			}
 		}

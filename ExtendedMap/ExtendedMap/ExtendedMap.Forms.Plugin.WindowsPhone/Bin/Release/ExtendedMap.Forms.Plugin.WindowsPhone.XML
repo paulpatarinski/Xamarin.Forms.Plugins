@@ -1,15 +1,15 @@
 <?xml version="1.0"?>
 <doc>
     <assembly>
-        <name>SVG.Forms.Plugin.WindowsPhone</name>
+        <name>ExtendedMap.Forms.Plugin.WindowsPhone</name>
     </assembly>
     <members>
-        <member name="T:SVG.Forms.Plugin.WindowsPhone.SvgImageRenderer">
+        <member name="T:ExtendedMap.Forms.Plugin.WindowsPhone.ExtendedMapRenderer">
             <summary>
-            SVG Renderer
+            ExtendedMap Renderer
             </summary>
         </member>
-        <member name="M:SVG.Forms.Plugin.WindowsPhone.SvgImageRenderer.Init">
+        <member name="M:ExtendedMap.Forms.Plugin.WindowsPhone.ExtendedMapRenderer.Init">
             <summary>
             Used for registration with dependency service
             </summary>
