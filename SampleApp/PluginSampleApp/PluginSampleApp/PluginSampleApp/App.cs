@@ -1,6 +1,4 @@
 ﻿using System.Collections.Generic;
-using System.Reflection;
-using SVG.Forms.Plugin.Abstractions;
 using Xamarin.Forms;
 
 namespace PluginSampleApp
@@ -9,49 +7,43 @@ namespace PluginSampleApp
     {
         public App()
         {
-            var stackLayout = new StackLayout();
+            var listview = new ListView();
 
-            stackLayout.Children.Add(new Label
+            var navigationPage = new NavigationPage(new ContentPage
             {
-                Text = "SVGs are AWESOME!!!",
-                Font = Font.BoldSystemFontOfSize(20),
-                HorizontalOptions = LayoutOptions.Center
+                Content = listview
             });
 
-            //Get SVGs from http://thenounproject.com/
-            var svgPaths = new List<string>
+            listview.ItemsSource = new List<string>
             {
-                "PluginSampleApp.Images.Animation.svg",
-                "PluginSampleApp.Images.SampleImage.svg",
+                PageTitle.SVG,
+                PageTitle.ExtendedMap
             };
 
-            foreach (var svgPath in svgPaths)
+            listview.ItemSelected += (sender, args) =>
             {
-                var horizontalStackLayout = new StackLayout { Orientation = StackOrientation.Horizontal };
+                if (args.SelectedItem == null)
+                    return;
 
-                for (var y = 1; y <= 4; y++)
+                switch (args.SelectedItem.ToString())
                 {
-                    //IMPORTANT Make sure you set both SvgPath and SvgAssembly
-                    var svgImage = new SvgImage { 
-                        SvgPath = svgPath,
-                        SvgAssembly = typeof(App).GetTypeInfo().Assembly, 
-                        HeightRequest = y * 50,
-                        WidthRequest = y * 50};
-
-                    if (svgPath.Contains("hipster"))
-                        svgImage.BackgroundColor = Color.White;
-
-                    horizontalStackLayout.Children.Add(svgImage);
+                    case PageTitle.SVG:
+                    {
+                        navigationPage.Navigation.PushAsync(new SVGPage());
+                        break;
+                    }
+                    case PageTitle.ExtendedMap:
+                    {
+                        navigationPage.Navigation.PushAsync(new ExtendedMapPage());
+                        break;
+                    }
                 }
 
-                stackLayout.Children.Add(horizontalStackLayout);
-            }
+                listview.SelectedItem = null;
+            };
 
             // The root page of your application
-            MainPage = new ContentPage
-            {
-                Content = new ScrollView {Content = stackLayout}
-            };
+            MainPage = navigationPage;
         }
 
         protected override void OnStart()
