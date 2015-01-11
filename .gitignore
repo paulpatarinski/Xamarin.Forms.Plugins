@@ -6,3 +6,10 @@ SampleApp/PluginSampleApp/PluginSampleApp/PluginSampleApp/obj/
 SampleApp/PluginSampleApp/PluginSampleApp/PluginSampleApp.WinPhone/Bin/
 SampleApp/PluginSampleApp/packages/
 SampleApp/PluginSampleApp/PluginSampleApp/PluginSampleApp.Droid/bin/
+ExtendedMap/packages/
+ExtendedMap/Components/
+ExtendedMap/ExtendedMap/ExtendedMap.Forms.Plugin.iOS/bin/
+ExtendedMap/ExtendedMap/ExtendedMap.Forms.Plugin.Android/obj/
+ExtendedMap/ExtendedMap/ExtendedMap.Forms.Plugin.WindowsPhone/obj/
+ExtendedMap/ExtendedMap/ExtendedMap.Forms.Plugin.Abstractions/obj/
+ExtendedMap/ExtendedMap/ExtendedMap.Forms.Plugin.iOS/obj/
