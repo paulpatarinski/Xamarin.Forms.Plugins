@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Reflection;
+using SVG.Forms.Plugin.Abstractions;
 using Xamarin.Forms;
 
 namespace ExtendedMap.Forms.Plugin.Abstractions
@@ -80,8 +82,8 @@ namespace ExtendedMap.Forms.Plugin.Abstractions
 				_mapGrid.RowDefinitions [0].Height = new GridLength (height * expandedMapHeight);
 				_mapGrid.RowDefinitions [1].Height = new GridLength (footerHeight);
 
-				_mapGrid.Children.Add (CreateFooter (footerHeight), 0, 1);
 				_mapGrid.Children.Add (_extendedMap, 0, 0);
+                _mapGrid.Children.Add(CreateFooter(footerHeight), 0, 1);
 
 				Grid.SetRowSpan (_extendedMap, 2);
 
@@ -213,7 +215,7 @@ namespace ExtendedMap.Forms.Plugin.Abstractions
 			pinInfoStackLayout.Spacing = 0;
 
 			footerGrid.Children.Add (pinInfoStackLayout, 0, 0);
-			footerGrid.Children.Add (CreateImageButton ("navigate_icon.png", "Route", (view, o) => {
+			footerGrid.Children.Add (CreateImageButton ("navigate-icon.svg", "Route", (view, o) => {
 				var selectedPin = _extendedMap.SelectedPin;
 				DependencyService.Get<IPhoneService> ().LaunchNavigationAsync (new NavigationModel {
 					Latitude = selectedPin.Position.Latitude,
@@ -303,19 +305,19 @@ namespace ExtendedMap.Forms.Plugin.Abstractions
 				BackgroundColor = Color.White
 			};
 
-			var callImageButton = CreateImageButton ("call_icon.png", "Call", (view, o) => {
-				var phoneNumber = _extendedMap.SelectedPin.PhoneNumber;
-				DependencyService.Get<IPhoneService> ().DialNumber (phoneNumber);
-			});
+            //var callImageButton = CreateImageButton ("call_icon.png", "Call", (view, o) => {
+            //    var phoneNumber = _extendedMap.SelectedPin.PhoneNumber;
+            //    DependencyService.Get<IPhoneService> ().DialNumber (phoneNumber);
+            //});
 
-			var shareImageButton = CreateImageButton ("share_icon.png", "Share", (view, o) => {
-				var selectedPin = _extendedMap.SelectedPin;
-				var text = string.Format ("I am playing vball at {0}, {1}.", selectedPin.Label, selectedPin.Address);
-				DependencyService.Get<IPhoneService> ().ShareText (text);
-			});
+            //var shareImageButton = CreateImageButton ("share_icon.png", "Share", (view, o) => {
+            //    var selectedPin = _extendedMap.SelectedPin;
+            //    var text = string.Format ("I am playing vball at {0}, {1}.", selectedPin.Label, selectedPin.Address);
+            //    DependencyService.Get<IPhoneService> ().ShareText (text);
+            //});
 
-			actionButtonsGrid.Children.Add (callImageButton, 1, 0);
-			actionButtonsGrid.Children.Add (shareImageButton, 3, 0);
+            //actionButtonsGrid.Children.Add (callImageButton, 1, 0);
+            //actionButtonsGrid.Children.Add (shareImageButton, 3, 0);
 
 			return actionButtonsGrid;
 		}
@@ -443,8 +445,9 @@ namespace ExtendedMap.Forms.Plugin.Abstractions
 				}
 			};
 
-			var navImage = new Image () {
-				Source = ImageSource.FromFile (buttonImage),
+			var navImage = new SvgImage {
+                SvgPath = string.Format("ExtendedMap.Forms.Plugin.Abstractions.Images.{0}",buttonImage),
+                SvgAssembly = typeof(CustomMapContentView).GetTypeInfo().Assembly,
 				Aspect = Aspect.Fill,
 				HorizontalOptions = LayoutOptions.Center
 			};

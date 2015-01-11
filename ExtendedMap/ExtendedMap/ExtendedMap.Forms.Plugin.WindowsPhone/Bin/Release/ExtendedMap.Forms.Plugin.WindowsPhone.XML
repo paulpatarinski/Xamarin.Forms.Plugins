@@ -4,12 +4,12 @@
         <name>ExtendedMap.Forms.Plugin.WindowsPhone</name>
     </assembly>
     <members>
-        <member name="T:ExtendedMap.Forms.Plugin.WindowsPhone.ExtendedMapRenderer">
+        <member name="T:Forms.Plugin.WindowsPhone.ExtendedMapRenderer">
             <summary>
             ExtendedMap Renderer
             </summary>
         </member>
-        <member name="M:ExtendedMap.Forms.Plugin.WindowsPhone.ExtendedMapRenderer.Init">
+        <member name="M:Forms.Plugin.WindowsPhone.ExtendedMapRenderer.Init">
             <summary>
             Used for registration with dependency service
             </summary>

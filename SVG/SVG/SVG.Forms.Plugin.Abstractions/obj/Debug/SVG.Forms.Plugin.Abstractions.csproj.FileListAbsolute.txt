@@ -1,0 +1,8 @@
+C:\Xamarin.Forms.Plugins\SVG\SVG\SVG.Forms.Plugin.Abstractions\bin\Debug\SVG.Forms.Plugin.Abstractions.dll
+C:\Xamarin.Forms.Plugins\SVG\SVG\SVG.Forms.Plugin.Abstractions\bin\Debug\SVG.Forms.Plugin.Abstractions.pdb
+C:\Xamarin.Forms.Plugins\SVG\SVG\SVG.Forms.Plugin.Abstractions\bin\Debug\Xamarin.Forms.Core.dll
+C:\Xamarin.Forms.Plugins\SVG\SVG\SVG.Forms.Plugin.Abstractions\bin\Debug\Xamarin.Forms.Xaml.dll
+C:\Xamarin.Forms.Plugins\SVG\SVG\SVG.Forms.Plugin.Abstractions\bin\Debug\Xamarin.Forms.Core.xml
+C:\Xamarin.Forms.Plugins\SVG\SVG\SVG.Forms.Plugin.Abstractions\bin\Debug\Xamarin.Forms.Xaml.xml
+C:\Xamarin.Forms.Plugins\SVG\SVG\SVG.Forms.Plugin.Abstractions\obj\Debug\SVG.Forms.Plugin.Abstractions.dll
+C:\Xamarin.Forms.Plugins\SVG\SVG\SVG.Forms.Plugin.Abstractions\obj\Debug\SVG.Forms.Plugin.Abstractions.pdb

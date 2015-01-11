@@ -1,17 +1,25 @@
 ﻿using System.Collections.Generic;
+using System.Threading.Tasks;
+using PluginSampleApp.Pages;
 using Xamarin.Forms;
 
 namespace PluginSampleApp
 {
     public class App : Application
     {
+        private readonly NavigationPage _navigationPage;
+
         public App()
         {
-            var listview = new ListView();
+            var listview = new ListView{RowHeight = 60};
 
-            var navigationPage = new NavigationPage(new ContentPage
+            var listviewStackLayout = new StackLayout {Padding = 10};
+
+            listviewStackLayout.Children.Add(listview);
+
+            _navigationPage = new NavigationPage(new ContentPage
             {
-                Content = listview
+                Content = listviewStackLayout
             });
 
             listview.ItemsSource = new List<string>
@@ -20,30 +28,34 @@ namespace PluginSampleApp
                 PageTitle.ExtendedMap
             };
 
-            listview.ItemSelected += (sender, args) =>
-            {
-                if (args.SelectedItem == null)
-                    return;
-
-                switch (args.SelectedItem.ToString())
-                {
-                    case PageTitle.SVG:
-                    {
-                        navigationPage.Navigation.PushAsync(new SVGPage());
-                        break;
-                    }
-                    case PageTitle.ExtendedMap:
-                    {
-                        navigationPage.Navigation.PushAsync(new ExtendedMapPage());
-                        break;
-                    }
-                }
-
-                listview.SelectedItem = null;
-            };
+            listview.ItemSelected += (sender, args) => MenuItemSelected(sender,args);
 
             // The root page of your application
-            MainPage = navigationPage;
+            MainPage = _navigationPage;
+        }
+
+
+        private async Task MenuItemSelected(object sender, SelectedItemChangedEventArgs args)
+        {
+            if (args.SelectedItem == null)
+                return;
+
+            switch (args.SelectedItem.ToString())
+            {
+                case PageTitle.SVG:
+                    {
+                        await _navigationPage.Navigation.PushAsync(new SVGPage());
+                        break;
+                    }
+                case PageTitle.ExtendedMap:
+                    {
+                        await _navigationPage.Navigation.PushAsync(new ExtendedMapPage());
+                        break;
+                    }
+            }
+
+
+            ((ListView)(sender)).SelectedItem = null;
         }
 
         protected override void OnStart()

@@ -3,7 +3,7 @@ using System.Reflection;
 using SVG.Forms.Plugin.Abstractions;
 using Xamarin.Forms;
 
-namespace PluginSampleApp
+namespace PluginSampleApp.Pages
 {
     public class SVGPage : ContentPage
     {
