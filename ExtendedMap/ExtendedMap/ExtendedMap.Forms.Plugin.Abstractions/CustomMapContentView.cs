@@ -55,7 +55,7 @@ namespace ExtendedMap.Forms.Plugin.Abstractions
 			}
 		}
 
-		private View _mapGridFooterRow { get { return _mapGrid.Children [0]; } }
+		private View _mapGridFooterRow { get { return _mapGrid.Children [1]; } }
 
 		private View _mapGridMapRow {
 			get {
