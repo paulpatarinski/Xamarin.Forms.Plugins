@@ -164,11 +164,11 @@
   <ItemGroup>
     <Reference Include="ExtendedMap.Forms.Plugin.Abstractions, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\packages\Xam.Plugins.Forms.ExtendedMap.1.0.0.6\lib\wp8\ExtendedMap.Forms.Plugin.Abstractions.dll</HintPath>
+      <HintPath>..\..\..\..\ExtendedMap\ExtendedMap\ExtendedMap.Forms.Plugin.WindowsPhone\Bin\Debug\ExtendedMap.Forms.Plugin.Abstractions.dll</HintPath>
     </Reference>
     <Reference Include="ExtendedMap.Forms.Plugin.WindowsPhone, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\packages\Xam.Plugins.Forms.ExtendedMap.1.0.0.6\lib\wp8\ExtendedMap.Forms.Plugin.WindowsPhone.dll</HintPath>
+      <HintPath>..\..\..\..\ExtendedMap\ExtendedMap\ExtendedMap.Forms.Plugin.WindowsPhone\Bin\Release\ExtendedMap.Forms.Plugin.WindowsPhone.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Phone.Controls.Toolkit">
       <HintPath>..\..\packages\WPtoolkit.4.2013.08.16\lib\wp8\Microsoft.Phone.Controls.Toolkit.dll</HintPath>

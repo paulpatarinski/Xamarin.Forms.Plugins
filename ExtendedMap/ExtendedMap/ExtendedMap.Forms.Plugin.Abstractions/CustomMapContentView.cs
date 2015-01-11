@@ -34,11 +34,12 @@ namespace ExtendedMap.Forms.Plugin.Abstractions
 		private double _minimizedFooterY;
 		private double _expandedFooterY;
 		private double _pageHeight;
-		private Grid _mapGrid;
+        private double _pageWidth;
+        private Grid _mapGrid;
 		private ExtendedMap _extendedMap;
 		private FooterMode _footerMode;
 
-		public FooterMode FooterMode {
+	    public FooterMode FooterMode {
 			get { return _footerMode; }
 			set {
 				_footerMode = value;
@@ -70,6 +71,7 @@ namespace ExtendedMap.Forms.Plugin.Abstractions
 			//If the pageSize values have not been set yet, set them
 			if (Math.Abs (_pageHeight) < 0.001 && height > 0) {
 				_pageHeight = Bounds.Height;
+				_pageWidth = Bounds.Width;
 				const double collapsedMapHeight = 0.37;
 				const double expandedMapHeight = 0.86;
 				const double expandedFooterHeight = 0.63;
@@ -215,22 +217,32 @@ namespace ExtendedMap.Forms.Plugin.Abstractions
 			pinInfoStackLayout.Spacing = 0;
 
 			footerGrid.Children.Add (pinInfoStackLayout, 0, 0);
-			footerGrid.Children.Add (CreateImageButton ("navigate-icon.svg", "Route", (view, o) => {
-				var selectedPin = _extendedMap.SelectedPin;
-				DependencyService.Get<IPhoneService> ().LaunchNavigationAsync (new NavigationModel {
-					Latitude = selectedPin.Position.Latitude,
-					Longitude = selectedPin.Position.Longitude,
-					DestinationAddress = selectedPin.Address,
-					DestinationName = selectedPin.Label
-				});
-			}), 1, 0);
+
+		    var footerTopSectionHeight = footerHeight*0.2;
+            var navigationImageButtonHeight = footerTopSectionHeight - (0.007 * footerTopSectionHeight);
+		    var navigationImageButtonWidth = (0.15 * _pageWidth);
+
+		    var navigationImageButton = CreateImageButton("navigate-icon.svg",navigationImageButtonHeight, navigationImageButtonWidth, (view, o) =>
+		    {
+		        var selectedPin = _extendedMap.SelectedPin;
+		        DependencyService.Get<IPhoneService>().LaunchNavigationAsync(new NavigationModel
+		        {
+		            Latitude = selectedPin.Position.Latitude,
+		            Longitude = selectedPin.Position.Longitude,
+		            DestinationAddress = selectedPin.Address,
+		            DestinationName = selectedPin.Label
+		        });
+		    });
+
+            navigationImageButton.Padding = new Thickness(0, (navigationImageButtonHeight / 2.5) * -1, 0, 0);
+		    footerGrid.Children.Add (navigationImageButton, 1, 0);
 
 			footerMasterGrid.Children.Add (footerGrid, 1, 0);
 
 			footerMainGrid.Children.Add (CreateFooterDetails (footerHeight), 0, 1);
 			footerMainGrid.Children.Add (footerMasterGrid, 0, 0);
 
-			return new ContentView { Content = footerMainGrid, BackgroundColor = Color.White, Opacity = 0.9 };
+			return new ContentView { Content = footerMainGrid, BackgroundColor = Color.White };
 		}
 
 		ScrollView CreateFooterDetails (double footerDetailsHeight)
@@ -397,22 +409,59 @@ namespace ExtendedMap.Forms.Plugin.Abstractions
 			return contentView;
 		}
 
-		ContentView CreateImageButton (string buttonImage, string buttonText, Action<View, Object> tappedCallback)
+        ContentView CreateImageButton(string buttonImage, double height, double width, Action<View, Object> tappedCallback)
+        {
+            var grid = new Grid
+            {
+                RowDefinitions = new RowDefinitionCollection {
+					new RowDefinition {
+						Height = new GridLength (1, GridUnitType.Star)
+					},
+				},
+                ColumnDefinitions = new ColumnDefinitionCollection {
+					new ColumnDefinition {
+						Width = new GridLength (1, GridUnitType.Star)
+					},
+
+				},
+                BackgroundColor = Color.Transparent,
+                HorizontalOptions = LayoutOptions.Center,
+                RowSpacing = 0
+            };
+
+            var navImage = new SvgImage
+            {
+                SvgPath = string.Format("ExtendedMap.Forms.Plugin.Abstractions.Images.{0}", buttonImage),
+                SvgAssembly = typeof(CustomMapContentView).GetTypeInfo().Assembly,
+                HorizontalOptions = LayoutOptions.Center,
+                HeightRequest = height,
+                WidthRequest = width
+            };
+
+            grid.GestureRecognizers.Add(new TapGestureRecognizer(tappedCallback));
+
+            grid.Children.Add(navImage, 0, 0);
+
+            return new ContentView { Content = grid };
+        }
+
+
+		ContentView CreateImageButton (string buttonImage, string buttonText, double height, double width, Action<View, Object> tappedCallback)
 		{
 			var grid = new Grid {
 				RowDefinitions = new RowDefinitionCollection {
 					new RowDefinition {
-						Height = new GridLength (0.12, GridUnitType.Star)
+						Height = new GridLength (1, GridUnitType.Star)
 					},
-					new RowDefinition {
-						Height = new GridLength (0.38, GridUnitType.Star)
-					},
-					new RowDefinition {
-						Height = new GridLength (0.4, GridUnitType.Star)
-					},
-					new RowDefinition {
-						Height = new GridLength (0.1, GridUnitType.Star)
-					},
+                    //new RowDefinition {
+                    //    Height = new GridLength (0.38, GridUnitType.Star)
+                    //},
+                    //new RowDefinition {
+                    //    Height = new GridLength (0.4, GridUnitType.Star)
+                    //},
+                    //new RowDefinition {
+                    //    Height = new GridLength (0.1, GridUnitType.Star)
+                    //},
 				},
 				ColumnDefinitions = new ColumnDefinitionCollection {
 					new ColumnDefinition {
@@ -420,7 +469,7 @@ namespace ExtendedMap.Forms.Plugin.Abstractions
 					},
 
 				},
-				BackgroundColor = Color.White,
+				BackgroundColor = Color.Transparent,
 				HorizontalOptions = LayoutOptions.Center,
 				RowSpacing = 0
 			};
@@ -432,15 +481,15 @@ namespace ExtendedMap.Forms.Plugin.Abstractions
 					}
 				},
 				ColumnDefinitions = new ColumnDefinitionCollection {
+                    //new ColumnDefinition {
+                    //    Width = new GridLength (0.28, GridUnitType.Star)
+                    //},
 					new ColumnDefinition {
-						Width = new GridLength (0.28, GridUnitType.Star)
+						Width = new GridLength (1, GridUnitType.Star)
 					},
-					new ColumnDefinition {
-						Width = new GridLength (0.44, GridUnitType.Star)
-					},
-					new ColumnDefinition {
-						Width = new GridLength (0.28, GridUnitType.Star)
-					},
+                    //new ColumnDefinition {
+                    //    Width = new GridLength (0.28, GridUnitType.Star)
+                    //},
 
 				}
 			};
@@ -448,13 +497,15 @@ namespace ExtendedMap.Forms.Plugin.Abstractions
 			var navImage = new SvgImage {
                 SvgPath = string.Format("ExtendedMap.Forms.Plugin.Abstractions.Images.{0}",buttonImage),
                 SvgAssembly = typeof(CustomMapContentView).GetTypeInfo().Assembly,
-				Aspect = Aspect.Fill,
-				HorizontalOptions = LayoutOptions.Center
+                //Aspect = Aspect.Fill,
+                //HorizontalOptions = LayoutOptions.Center,
+                HeightRequest = height,
+                WidthRequest = width
 			};
 
 			grid.GestureRecognizers.Add (new TapGestureRecognizer (tappedCallback));
 
-			navImageGrid.Children.Add (navImage, 1, 0);
+			navImageGrid.Children.Add (navImage, 0, 0);
 
 			var label = new Label {
 				Text = buttonText,
@@ -463,8 +514,8 @@ namespace ExtendedMap.Forms.Plugin.Abstractions
 				HorizontalOptions = LayoutOptions.Center
 			};
 
-			grid.Children.Add (navImageGrid, 0, 1);
-			grid.Children.Add (label, 0, 2);
+			grid.Children.Add (navImageGrid, 0, 0);
+            //grid.Children.Add (label, 0, 2);
 
 			return new ContentView { Content = grid };
 		}

@@ -50,10 +50,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="ExtendedMap.Forms.Plugin.Abstractions">
-      <HintPath>..\..\packages\Xam.Plugins.Forms.ExtendedMap.1.0.0.4\lib\MonoAndroid10\ExtendedMap.Forms.Plugin.Abstractions.dll</HintPath>
+      <HintPath>..\..\..\..\ExtendedMap\ExtendedMap\ExtendedMap.Forms.Plugin.Android\bin\Debug\ExtendedMap.Forms.Plugin.Abstractions.dll</HintPath>
     </Reference>
     <Reference Include="ExtendedMap.Forms.Plugin.Android">
-      <HintPath>..\..\packages\Xam.Plugins.Forms.ExtendedMap.1.0.0.4\lib\MonoAndroid10\ExtendedMap.Forms.Plugin.Android.dll</HintPath>
+      <HintPath>..\..\..\..\ExtendedMap\ExtendedMap\ExtendedMap.Forms.Plugin.Android\bin\Debug\ExtendedMap.Forms.Plugin.Android.dll</HintPath>
     </Reference>
     <Reference Include="FormsViewGroup">
       <HintPath>..\..\packages\Xamarin.Forms.1.3.0.6292\lib\MonoAndroid10\FormsViewGroup.dll</HintPath>
