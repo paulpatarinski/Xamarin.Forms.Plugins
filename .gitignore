@@ -25,3 +25,6 @@ SVG/SVG/SVG.Forms.Plugin.Abstractions/bin/
 SVG/SVG/SVG.Forms.Plugin.Android/bin/
 SVG/SVG/SVG.Forms.Plugin.iOS/bin/
 SVG/SVG.sln.ide/
+SVG/SVG/SVG.Forms.Plugin.Abstractions/obj/
+SVG/SVG/SVG.Forms.Plugin.WindowsPhone/obj/
+SVG/SVG/SVG.Forms.Plugin.iOS/obj/
