@@ -9,47 +9,55 @@ namespace PluginSampleApp.Pages
     {
         public SVGPage()
         {
-            var stackLayout = new StackLayout();
-
-            stackLayout.Children.Add(new Label
-            {
-                Text = "SVGs are AWESOME!!!",
-                Font = Font.BoldSystemFontOfSize(20),
-                HorizontalOptions = LayoutOptions.Center
-            });
-
             //Get SVGs from http://thenounproject.com/
             var svgPaths = new List<string>
             {
-                "PluginSampleApp.Images.Animation.svg",
-                "PluginSampleApp.Images.SampleImage.svg",
+                "PluginSampleApp.Images.CoolGuy.svg",
+                "PluginSampleApp.Images.Elvis.svg",
+                "PluginSampleApp.Images.tiger.svg",
             };
 
-            foreach (var svgPath in svgPaths)
+            var grid = new Grid
             {
-                var horizontalStackLayout = new StackLayout { Orientation = StackOrientation.Horizontal };
+                RowDefinitions = new RowDefinitionCollection(),
+                ColumnDefinitions = new ColumnDefinitionCollection()
+            };
 
-                for (var y = 1; y <= 4; y++)
+            for (var rowIndex = 0; rowIndex < svgPaths.Count; rowIndex++)
+            {
+                var svgPath = svgPaths[rowIndex];
+
+                grid.RowDefinitions.Add(new RowDefinition {Height = GridLength.Auto});
+
+                for (var columnIndex = 0; columnIndex <= 4; columnIndex++)
                 {
+                    grid.ColumnDefinitions.Add(new ColumnDefinition {Width = GridLength.Auto});
+
                     //IMPORTANT Make sure you set both SvgPath and SvgAssembly
                     var svgImage = new SvgImage
                     {
                         SvgPath = svgPath,
-                        SvgAssembly = typeof(App).GetTypeInfo().Assembly,
-                        HeightRequest = y * 50,
-                        WidthRequest = y * 50
+                        SvgAssembly = typeof (App).GetTypeInfo().Assembly,
+                        HeightRequest = columnIndex*50,
+                        WidthRequest = columnIndex*50,
+                        HorizontalOptions = LayoutOptions.Center,
+                        VerticalOptions = LayoutOptions.Center,
+                        BackgroundColor = Color.White
                     };
 
-                    if (svgPath.Contains("hipster"))
-                        svgImage.BackgroundColor = Color.White;
-
-                    horizontalStackLayout.Children.Add(svgImage);
+                    grid.Children.Add(svgImage, columnIndex, rowIndex);
                 }
-
-                stackLayout.Children.Add(horizontalStackLayout);
             }
 
-            Content = stackLayout;
+            var verticalScrollView = new ScrollView {Orientation = ScrollOrientation.Vertical, Content = grid};
+
+            var horizontalScrollView = new ScrollView
+            {
+                Orientation = ScrollOrientation.Horizontal,
+                Content = verticalScrollView,
+            };
+
+            Content = horizontalScrollView;
         }
     }
 }

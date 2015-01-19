@@ -69,6 +69,12 @@ C:\Xamarin.Forms.Plugins\SVG\SVG\SVG.Forms.Plugin.WindowsPhone\Bin\Debug\ko\Syst
 C:\Xamarin.Forms.Plugins\SVG\SVG\SVG.Forms.Plugin.WindowsPhone\Bin\Debug\ru\System.Windows.Interactivity.resources.dll
 C:\Xamarin.Forms.Plugins\SVG\SVG\SVG.Forms.Plugin.WindowsPhone\Bin\Debug\zh-Hans\System.Windows.Interactivity.resources.dll
 C:\Xamarin.Forms.Plugins\SVG\SVG\SVG.Forms.Plugin.WindowsPhone\Bin\Debug\zh-Hant\System.Windows.Interactivity.resources.dll
-C:\Xamarin.Forms.Plugins\SVG\SVG\SVG.Forms.Plugin.WindowsPhone\obj\Debug\SVG.Forms.Plugin.WindowsPhone.csprojResolveAssemblyReference.cache
 C:\Xamarin.Forms.Plugins\SVG\SVG\SVG.Forms.Plugin.WindowsPhone\obj\Debug\SVG.Forms.Plugin.WindowsPhone.dll
 C:\Xamarin.Forms.Plugins\SVG\SVG\SVG.Forms.Plugin.WindowsPhone\obj\Debug\SVG.Forms.Plugin.WindowsPhone.pdb
+C:\Xamarin.Forms.Plugins\SVG\SVG\SVG.Forms.Plugin.WindowsPhone\Bin\Debug\ExtendedMap.Forms.Plugin.Abstractions.dll
+C:\Xamarin.Forms.Plugins\SVG\SVG\SVG.Forms.Plugin.WindowsPhone\Bin\Debug\ExtendedMap.Forms.Plugin.WindowsPhone.dll
+C:\Xamarin.Forms.Plugins\SVG\SVG\SVG.Forms.Plugin.WindowsPhone\Bin\Debug\Xamarin.Forms.Maps.dll
+C:\Xamarin.Forms.Plugins\SVG\SVG\SVG.Forms.Plugin.WindowsPhone\Bin\Debug\Xamarin.Forms.Maps.WP8.dll
+C:\Xamarin.Forms.Plugins\SVG\SVG\SVG.Forms.Plugin.WindowsPhone\Bin\Debug\SVG.Forms.Plugin.Abstractions.xml
+C:\Xamarin.Forms.Plugins\SVG\SVG\SVG.Forms.Plugin.WindowsPhone\Bin\Debug\SVG.Forms.Plugin.WindowsPhone.xml
+C:\Xamarin.Forms.Plugins\SVG\SVG\SVG.Forms.Plugin.WindowsPhone\Bin\Debug\Xamarin.Forms.Maps.xml

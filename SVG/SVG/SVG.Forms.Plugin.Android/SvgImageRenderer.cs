@@ -8,7 +8,7 @@ using Xamarin.Forms;
 using Xamarin.Forms.Platform.Android;
 using XamSvg;
 
-[assembly: ExportRenderer (typeof(SvgImage), typeof(SvgImageRenderer))]
+[assembly: ExportRenderer(typeof(SvgImage), typeof(SvgImageRenderer))]
 
 namespace SVG.Forms.Plugin.Droid
 {
@@ -60,9 +60,9 @@ namespace SVG.Forms.Plugin.Droid
             var width = (int) _formsControl.WidthRequest <= 0 ? 100 : (int) _formsControl.WidthRequest;
             var height = (int) _formsControl.HeightRequest <= 0 ? 100 : (int) _formsControl.HeightRequest;
 
-            var svg = SvgFactory.GetBitmap(GetSvgStream(_formsControl.SvgPath), width, height);
-
-            imageView.SetImageBitmap(svg);
+            var svg = SvgFactory.GetDrawable(GetSvgStream(_formsControl.SvgPath));
+            imageView.SetScaleType(ImageView.ScaleType.FitXy);
+            imageView.SetImageDrawable(svg);
         }
 
         private Stream GetSvgStream(string svgPath)

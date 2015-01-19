@@ -15,3 +15,13 @@ ExtendedMap/ExtendedMap/ExtendedMap.Forms.Plugin.Abstractions/obj/
 ExtendedMap/ExtendedMap/ExtendedMap.Forms.Plugin.iOS/obj/
 ExtendedMap/ExtendedMap/ExtendedMap.Forms.Plugin.Abstractions/bin/
 ExtendedMap/ExtendedMap/ExtendedMap.Forms.Plugin.WindowsPhone/Bin/
+SVG/packages/
+SVG/Components/
+SVG/SVG/SVG.Forms.Plugin.Android/obj/
+SampleApp/PluginSampleApp/Components/
+ExtendedMap/ExtendedMap/ExtendedMap.Forms.Plugin.Android/bin/
+SVG/SVG/SVG.Forms.Plugin.WindowsPhone/Bin/
+SVG/SVG/SVG.Forms.Plugin.Abstractions/bin/
+SVG/SVG/SVG.Forms.Plugin.Android/bin/
+SVG/SVG/SVG.Forms.Plugin.iOS/bin/
+SVG/SVG.sln.ide/
