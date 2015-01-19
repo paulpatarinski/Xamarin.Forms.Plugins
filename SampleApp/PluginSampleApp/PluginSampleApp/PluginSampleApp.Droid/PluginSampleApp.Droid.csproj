@@ -131,10 +131,6 @@
       <Project>{ad2d2db4-e781-4cf1-9b62-3aad264f196d}</Project>
       <Name>SVG.Forms.Plugin.Android</Name>
     </ProjectReference>
-    <ProjectReference Include="..\PluginSampleApp\PluginSampleApp.csproj">
-      <Project>{FB7259F4-6B54-46BC-83F7-821E1618AED0}</Project>
-      <Name>PluginSampleApp</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <XamarinComponentReference Include="googleplayservices">
