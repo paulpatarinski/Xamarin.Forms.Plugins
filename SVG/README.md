@@ -37,7 +37,8 @@ new SvgImage {
 In the example my SVG file is located under the Images folder in the PluginSampleApp project. The SvgAssembly is a reference to the assembly containing the svg/xaml file.
 
 # Where to get SVG/XAML?
-Win Phone does not support SVGs by default and there are no good SVG to Win Phone XAML libraries. Therefore the easiest way to get an SVG and it's XAML equivalent is download [Metro Studio](http://www.syncfusion.com/downloads/metrostudio).This software will give you a large selection of SVGs with the ability to export in Metro XAML format ALL FOR FREE.
+Win Phone does not support SVGs by default and there are no good SVG to Win Phone XAML libraries. Diederik Krols has a [really nice post](http://blogs.u2u.be/diederik/post/2012/07/26/Transforming-SVG-graphics-to-XAML-Metro-Icons.aspx) on how to convert SVG to Metro XAML. Check out the [nounproject](http://thenounproject.com/) for some royalty free SVGs.
+
 
 # License
 Licensed under main repo license
