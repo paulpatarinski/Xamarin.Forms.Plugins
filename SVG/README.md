@@ -39,6 +39,9 @@ In the example my SVG file is located under the Images folder in the PluginSampl
 # Where to get SVG/XAML?
 Win Phone does not support SVGs by default and there are no good SVG to Win Phone XAML libraries. Diederik Krols has a [really nice post](http://blogs.u2u.be/diederik/post/2012/07/26/Transforming-SVG-graphics-to-XAML-Metro-Icons.aspx) on how to convert SVG to Metro XAML. Check out the [nounproject](http://thenounproject.com/) for some royalty free SVGs.
 
+# Screenshots
+
+![ScreenShot](https://raw.githubusercontent.com/paulpatarinski/Xamarin.Forms.Plugins/master/SampleApp/Images/Screenshots/SVG.JPG)
 
 # License
 Licensed under main repo license
