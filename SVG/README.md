@@ -1,5 +1,8 @@
 # SVG Image Control Plugin for Xamarin.Forms
 
+# Why SVG?
+[![ScreenShot](https://raw.githubusercontent.com/paulpatarinski/Xamarin.Forms.Plugins/master/SampleApp/Images/WhySVG.PNG)](http://youtu.be/wlFVIIstKmA)
+
 # Setup
 * Available on NuGet: https://www.nuget.org/packages/Xam.Plugins.Forms.Svg/
 * Install into your PCL project and Client projects.
