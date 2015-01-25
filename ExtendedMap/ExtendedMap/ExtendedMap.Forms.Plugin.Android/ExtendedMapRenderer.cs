@@ -69,7 +69,7 @@ namespace ExtendedMap.Forms.Plugin.Droid
 			_previouslySelectedPin = null;
 			_previouslySelectedMarker = null;
 
-			_customMapContentView.FooterMode = FooterMode.Hidden;
+            //_customMapContentView.FooterMode = FooterMode.Hidden;
 		}
 
 
