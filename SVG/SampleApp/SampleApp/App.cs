@@ -16,6 +16,7 @@ namespace SampleApp
             //Get SVGs from http://thenounproject.com/
             var svgPaths = new List<string>
             {
+                "SampleApp.Images.NavigateIcon.svg",
                 "SampleApp.Images.CoolGuy.svg",
                 "SampleApp.Images.Elvis.svg",
                 "SampleApp.Images.tiger.svg",
