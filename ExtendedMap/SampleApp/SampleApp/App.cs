@@ -1,11 +1,5 @@
-﻿using System.Diagnostics;
-using ExtendedMap.Forms.Plugin.Abstractions;
+﻿using ExtendedMap.Forms.Plugin.Abstractions;
 using PluginSampleApp.ViewModels;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
 using Xamarin.Forms;
 using Xamarin.Forms.Maps;
 
@@ -42,13 +36,13 @@ namespace SampleApp
 
             var location = new Position(latitude, longitude);
 
-            var _map = new global::ExtendedMap.Forms.Plugin.Abstractions.ExtendedMap(MapSpan.FromCenterAndRadius(location, Distance.FromMiles(15))) { IsShowingUser = true };
+            var _map = new ExtendedMap.Forms.Plugin.Abstractions.ExtendedMap(MapSpan.FromCenterAndRadius(location, Distance.FromMiles(15))) { IsShowingUser = true };
 
             _map.StyleId = "CustomMap";
 
             _map.BindingContext = BindingContext;
 
-            _map.SetBinding<ExtendedMapViewModel>(global::ExtendedMap.Forms.Plugin.Abstractions.ExtendedMap.CustomPinsProperty, x => x.SamplePins);
+            _map.SetBinding<ExtendedMapViewModel>(ExtendedMap.Forms.Plugin.Abstractions.ExtendedMap.CustomPinsProperty, x => x.SamplePins);
 
             var createMapContentView = new CustomMapContentView(_map);
 
