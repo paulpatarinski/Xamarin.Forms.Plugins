@@ -21,7 +21,7 @@ namespace SampleApp.ViewModels
             Address = "8832 West Dempster Street, Niles, IL 60714",
             Label = "Portillo's",
             Position = new Position(42.0412592, -87.8534305),
-            PinIcon = Icons.BeachVball,
+            PinIcon = Icons.FoodBowl,
             PhoneNumber = "(847)795-0600"
           });
 
@@ -31,7 +31,7 @@ namespace SampleApp.ViewModels
             Address = "8265 West Golf Road, Niles, IL 60714",
             Label = "Himalayan Restaurant",
             Position = new Position(42.0399843, -87.8444183),
-            PinIcon = Icons.IndoorVball,
+            PinIcon = Icons.Chicken,
             PhoneNumber = "(847)324-4150"
           });
         });

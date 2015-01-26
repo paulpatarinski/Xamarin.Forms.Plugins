@@ -5,8 +5,8 @@
   /// </summary>
   public static class Icons
   {
-    public static string BeachVball { get { return "BeachVball"; } }
+    public static string FoodBowl { get { return "FoodBowl"; } }
 
-    public static string IndoorVball { get { return "IndoorVball"; } }
+    public static string Chicken { get { return "Chicken"; } }
   }
 }

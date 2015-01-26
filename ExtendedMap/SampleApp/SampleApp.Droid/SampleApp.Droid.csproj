@@ -120,8 +120,8 @@
     <AndroidResource Include="Resources\drawable-xxhdpi\icon.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidAsset Include="Assets\BeachVball.png" />
-    <AndroidAsset Include="Assets\IndoorVball.png" />
+    <AndroidAsset Include="Assets\FoodBowl.png" />
+    <AndroidAsset Include="Assets\Chicken.png" />
     <Content Include="Properties\AndroidManifest.xml" />
   </ItemGroup>
   <ItemGroup>
