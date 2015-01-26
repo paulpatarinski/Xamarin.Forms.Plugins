@@ -182,7 +182,7 @@ namespace ExtendedMap.Forms.Plugin.Abstractions
           {
             Width = new GridLength(1, GridUnitType.Star)
           }
-        },
+        }, RowSpacing = 10
       };
 
       var footerMasterGrid = new Grid
@@ -293,7 +293,7 @@ namespace ExtendedMap.Forms.Plugin.Abstractions
         Command = new Command(ToogleFooter)
       });
 
-      footerMainGrid.Children.Add(CreateFooterDetails(footerHeight), 0, 1);
+      footerMainGrid.Children.Add(CreateFooterDetails(footerHeight, footerTopSectionHeight), 0, 1);
       footerMainGrid.Children.Add(footerMasterGrid, 0, 0);
 
       footerMainGrid.Children[1].GestureRecognizers.Add(new TapGestureRecognizer
@@ -304,7 +304,7 @@ namespace ExtendedMap.Forms.Plugin.Abstractions
       return new ContentView {Content = footerMainGrid, BackgroundColor = Color.White};
     }
 
-    private ScrollView CreateFooterDetails(double footerDetailsHeight)
+    private ScrollView CreateFooterDetails(double footerDetailsHeight, double footerTopSectionHeight)
     {
       var footerDetailsGrid = new Grid
       {
@@ -346,7 +346,7 @@ namespace ExtendedMap.Forms.Plugin.Abstractions
         Padding = new Thickness(0, 0, 0, 0)
       };
 
-      footerDetailsGrid.Children.Add(CreateActionButtonsGrid(), 1, 0);
+      footerDetailsGrid.Children.Add(CreateActionButtonsGrid(footerTopSectionHeight), 1, 0);
       footerDetailsGrid.Children.Add(CreateScheduleGrid(), 1, 1);
       footerDetailsGrid.Children.Add(CreateOtherView(), 1, 2);
 
@@ -360,7 +360,7 @@ namespace ExtendedMap.Forms.Plugin.Abstractions
       };
     }
 
-    private Grid CreateActionButtonsGrid()
+    private Grid CreateActionButtonsGrid(double footerTopSectionHeight)
     {
       var actionButtonsGrid = new Grid
       {
@@ -397,19 +397,24 @@ namespace ExtendedMap.Forms.Plugin.Abstractions
         BackgroundColor = Color.White
       };
 
-      //var callImageButton = CreateImageButton ("call_icon.png", "Call", (view, o) => {
-      //    var phoneNumber = _extendedMap.SelectedPin.PhoneNumber;
-      //    DependencyService.Get<IPhoneService> ().DialNumber (phoneNumber);
-      //});
+      var callImageButton = CreateImageButton("phone-icon.svg", "CALL", (footerTopSectionHeight / 5),
+       (footerTopSectionHeight / 5), (view, o) =>
+       {
+         var phoneNumber = _extendedMap.SelectedPin.PhoneNumber;
+         DependencyService.Get<IPhoneService>().DialNumber(phoneNumber);
+       });
 
-      //var shareImageButton = CreateImageButton ("share_icon.png", "Share", (view, o) => {
-      //    var selectedPin = _extendedMap.SelectedPin;
-      //    var text = string.Format ("I am playing vball at {0}, {1}.", selectedPin.Label, selectedPin.Address);
-      //    DependencyService.Get<IPhoneService> ().ShareText (text);
-      //});
 
-      //actionButtonsGrid.Children.Add (callImageButton, 1, 0);
-      //actionButtonsGrid.Children.Add (shareImageButton, 3, 0);
+      var shareImageButton = CreateImageButton("share-icon.svg", "SHARE", (footerTopSectionHeight / 4),
+       (footerTopSectionHeight / 4),(view, o) =>
+      {
+        var selectedPin = _extendedMap.SelectedPin;
+        var text = string.Format("Get some food at {0}, {1}?", selectedPin.Label, selectedPin.Address);
+        DependencyService.Get<IPhoneService>().ShareText(text);
+      });
+
+      actionButtonsGrid.Children.Add(callImageButton, 1, 0);
+      actionButtonsGrid.Children.Add(shareImageButton, 3, 0);
 
       return actionButtonsGrid;
     }
@@ -548,15 +553,7 @@ namespace ExtendedMap.Forms.Plugin.Abstractions
           {
             Height = new GridLength(1, GridUnitType.Star)
           },
-          //new RowDefinition {
-          //    Height = new GridLength (0.38, GridUnitType.Star)
-          //},
-          //new RowDefinition {
-          //    Height = new GridLength (0.4, GridUnitType.Star)
-          //},
-          //new RowDefinition {
-          //    Height = new GridLength (0.1, GridUnitType.Star)
-          //},
+      
         },
         ColumnDefinitions = new ColumnDefinitionCollection
         {
@@ -582,16 +579,12 @@ namespace ExtendedMap.Forms.Plugin.Abstractions
         },
         ColumnDefinitions = new ColumnDefinitionCollection
         {
-          //new ColumnDefinition {
-          //    Width = new GridLength (0.28, GridUnitType.Star)
-          //},
+         
           new ColumnDefinition
           {
             Width = new GridLength(1, GridUnitType.Star)
           },
-          //new ColumnDefinition {
-          //    Width = new GridLength (0.28, GridUnitType.Star)
-          //},
+         
 
         }
       };
@@ -600,8 +593,6 @@ namespace ExtendedMap.Forms.Plugin.Abstractions
       {
         SvgPath = string.Format("ExtendedMap.Forms.Plugin.Abstractions.Images.{0}", buttonImage),
         SvgAssembly = typeof (CustomMapContentView).GetTypeInfo().Assembly,
-        //Aspect = Aspect.Fill,
-        //HorizontalOptions = LayoutOptions.Center,
         HeightRequest = height,
         WidthRequest = width
       };
@@ -619,7 +610,7 @@ namespace ExtendedMap.Forms.Plugin.Abstractions
       };
 
       grid.Children.Add(navImageGrid, 0, 0);
-      //grid.Children.Add (label, 0, 2);
+      grid.Children.Add(label, 0, 1);
 
       return new ContentView {Content = grid};
     }

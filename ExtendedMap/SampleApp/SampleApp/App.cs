@@ -1,5 +1,5 @@
 ﻿using ExtendedMap.Forms.Plugin.Abstractions;
-using PluginSampleApp.ViewModels;
+using SampleApp.ViewModels;
 using Xamarin.Forms;
 using Xamarin.Forms.Maps;
 
