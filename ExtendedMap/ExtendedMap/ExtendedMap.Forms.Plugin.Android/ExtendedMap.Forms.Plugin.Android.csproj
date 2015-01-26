@@ -97,8 +97,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ExtendedMapRenderer.cs" />
+    <Compile Include="Extensions\ObjectExtensions.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\PhoneService.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
