@@ -5,39 +5,39 @@ using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
 using ExtendedMap.Forms.Plugin.Abstractions;
 using SampleApp.Helpers;
+using Xamarin.Forms;
 using Xamarin.Forms.Maps;
 
-namespace PluginSampleApp.ViewModels
+namespace SampleApp.ViewModels
 {
     public class ExtendedMapViewModel : INotifyPropertyChanged
     {
-        public ExtendedMapViewModel()
+      public ExtendedMapViewModel()
+      {
+        Device.BeginInvokeOnMainThread(() =>
         {
-            const double latitude = 41.788081;
-            const double longitude = -87.831573;
-
-            Task.Delay(TimeSpan.FromSeconds(5)).ContinueWith((result) =>
-            {
-                SamplePins.Add(new ExtendedPin
-                {
-                    Address = "Sample Address 1",
-                    Label = "Test Label",
-                    Position = new Position(latitude, longitude),
-                    PinIcon = Icons.BeachVball
-                });
+          SamplePins.Add(new ExtendedPin
+          {
+            Address = "8832 West Dempster Street, Niles, IL 60714",
+            Label = "Portillo's",
+            Position = new Position(42.0412592, -87.8534305),
+            PinIcon = Icons.BeachVball,
+            PhoneNumber = "(847)795-0600"
+          });
 
 
-                SamplePins.Add(new ExtendedPin
-                {
-                    Address = "Sample Address 2",
-                    Label = "Test Label 2",
-                    Position = new Position(latitude + 0.1, longitude),
-                    PinIcon = Icons.IndoorVball
-                });
-            });
-        }
+          SamplePins.Add(new ExtendedPin
+          {
+            Address = "8265 West Golf Road, Niles, IL 60714",
+            Label = "Himalayan Restaurant",
+            Position = new Position(42.0399843, -87.8444183),
+            PinIcon = Icons.IndoorVball,
+            PhoneNumber = "(847)324-4150"
+          });
+        });
+      }
 
-        private ObservableCollection<ExtendedPin> _samplePins;
+      private ObservableCollection<ExtendedPin> _samplePins;
 
         public ObservableCollection<ExtendedPin> SamplePins
         {
