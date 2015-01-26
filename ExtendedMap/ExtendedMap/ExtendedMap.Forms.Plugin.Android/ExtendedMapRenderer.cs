@@ -49,17 +49,11 @@ namespace ExtendedMap.Forms.Plugin.Droid
 
 	  protected override void OnElementPropertyChanged (object sender, System.ComponentModel.PropertyChangedEventArgs e)
 		{
-			var androidMapView = (MapView)Control;
-
       if (e.PropertyName.Equals(Abstractions.ExtendedMap.CenterOnPositionProperty.PropertyName) || e.PropertyName.Equals(Abstractions.ExtendedMap.CameraFocusYOffsetProperty.PropertyName))
       {
         CenterOnLocation(new LatLng(_customMap.CenterOnPosition.Latitude, _customMap.CenterOnPosition.Longitude),
           _customMap.CameraFocusYOffset);
       }
-
-			if (e.PropertyName.Equals ("IsShowingUser")) {
-				androidMapView.Map.MyLocationEnabled = _customMap.IsShowingUser;
-			}
 		}
 
 		void AddPin (ExtendedPin formsPin)
@@ -121,8 +115,6 @@ namespace ExtendedMap.Forms.Plugin.Droid
 			ResetPrevioslySelectedMarker ();
 
 			var currentMarker = e.P0;
-
-      //CenterOnLocation(currentMarker.Position, _customMap.CameraFocusYOffset);
 
 			currentMarker.SetIcon (BitmapDescriptorFactory.DefaultMarker ());
 
