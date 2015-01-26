@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 using System.Reflection;
 using SVG.Forms.Plugin.Abstractions;
 using Xamarin.Forms;
@@ -256,7 +257,12 @@ namespace ExtendedMap.Forms.Plugin.Abstractions
             navigationImageButton.Padding = new Thickness(0, (navigationImageButtonHeight / 2.5) * -1, 0, 0);
 		    footerGrid.Children.Add (navigationImageButton, 1, 0);
 
-			footerMasterGrid.Children.Add (footerGrid, 1, 0);
+        footerMasterGrid.Children.Add(footerGrid, 1, 0);
+
+		  footerMasterGrid.Children[0].GestureRecognizers.Add(new TapGestureRecognizer
+		  {
+        Command = new Command(ToogleFooter)
+		  });
 
 			footerMainGrid.Children.Add (CreateFooterDetails (footerHeight), 0, 1);
 			footerMainGrid.Children.Add (footerMasterGrid, 0, 0);
