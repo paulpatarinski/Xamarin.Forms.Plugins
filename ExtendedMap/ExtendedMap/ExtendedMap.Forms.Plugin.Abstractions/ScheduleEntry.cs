@@ -1,3 +1,5 @@
+using System;
+
 namespace ExtendedMap.Forms.Plugin.Abstractions
 {
 	public class ScheduleEntry
@@ -13,4 +15,19 @@ namespace ExtendedMap.Forms.Plugin.Abstractions
 		/// <value>The times.</value>
 		public string HoursOfOperation { get; set; }
 	}
+
+  public class ScheduleEntryModel
+  {
+    public DateTime StartTime
+    {
+      get;
+      set;
+    }
+
+    public DateTime EndTime
+    {
+      get;
+      set;
+    }
+  }
 }

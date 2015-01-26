@@ -474,7 +474,7 @@ namespace ExtendedMap.Forms.Plugin.Abstractions
       //Don't allow selection
       listview.ItemSelected += (object sender, SelectedItemChangedEventArgs e) =>
       {
-        var url = e.SelectedItem as Url;
+        var url = e.SelectedItem as ExtraDetailModel;
 
         if (url != null && url.Value.Contains("www"))
         {

@@ -21,7 +21,7 @@ namespace ExtendedMap.Forms.Plugin.Abstractions
 		/// Other data relevant to the pin. ie. Website Url, 
 		/// </summary>
 		/// <value>The others.</value>
-		public List<Url> Others { get; set; }
+		public List<ExtraDetailModel> Others { get; set; }
 	}
 }
 

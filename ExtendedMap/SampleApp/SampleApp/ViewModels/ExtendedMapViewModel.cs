@@ -1,4 +1,6 @@
-﻿using System.Collections.ObjectModel;
+﻿using System;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using ExtendedMap.Forms.Plugin.Abstractions;
@@ -20,7 +22,28 @@ namespace SampleApp.ViewModels
             Label = "Portillo's",
             Position = new Position(42.0412592, -87.8534305),
             PinIcon = Icons.FoodBowl,
-            PhoneNumber = "(847)795-0600"
+            PhoneNumber = "(847)795-0600",
+            ScheduleEntries = new List<ScheduleEntry>
+            {
+              new ScheduleEntry
+              {
+                Day = "Monday",
+                HoursOfOperation = "9:00 am - 5:00pm"
+              },
+              new ScheduleEntry
+              {
+                Day = "Tuesday",
+                HoursOfOperation = "9:00 am - 5:00pm"
+              }
+            },
+            Others = new List<ExtraDetailModel>
+            {
+              new ExtraDetailModel
+              {
+                Key = "Website",
+                Value = "http://www.portillos.com/"
+              }
+            }
           });
 
 
@@ -30,7 +53,28 @@ namespace SampleApp.ViewModels
             Label = "Himalayan Restaurant",
             Position = new Position(42.0399843, -87.8444183),
             PinIcon = Icons.Chicken,
-            PhoneNumber = "(847)324-4150"
+            PhoneNumber = "(847)324-4150",
+            ScheduleEntries = new List<ScheduleEntry>
+            {
+              new ScheduleEntry
+              {
+                Day = "Monday",
+                HoursOfOperation = "9:00 am - 5:00pm"
+              },
+              new ScheduleEntry
+              {
+                Day = "Tuesday",
+                HoursOfOperation = "9:00 am - 5:00pm"
+              }
+            },
+            Others = new List<ExtraDetailModel>
+            {
+              new ExtraDetailModel
+              {
+                Key = "Website",
+                Value = "http://www.himalayanrestaurant.com/"
+              }
+            }
           });
         });
       }

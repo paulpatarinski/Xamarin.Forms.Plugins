@@ -37,9 +37,11 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Colors.cs" />
+    <Compile Include="DateTimeExtensions.cs" />
     <Compile Include="ExtendedMap.cs" />
     <Compile Include="CustomMapContentView.cs" />
     <Compile Include="ExtendedPin.cs" />
+    <Compile Include="ExtraDetailModel.cs" />
     <Compile Include="IPhoneService.cs" />
     <Compile Include="NavigationModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
