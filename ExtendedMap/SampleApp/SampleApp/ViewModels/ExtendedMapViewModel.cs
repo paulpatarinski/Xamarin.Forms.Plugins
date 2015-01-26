@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
 using ExtendedMap.Forms.Plugin.Abstractions;
+using SampleApp.Helpers;
 using Xamarin.Forms.Maps;
 
 namespace PluginSampleApp.ViewModels
@@ -21,7 +22,8 @@ namespace PluginSampleApp.ViewModels
                 {
                     Address = "Sample Address 1",
                     Label = "Test Label",
-                    Position = new Position(latitude, longitude)
+                    Position = new Position(latitude, longitude),
+                    PinIcon = Icons.BeachVball
                 });
 
 
@@ -29,7 +31,8 @@ namespace PluginSampleApp.ViewModels
                 {
                     Address = "Sample Address 2",
                     Label = "Test Label 2",
-                    Position = new Position(latitude + 0.1, longitude)
+                    Position = new Position(latitude + 0.1, longitude),
+                    PinIcon = Icons.IndoorVball
                 });
             });
         }
