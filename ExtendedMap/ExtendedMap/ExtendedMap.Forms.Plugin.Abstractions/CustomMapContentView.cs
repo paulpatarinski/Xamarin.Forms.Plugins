@@ -296,6 +296,11 @@ namespace ExtendedMap.Forms.Plugin.Abstractions
       footerMainGrid.Children.Add(CreateFooterDetails(footerHeight), 0, 1);
       footerMainGrid.Children.Add(footerMasterGrid, 0, 0);
 
+      footerMainGrid.Children[1].GestureRecognizers.Add(new TapGestureRecognizer
+      {
+        Command = new Command(ToogleFooter)
+      });
+
       return new ContentView {Content = footerMainGrid, BackgroundColor = Color.White};
     }
 
