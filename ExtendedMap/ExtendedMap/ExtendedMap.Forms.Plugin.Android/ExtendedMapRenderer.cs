@@ -51,7 +51,7 @@ namespace ExtendedMap.Forms.Plugin.Droid
 		{
 			var androidMapView = (MapView)Control;
 
-      if (e.PropertyName.Equals(Abstractions.ExtendedMap.CenterOnPositionProperty.PropertyName))
+      if (e.PropertyName.Equals(Abstractions.ExtendedMap.CenterOnPositionProperty.PropertyName) || e.PropertyName.Equals(Abstractions.ExtendedMap.CameraFocusYOffsetProperty.PropertyName))
       {
         CenterOnLocation(new LatLng(_customMap.CenterOnPosition.Latitude, _customMap.CenterOnPosition.Longitude),
           _customMap.CameraFocusYOffset);
