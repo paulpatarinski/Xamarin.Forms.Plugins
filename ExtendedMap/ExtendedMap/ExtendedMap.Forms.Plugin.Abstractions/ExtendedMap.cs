@@ -13,12 +13,17 @@ namespace ExtendedMap.Forms.Plugin.Abstractions
 
 		}
 
+    public static readonly BindableProperty CenterOnPositionProperty = BindableProperty.Create("CenterOnPosition", typeof(Position), typeof(ExtendedMap),default(Position));
+
 		public Position CenterOnPosition {
-			get { return _centerOnPosition; }
-			set {
-				_centerOnPosition = value;
-				OnPropertyChanged ();
-			}
+      get
+      {
+        return (Position)GetValue(CenterOnPositionProperty);
+      }
+      set
+      {
+        SetValue(CenterOnPositionProperty, value);
+      }
 		}
 
 		string _selectedPinAddress;
