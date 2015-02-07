@@ -39,8 +39,6 @@ Xaml Usage :
 
 ```
   <abstractions:SvgImage Grid.Row="0" Grid.Column="0" SvgAssembly="{Binding SvgAssembly}" SvgPath="{Binding CoolMaskSvgPath}" HeightRequest="50" WidthRequest="50" BackgroundColor="White" HorizontalOptions="Center" VerticalOptions="Center"/>
-    
-
 ```
 
 In the example my SVG file is located under the Images folder in the PluginSampleApp project. The SvgAssembly is a reference to the assembly containing the svg/xaml file.
