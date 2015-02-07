@@ -25,7 +25,7 @@ You **MUST** :
 - For Win Phone make sure you include a XAML file equivalent of the SVG with the root element being a Viewbox
  - Example : If you have Sample.svg also add Sample.xaml under the same folder of the svg.(No need to specify anything else as long as the names match)	
 
-Here is a sample:
+Code Usage :
 ```
 new SvgImage { 
 		SvgPath = "PluginSampleApp.Images.hipster.svg",
@@ -33,6 +33,12 @@ new SvgImage {
 		HeightRequest = 100,
 		WidthRequest = 100
 		};
+```
+
+Xaml Usage : 
+
+```
+  <abstractions:SvgImage Grid.Row="0" Grid.Column="0" SvgAssembly="{Binding SvgAssembly}" SvgPath="{Binding CoolMaskSvgPath}" HeightRequest="50" WidthRequest="50" BackgroundColor="White" HorizontalOptions="Center" VerticalOptions="Center"/>
 ```
 
 In the example my SVG file is located under the Images folder in the PluginSampleApp project. The SvgAssembly is a reference to the assembly containing the svg/xaml file.
