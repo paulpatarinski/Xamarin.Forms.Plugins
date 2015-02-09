@@ -1,7 +1,9 @@
 ﻿using System;
 using System.IO;
+using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Markup;
+using System.Windows.Media;
 using SVG.Forms.Plugin.Abstractions;
 using Xamarin.Forms;
 using SVG.Forms.Plugin.WindowsPhone;
@@ -44,9 +46,25 @@ namespace SVG.Forms.Plugin.WindowsPhone
 
                 try
                 {
-                    var xaml = (Viewbox) XamlReader.Load(xamlString);
+                  var xaml = (Viewbox) XamlReader.Load(xamlString);
 
-                    SetNativeControl(xaml);
+                  switch (svgImage.Aspect)
+                  {
+                    case Aspect.AspectFill:
+                      xaml.Stretch = Stretch.UniformToFill;
+                      break;
+                    case Aspect.AspectFit:
+                      xaml.Stretch = Stretch.Uniform;
+                      break;
+                    case Aspect.Fill:
+                      xaml.Stretch = Stretch.Fill;
+                      break;
+                    default:
+                      xaml.Stretch = Stretch.None;
+                      break;
+                  }
+
+                  SetNativeControl(xaml);
                 }
                 catch (Exception)
                 {
