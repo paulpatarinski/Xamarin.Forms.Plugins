@@ -9,14 +9,14 @@ using Xamarin.Forms;
 using SVG.Forms.Plugin.WindowsPhone;
 using Xamarin.Forms.Platform.WinPhone;
 
-[assembly: ExportRenderer(typeof(SvgImage), typeof(SvgImageRenderer))]
+[assembly: ExportRenderer(typeof(TwoColumnCell), typeof(TwoColumnCellRenderer))]
 
 namespace SVG.Forms.Plugin.WindowsPhone
 {
     /// <summary>
     /// SVG Renderer
     /// </summary>
-    public class SvgImageRenderer : ViewRenderer<SvgImage, Viewbox>
+    public class TwoColumnCellRenderer : ViewRenderer<TwoColumnCell, Viewbox>
     {
         /// <summary>
         /// Used for registration with dependency service
@@ -25,14 +25,14 @@ namespace SVG.Forms.Plugin.WindowsPhone
         {
         }
 
-        protected override void OnElementChanged(ElementChangedEventArgs<SvgImage> e)
+        protected override void OnElementChanged(ElementChangedEventArgs<TwoColumnCell> e)
         {
             base.OnElementChanged(e);
 
-            var svgImage = Element;
+            var TwoColumnCell = Element;
 
-            var xamlFilePath = svgImage.SvgPath.Replace(".svg", ".xaml");
-            var xamlStream = svgImage.SvgAssembly.GetManifestResourceStream(xamlFilePath);
+            var xamlFilePath = TwoColumnCell.SvgPath.Replace(".svg", ".xaml");
+            var xamlStream = TwoColumnCell.SvgAssembly.GetManifestResourceStream(xamlFilePath);
 
             if (xamlStream == null)
                 throw new Exception(
@@ -48,7 +48,7 @@ namespace SVG.Forms.Plugin.WindowsPhone
                 {
                   var xaml = (Viewbox) XamlReader.Load(xamlString);
 
-                  switch (svgImage.Aspect)
+                  switch (TwoColumnCell.Aspect)
                   {
                     case Aspect.AspectFill:
                       xaml.Stretch = Stretch.UniformToFill;

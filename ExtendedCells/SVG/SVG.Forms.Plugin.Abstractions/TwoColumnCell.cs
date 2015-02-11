@@ -3,13 +3,13 @@ using Xamarin.Forms;
 
 namespace SVG.Forms.Plugin.Abstractions
 {
-  public class SvgImage : Image
+  public class TwoColumnCell : Image
   {
     /// <summary>
     /// The path to the svg file
     /// </summary>
     public static readonly BindableProperty SvgPathProperty =
-      BindableProperty.Create("SvgPath", typeof(string), typeof(SvgImage), default(string));
+      BindableProperty.Create("SvgPath", typeof(string), typeof(TwoColumnCell), default(string));
 
     /// <summary>
     /// The path to the svg file
@@ -24,7 +24,7 @@ namespace SVG.Forms.Plugin.Abstractions
     /// The assembly containing the svg file
     /// </summary>
     public static readonly BindableProperty SvgAssemblyProperty =
-      BindableProperty.Create("SvgAssembly", typeof(Assembly), typeof(SvgImage), default(Assembly));
+      BindableProperty.Create("SvgAssembly", typeof(Assembly), typeof(TwoColumnCell), default(Assembly));
 
     /// <summary>
     /// The assembly containing the svg file

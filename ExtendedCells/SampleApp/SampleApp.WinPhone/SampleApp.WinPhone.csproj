@@ -91,11 +91,11 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="App.xaml.cs">
+    <Compile Include="App.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="LocalizedStrings.cs" />
-    <Compile Include="MainPage.xaml.cs">
+    <Compile Include="MainPage.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -159,9 +159,9 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\SVG\SVG.Forms.Plugin.WindowsPhone\SVG.Forms.Plugin.WindowsPhone.csproj">
+    <ProjectReference Include="..\..\SVG\SVG.Forms.Plugin.WindowsPhone\ExtendedCells.Forms.Plugin.WindowsPhone.csproj">
       <Project>{983b7eff-7e75-4a87-890a-744a0b4c5232}</Project>
-      <Name>SVG.Forms.Plugin.WindowsPhone</Name>
+      <Name>ExtendedCells.Forms.Plugin.WindowsPhone</Name>
     </ProjectReference>
     <ProjectReference Include="..\SampleApp\SampleApp.csproj">
       <Name>SampleApp</Name>

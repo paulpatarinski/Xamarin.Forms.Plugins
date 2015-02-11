@@ -8,17 +8,17 @@ using Xamarin.Forms;
 using Xamarin.Forms.Platform.Android;
 using XamSvg;
 
-[assembly: ExportRenderer(typeof(SvgImage), typeof(SvgImageRenderer))]
+[assembly: ExportRenderer(typeof(TwoColumnCell), typeof(TwoColumnCellRenderer))]
 
 namespace SVG.Forms.Plugin.Droid
 {
-    public class SvgImageRenderer : ImageRenderer
+    public class TwoColumnCellRenderer : ImageRenderer
     {
         public static void Init() { }
 
         private bool _svgSourceSet;
         private Dictionary<string, Stream> _svgStreamByPath;
-        private SvgImage _formsControl;
+        private TwoColumnCell _formsControl;
 
         private Dictionary<string, Stream> SvgStreamByPath
         {
@@ -53,7 +53,7 @@ namespace SVG.Forms.Plugin.Droid
         private void UpdateBitmapFromSvg()
         {
             var imageView = Control as ImageView;
-            _formsControl = Element as SvgImage;
+            _formsControl = Element as TwoColumnCell;
 
             _svgSourceSet = true;
 
@@ -72,7 +72,7 @@ namespace SVG.Forms.Plugin.Droid
             if (!SvgStreamByPath.ContainsKey(svgPath))
             {
                 if(_formsControl.SvgAssembly == null)
-                    throw new Exception("Svg Assembly not specified. Please specify assembly using the SvgImage Control SvgAssembly property.");
+                    throw new Exception("Svg Assembly not specified. Please specify assembly using the TwoColumnCell Control SvgAssembly property.");
 
                 stream = _formsControl.SvgAssembly.GetManifestResourceStream(svgPath);
 

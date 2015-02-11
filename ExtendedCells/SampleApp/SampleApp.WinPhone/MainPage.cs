@@ -19,7 +19,7 @@ namespace SampleApp.WinPhone
             SupportedOrientations = SupportedPageOrientation.PortraitOrLandscape;
 
             global::Xamarin.Forms.Forms.Init();
-            SvgImageRenderer.Init();
+            TwoColumnCellRenderer.Init();
 
             LoadApplication(new SampleApp.App());
         }

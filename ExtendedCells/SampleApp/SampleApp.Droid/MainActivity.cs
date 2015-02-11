@@ -19,7 +19,7 @@ namespace SampleApp.Droid
 
             global::Xamarin.Forms.Forms.Init(this, bundle);
 
-            SvgImageRenderer.Init();
+            TwoColumnCellRenderer.Init();
 
             LoadApplication(new App());
         }

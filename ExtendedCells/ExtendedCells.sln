@@ -3,13 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SVG.Forms.Plugin.Abstractions", "SVG\SVG.Forms.Plugin.Abstractions\SVG.Forms.Plugin.Abstractions.csproj", "{14C534B6-1984-41A9-A384-D3A5508588E3}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExtendedCells.Forms.Plugin.Abstractions", "SVG\SVG.Forms.Plugin.Abstractions\ExtendedCells.Forms.Plugin.Abstractions.csproj", "{14C534B6-1984-41A9-A384-D3A5508588E3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SVG.Forms.Plugin.iOS", "SVG\SVG.Forms.Plugin.iOS\SVG.Forms.Plugin.iOS.csproj", "{D525F236-6A2D-4010-B1CC-4A4B8581C90B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExtendedCells.Forms.Plugin.iOS", "SVG\SVG.Forms.Plugin.iOS\ExtendedCells.Forms.Plugin.iOS.csproj", "{D525F236-6A2D-4010-B1CC-4A4B8581C90B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SVG.Forms.Plugin.Android", "SVG\SVG.Forms.Plugin.Android\SVG.Forms.Plugin.Android.csproj", "{AD2D2DB4-E781-4CF1-9B62-3AAD264F196D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExtendedCells.Forms.Plugin.Android", "SVG\SVG.Forms.Plugin.Android\ExtendedCells.Forms.Plugin.Android.csproj", "{AD2D2DB4-E781-4CF1-9B62-3AAD264F196D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SVG.Forms.Plugin.WindowsPhone", "SVG\SVG.Forms.Plugin.WindowsPhone\SVG.Forms.Plugin.WindowsPhone.csproj", "{983B7EFF-7E75-4A87-890A-744A0B4C5232}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExtendedCells.Forms.Plugin.WindowsPhone", "SVG\SVG.Forms.Plugin.WindowsPhone\ExtendedCells.Forms.Plugin.WindowsPhone.csproj", "{983B7EFF-7E75-4A87-890A-744A0B4C5232}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SampleApps", "SampleApps", "{69D62C9F-0FC1-47BA-80B1-92628ECD3622}"
 EndProject

@@ -80,7 +80,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="MainActivity.cs" />
-    <Compile Include="Resources\Resource.Designer.cs" />
+    <Compile Include="Resources\Resource.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -98,9 +98,9 @@
     <Content Include="Properties\AndroidManifest.xml" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\SVG\SVG.Forms.Plugin.Android\SVG.Forms.Plugin.Android.csproj">
+    <ProjectReference Include="..\..\SVG\SVG.Forms.Plugin.Android\ExtendedCells.Forms.Plugin.Android.csproj">
       <Project>{ad2d2db4-e781-4cf1-9b62-3aad264f196d}</Project>
-      <Name>SVG.Forms.Plugin.Android</Name>
+      <Name>ExtendedCells.Forms.Plugin.Android</Name>
     </ProjectReference>
     <ProjectReference Include="..\SampleApp\SampleApp.csproj">
       <Name>SampleApp</Name>

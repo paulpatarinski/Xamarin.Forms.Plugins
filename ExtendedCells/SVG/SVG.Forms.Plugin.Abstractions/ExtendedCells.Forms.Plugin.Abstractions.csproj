@@ -8,8 +8,8 @@
     <ProjectGuid>{14C534B6-1984-41A9-A384-D3A5508588E3}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>SVG.Forms.Plugin.Abstractions</RootNamespace>
-    <AssemblyName>SVG.Forms.Plugin.Abstractions</AssemblyName>
+    <RootNamespace>ExtendedCells.Forms.Plugin.Abstractions</RootNamespace>
+    <AssemblyName>ExtendedCells.Forms.Plugin.Abstractions</AssemblyName>
     <DefaultLanguage>en-US</DefaultLanguage>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{786C830F-07A1-408B-BD7F-6EE04809D6DB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -33,10 +33,10 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <DocumentationFile>bin\Release\SVG.Forms.Plugin.Abstractions.XML</DocumentationFile>
+    <DocumentationFile>bin\Release\ExtendedCells.Forms.Plugin.Abstractions.xml</DocumentationFile>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="SvgImage.cs" />
+    <Compile Include="TwoColumnCell.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
