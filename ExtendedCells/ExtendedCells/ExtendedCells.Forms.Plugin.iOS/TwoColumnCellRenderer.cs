@@ -1,8 +1,9 @@
-﻿using Xamarin.Forms;
-using SVG.Forms.Plugin.iOS;
+﻿using ExtendedCells.Forms.Plugin.Abstractions;
+using ExtendedCells.Forms.Plugin.iOS;
+using Xamarin.Forms;
 
-[assembly: ExportRenderer(typeof(SVG.Forms.Plugin.Abstractions.TwoColumnCell), typeof(TwoColumnCellRenderer))]
-namespace SVG.Forms.Plugin.iOS
+[assembly: ExportRenderer(typeof(TwoColumnCell), typeof(TwoColumnCellRenderer))]
+namespace ExtendedCells.Forms.Plugin.iOS
 {
     /// <summary>
     /// SVG Renderer

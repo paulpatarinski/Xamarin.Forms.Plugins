@@ -1,17 +1,16 @@
 ﻿using System;
 using System.IO;
-using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Markup;
 using System.Windows.Media;
-using SVG.Forms.Plugin.Abstractions;
+using ExtendedCells.Forms.Plugin.Abstractions;
+using ExtendedCells.Forms.Plugin.WindowsPhone;
 using Xamarin.Forms;
-using SVG.Forms.Plugin.WindowsPhone;
 using Xamarin.Forms.Platform.WinPhone;
 
 [assembly: ExportRenderer(typeof(TwoColumnCell), typeof(TwoColumnCellRenderer))]
 
-namespace SVG.Forms.Plugin.WindowsPhone
+namespace ExtendedCells.Forms.Plugin.WindowsPhone
 {
     /// <summary>
     /// SVG Renderer

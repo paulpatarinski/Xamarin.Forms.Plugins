@@ -1,0 +1,96 @@
+﻿<UserControl x:Class="ExtendedCells.Forms.Plugin.WindowsPhone.Pages.NativeListview"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:models="clr-namespace:ExtendedCells.Forms.Plugin.WindowsPhone.Models"
+    xmlns:valueConverters="clr-namespace:ExtendedCells.Forms.Plugin.WindowsPhone.ValueConverters"
+    mc:Ignorable="d"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    d:DesignHeight="480" d:DesignWidth="480">
+
+  <Grid>
+    <Grid.Resources>
+      <models:TwoColumnCellSampleModelCollection x:Key="punchHistoryItems" />
+      <valueConverters:ToNativeColorConverter x:Key="toNativeColorConverter" />
+      <valueConverters:TextToVisibilityConverter x:Key="textToVisibilityConverter" />
+      <valueConverters:ToNativeGridLengthConverter x:Key="toNativeGridLengthConverter" />
+      <valueConverters:ToNativeTextAlignmentConverter x:Key="toNativeTextAlignmentConverter" />
+      <valueConverters:ToNativeFontSizeConverter x:Key="toNativeFontSizeConverter" />
+      <valueConverters:ToNativeFontFamilyConverter x:Key="toNativeFontFamilyConverter" />
+      <valueConverters:ToNativeFontStyleConverter x:Key="toNativeFontStyleConverter" />
+      <valueConverters:ToNativeFontWeightConverter x:Key="toNativeFontWeightConverter" />
+      <valueConverters:ThicknessToMarginConverter x:Key="thicknessToMarginConverter" />
+    </Grid.Resources>
+
+    <phone:LongListSelector Name="NativeLongListSelector" ItemsSource="{StaticResource punchHistoryItems}">
+      <phone:LongListSelector.ItemTemplate>
+        <DataTemplate>
+          <Grid Margin="{Binding Thickness, Converter={StaticResource thicknessToMarginConverter}}"
+                Background="{Binding BackgroundColor,Converter={StaticResource toNativeColorConverter}}">
+
+            <Grid.RowDefinitions>
+              <RowDefinition Height="Auto" />
+              <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+              <ColumnDefinition
+                Width="{Binding LeftColumnWidth, Converter={StaticResource toNativeGridLengthConverter}}" />
+              <ColumnDefinition
+                Width="{Binding RightColumnWidth, Converter={StaticResource toNativeGridLengthConverter}}" />
+            </Grid.ColumnDefinitions>
+
+            <TextBlock x:Name="LeftTextTextBlock" Grid.Row="0" Grid.Column="0"
+                       Text="{Binding LeftText}"
+                       TextAlignment="{Binding LeftTextAlignment, Converter={StaticResource toNativeTextAlignmentConverter}}"
+                       Foreground="{Binding LeftTextColor,Converter={StaticResource toNativeColorConverter}}"
+                       TextWrapping="Wrap"
+                       FontSize="{Binding LeftTextFont, Converter={StaticResource toNativeFontSizeConverter}}"
+                       FontFamily="{Binding LeftTextFont, Converter={StaticResource toNativeFontFamilyConverter}}"
+                       FontStyle="{Binding LeftTextFont, Converter={StaticResource toNativeFontStyleConverter}}"
+                       FontWeight="{Binding LeftTextFont, Converter={StaticResource toNativeFontWeightConverter}}"
+                       />
+
+            <TextBlock x:Name="LeftDetailTextBlock" Grid.Row="1" Grid.Column="0"
+                       Text="{Binding LeftDetail}"
+                       TextAlignment="{Binding LeftDetailAlignment, Converter={StaticResource toNativeTextAlignmentConverter}}"
+                       Foreground="{Binding LeftDetailColor,Converter={StaticResource toNativeColorConverter}}"
+                       TextWrapping="Wrap"
+                       Visibility="{Binding LeftDetail, Converter={StaticResource textToVisibilityConverter}}"
+                       FontSize="{Binding LeftDetailFont, Converter={StaticResource toNativeFontSizeConverter}}"
+                       FontFamily="{Binding LeftDetailFont, Converter={StaticResource toNativeFontFamilyConverter}}"
+                       FontStyle="{Binding LeftDetailFont, Converter={StaticResource toNativeFontStyleConverter}}"
+                       FontWeight="{Binding LeftDetailFont, Converter={StaticResource toNativeFontWeightConverter}}"
+                       />
+
+            <TextBlock x:Name="RightTextTextBlock" Grid.Row="0" Grid.Column="1"
+                       Text="{Binding RightText}"
+                       TextAlignment="{Binding RightTextAlignment, Converter={StaticResource toNativeTextAlignmentConverter}}"
+                       Foreground="{Binding RightTextColor,Converter={StaticResource toNativeColorConverter}}"
+                       TextWrapping="Wrap"
+                       FontSize="{Binding RightTextFont, Converter={StaticResource toNativeFontSizeConverter}}"
+                       FontFamily="{Binding RightTextFont, Converter={StaticResource toNativeFontFamilyConverter}}"
+                       FontStyle="{Binding RightTextFont, Converter={StaticResource toNativeFontStyleConverter}}"
+                       FontWeight="{Binding RightTextFont, Converter={StaticResource toNativeFontWeightConverter}}"
+                       />
+
+            <TextBlock x:Name="RightDetailTextBlock" Grid.Row="1" Grid.Column="1"
+                       Text="{Binding RightDetail}"
+                       TextAlignment="{Binding RightDetailAlignment, Converter={StaticResource toNativeTextAlignmentConverter}}"
+                       Foreground="{Binding RightDetailColor,Converter={StaticResource toNativeColorConverter}}"
+                       TextWrapping="Wrap"
+                       Visibility="{Binding RightDetail, Converter={StaticResource textToVisibilityConverter}}"
+                       FontSize="{Binding RightDetailFont, Converter={StaticResource toNativeFontSizeConverter}}"
+                       FontFamily="{Binding RightDetailFont, Converter={StaticResource toNativeFontFamilyConverter}}"
+                       FontStyle="{Binding RightDetailFont, Converter={StaticResource toNativeFontStyleConverter}}"
+                       FontWeight="{Binding RightDetailFont, Converter={StaticResource toNativeFontWeightConverter}}"
+                       />
+          </Grid>
+        </DataTemplate>
+      </phone:LongListSelector.ItemTemplate>
+    </phone:LongListSelector>
+  </Grid>
+</UserControl>

@@ -1,7 +1,7 @@
 ﻿using Android.App;
 using Android.Content.PM;
 using Android.OS;
-using SVG.Forms.Plugin.Droid;
+using ExtendedCells.Forms.Plugin.Android;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.Android;
 

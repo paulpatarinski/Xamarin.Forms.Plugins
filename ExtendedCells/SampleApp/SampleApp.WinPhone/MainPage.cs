@@ -1,5 +1,5 @@
-﻿using Microsoft.Phone.Controls;
-using SVG.Forms.Plugin.WindowsPhone;
+﻿using ExtendedCells.Forms.Plugin.WindowsPhone;
+using Microsoft.Phone.Controls;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.WinPhone;
 

@@ -85,8 +85,24 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="ExtensionMethods\ColorExtensions.cs" />
+    <Compile Include="ExtensionMethods\GridLengthExtensions.cs" />
+    <Compile Include="ExtensionMethods\TextAlignmentExtensions.cs" />
+    <Compile Include="Models\TwoColumnCellSampleModel.cs" />
+    <Compile Include="Pages\NativeListview.cs">
+      <DependentUpon>NativeListview.xaml</DependentUpon>
+    </Compile>
     <Compile Include="TwoColumnCellRenderer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ValueConverters\TextToVisibilityConverter.cs" />
+    <Compile Include="ValueConverters\ThicknessToMarginConverter.cs" />
+    <Compile Include="ValueConverters\ToNativeColorConverter.cs" />
+    <Compile Include="ValueConverters\ToNativeFontFamilyConverter.cs" />
+    <Compile Include="ValueConverters\ToNativeFontSizeConverter.cs" />
+    <Compile Include="ValueConverters\ToNativeFontStyleConverter.cs" />
+    <Compile Include="ValueConverters\ToNativeFontWeightConverter.cs" />
+    <Compile Include="ValueConverters\ToNativeGridLengthConverter.cs" />
+    <Compile Include="ValueConverters\ToNativeTextAlignmentConverter.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="README_FIRST.txt" />
@@ -122,6 +138,12 @@
       <Project>{14c534b6-1984-41a9-a384-d3a5508588e3}</Project>
       <Name>ExtendedCells.Forms.Plugin.Abstractions</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Pages\NativeListview.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\$(TargetFrameworkIdentifier)\$(TargetFrameworkVersion)\Microsoft.$(TargetFrameworkIdentifier).$(TargetFrameworkVersion).Overrides.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\$(TargetFrameworkIdentifier)\$(TargetFrameworkVersion)\Microsoft.$(TargetFrameworkIdentifier).CSharp.targets" />

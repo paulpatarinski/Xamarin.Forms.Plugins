@@ -1,7 +1,7 @@
 ﻿using System.Reflection;
 using Xamarin.Forms;
 
-namespace SVG.Forms.Plugin.Abstractions
+namespace ExtendedCells.Forms.Plugin.Abstractions
 {
   public class TwoColumnCell : Image
   {

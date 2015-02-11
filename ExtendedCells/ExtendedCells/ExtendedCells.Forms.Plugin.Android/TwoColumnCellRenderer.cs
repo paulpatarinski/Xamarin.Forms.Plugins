@@ -2,15 +2,15 @@
 using System.Collections.Generic;
 using System.IO;
 using Android.Widget;
-using SVG.Forms.Plugin.Abstractions;
-using SVG.Forms.Plugin.Droid;
+using ExtendedCells.Forms.Plugin.Abstractions;
+using ExtendedCells.Forms.Plugin.Android;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.Android;
 using XamSvg;
 
 [assembly: ExportRenderer(typeof(TwoColumnCell), typeof(TwoColumnCellRenderer))]
 
-namespace SVG.Forms.Plugin.Droid
+namespace ExtendedCells.Forms.Plugin.Android
 {
     public class TwoColumnCellRenderer : ImageRenderer
     {
