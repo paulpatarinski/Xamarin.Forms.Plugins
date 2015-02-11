@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
     <metadata>
         <id>Xam.Plugins.Forms.SVG</id>
-        <version>1.0.0.12</version>
+        <version>1.0.0.13</version>
         <title>SVG Control Plugin for Xamarin.Forms</title>
         <authors>Paul Patarinski</authors>
         <owners>Paul Patarinski</owners>
@@ -13,7 +13,7 @@
         <description>Custom control for your Xamarin.Forms project to allow you to use SVGs
           Ensure you call SvgImageRenderer.Init() on each platform! VISIT THE PROJECT URL for more info.</description>
         <summary>Use a SVG Image in your Xamarin.Forms projects! Ensure you call SvgImageRenderer.Init() on each platform! VISIT THE PROJECT URL for more info.</summary>
-        <releaseNotes>Adding a xaml implementation.</releaseNotes>
+        <releaseNotes>Taking image aspect into account WinPhone</releaseNotes>
         <tags>xamarin, pcl, xam.pcl, windows phone, winphone, wp8, android, xamarin.forms, svg</tags>
         <dependencies>
             <dependency id="Xamarin.Forms" version="1.3.1.6296" />
