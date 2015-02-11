@@ -159,8 +159,8 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\SVG\SVG.Forms.Plugin.WindowsPhone\ExtendedCells.Forms.Plugin.WindowsPhone.csproj">
-      <Project>{983b7eff-7e75-4a87-890a-744a0b4c5232}</Project>
+    <ProjectReference Include="..\..\ExtendedCells\ExtendedCells.Forms.Plugin.WindowsPhone\ExtendedCells.Forms.Plugin.WindowsPhone.csproj">
+      <Project>{983B7EFF-7E75-4A87-890A-744A0B4C5232}</Project>
       <Name>ExtendedCells.Forms.Plugin.WindowsPhone</Name>
     </ProjectReference>
     <ProjectReference Include="..\SampleApp\SampleApp.csproj">

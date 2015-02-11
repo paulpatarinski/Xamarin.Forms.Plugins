@@ -98,8 +98,8 @@
     <Content Include="Properties\AndroidManifest.xml" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\SVG\SVG.Forms.Plugin.Android\ExtendedCells.Forms.Plugin.Android.csproj">
-      <Project>{ad2d2db4-e781-4cf1-9b62-3aad264f196d}</Project>
+    <ProjectReference Include="..\..\ExtendedCells\ExtendedCells.Forms.Plugin.Android\ExtendedCells.Forms.Plugin.Android.csproj">
+      <Project>{AD2D2DB4-E781-4CF1-9B62-3AAD264F196D}</Project>
       <Name>ExtendedCells.Forms.Plugin.Android</Name>
     </ProjectReference>
     <ProjectReference Include="..\SampleApp\SampleApp.csproj">
