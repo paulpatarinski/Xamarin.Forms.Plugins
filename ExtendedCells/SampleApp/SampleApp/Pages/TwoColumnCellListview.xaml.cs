@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using SampleApp.ViewModel;
 
 namespace SampleApp.Pages
 {
@@ -11,6 +7,7 @@ namespace SampleApp.Pages
     public TwoColumnCellListview()
     {
       InitializeComponent();
+      BindingContext = new ListviewViewModel();
     }
   }
 }

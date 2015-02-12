@@ -1,14 +1,16 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-					   xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-					   xmlns:abstractions="clr-namespace:ExtendedCells.Forms.Plugin.Abstractions;assembly=ExtendedCells.Forms.Plugin.Abstractions"
-					   x:Class="SampleApp.Pages.TwoColumnCellListview" Title="Two Column Cell">
-    <ListView>
-      <ListView.ItemTemplate>
-        <DataTemplate>
-          <abstractions:TwoColumnCell LeftText="{Binding LeftText}"/>
-        </DataTemplate>
-      </ListView.ItemTemplate>
+﻿<?xml version="1.0" encoding="utf-8"?>
 
-    </ListView>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:abstractions="clr-namespace:ExtendedCells.Forms.Plugin.Abstractions;assembly=ExtendedCells.Forms.Plugin.Abstractions"
+             x:Class="SampleApp.Pages.TwoColumnCellListview" Title="Native Cell" BackgroundColor="Black">
+  <ListView ItemsSource="{Binding People}">
+    <ListView.ItemTemplate>
+      <DataTemplate>
+        <abstractions:TwoColumnCell LeftText="{Binding FirstName}" LeftTextColor="White" LeftTextFont="26"
+                                    LeftDetail="{Binding PhoneNumber}" LeftDetailColor="Silver" LeftDetailFont="Italic"
+                                    RightText="{Binding LastName}" RightTextColor="Fuchsia" RightTextFont="26"/>
+      </DataTemplate>
+    </ListView.ItemTemplate>
+  </ListView>
 </ContentPage>

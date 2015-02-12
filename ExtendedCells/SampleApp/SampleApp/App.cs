@@ -1,4 +1,5 @@
-﻿using Xamarin.Forms;
+﻿using SampleApp.Pages;
+using Xamarin.Forms;
 
 namespace SampleApp
 {
@@ -8,6 +9,7 @@ namespace SampleApp
         {
           var tabbedPage = new TabbedPage();
 
+          tabbedPage.Children.Add(new TwoColumnCellListview());
 
           MainPage = tabbedPage;
         }
