@@ -10,6 +10,7 @@ namespace SampleApp
           var tabbedPage = new TabbedPage();
 
           tabbedPage.Children.Add(new TwoColumnCellListview());
+          tabbedPage.Children.Add(new StackLayoutCell());
 
           MainPage = tabbedPage;
         }

@@ -35,6 +35,9 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="App.cs" />
+    <Compile Include="Pages\StackLayoutCell.xaml.cs">
+      <DependentUpon>StackLayoutCell.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\TwoColumnCellListview.xaml.cs">
       <DependentUpon>TwoColumnCellListview.xaml</DependentUpon>
     </Compile>
@@ -84,7 +87,12 @@
       <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <EmbeddedResource Include="Pages\StackLayoutCell.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Pages\TwoColumnCellListview.xaml">
       <SubType>Designer</SubType>

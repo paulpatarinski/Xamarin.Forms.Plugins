@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+					   xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+					   x:Class="SampleApp.Pages.StackLayoutCell" Title="Stack Layout" BackgroundColor="Black">
+  <ListView ItemsSource="{Binding People}">
+    <ListView.ItemTemplate>
+      <DataTemplate>
+        <ViewCell>
+          <StackLayout>
+            <StackLayout Orientation="Horizontal">
+              <Label Text="{Binding FirstName}" TextColor="White" FontSize="26" WidthRequest="200"/>
+              <Label Text="{Binding LastName}" TextColor="Fuchsia" FontSize="26" />
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+              <Label Text="{Binding PhoneNumber}" TextColor="Silver" FontAttributes="Italic" WidthRequest="200"/>
+              <Label Text="{Binding Address}" TextColor="Pink" />
+            </StackLayout>
+          </StackLayout>
+        </ViewCell>
+      </DataTemplate>
+    </ListView.ItemTemplate>
+  </ListView>
+  
+</ContentPage>
