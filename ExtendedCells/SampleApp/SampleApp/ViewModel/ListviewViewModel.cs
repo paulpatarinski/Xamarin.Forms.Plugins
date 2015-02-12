@@ -14,7 +14,8 @@ namespace SampleApp.ViewModel
         {
           FirstName = "John " + i,
           LastName = "Doe",
-          PhoneNumber = string.Format("(262)564-123{0}", i)
+          PhoneNumber = string.Format("(262)564-123{0}", i),
+          Address = string.Format("12{0} Lake ave", i)
         });
       }
     }
