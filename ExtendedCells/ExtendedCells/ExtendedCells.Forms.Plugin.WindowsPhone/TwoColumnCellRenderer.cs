@@ -1,78 +1,43 @@
-﻿using System;
-using System.IO;
-using System.Windows.Controls;
-using System.Windows.Markup;
-using System.Windows.Media;
-using ExtendedCells.Forms.Plugin.Abstractions;
+﻿using ExtendedCells.Forms.Plugin.Abstractions;
 using ExtendedCells.Forms.Plugin.WindowsPhone;
+using ExtendedCells.Forms.Plugin.WindowsPhone.Pages;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.WinPhone;
+using DataTemplate = System.Windows.DataTemplate;
 
 [assembly: ExportRenderer(typeof(TwoColumnCell), typeof(TwoColumnCellRenderer))]
 
 namespace ExtendedCells.Forms.Plugin.WindowsPhone
 {
     /// <summary>
-    /// SVG Renderer
+    /// Two Column Cell
     /// </summary>
-    public class TwoColumnCellRenderer : ViewRenderer<TwoColumnCell, Viewbox>
+  public class TwoColumnCellRenderer : ViewCellRenderer
+  {
+      public static void Init()
+      {
+      }
+
+    private NativeListviewControl _nativeListviewControl;
+
+    public NativeListviewControl NativeListviewControl
     {
-        /// <summary>
-        /// Used for registration with dependency service
-        /// </summary>
-        public static void Init()
+      get
+      {
+        if (_nativeListviewControl == null)
         {
+          _nativeListviewControl = new NativeListviewControl();
         }
 
-        protected override void OnElementChanged(ElementChangedEventArgs<TwoColumnCell> e)
-        {
-            base.OnElementChanged(e);
-
-            var TwoColumnCell = Element;
-
-            var xamlFilePath = TwoColumnCell.SvgPath.Replace(".svg", ".xaml");
-            var xamlStream = TwoColumnCell.SvgAssembly.GetManifestResourceStream(xamlFilePath);
-
-            if (xamlStream == null)
-                throw new Exception(
-                    string.Format(
-                        "Not able to retrieve xaml file {0}. Make sure the Build Action is set to Embedded Resource",
-                        xamlFilePath));
-
-            using (var reader = new StreamReader(xamlStream))
-            {
-                var xamlString = reader.ReadToEnd();
-
-                try
-                {
-                  var xaml = (Viewbox) XamlReader.Load(xamlString);
-
-                  switch (TwoColumnCell.Aspect)
-                  {
-                    case Aspect.AspectFill:
-                      xaml.Stretch = Stretch.UniformToFill;
-                      break;
-                    case Aspect.AspectFit:
-                      xaml.Stretch = Stretch.Uniform;
-                      break;
-                    case Aspect.Fill:
-                      xaml.Stretch = Stretch.Fill;
-                      break;
-                    default:
-                      xaml.Stretch = Stretch.None;
-                      break;
-                  }
-
-                  SetNativeControl(xaml);
-                }
-                catch (Exception)
-                {
-                    throw new Exception(
-                        string.Format(
-                            "Not able to convert xaml file {0} to Viewbox. Make sure the root element of the xaml file is a Viewbox",
-                            xamlFilePath));
-                }
-            }
-        }
+        return _nativeListviewControl;
+      }
     }
+
+    public override DataTemplate GetTemplate(Cell cell)
+    {
+      return NativeListviewControl.TwoColumnCellTemplate;
+    }
+
+      
+  }
 }

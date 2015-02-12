@@ -89,8 +89,8 @@
     <Compile Include="ExtensionMethods\GridLengthExtensions.cs" />
     <Compile Include="ExtensionMethods\TextAlignmentExtensions.cs" />
     <Compile Include="Models\TwoColumnCellSampleModel.cs" />
-    <Compile Include="Pages\NativeListview.cs">
-      <DependentUpon>NativeListview.xaml</DependentUpon>
+    <Compile Include="Pages\NativeListviewControl.xaml.cs">
+      <DependentUpon>NativeListviewControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="TwoColumnCellRenderer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -140,7 +140,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Page Include="Pages\NativeListview.xaml">
+    <Page Include="Pages\NativeListviewControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
