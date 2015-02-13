@@ -1,89 +1,114 @@
-﻿using System.Resources;
-using Android.App;
-using Android.Content;
+﻿using Android.Content;
 using Android.Views;
 using Android.Widget;
 using ExtendedCells.Forms.Plugin.Abstractions;
 using ExtendedCells.Forms.Plugin.Android;
+using ExtendedCells.Forms.Plugin.Android.Models;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.Android;
 using View = Android.Views.View;
 
-[assembly: ExportRenderer(typeof(TwoColumnCell), typeof(TwoColumnCellRenderer))]
+[assembly: ExportRenderer(typeof (TwoColumnCell), typeof (TwoColumnCellRenderer))]
 
 namespace ExtendedCells.Forms.Plugin.Android
 {
+  /// <summary>
+  ///   TwoColumn Cell renderer for Android
+  /// </summary>
   public class TwoColumnCellRenderer : ViewCellRenderer
   {
+    /// <summary>
+    /// </summary>
     public static void Init()
     {
     }
 
+    /// <summary>
+    ///   Returns the View to render
+    /// </summary>
+    /// <param name="item"></param>
+    /// <param name="convertView"></param>
+    /// <param name="parent"></param>
+    /// <param name="context"></param>
+    /// <returns></returns>
     protected override View GetCellCore(Cell item, View convertView, ViewGroup parent, Context context)
     {
-      var x = (TwoColumnCell) item;
+      var formsControl = (TwoColumnCell) item;
+      TwoColumnCellViewHolder viewHolder = null;
 
-      var view = convertView;
+      var view = (TableLayout) convertView;
 
-      if (view == null)
+      if (view != null)
       {
-        // no view to re-use, create new
-        var activity = context as Activity;
-        
-        var test = Resource.Layout.TwoColumnCellNative;
-        //var testLayout = Resource.Layout.TestLayout;
-        if (activity != null)
-          view = activity.LayoutInflater.Inflate(test, null);
+        viewHolder = view.Tag as TwoColumnCellViewHolder;
       }
-      else
+      if (viewHolder == null)
       {
-        // re-use, clear image
-        // doesn't seem to help
-        //view.FindViewById<ImageView> (Resource.Id.Image).Drawable.Dispose ();
+        viewHolder = new TwoColumnCellViewHolder
+        {
+          LeftTextView = new TextView(context),
+          LeftDetailTextView = new TextView(context),
+          RightTextView = new TextView(context),
+          RightDetailTextView = new TextView(context) 
+        };
+
+        view = new TableLayout(context)
+        {
+          StretchAllColumns = true,
+          LayoutParameters =
+            new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MatchParent, ViewGroup.LayoutParams.MatchParent)
+        };
+
+        view.AddView(CreateRow(context, viewHolder.LeftTextView, viewHolder.RightTextView));
+        view.AddView(CreateRow(context, viewHolder.LeftDetailTextView, viewHolder.RightDetailTextView));
+
+        view.Tag = viewHolder;
       }
 
-      view.FindViewById<TextView>(Resource.Id.LeftText).Text = x.LeftText;
-      view.FindViewById<TextView>(Resource.Id.LeftDetail).Text = x.LeftDetail;
-
-      //// grab the old image and dispose of it
-      //// TODO: optimize if the image is the *same* and we want to just keep it
-      //if (view.FindViewById<ImageView>(Resource.Id.Image).Drawable != null)
-      //{
-      //  using (var image = view.FindViewById<ImageView>(Resource.Id.Image).Drawable as BitmapDrawable)
-      //  {
-      //    if (image != null)
-      //    {
-      //      if (image.Bitmap != null)
-      //      {
-      //        //image.Bitmap.Recycle ();
-      //        image.Bitmap.Dispose();
-      //      }
-      //    }
-      //  }
-      //}
-
-      //// If a new image is required, display it
-      //if (!String.IsNullOrWhiteSpace(x.ImageFilename))
-      //{
-      //  context.Resources.GetBitmapAsync(x.ImageFilename).ContinueWith((t) =>
-      //  {
-      //    var bitmap = t.Result;
-      //    if (bitmap != null)
-      //    {
-      //      view.FindViewById<ImageView>(Resource.Id.Image).SetImageBitmap(bitmap);
-      //      bitmap.Dispose();
-      //    }
-      //  }, TaskScheduler.FromCurrentSynchronizationContext());
-
-      //}
-      //else
-      //{
-      //  // clear the image
-      //  view.FindViewById<ImageView>(Resource.Id.Image).SetImageBitmap(null);
-      //}
+      ApplyFormsControlValuesToNativeControl(viewHolder, formsControl);
 
       return view;
     }
 
+    private static TableRow CreateRow(Context context, TextView leftTextView, TextView rightTextView)
+    {
+      var tableRow = new TableRow(context);
+
+      tableRow.AddView(WrapTextViewInFrameLayout(context, leftTextView));
+      tableRow.AddView(WrapTextViewInFrameLayout(context, rightTextView));
+
+      return tableRow;
+    }
+
+    private static FrameLayout WrapTextViewInFrameLayout(Context context, TextView textView)
+    {
+      var frameLayout = new FrameLayout(context);
+      frameLayout.AddView(textView);
+      return frameLayout;
+    }
+
+    private static void ApplyFormsControlValuesToNativeControl(TwoColumnCellViewHolder viewHolder,
+      TwoColumnCell formsControl)
+    {
+      viewHolder.LeftTextView.Text = formsControl.LeftText;
+
+      if (formsControl.LeftTextFont.FontSize != 0.0)
+        viewHolder.LeftTextView.TextSize = (float) formsControl.LeftTextFont.FontSize;
+
+      viewHolder.LeftDetailTextView.Text = formsControl.LeftDetail;
+      
+      if (formsControl.LeftDetailFont.FontSize != 0.0)
+        viewHolder.LeftDetailTextView.TextSize = (float) formsControl.LeftDetailFont.FontSize;
+
+      viewHolder.RightTextView.Text = formsControl.RightText;
+      
+      if (formsControl.RightTextFont.FontSize != 0.0)
+        viewHolder.RightTextView.TextSize = (float) formsControl.RightTextFont.FontSize;
+
+      viewHolder.RightDetailTextView.Text = formsControl.RightDetail;
+
+      if (formsControl.RightDetailFont.FontSize != 0.0)
+        viewHolder.RightDetailTextView.TextSize = (float) formsControl.RightDetailFont.FontSize;
+    }
   }
 }
