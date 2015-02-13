@@ -1,4 +1,4 @@
-﻿namespace SampleApp.ViewModel
+﻿namespace SampleApp.Models
 {
   public class Person
   {

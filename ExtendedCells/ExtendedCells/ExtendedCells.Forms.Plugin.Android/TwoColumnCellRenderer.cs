@@ -1,95 +1,89 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
+﻿using System.Resources;
+using Android.App;
+using Android.Content;
+using Android.Views;
 using Android.Widget;
 using ExtendedCells.Forms.Plugin.Abstractions;
 using ExtendedCells.Forms.Plugin.Android;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.Android;
-using XamSvg;
+using View = Android.Views.View;
 
 [assembly: ExportRenderer(typeof(TwoColumnCell), typeof(TwoColumnCellRenderer))]
 
 namespace ExtendedCells.Forms.Plugin.Android
 {
-    public class TwoColumnCellRenderer : ImageRenderer
+  public class TwoColumnCellRenderer : ViewCellRenderer
+  {
+    public static void Init()
     {
-        public static void Init() { }
-
-        private bool _svgSourceSet;
-        private Dictionary<string, Stream> _svgStreamByPath;
-        private TwoColumnCell _formsControl;
-
-        private Dictionary<string, Stream> SvgStreamByPath
-        {
-            get
-            {
-                if (_svgStreamByPath == null)
-                {
-                    _svgStreamByPath = new Dictionary<string, Stream>();
-                }
-
-                return _svgStreamByPath;
-            }
-        }
-
-        protected override void OnElementChanged(ElementChangedEventArgs<Image> e)
-        {
-            base.OnElementChanged(e);
-
-            if (e.OldElement == null)
-            {
-                try
-                {
-                    UpdateBitmapFromSvg();
-                }
-                catch (Exception ex)
-                {
-                    throw new Exception("Problem setting image source", ex);
-                }
-            }
-        }
-
-        private void UpdateBitmapFromSvg()
-        {
-            var imageView = Control as ImageView;
-            _formsControl = Element as TwoColumnCell;
-
-            _svgSourceSet = true;
-
-            var width = (int) _formsControl.WidthRequest <= 0 ? 100 : (int) _formsControl.WidthRequest;
-            var height = (int) _formsControl.HeightRequest <= 0 ? 100 : (int) _formsControl.HeightRequest;
-
-            var svg = SvgFactory.GetDrawable(GetSvgStream(_formsControl.SvgPath));
-            imageView.SetScaleType(ImageView.ScaleType.FitXy);
-            imageView.SetImageDrawable(svg);
-        }
-
-        private Stream GetSvgStream(string svgPath)
-        {
-            Stream stream = null;
-            //Insert into Dictionary
-            if (!SvgStreamByPath.ContainsKey(svgPath))
-            {
-                if(_formsControl.SvgAssembly == null)
-                    throw new Exception("Svg Assembly not specified. Please specify assembly using the TwoColumnCell Control SvgAssembly property.");
-
-                stream = _formsControl.SvgAssembly.GetManifestResourceStream(svgPath);
-
-                if (stream == null)
-                    throw new Exception(string.Format("Not able to retrieve svg from {0} make sure the svg is an Embedded Resource and the path is set up correctly",svgPath));
-
-                SvgStreamByPath.Add(svgPath, stream);
-
-                return stream;
-            }
-
-            //Get from dictionary
-            stream = SvgStreamByPath[svgPath];
-            //Reset the stream position otherwise an error is thrown (SvgFactory.GetBitmap sets the position to position max)
-            stream.Position = 0;
-
-            return stream;
-        }
     }
+
+    protected override View GetCellCore(Cell item, View convertView, ViewGroup parent, Context context)
+    {
+      var x = (TwoColumnCell) item;
+
+      var view = convertView;
+
+      if (view == null)
+      {
+        // no view to re-use, create new
+        var activity = context as Activity;
+        
+        var test = Resource.Layout.TwoColumnCellNative;
+        //var testLayout = Resource.Layout.TestLayout;
+        if (activity != null)
+          view = activity.LayoutInflater.Inflate(test, null);
+      }
+      else
+      {
+        // re-use, clear image
+        // doesn't seem to help
+        //view.FindViewById<ImageView> (Resource.Id.Image).Drawable.Dispose ();
+      }
+
+      view.FindViewById<TextView>(Resource.Id.LeftText).Text = x.LeftText;
+      view.FindViewById<TextView>(Resource.Id.LeftDetail).Text = x.LeftDetail;
+
+      //// grab the old image and dispose of it
+      //// TODO: optimize if the image is the *same* and we want to just keep it
+      //if (view.FindViewById<ImageView>(Resource.Id.Image).Drawable != null)
+      //{
+      //  using (var image = view.FindViewById<ImageView>(Resource.Id.Image).Drawable as BitmapDrawable)
+      //  {
+      //    if (image != null)
+      //    {
+      //      if (image.Bitmap != null)
+      //      {
+      //        //image.Bitmap.Recycle ();
+      //        image.Bitmap.Dispose();
+      //      }
+      //    }
+      //  }
+      //}
+
+      //// If a new image is required, display it
+      //if (!String.IsNullOrWhiteSpace(x.ImageFilename))
+      //{
+      //  context.Resources.GetBitmapAsync(x.ImageFilename).ContinueWith((t) =>
+      //  {
+      //    var bitmap = t.Result;
+      //    if (bitmap != null)
+      //    {
+      //      view.FindViewById<ImageView>(Resource.Id.Image).SetImageBitmap(bitmap);
+      //      bitmap.Dispose();
+      //    }
+      //  }, TaskScheduler.FromCurrentSynchronizationContext());
+
+      //}
+      //else
+      //{
+      //  // clear the image
+      //  view.FindViewById<ImageView>(Resource.Id.Image).SetImageBitmap(null);
+      //}
+
+      return view;
+    }
+
+  }
 }

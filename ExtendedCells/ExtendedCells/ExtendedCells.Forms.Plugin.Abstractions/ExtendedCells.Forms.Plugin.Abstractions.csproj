@@ -35,6 +35,16 @@
     <WarningLevel>4</WarningLevel>
     <DocumentationFile>bin\Release\ExtendedCells.Forms.Plugin.Abstractions.xml</DocumentationFile>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'WinPhoneRelease|AnyCPU'">
+    <OutputPath>bin\WinPhoneRelease\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <DocumentationFile>bin\Release\ExtendedCells.Forms.Plugin.Abstractions.xml</DocumentationFile>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
   <ItemGroup>
     <Compile Include="TwoColumnCell.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
