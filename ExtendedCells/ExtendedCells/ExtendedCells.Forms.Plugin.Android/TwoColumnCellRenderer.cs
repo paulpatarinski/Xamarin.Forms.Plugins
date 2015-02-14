@@ -3,6 +3,7 @@ using Android.Views;
 using Android.Widget;
 using ExtendedCells.Forms.Plugin.Abstractions;
 using ExtendedCells.Forms.Plugin.Android;
+using ExtendedCells.Forms.Plugin.Android.ExtensionsMethods;
 using ExtendedCells.Forms.Plugin.Android.Models;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.Android;
@@ -27,79 +28,26 @@ namespace ExtendedCells.Forms.Plugin.Android
         {
             if ((View = convertView as TwoColumnTableLayout) == null)
             {
-                View = new TwoColumnTableLayout(context);
-
-                View.LeftTextView = new TextView(context);
-                View.LeftDetailTextView = new TextView(context);
-                View.RightTextView = new TextView(context);
-                View.RightDetailTextView = new TextView(context);
+                View = new TwoColumnTableLayout(context)
+                {
+                    LeftTextView = new TextView(context),
+                    LeftDetailTextView = new TextView(context),
+                    RightTextView = new TextView(context),
+                    RightDetailTextView = new TextView(context)
+                };
 
                 View.AddView(CreateRow(context, View.LeftTextView, View.RightTextView));
                 View.AddView(CreateRow(context, View.LeftDetailTextView, View.RightDetailTextView));
             }
 
-            UpdateLeftTextView();
-            UpdateLeftDetailTextView();
-            UpdateRightTextView();
-            UpdateRightDetailTextView();
+            var twoColumnCell = (TwoColumnCell) Cell;
+
+            View.LeftTextView.UpdateFromFormsControl(twoColumnCell.LeftText,twoColumnCell.LeftTextColor, twoColumnCell.LeftTextFont);
+            View.LeftDetailTextView.UpdateFromFormsControl(twoColumnCell.LeftDetail,twoColumnCell.LeftDetailColor, twoColumnCell.LeftDetailFont);
+            View.RightTextView.UpdateFromFormsControl(twoColumnCell.RightText,twoColumnCell.RightTextColor, twoColumnCell.RightTextFont);
+            View.RightDetailTextView.UpdateFromFormsControl(twoColumnCell.RightDetail,twoColumnCell.RightDetailColor, twoColumnCell.RightDetailFont);
 
             return View;
-        }
-
-        private void UpdateLeftTextView()
-        {
-            var twoColumnCell = Cell as TwoColumnCell;
-
-            if (twoColumnCell != null)
-            {
-                View.LeftTextView.Text = twoColumnCell.LeftText;
-                View.LeftTextView.SetTextColor(twoColumnCell.LeftTextColor.ToAndroid(Color.Default));
-
-                if (twoColumnCell.LeftTextFont.FontSize != 0.0)
-                    View.LeftTextView.TextSize = (float) twoColumnCell.LeftTextFont.FontSize;
-            }
-        }
-
-        private void UpdateLeftDetailTextView()
-        {
-            var twoColumnCell = Cell as TwoColumnCell;
-
-            if (twoColumnCell != null)
-            {
-                View.LeftDetailTextView.Text = twoColumnCell.LeftDetail;
-                View.LeftDetailTextView.SetTextColor(twoColumnCell.LeftDetailColor.ToAndroid(Color.Default));
-
-                if (twoColumnCell.LeftDetailFont.FontSize != 0.0)
-                    View.LeftDetailTextView.TextSize = (float) twoColumnCell.LeftTextFont.FontSize;
-            }
-        }
-
-        private void UpdateRightTextView()
-        {
-            var twoColumnCell = Cell as TwoColumnCell;
-
-            if (twoColumnCell != null)
-            {
-                View.RightTextView.Text = twoColumnCell.RightText;
-                View.RightTextView.SetTextColor(twoColumnCell.RightTextColor.ToAndroid(Color.Default));
-                
-                if (twoColumnCell.RightTextFont.FontSize != 0.0)
-                    View.RightTextView.TextSize = (float) twoColumnCell.RightTextFont.FontSize;
-            }
-        }
-
-        private void UpdateRightDetailTextView()
-        {
-            var twoColumnCell = Cell as TwoColumnCell;
-
-            if (twoColumnCell != null)
-            {
-                View.RightDetailTextView.Text = twoColumnCell.RightDetail;
-                View.RightDetailTextView.SetTextColor(twoColumnCell.RightDetailColor.ToAndroid(Color.Default));
-
-                if (twoColumnCell.RightDetailFont.FontSize != 0.0)
-                    View.RightDetailTextView.TextSize = (float) twoColumnCell.RightDetailFont.FontSize;
-            }
         }
 
         private static TableRow CreateRow(Context context, TextView leftTextView, TextView rightTextView)

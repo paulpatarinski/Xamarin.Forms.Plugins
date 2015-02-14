@@ -91,6 +91,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ExtensionsMethods\TextViewExtensions.cs" />
     <Compile Include="Models\TwoColumnCellViewHolder.cs" />
     <Compile Include="Models\TwoColumnTableLayout.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
