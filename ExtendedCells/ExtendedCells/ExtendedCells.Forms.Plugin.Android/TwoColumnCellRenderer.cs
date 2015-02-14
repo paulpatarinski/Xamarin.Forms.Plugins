@@ -12,103 +12,111 @@ using View = Android.Views.View;
 
 namespace ExtendedCells.Forms.Plugin.Android
 {
-  /// <summary>
-  ///   TwoColumn Cell renderer for Android
-  /// </summary>
-  public class TwoColumnCellRenderer : ViewCellRenderer
-  {
     /// <summary>
+    /// TwoColumn Cell renderer for Android
     /// </summary>
-    public static void Init()
+    public class TwoColumnCellRenderer : CellRenderer
     {
-    }
-
-    /// <summary>
-    ///   Returns the View to render
-    /// </summary>
-    /// <param name="item"></param>
-    /// <param name="convertView"></param>
-    /// <param name="parent"></param>
-    /// <param name="context"></param>
-    /// <returns></returns>
-    protected override View GetCellCore(Cell item, View convertView, ViewGroup parent, Context context)
-    {
-      var formsControl = (TwoColumnCell) item;
-      TwoColumnCellViewHolder viewHolder = null;
-
-      var view = (TableLayout) convertView;
-
-      if (view != null)
-      {
-        viewHolder = view.Tag as TwoColumnCellViewHolder;
-      }
-      if (viewHolder == null)
-      {
-        viewHolder = new TwoColumnCellViewHolder
+        public static void Init()
         {
-          LeftTextView = new TextView(context),
-          LeftDetailTextView = new TextView(context),
-          RightTextView = new TextView(context),
-          RightDetailTextView = new TextView(context) 
-        };
+        }
 
-        view = new TableLayout(context)
+        public TwoColumnTableLayout View { get; set; }
+
+        protected override View GetCellCore(Cell item, View convertView, ViewGroup parent, Context context)
         {
-          StretchAllColumns = true,
-          LayoutParameters =
-            new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MatchParent, ViewGroup.LayoutParams.MatchParent)
-        };
+            if ((View = convertView as TwoColumnTableLayout) == null)
+            {
+                View = new TwoColumnTableLayout(context);
 
-        view.AddView(CreateRow(context, viewHolder.LeftTextView, viewHolder.RightTextView));
-        view.AddView(CreateRow(context, viewHolder.LeftDetailTextView, viewHolder.RightDetailTextView));
+                View.LeftTextView = new TextView(context);
+                View.LeftDetailTextView = new TextView(context);
+                View.RightTextView = new TextView(context);
+                View.RightDetailTextView = new TextView(context);
 
-        view.Tag = viewHolder;
-      }
+                View.AddView(CreateRow(context, View.LeftTextView, View.RightTextView));
+                View.AddView(CreateRow(context, View.LeftDetailTextView, View.RightDetailTextView));
+            }
 
-      ApplyFormsControlValuesToNativeControl(viewHolder, formsControl);
+            UpdateLeftTextView();
+            UpdateLeftDetailTextView();
+            UpdateRightTextView();
+            UpdateRightDetailTextView();
 
-      return view;
+            return View;
+        }
+
+        private void UpdateLeftTextView()
+        {
+            var twoColumnCell = Cell as TwoColumnCell;
+
+            if (twoColumnCell != null)
+            {
+                View.LeftTextView.Text = twoColumnCell.LeftText;
+                View.LeftTextView.SetTextColor(twoColumnCell.LeftTextColor.ToAndroid(Color.Default));
+
+                if (twoColumnCell.LeftTextFont.FontSize != 0.0)
+                    View.LeftTextView.TextSize = (float) twoColumnCell.LeftTextFont.FontSize;
+            }
+        }
+
+        private void UpdateLeftDetailTextView()
+        {
+            var twoColumnCell = Cell as TwoColumnCell;
+
+            if (twoColumnCell != null)
+            {
+                View.LeftDetailTextView.Text = twoColumnCell.LeftDetail;
+                View.LeftDetailTextView.SetTextColor(twoColumnCell.LeftDetailColor.ToAndroid(Color.Default));
+
+                if (twoColumnCell.LeftDetailFont.FontSize != 0.0)
+                    View.LeftDetailTextView.TextSize = (float) twoColumnCell.LeftTextFont.FontSize;
+            }
+        }
+
+        private void UpdateRightTextView()
+        {
+            var twoColumnCell = Cell as TwoColumnCell;
+
+            if (twoColumnCell != null)
+            {
+                View.RightTextView.Text = twoColumnCell.RightText;
+                View.RightTextView.SetTextColor(twoColumnCell.RightTextColor.ToAndroid(Color.Default));
+                
+                if (twoColumnCell.RightTextFont.FontSize != 0.0)
+                    View.RightTextView.TextSize = (float) twoColumnCell.RightTextFont.FontSize;
+            }
+        }
+
+        private void UpdateRightDetailTextView()
+        {
+            var twoColumnCell = Cell as TwoColumnCell;
+
+            if (twoColumnCell != null)
+            {
+                View.RightDetailTextView.Text = twoColumnCell.RightDetail;
+                View.RightDetailTextView.SetTextColor(twoColumnCell.RightDetailColor.ToAndroid(Color.Default));
+
+                if (twoColumnCell.RightDetailFont.FontSize != 0.0)
+                    View.RightDetailTextView.TextSize = (float) twoColumnCell.RightDetailFont.FontSize;
+            }
+        }
+
+        private static TableRow CreateRow(Context context, TextView leftTextView, TextView rightTextView)
+        {
+            var tableRow = new TableRow(context);
+
+            tableRow.AddView(WrapTextViewInFrameLayout(context, leftTextView));
+            tableRow.AddView(WrapTextViewInFrameLayout(context, rightTextView));
+
+            return tableRow;
+        }
+
+        private static FrameLayout WrapTextViewInFrameLayout(Context context, TextView textView)
+        {
+            var frameLayout = new FrameLayout(context);
+            frameLayout.AddView(textView);
+            return frameLayout;
+        }
     }
-
-    private static TableRow CreateRow(Context context, TextView leftTextView, TextView rightTextView)
-    {
-      var tableRow = new TableRow(context);
-
-      tableRow.AddView(WrapTextViewInFrameLayout(context, leftTextView));
-      tableRow.AddView(WrapTextViewInFrameLayout(context, rightTextView));
-
-      return tableRow;
-    }
-
-    private static FrameLayout WrapTextViewInFrameLayout(Context context, TextView textView)
-    {
-      var frameLayout = new FrameLayout(context);
-      frameLayout.AddView(textView);
-      return frameLayout;
-    }
-
-    private static void ApplyFormsControlValuesToNativeControl(TwoColumnCellViewHolder viewHolder,
-      TwoColumnCell formsControl)
-    {
-      viewHolder.LeftTextView.Text = formsControl.LeftText;
-
-      if (formsControl.LeftTextFont.FontSize != 0.0)
-        viewHolder.LeftTextView.TextSize = (float) formsControl.LeftTextFont.FontSize;
-
-      viewHolder.LeftDetailTextView.Text = formsControl.LeftDetail;
-      
-      if (formsControl.LeftDetailFont.FontSize != 0.0)
-        viewHolder.LeftDetailTextView.TextSize = (float) formsControl.LeftDetailFont.FontSize;
-
-      viewHolder.RightTextView.Text = formsControl.RightText;
-      
-      if (formsControl.RightTextFont.FontSize != 0.0)
-        viewHolder.RightTextView.TextSize = (float) formsControl.RightTextFont.FontSize;
-
-      viewHolder.RightDetailTextView.Text = formsControl.RightDetail;
-
-      if (formsControl.RightDetailFont.FontSize != 0.0)
-        viewHolder.RightDetailTextView.TextSize = (float) formsControl.RightDetailFont.FontSize;
-    }
-  }
 }
