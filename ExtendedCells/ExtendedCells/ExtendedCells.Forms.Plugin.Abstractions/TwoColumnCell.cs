@@ -19,6 +19,15 @@ namespace ExtendedCells.Forms.Plugin.Abstractions
       }
     }
 
+    public static readonly BindableProperty ThicknessProperty =
+     BindableProperty.Create("Thickness", typeof(Thickness), typeof(TwoColumnCell), default(Thickness));
+
+    public Thickness Thickness
+    {
+      get { return (Thickness)GetValue(ThicknessProperty); }
+      set { SetValue(ThicknessProperty, value); }
+    }
+
     public static readonly BindableProperty LeftColumnWidthProperty =
     BindableProperty.Create("LeftColumnWidth", typeof(GridLength), typeof(TextCell), default(GridLength));
 
@@ -47,15 +56,6 @@ namespace ExtendedCells.Forms.Plugin.Abstractions
       {
         SetValue(RightColumnWidthProperty, value);
       }
-    }
-
-    public static readonly BindableProperty ThicknessProperty =
-      BindableProperty.Create("Thickness", typeof(Thickness), typeof(TwoColumnCell), default(Thickness));
-
-    public Thickness Thickness
-    {
-      get { return (Thickness)GetValue(ThicknessProperty); }
-      set { SetValue(ThicknessProperty, value); }
     }
 
     #region LeftText
