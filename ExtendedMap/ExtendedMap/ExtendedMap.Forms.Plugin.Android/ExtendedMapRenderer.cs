@@ -114,7 +114,7 @@ namespace ExtendedMap.Forms.Plugin.Droid
 		{
 			ResetPrevioslySelectedMarker ();
 
-			var currentMarker = e.P0;
+			var currentMarker = e.Marker;
 
 			currentMarker.SetIcon (BitmapDescriptorFactory.DefaultMarker ());
 

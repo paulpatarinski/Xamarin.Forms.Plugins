@@ -444,7 +444,8 @@ namespace AbsoluteLayoutDemo
                     <item>
                         <term>IsRunning</term>
                         <description>
-                            <para>"true" or "false".</para>
+                            <para>
+                                <see langword="true" /> or <see langword="false" />, to indicate whether the animation for <see cref="T:Xamarin.Forms.ActivityIndicator" /> is displayed.</para>
                         </description>
                     </item>
                 </list>
@@ -2461,6 +2462,26 @@ Content = new TableView
 }          
           ]]></code>
                 </example>
+                <para>The <see cref="T:Xamarin.Forms.Cell" /> class has the following XAML properties:</para>
+                <list type="table">
+                    <listheader>
+                        <term>Property</term>
+                        <description>Value</description>
+                    </listheader>
+                    <item>
+                        <term>ContextActions</term>
+                        <description>
+                            <para>A list of <see cref="T:Xamarin.Forms.MenuItem" /> objects to display when the user performs the context action.</para>
+                        </description>
+                    </item>
+                    <item>
+                        <term>IsEnabled</term>
+                        <description>
+                            <para>
+                                <see langword="true" /> or <see langword="false" />, indicating whether the animation for <see cref="T:Xamarin.Forms.ActivityIndicator" /> is displayed.</para>
+                        </description>
+                    </item>
+                </list>
             </remarks>
         </member>
         <member name="C:Xamarin.Forms.Cell">
@@ -2469,7 +2490,7 @@ Content = new TableView
         </member>
         <member name="E:Xamarin.Forms.Cell.Appearing">
             <summary>Occurs when the visual representation of the Cell is being added to the visual layout.</summary>
-            <remarks>This method is gauranteed to fire at some point before the cell is on screen.</remarks>
+            <remarks>This method is raised before the cell is on screen.</remarks>
         </member>
         <member name="P:Xamarin.Forms.Cell.ContextActions">
             <summary>Gets a list of menu items to display when the user performs the device-specific context gesture on the Cell.</summary>
@@ -2487,8 +2508,8 @@ Content = new TableView
         </member>
         <member name="P:Xamarin.Forms.Cell.Height">
             <summary>Gets or sets the height of the Cell.</summary>
-            <value>A double representing the height of the cell.</value>
-            <remarks>This is ignored if the ListView or TableView HasUnevenRows property is <see langword="false" />. ListView or TableView RowHeight property is used in that case.</remarks>
+            <value>A double that represents the height of the cell.</value>
+            <remarks>The <see cref="P:Xamarin.Forms.Cell.Height" /> property is ignored if the app developer sets the <see cref="P:Xamarin.Forms.ListView.HasUnevenRows" /> or <see cref="P:Xamarin.Forms.TableView.HasUnevenRows" /> property on the surrounding <see cref="T:Xamarin.Forms.View" /> to <see langword="false" />. In that case, the <see cref="P:Xamarin.Forms.ListView.RowHeight" /> or <see cref="P:Xamarin.Forms.TableView.RowHeight" /> property is used instead.</remarks>
         </member>
         <member name="P:Xamarin.Forms.Cell.IsEnabled">
             <summary>Gets or sets the IsEnabled state of the Cell. This is a bindable property.</summary>
@@ -2861,6 +2882,19 @@ Assert.AreEqual (Color.Accent, converter.ConvertFrom ("Accent"));
         <member name="T:Xamarin.Forms.ColumnDefinition">
             <summary>An <see cref="I:Xamarin.Forms.IDefinition" /> that defines properties for a column in a <see cref="T:Xamarin.Forms.Grid" />.</summary>
             <remarks>
+                <para>The <see cref="T:Xamarin.Forms.ColumnDefinition" /> class has the following XAML property:</para>
+                <list type="table">
+                    <listheader>
+                        <term>Property</term>
+                        <description>Value</description>
+                    </listheader>
+                    <item>
+                        <term>Width</term>
+                        <description>
+                            <para>"*" or "Auto" to indicate the corresponding <see cref="T:Xamarin.Forms.GridUnitType" /> enumeration values, or a number to indicate an absolute width.</para>
+                        </description>
+                    </item>
+                </list>
                 <example>
                     <para>App developers can specify <see cref="T:Xamarin.Forms.GridUnitType" /> values for the <see cref="P:Xamarin.Forms.ColumnDefinition.Width" /> property in XAML by nesting <c>ColumnDefinition</c> tags inside tags for the <see cref="P:Xamarin.Forms.Grid.ColumnDefinitions" /> collection property. The following example demonstrates setting three column widths to each of the three valid <see cref="T:Xamarin.Forms.GridUnitType" /> values:</para>
                     <code lang="XAML"><![CDATA[
@@ -2892,7 +2926,18 @@ Assert.AreEqual (Color.Accent, converter.ConvertFrom ("Accent"));
         </member>
         <member name="T:Xamarin.Forms.ColumnDefinitionCollection">
             <summary>A <see cref="T:Xamarin.Forms.DefinitionCollection`1" /> for <see cref="T:Xamarin.Forms.ColumnDefinition" />s.</summary>
-            <remarks>To be added.</remarks>
+            <remarks>
+                <para>App developers can specify <see cref="T:Xamarin.Forms.GridUnitType" /> values for the <see cref="P:Xamarin.Forms.ColumnDefinition.Width" /> property in XAML by nesting <c>ColumnDefinition</c> tags inside tags for the <see cref="P:Xamarin.Forms.Grid.ColumnDefinitions" /> collection property. The following example demonstrates setting three column widths to each of the three valid <see cref="T:Xamarin.Forms.GridUnitType" /> values:</para>
+                <example>
+                    <code lang="XAML"><![CDATA[
+<Grid.ColumnDefinitions>
+    <ColumnDefinition Width="Auto" />
+    <ColumnDefinition Width="*" />
+    <ColumnDefinition Width="100" />
+</Grid.ColumnDefinitions>
+]]></code>
+                </example>
+            </remarks>
         </member>
         <member name="C:Xamarin.Forms.ColumnDefinitionCollection">
             <summary>Creates a new empty <see cref="T:Xamarin.Forms.ColumnDefinitionCollection" /> collection.</summary>
@@ -3040,7 +3085,46 @@ var button = new Button {
         </member>
         <member name="T:Xamarin.Forms.ConstraintExpression">
             <summary>Defines a constraint relationship.</summary>
-            <remarks>To be added.</remarks>
+            <remarks>
+                <para>The <see cref="T:Xamarin.Forms.ConstraintExpression" /> class has the following XAML properties:</para>
+                <list type="table">
+                    <listheader>
+                        <term>Property</term>
+                        <description>Value</description>
+                    </listheader>
+                    <item>
+                        <term>Constant</term>
+                        <description>
+                            <para>An optionally signed integer literal.</para>
+                        </description>
+                    </item>
+                    <item>
+                        <term>ElementName</term>
+                        <description>
+                            <para>The name of a source element against which to calculate the constraint.</para>
+                        </description>
+                    </item>
+                    <item>
+                        <term>Factor</term>
+                        <description>
+                            <para>A decimal literal in the range (0,1].</para>
+                        </description>
+                    </item>
+                    <item>
+                        <term>Property</term>
+                        <description>
+                            <para>The name of the property on the source element to use in the constraint calculation.</para>
+                        </description>
+                    </item>
+                    <item>
+                        <term>Type</term>
+                        <description>
+                            <para>
+                                <c>Constant</c>, <c>RelativeToParent</c>, or <c>RelativeToView</c>.</para>
+                        </description>
+                    </item>
+                </list>
+            </remarks>
         </member>
         <member name="C:Xamarin.Forms.ConstraintExpression">
             <summary>Creates a new <see cref="T:Xamarin.Forms.ConstraintExpression" /> with default values.</summary>
@@ -3052,17 +3136,17 @@ var button = new Button {
             <remarks>To be added.</remarks>
         </member>
         <member name="P:Xamarin.Forms.ConstraintExpression.ElementName">
-            <summary>Gets or sets the name of the element.</summary>
+            <summary>Gets or sets the name of a source element against which to calculate the constraint.</summary>
             <value>To be added.</value>
             <remarks>To be added.</remarks>
         </member>
         <member name="P:Xamarin.Forms.ConstraintExpression.Factor">
-            <summary>Gets or sets the factor for a relative layout.</summary>
+            <summary>Gets or sets the factor by which to scale a constrained dimension, relative to the source element.</summary>
             <value>To be added.</value>
             <remarks>To be added.</remarks>
         </member>
         <member name="P:Xamarin.Forms.ConstraintExpression.Property">
-            <summary>Gets or sets the <see cref="T:Xamarin.Forms.View" /> property to which the <see cref="T:Xamarin.Forms.ConstraintExpression" /> applies.</summary>
+            <summary>Gets or sets name of the property on the source element to use in the constraint calculation.</summary>
             <value>To be added.</value>
             <remarks>To be added.</remarks>
         </member>
@@ -3139,6 +3223,21 @@ namespace ContentPageExample
 }
           ]]></code>
                     <para>The FormsGallery sample, which can be found on the <format type="text/html"><a href="http://developer.xamarin.com/samples/tag/Xamarin.Forms/" target="_blank">Sample Applications</a></format> page, has a ContentPageDemoPage.cs file. This file contains a longer and more complicated example.</para>
+                    <para>The <see cref="T:Xamarin.Forms.ContentPage" /> class has the following XAML property:</para>
+                    <para>
+                        <list type="table">
+                            <listheader>
+                                <term>Property</term>
+                                <description>Value</description>
+                            </listheader>
+                            <item>
+                                <term>Content</term>
+                                <description>
+                                    <para>A list of <see cref="T:Xamarin.Forms.View" /> objects that represent the visual content of the <see cref="T:Xamarin.Forms.ContentPage" />. This tag can be omitted, and the contents listed directly.</para>
+                                </description>
+                            </item>
+                        </list>A <c>ContentPage</c> tag can be the root element of a XAML document.</para>
+                    <para />
                 </example>
             </remarks>
         </member>
@@ -3185,9 +3284,21 @@ This is equivalent to the following, more explicit XAML
             <remarks />
         </member>
         <member name="T:Xamarin.Forms.ContentView">
-            <summary>An element with a single content.</summary>
+            <summary>An element that contains a single child element.</summary>
             <remarks>
-                <para>ContentView has very little use of it's own. It's purpose is to serve as a base class for user-defined compound views.</para>
+                <para>The <see cref="T:Xamarin.Forms.ContentView" /> class has the following XAML property:</para>
+                <list type="table">
+                    <listheader>
+                        <term>Property</term>
+                        <description>Value</description>
+                    </listheader>
+                    <item>
+                        <term>Content</term>
+                        <description>
+                            <para>The <see cref="T:Xamarin.Forms.View" /> object that represents the visual content of the <see cref="T:Xamarin.Forms.ContentView" />.</para>
+                        </description>
+                    </item>
+                </list>
                 <para>
           The following example shows how to construct a new ContentView with a Label inside.
           </para>
@@ -3229,7 +3340,7 @@ var layout = new ContentView {
         </member>
         <member name="T:Xamarin.Forms.DataTemplate">
             <summary>A template for multiple bindings, commonly used by <see cref="T:Xamarin.Forms.ListView" />s, <see cref="T:Xamarin.Forms.MultiPage" />s, and <see cref="T:Xamarin.Forms.TableView" />s.</summary>
-            <remarks>To be added.</remarks>
+            <remarks>In XAML, application developers can nest markup inside a <c>DataTemplate</c> tag to create a <see cref="T:Xamarin.Forms.View" /> whose members are bound to the properties of data objects that are contained in a <see cref="P:Xamarin.Forms.MultiPage`1.ItemsSource" /> list.</remarks>
         </member>
         <member name="C:Xamarin.Forms.DataTemplate(System.Func{System.Object})">
             <param name="loadTemplate">A custom content generator to be called </param>
@@ -3295,7 +3406,33 @@ var layout = new ContentView {
         </member>
         <member name="T:Xamarin.Forms.DataTrigger">
             <summary>Class that represents a binding condition and a list of <see cref="T:Xamarin.Forms.Setter" /> objects that will be applied when the condition is met.</summary>
-            <remarks>To be added.</remarks>
+            <remarks>
+                <para>The <see cref="T:Xamarin.Forms.DataTrigger" /> class has the following XAML properties:</para>
+                <list type="table">
+                    <listheader>
+                        <term>Property</term>
+                        <description>Value</description>
+                    </listheader>
+                    <item>
+                        <term>Property</term>
+                        <description>
+                            <para>The name of the property whose value to compare against <c>Value</c>.</para>
+                        </description>
+                    </item>
+                    <item>
+                        <term>Value</term>
+                        <description>
+                            <para>The value of the property that will trigger the setters in <c>Setters</c>.</para>
+                        </description>
+                    </item>
+                    <item>
+                        <term>Setters</term>
+                        <description>
+                            <para>A list of setters that are called when the property condition is met. Each <c>Setter</c> tag or tag pair in the list has a <c>Property</c> and <c>Value</c> that represents the assignments to perform when the condition is met.</para>
+                        </description>
+                    </item>
+                </list>
+            </remarks>
         </member>
         <member name="C:Xamarin.Forms.DataTrigger(System.Type)">
             <param name="targetType">To be added.</param>
@@ -3391,6 +3528,59 @@ namespace FormsGallery
     }
 }
 ]]></code>
+                </example>
+                <para>The <see cref="T:Xamarin.Forms.DatePicker" /> class has the following XAML properties:</para>
+                <list type="table">
+                    <listheader>
+                        <term>Property</term>
+                        <description>Value</description>
+                    </listheader>
+                    <item>
+                        <term>Format</term>
+                        <description>
+                            <para>A string that specifies the display format in the control of the chosen date.</para>
+                        </description>
+                    </item>
+                    <item>
+                        <term>Date</term>
+                        <description>
+                            <para>An <c>x:FactoryMethod</c> call to the <see cref="M:System.DateTime.Parse" /> method, or a markup extension call to a method that produces a <see cref="T:System.DateTime" /> object. See below.</para>
+                        </description>
+                    </item>
+                    <item>
+                        <term>MinimumDate</term>
+                        <description>
+                            <para>An <c>x:FactoryMethod</c> call to the <see cref="M:System.DateTime.Parse" /> method, or a markup extension call to a method that produces a <see cref="T:System.DateTime" /> object. See below.</para>
+                        </description>
+                    </item>
+                    <item>
+                        <term>MaximumDate</term>
+                        <description>
+                            <para>An <c>x:FactoryMethod</c> call to the <see cref="M:System.DateTime.Parse" /> method, or a markup extension call to a method that produces a <see cref="T:System.DateTime" /> object. See below.</para>
+                        </description>
+                    </item>
+                </list>
+                <example>
+                    <para>The example below creates a working <see cref="T:Xamarin.Forms.DatePicker" /> that displays the current date and allows the user to select a date between the specified ranges. The value for the <see cref="P:Xamarin.Forms.DatePicker.Date" /> property is specified with the <c>x:Static</c> markup extension, and the <see cref="P:Xamarin.Forms.DatePicker.MinimumDate" /> and <see cref="P:Xamarin.Forms.DatePicker.MaximumDate" /> properties are specified by calling the <see cref="M:System.DateTime.Parse" /> method with the <c>x:FactoryMethod</c> and <x>x:Arguments</x> tags. <block type="note">The example below requires a namespace declaration in the root <c>ContentPage</c> or <c>ContentView</c> tags. In particular, <c>xmlns:sys="clr-namespace:System;assembly=mscorlib"</c> must appear in the attribute list for the root element, so that the XAML parser can resolve the name, <c>sys:DateTime</c>.</block></para>
+                    <code lang="XAML"><![CDATA[<StackLayout>
+      <DatePicker VerticalOptions="CenterAndExpand" Date="{x:Static sys:DateTime.Now}">
+         <DatePicker.Format>yyyy-MM-dd</DatePicker.Format>
+         <DatePicker.MinimumDate>
+            <sys:DateTime x:FactoryMethod="Parse">
+               <x:Arguments>
+                  <x:String>Jan 1 2000</x:String>
+               </x:Arguments>
+            </sys:DateTime>
+         </DatePicker.MinimumDate>
+         <DatePicker.MaximumDate>
+            <sys:DateTime x:FactoryMethod="Parse">
+               <x:Arguments>
+                  <x:String>Dec 31 2050</x:String>
+               </x:Arguments>
+            </sys:DateTime>
+         </DatePicker.MaximumDate>
+      </DatePicker>
+   </StackLayout>]]></code>
                 </example>
             </remarks>
         </member>
@@ -3967,6 +4157,19 @@ var editor = new Editor {
 };
               ]]></code>
                 </example>
+                <para>The <see cref="T:Xamarin.Forms.Editor" /> class has the following XAML propertY:</para>
+                <list type="table">
+                    <listheader>
+                        <term>Property</term>
+                        <description>Value</description>
+                    </listheader>
+                    <item>
+                        <term>Text</term>
+                        <description>
+                            <para>The initial text that will appear in the editor.</para>
+                        </description>
+                    </item>
+                </list>
             </remarks>
         </member>
         <member name="E:Xamarin.Forms.Editor.Completed">
@@ -4205,8 +4408,36 @@ View CreateLoginForm ()
   };
 }
             ]]></code>
-                    <para>The FormsGallery sample, which can be found on the <format type="text/html"><a href="http://developer.xamarin.com/samples/tag/Xamarin.Forms/" target="_blank">Sample Applications</a></format> page, has a EntryDemoPage.cs file. This file contains a longer and more complicated example.</para>
+                    <para>The FormsGallery sample, which can be found on the <format type="text/html"><a href="http://developer.xamarin.com/samples/tag/Xamarin.Forms/" target="_blank">Sample Applications</a></format> page, has an EntryDemoPage.cs file. This file contains a longer and more complicated example.</para>
                 </example>
+                <para>The <see cref="T:Xamarin.Forms.ActivityIndicator" /> class has the following XAML properties:</para>
+                <list type="table">
+                    <listheader>
+                        <term>Property</term>
+                        <description>Value</description>
+                    </listheader>
+                    <item>
+                        <term>IsPassword</term>
+                        <description>
+                            <c>true</c> to indicate that the <see cref="T:Xamarin.Forms.Entry" /> is a password field. Otherwise, <c>false</c>.</description>
+                    </item>
+                    <item>
+                        <term>Placeholder</term>
+                        <description>The default text that will appear in the control.</description>
+                    </item>
+                    <item>
+                        <term>Text</term>
+                        <description>
+                            <para>The initial text that will appear in the entry.</para>
+                        </description>
+                    </item>
+                    <item>
+                        <term>TextColor</term>
+                        <description>
+                            <para>A color specification, with or without the prefix, "Color". For example, "Color.Red" and "Red" both specify the color red.</para>
+                        </description>
+                    </item>
+                </list>
                 <para>
                     <img href="Entry.TripleScreenShot.png" />
                 </para>
@@ -4315,6 +4546,46 @@ namespace FormsGallery
 }
 ]]></code>
                 </example>
+                <para>The <see cref="T:Xamarin.Forms.ActivityIndicator" /> class has the following XAML properties:</para>
+                <list type="table">
+                    <listheader>
+                        <term>Property</term>
+                        <description>Value</description>
+                    </listheader>
+                    <item>
+                        <term>Keyboard</term>
+                        <description>A <see cref="T:Xamarin.Forms.Keyboard" /> property name that indicates which keyboard to present to the user when editing text.</description>
+                    </item>
+                    <item>
+                        <term>Label</term>
+                        <description>
+                            <para>The text that is presented next to the entry area in the <see cref="T:Xamarin.Forms.EntryCell" />. </para>
+                        </description>
+                    </item>
+                    <item>
+                        <term>LabelColor</term>
+                        <description>
+                            <para>A color specification, with or without the prefix, "Color". For example, "Color.Red" and "Red" both specify the color red.</para>
+                        </description>
+                    </item>
+                    <item>
+                        <term>Placeholder</term>
+                        <description>The default text that will appear in the control when it is empty.</description>
+                    </item>
+                    <item>
+                        <term>Text</term>
+                        <description>
+                            <para>The initial text that will appear in the editor.</para>
+                        </description>
+                    </item>
+                    <item>
+                        <term>XAlign</term>
+                        <description>
+                            <para>
+                                <c>Center</c>, <c>End</c>, or <c>Start</c>, to indicate the placement of the text that is entered by the user.</para>
+                        </description>
+                    </item>
+                </list>
                 <para>
                     <img href="EntryCell.TripleScreenShot.png" />
                 </para>
@@ -4338,7 +4609,7 @@ namespace FormsGallery
             <remarks />
         </member>
         <member name="P:Xamarin.Forms.EntryCell.Label">
-            <summary>Gets or sets the fixed text presented nes to the Entry in the EntryCell. This is a bindable property.</summary>
+            <summary>Gets or sets the fixed text presented next to the Entry in the EntryCell. This is a bindable property.</summary>
             <value>A <see cref="T:System.String" />.</value>
             <remarks />
         </member>
@@ -4384,7 +4655,26 @@ namespace FormsGallery
         </member>
         <member name="T:Xamarin.Forms.EventTrigger">
             <summary>Class that represents a triggering event and a list of <see cref="T:Xamarin.Forms.TriggerAction" /> objects that will be invoked when the event is raised.</summary>
-            <remarks />
+            <remarks>
+                <para>The <see cref="T:Xamarin.Forms.EventTrigger" /> class has the following XAML property:</para>
+                <list type="table">
+                    <listheader>
+                        <term>Property</term>
+                        <description>Value</description>
+                    </listheader>
+                    <item>
+                        <term>Event</term>
+                        <description>
+                            <para>The name of the event to which to respond.</para>
+                        </description>
+                    </item>
+                    <item>
+                        <term>Object name</term>
+                        <description>
+                            <para>The qualified name of a <see cref="T:Xamarin.Forms.TriggerAction`1" /> implementation that has been defined by the application developer. This object is instantiated and its <see cref="M:Xamarin.Forms.TriggerAction`1.Invoke" /> method is called when the triggering event is raised. Attributes on this tag set corresponding proptery values on the <see cref="T:Xamarin.Forms.TriggerAction`1" /> implementation</para> before the <see cref="M:Xamarin.Forms.TriggerAction`1.Invoke" /> method is called.</description>
+                    </item>
+                </list>
+            </remarks>
         </member>
         <member name="C:Xamarin.Forms.EventTrigger">
             <summary>Creates a new <see cref="T:Xamarin.Forms.EventTrigger" /> instance.</summary>
@@ -4710,6 +5000,26 @@ var frame = new Frame {
                 <para>
                     <img href="Frame.TripleScreenShot.png" />
                 </para>
+                <para>The <see cref="T:Xamarin.Forms.Frame" /> class has the following XAML properties:</para>
+                <list type="table">
+                    <listheader>
+                        <term>Property</term>
+                        <description>Value</description>
+                    </listheader>
+                    <item>
+                        <term>HasShadow</term>
+                        <description>
+                            <para>
+                                <c>true</c> or <c>false</c>, to indicate whether to show a shadow effect where the platform supports it.</para>
+                        </description>
+                    </item>
+                    <item>
+                        <term>OutlineColor</term>
+                        <description>
+                            <para>A color specification, with or without the prefix, "Color". For example, "Color.Red" and "Red" both specify the color red.</para>
+                        </description>
+                    </item>
+                </list>
             </remarks>
         </member>
         <member name="C:Xamarin.Forms.Frame">
@@ -4879,28 +5189,70 @@ namespace FormsGallery
                     <img href="Grid.TripleScreenShot.png" />
                 </para>
                 <para>It is convenient for the <see cref="T:Xamarin.Forms.Grid" /> layout class arranges to store row and column indices of each of its child elements. Additionally, when a <see cref="T:Xamarin.Forms.View" /> element is laid out with a grid, application developers can access and change the child's position and span from the child itself by using the <see cref="M:Xamarin.Forms.Get(BindableObject)" />, <see cref="M:Xamarin.Forms..Grid.GetRow(BindableObject)" />, <see cref="M:Xamarin.Forms.Grid.SetRow(BindableObject)" />, <see cref="M:Xamarin.Forms.Grid.GetRowSpan(BindableObject)" />, <see cref="M:Xamarin.Forms.Grid.SetRowSpan(BindableObject)" /> static methods, and the equivalent static methods for columns and column spans.</para>
-                <example>
-                    <para>The methods mentioned above have XAML syntax support for setting the attached properties on the <see cref="T:Xamarin.Forms.Grid" /> layout. The example below shows how to set the <c>Grid.Row</c> and <c>Grid.Column</c> attached properties to integer values by using both the attribute syntax and the nested tag syntax. <c>Grid.RowSpan</c> and <c>Grid.ColumnSpan</c> are supported in a similar way.</para>
-                    <code lang="XAML"><![CDATA[
-<Grid>
-    ...
-    <Grid.Children>
-            <!-- Grid.Row and Grid.Column as attributes: -->
-            <Label Text="Sample Label 1"
-                   Grid.Row="0"
-                   Grid.Column="0" />
-            <!-- Grid.Row and Grid.Column as nested tags: -->
-            <Label>
-                <Text>Sample Label 2</Text>
-                <Grid.Row>0</Grid.Row>
-                <Grid.Column>1</Grid.Column>
-            </Label>
-            ...
-    </Grid.Children>
-    ...
-</Grid>
-]]></code>
-                </example>
+                <para>The <see cref="T:Xamarin.Forms.Grid" /> class has the following XAML properties.</para>
+                <list type="table">
+                    <listheader>
+                        <term>Property</term>
+                        <description>Value</description>
+                    </listheader>
+                    <item>
+                        <term>Children</term>
+                        <description>
+                            <para>Nested visual elements that are displayed in the Grid.</para>
+                        </description>
+                    </item>
+                    <item>
+                        <term>ColumnDefinitions</term>
+                        <description>
+                            <para>A list of <c>ColumnDefinition</c> specifications. See <see cref="T:Xamarin.Forms.ColumnDefinition" />.</para>
+                        </description>
+                    </item>
+                    <item>
+                        <term>ColumnSpacing</term>
+                        <description>An integer.<para /></description>
+                    </item>
+                    <item>
+                        <term>RowDefinitions</term>
+                        <description>
+                            <para>A list of <c>RowDefinition</c> specifications. See <see cref="T:Xamarin.Forms.RowDefinition" />.</para>
+                        </description>
+                    </item>
+                    <item>
+                        <term>RowSpacing</term>
+                        <description>
+                            <para>An integer.</para>
+                        </description>
+                    </item>
+                </list>
+                <para>The <see cref="T:Xamarin.Forms.Grid" /> class has the following XAML attached properties.</para>
+                <list type="table">
+                    <listheader>
+                        <term>Attached Property</term>
+                        <description>Value</description>
+                    </listheader>
+                    <item>
+                        <term>Column</term>
+                        <description>
+                            <para>An integer that represents the Column in which the item will appear.</para>
+                        </description>
+                    </item>
+                    <item>
+                        <term>ColumnSpan</term>
+                        <description>An integer that represents the number of Columns that the item will span.<para /></description>
+                    </item>
+                    <item>
+                        <term>Row</term>
+                        <description>
+                            <para>An integer that represents the row in which the item will appear.</para>
+                        </description>
+                    </item>
+                    <item>
+                        <term>RowSpan</term>
+                        <description>
+                            <para>An integer that represents the number of rows that the item will span.</para>
+                        </description>
+                    </item>
+                </list>
                 <para>The documentation for the following <see cref="T:Xamarin.Forms.Grid" /> member methods contains XAML syntax examples:
 <list type="bullet"><item><term><see cref="M:Xamarin.Forms.Grid.SetRow" /></term></item><item><term><see cref="M:Xamarin.Forms.Grid.SetRowSpan" /></term></item><item><term><see cref="M:Xamarin.Forms.Grid.SetColumn" /></term></item><item><term><see cref="M:Xamarin.Forms.Grid.SetColumnSpan" /></term></item></list></para>
             </remarks>
@@ -4914,28 +5266,6 @@ namespace FormsGallery
             <value>The collection of child elements.</value>
             <remarks>
                 <para>Application developers can use implicit collection syntax in XAML to add items to this collection, because this property is the <c>ContentPropertyAttribute</c> for the Grid class.</para>
-                <example>
-                    <para>The <see cref="P:Xamarin.Forms.Grid.Children" /> property is supported by XAML.</para>
-                    <para>The following example shows the explicit syntax for the <see cref="P:Xamarin.Forms.Grid.Children" /> property:</para>
-                    <code lang="XAML Syntax"><![CDATA[
-<Grid>
-    ...
-    <Grid.Children>
-        [Child Elements]
-    </Grid.Children>
-    ...
-    [Child Elements]
-    ...
-</Grid>]]></code>
-                    <para>The following example shows the implicit syntax for the <see cref="P:Xamarin.Forms.Grid.Children" /> property:</para>
-                    <code lang="XAML Syntax"><![CDATA[
-<Grid>
-  ...
-  [Child Elements]
-  ...
-</Grid>]]></code>
-                    <para>There is no attribute syntax for the <see cref="P:Xamarin.Forms.Grid.Children" /> property.</para>
-                </example>
             </remarks>
         </member>
         <member name="P:Xamarin.Forms.Grid.ColumnDefinitions">
@@ -4944,24 +5274,6 @@ namespace FormsGallery
             <remarks>
                 <para>ColumnDefinitions is an ordered set of ColumnDefinition objects that determine the width of each column. Each successive ColumnDefintion controls the width of each successive column. If ColumnDefinitions is empty, or if there are more columns than definitions, then columns for which there is no definition are rendered as if they were controlled by a ColumnDefinition object that has its <see cref="P:Xamarin.Forms.ColumnDefinition.Width" /> property set to <see cref="P:Xamarin.Forms.GridLength.Auto" />.</para>
                 <para>The <see cref="P:Xamarin.Forms.Grid.ColumnDefinitions" /> property has XAML syntax support. The syntax for this operation is shown below.</para>
-                <example>
-                    <para>Nested tag syntax:</para>
-                    <code lang="XAML Syntax"><![CDATA[
-<Grid>
-    ...
-    <ColumnDefinitions>
-        <ColumnDefinition [Width="[LayoutOptions Value]"]
-                          [SizeChanged="[Method Name]"] />
-        <ColumnDefinition>
-            <Width>[LayoutOptions Value]</Width>
-            <SizeChanged>[Method Name]</SizeChanged>
-        </ColumnDefinition>
-        ...
-    </ColumnDefinitions>
-    ...
-</Grid>
-]]></code>
-                </example>
             </remarks>
         </member>
         <member name="F:Xamarin.Forms.Grid.ColumnDefinitionsProperty">
@@ -4979,22 +5291,6 @@ namespace FormsGallery
             <value>The space between columns in this <see cref="T:Xamarin.Forms.Grid" />layout.</value>
             <remarks>
                 <para>The <see cref="P:Xamarin.Forms.Grid.ColumnSpacing" /> property does not control spacing on the left and right edges of the <see cref="T:Xamarin.Forms.Grid" /> layout. Application developers can control the spacing around the outside of the <see cref="T:Xamarin.Forms.Grid" /> layout by setting the <see cref="P:Xamarin.Forms.Page.Padding" /> property of the visual element to which it belongs.</para>
-                <para>The <see cref="M:Xamarin.Forms.Grid.ColumnSpacing" /> propery has XAML syntax support . The syntax for this operation is shown below.</para>
-                <example>
-                    <para>Attribute syntax example:</para>
-                    <code lang="XAML Syntax"><![CDATA[
-<Grid ColumnSpacing="[Integer]" ... >
-    ...
-</Grid>]]></code>
-                    <para>Nested tag syntax:</para>
-                    <code lang="XAML Syntax"><![CDATA[
-<Grid>
-    ...
-    <ColumnSpacing>[Integer]</ColumnSpacing>
-    ...
-</Grid>
-]]></code>
-                </example>
             </remarks>
         </member>
         <member name="F:Xamarin.Forms.Grid.ColumnSpacingProperty">
@@ -5012,6 +5308,19 @@ namespace FormsGallery
             <summary>Gets the column of the <paramref name="bindable" /> child element.</summary>
             <returns>The column that the child element is in.</returns>
             <remarks>
+                <para>The <see cref="M:Xamarin.Forms.Grid.GetColum" /> method corresponds to the value that is set by the following XAML attached property.</para>
+                <list type="table">
+                    <listheader>
+                        <term>Attached Property</term>
+                        <description>Value</description>
+                    </listheader>
+                    <item>
+                        <term>Column</term>
+                        <description>
+                            <para>An integer that represents the Column in which the item will appear.</para>
+                        </description>
+                    </item>
+                </list>
                 <para>The remarks for the <see cref="M:Xamarin.Forms.Grid.SetColumn" /> method contain syntax for and information about the <c>Column</c> attached property.</para>
             </remarks>
         </member>
@@ -5020,6 +5329,19 @@ namespace FormsGallery
             <summary>Gets the column span of the <paramref name="bindable" /> child element.</summary>
             <returns>The column that the child element is in.</returns>
             <remarks>
+                <para>The <see cref="M:Xamarin.Forms.Grid.GetColumSpan" /> method corresponds to the value that is set by the following XAML attached property.</para>
+                <list type="table">
+                    <listheader>
+                        <term>Attached Property</term>
+                        <description>Value</description>
+                    </listheader>
+                    <item>
+                        <term>ColumnSpan</term>
+                        <description>
+                            <para>An integer that represents the number of Columns that the item will span.</para>
+                        </description>
+                    </item>
+                </list>
                 <para>The remarks for the <see cref="M:Xamarin.Forms.Grid.SetColumnSpan" /> method contain syntax for and information about the <c>ColumnSpan</c> attached property.</para>
             </remarks>
         </member>
@@ -5028,6 +5350,19 @@ namespace FormsGallery
             <summary>Gets the row of the <paramref name="bindable" /> child element.</summary>
             <returns>The row that the child element is in.</returns>
             <remarks>
+                <para>The <see cref="M:Xamarin.Forms.Grid.GetRow" /> method corresponds to the following XAML attached property:</para>
+                <list type="table">
+                    <listheader>
+                        <term>Attached Property</term>
+                        <description>Value</description>
+                    </listheader>
+                    <item>
+                        <term>Row</term>
+                        <description>
+                            <para>An integer that represents the row in which the item will appear.</para>
+                        </description>
+                    </item>
+                </list>
                 <para>The remarks for the <see cref="M:Xamarin.Forms.Grid.SetRow" /> method contain syntax for and information about the <c>Row</c> attached property.</para>
             </remarks>
         </member>
@@ -5036,6 +5371,17 @@ namespace FormsGallery
             <summary>Gets the row span of the <paramref name="bindable" /> child element.</summary>
             <returns>The row that the child element is in.</returns>
             <remarks>
+                <para>The <see cref="M:Xamarin.Forms.Grid.GetRowSpan" /> method corresponds to the following XAML attached properties:</para>
+                <list type="table">
+                    <listheader>
+                        <term>Attached Property</term>
+                        <description>Value</description>
+                    </listheader>
+                    <item>
+                        <term>RowSpan</term>
+                        <description>An integer that represents the number of rows that the item will span.<para /></description>
+                    </item>
+                </list>
                 <para>The remarks for the <see cref="M:Xamarin.Forms.Grid.SetRowSpan" /> method contain syntax for and information about the <c>RowSpan</c> attached property.</para>
             </remarks>
         </member>
@@ -5077,25 +5423,6 @@ namespace FormsGallery
             <value>A RowDefinitionCollection for the Grid instance.</value>
             <remarks>
                 <para>RowDefinitions is an ordered set of <see cref="T:Xamarin.Forms.RowDefinition" /> objects that determine the height of each column. Each successive RowDefintion controls the width of each successive column. If RowDefinitions is empty, or if there are more rows than definitions, then rows for which there is no definition are rendered as if they were controlled by a RowDefinition object that has its <see cref="P:Xamarin.Forms.RowDefinition.Height" /> property set to <see cref="P:Xamarin.Forms.GridLength.Auto" />.</para>
-                <para>The <see cref="P:Xamarin.Forms.Grid.RowDefinitions" /> property has XAML syntax support. The syntax for this operation is shown below.</para>
-                <example>
-                    <para>Nested tag syntax:</para>
-                    <code lang="XAML Syntax"><![CDATA[
-<Grid>
-    ...
-    <RowDefinitions>
-        <RowDefinition [Height="[LayoutOptions Value]"]
-                          [SizeChanged="[Method Name]"] />
-        <RowDefinition>
-            <Height>[LayoutOptions Value]</Height>
-            <SizeChanged>[Method Name]</SizeChanged>
-        </RowDefinition>
-        ...
-    </RowDefinitions>
-    ...
-</Grid>
-]]></code>
-                </example>
             </remarks>
         </member>
         <member name="F:Xamarin.Forms.Grid.RowDefinitionsProperty">
@@ -5113,22 +5440,6 @@ namespace FormsGallery
             <value>The space between rows</value>
             <remarks>
                 <para>The <see cref="P:Xamarin.Forms.Grid.RowSpacing" /> property does not control spacing on the top and bottom edges of the <see cref="T:Xamarin.Forms.Grid" /> layout. Application developers can control the spacing around the outside of the <see cref="T:Xamarin.Forms.Grid" /> layout by setting the <see cref="P:Xamarin.Forms.Page.Padding" /> property of the visual element to which it belongs.</para>
-                <para>The <see cref="M:Xamarin.Forms.Grid.RowSpacing" /> propery has XAML syntax support . The syntax for this operation is shown below.</para>
-                <example>
-                    <para>Attribute syntax example:</para>
-                    <code lang="XAML Syntax"><![CDATA[
-<Grid RowSpacing="[Integer]" ... >
-    ...
-</Grid>]]></code>
-                    <para>Nested tag syntax:</para>
-                    <code lang="XAML Syntax"><![CDATA[
-<Grid>
-    ...
-    <RowSpacing>[Integer]</RowSpacing>
-    ...
-</Grid>
-]]></code>
-                </example>
             </remarks>
         </member>
         <member name="F:Xamarin.Forms.Grid.RowSpacingProperty">
@@ -5146,28 +5457,19 @@ namespace FormsGallery
             <param name="value">The column in which to place the child element.</param>
             <summary>Changes the column in which a child element will be placed.</summary>
             <remarks>
-                <para>The <see cref="M:Xamarin.Forms.Grid.SetColumn" /> method has XAML syntax support for setting the attached <c>Column</c> property on the children of the <see cref="T:Xamarin.Forms.Grid" /> layout. The syntax for this operation is shown below.</para>
-                <example>
-                    <para>Attribute syntax example:</para>
-                    <code lang="XAML Syntax"><![CDATA[
-<Grid.Children>
-    ...
-    <[Child Element] Grid.Column=[Quoted Integer] ... />
-    ...
-</Grid.Children>]]></code>
-                    <para>Nested tag syntax:</para>
-                    <code lang="XAML Syntax"><![CDATA[
-<Grid.Children>
-    ...
-    <[Child Element]>
-        ...
-        <Grid.Column>[Integer]</Grid.Column>
-        ...
-    </[Child Element]>
-    ...
-</Grid.Children>
-]]></code>
-                </example>
+                <para>The <see cref="M:Xamarin.Forms.Grid.GetColumSpan" /> method corresponds to the value that is set by the following XAML attached property.</para>
+                <list type="table">
+                    <listheader>
+                        <term>Attached Property</term>
+                        <description>Value</description>
+                    </listheader>
+                    <item>
+                        <term>ColumnSpan</term>
+                        <description>
+                            <para>An integer that represents the Column in which the item will appear.</para>
+                        </description>
+                    </item>
+                </list>
             </remarks>
         </member>
         <member name="M:Xamarin.Forms.Grid.SetColumnSpan(Xamarin.Forms.BindableObject,System.Int32)">
@@ -5175,28 +5477,19 @@ namespace FormsGallery
             <param name="value">The new column span.</param>
             <summary>Changes the column span of the specified child element.</summary>
             <remarks>
-                <para>The <see cref="M:Xamarin.Forms.Grid.SetColumnSpan" /> method has XAML syntax support for setting the attached <c>ColumnSpan</c> property on the children of the <see cref="T:Xamarin.Forms.Grid" /> layout. The syntax for this operation is shown below.</para>
-                <example>
-                    <para>Attribute syntax example:</para>
-                    <code lang="XAML Syntax"><![CDATA[
-<Grid.Children>
-    ...
-    <[Child Element] Grid.ColumnSpan=[Quoted Integer] ... />
-    ...
-</Grid.Children>]]></code>
-                    <para>Nested tag syntax:</para>
-                    <code lang="XAML Syntax"><![CDATA[
-<Grid.Children>
-    ...
-    <[Child Element]>
-        ...
-        <Grid.ColumnSpan>[Integer]</Grid.ColumnSpan>
-        ...
-    </[Child Element]>
-    ...
-</Grid.Children>
-]]></code>
-                </example>
+                <para>The <see cref="M:Xamarin.Forms.Grid.GetColum" /> method corresponds to the value that is set by the following XAML attached property.</para>
+                <list type="table">
+                    <listheader>
+                        <term>Attached Property</term>
+                        <description>Value</description>
+                    </listheader>
+                    <item>
+                        <term>Column</term>
+                        <description>
+                            <para>An integer that represents the number of Columns that the item will span.</para>
+                        </description>
+                    </item>
+                </list>
             </remarks>
         </member>
         <member name="M:Xamarin.Forms.Grid.SetRow(Xamarin.Forms.BindableObject,System.Int32)">
@@ -5204,28 +5497,19 @@ namespace FormsGallery
             <param name="value">The row in which to place the child element.</param>
             <summary>Changes the row in which a child element will be placed.</summary>
             <remarks>
-                <para>The <see cref="M:Xamarin.Forms.Grid.SetRow" /> method has XAML syntax support for setting the attached <c>Row</c> property on the children of the <see cref="T:Xamarin.Forms.Grid" /> layout. The syntax for this operation is shown below.</para>
-                <example>
-                    <para>Attribute syntax example:</para>
-                    <code lang="XAML Syntax"><![CDATA[
-<Grid.Children>
-    ...
-    <[Child Element] Grid.Row=[Quoted Integer] ... />
-    ...
-</Grid.Children>]]></code>
-                    <para>Nested tag syntax:</para>
-                    <code lang="XAML Syntax"><![CDATA[
-<Grid.Children>
-    ...
-    <[Child Element]>
-        ...
-        <Grid.Row>[Integer]</Grid.Row>
-        ...
-    </[Child Element]>
-    ...
-</Grid.Children>
-]]></code>
-                </example>
+                <para>The <see cref="M:Xamarin.Forms.Grid.SetRow" /> method corresponds to the following XAML attached property:</para>
+                <list type="table">
+                    <listheader>
+                        <term>Attached Property</term>
+                        <description>Value</description>
+                    </listheader>
+                    <item>
+                        <term>Row</term>
+                        <description>
+                            <para>An integer that represents the row in which the item will appear.</para>
+                        </description>
+                    </item>
+                </list>
             </remarks>
         </member>
         <member name="M:Xamarin.Forms.Grid.SetRowSpan(Xamarin.Forms.BindableObject,System.Int32)">
@@ -5233,28 +5517,17 @@ namespace FormsGallery
             <param name="value">The new row span.</param>
             <summary>Changes the row span of the specified child element.</summary>
             <remarks>
-                <para>The <see cref="M:Xamarin.Forms.Grid.SetRowSpan" /> method has XAML syntax support for setting the attached <c>RowSpan</c> property on the children of the <see cref="T:Xamarin.Forms.Grid" /> layout. The syntax for this operation is shown below.</para>
-                <example>
-                    <para>Attribute syntax example:</para>
-                    <code lang="XAML Syntax"><![CDATA[
-<Grid.Children>
-    ...
-    <[Child Element] Grid.RowSpan=[Quoted Integer] ... />
-    ...
-</Grid.Children>]]></code>
-                    <para>Nested tag syntax:</para>
-                    <code lang="XAML Syntax"><![CDATA[
-<Grid.Children>
-    ...
-    <[Child Element]>
-        ...
-        <Grid.RowSpan>[Integer]</Grid.RowSpan>
-        ...
-    </[Child Element]>
-    ...
-</Grid.Children>
-]]></code>
-                </example>
+                <para>The <see cref="M:Xamarin.Forms.Grid.SetRowSpan" /> method corresponds to the following XAML attached property:</para>
+                <list type="table">
+                    <listheader>
+                        <term>Attached Property</term>
+                        <description>Value</description>
+                    </listheader>
+                    <item>
+                        <term>RowSpan</term>
+                        <description>An integer that represents the number of rows that the item will span.<para /></description>
+                    </item>
+                </list>
             </remarks>
         </member>
         <member name="T:Xamarin.Forms.Grid.IGridList`1">
@@ -6288,6 +6561,75 @@ public class App
 ]]></code>
                     <para>The FormsGallery sample, which can be found on the <format type="text/html"><a href="http://developer.xamarin.com/samples/tag/Xamarin.Forms/" target="_blank">Sample Applications</a></format> page, has a LabelDemoPage.cs file. This file contains a longer and more complete example.</para>
                 </example>
+                <para>The <see cref="T:Xamarin.Forms.Label" /> class has the following XAML properties:</para>
+                <list type="table">
+                    <listheader>
+                        <term>Property</term>
+                        <description>Value</description>
+                    </listheader>
+                    <item>
+                        <term>Font</term>
+                        <description>
+                            <para>Deprecated. Use <c>FontAttributes</c>, <c>FontFamily</c>, and <c>FontSize</c>, instead. A string of the format <c>[name],[attributes],[size]</c>. The font specification  may contain multiple attributes, e.g. <c>Georgia, Bold, Italic, 42</c>.</para>
+                        </description>
+                    </item>
+                    <item>
+                        <term>FontAttributes</term>
+                        <description>
+                            <para>
+                                <c>Bold</c>, <c>Bold,Italic</c>, or <c>None</c>.</para>
+                        </description>
+                    </item>
+                    <item>
+                        <term>FontFamily</term>
+                        <description>
+                            <para>A font family, such as <c>sans-serif</c> or <c>monospace</c>.</para>
+                        </description>
+                    </item>
+                    <item>
+                        <term>FontSize</term>
+                        <description>
+                            <para>A named size, such as <c>Large</c>, or an integer that represents the size in device units.</para>
+                        </description>
+                    </item>
+                    <!--TODO: Figure this out. ON HOLD from ermau 2014-01-20
+                <item>
+                    <term>FormattedText</term>
+                    <description><para></para></description>
+                </item>-->
+                    <item>
+                        <term>LineBreakMode</term>
+                        <description>
+                            <para>A string that corresponds to a <see cref="T:Xamarin.Forms.LineBreakMode" /> enumeration value.</para>
+                        </description>
+                    </item>
+                    <item>
+                        <term>Text</term>
+                        <description>
+                            <para>The text that will appear on the label.</para>
+                        </description>
+                    </item>
+                    <item>
+                        <term>TextColor</term>
+                        <description>
+                            <para>A color specification, with or without the prefix, "Color". For example, "Color.Red" and "Red" both specify the color red.</para>
+                        </description>
+                    </item>
+                    <item>
+                        <term>XAlign</term>
+                        <description>
+                            <para>
+                                <c>Center</c>, <c>End</c>, or <c>Start</c>, to indicate the horizontal placement of the label text.</para>
+                        </description>
+                    </item>
+                    <item>
+                        <term>YAlign</term>
+                        <description>
+                            <para>
+                                <c>Center</c>, <c>End</c>, or <c>Start</c>, to indicate the vertical placement of the label text.</para>
+                        </description>
+                    </item>
+                </list>
             </remarks>
         </member>
         <member name="C:Xamarin.Forms.Label">
@@ -6396,6 +6738,26 @@ public class App
                 <para>
                     <img href="Element.Hierarchy.png" />
                 </para>
+                <para>The <see cref="T:Xamarin.Forms.Layout" /> class has the following XAML properties:</para>
+                <list type="table">
+                    <listheader>
+                        <term>Property</term>
+                        <description>Value</description>
+                    </listheader>
+                    <item>
+                        <term>IsClippedToBounds</term>
+                        <description>
+                            <para>
+                                <c>true</c> or <c>false</c>, to indicate whether the layout is clipped to its bounding rectangle.</para>
+                        </description>
+                    </item>
+                    <item>
+                        <term>Padding</term>
+                        <description>
+                            <para>A comma-separated list of 4 integers that represent a <see cref="T:Xamarin.Forms.Thickness" /> structure.</para>
+                        </description>
+                    </item>
+                </list>
             </remarks>
             <altmember cref="T:Xamarin.Forms.ContentView" />
             <altmember cref="T:Xamarin.Forms.Layout`1" />
@@ -6799,6 +7161,52 @@ namespace FormsGallery
 
 ]]></code>
                 </example>
+                <para>The <see cref="T:Xamarin.Forms.ListView" /> class has the following XAML properties:</para>
+                <list type="table">
+                    <listheader>
+                        <term>Property</term>
+                        <description>Value</description>
+                    </listheader>
+                    <!-- TODO: Ask about these bindings.
+                <item>
+                    <term>GroupDisplayBinding</term>
+                    <description><para></para></description>
+                </item>
+                <item>
+                    <term>GroupHeaderTemplate</term>
+                    <description><para></para></description>
+                </item>
+                <item>
+                <item>
+                    <term>GroupShortNameBinding</term>
+                    <description><para></para></description>
+                </item>-->
+                    <item>
+                        <term>HasUnevenRows</term>
+                        <description>
+                            <para>
+                                <c>true</c> or <c>false</c>, to indicate whether the items in the list all have the same height.</para>
+                        </description>
+                    </item>
+                    <item>
+                        <term>IsGroupingEnabled</term>
+                        <description>
+                            <para>
+                                <c>true</c> or <c>false</c>, to indicate whether grouping is enabled.</para>
+                        </description>
+                    </item>
+                    <item>
+                        <term>RowHeight</term>
+                        <description>
+                            <para>An integer that describes the height of the items in the list. This is ignored if <c>HasUnevenRows</c> is <c>true</c>.</para>
+                        </description>
+                    </item>
+                    <!-- TODO: Named item? Index? What works?
+                <item>
+                    <term>SelectedItem</term>
+                    <description><para></para></description>
+                </item>-->
+                </list>
             </remarks>
         </member>
         <member name="C:Xamarin.Forms.ListView">
@@ -7136,6 +7544,7 @@ ListView CreateListView()
             <remarks>
                 <para>The following example code, taken from the <format type="text/html"><a href="https://github.com/xamarin/xamarin-forms-samples/tree/master/FormsGallery/FormsGallery/FormsGallery">FormsGallery</a></format> sample application, creates a <see cref="T:Xamarin.Forms.MasterDetailPage" /> that allows the user to view detailed information about a color that she chooses from a list. Note that the <c>NamedColorPage</c> class, defined in as a sublcass of <see cref="T:Xamarin.Forms.ContentPage" /> in another file in the sample application, simply displays RGB data, a <see cref="T:Xamarin.Forms.BoxView" /> with its background color set to the color that the user selected, and, finally, hue, saturation, and luminosity data.</para>
                 <para>The sample below illustrates three key concepts. First, the "Master" portion of the MasterDetailPage is represented by the <see cref="P:Xamarin.Forms.MasterDetailPage.Master" /> property, which is set to a <see cref="T:Xamarin.Forms.ListView" /> element in this example. This <see cref="T:Xamarin.Forms.ListView" /> element contains a label and a list of colors. Second, the "Detail" portion of the <see cref="T:Xamarin.Forms.MasterDetailPage" /> is represented by the <see cref="P:Xamarin.Forms.MasterDetailPage.Detail" /> property, which, in this example, is set to the <c>NamedColorPage</c> that was noted above. Third, and finally, the page that is represented by the <see cref="P:Xamarin.Forms.MasterDetailPage.Detail" /> property is displayed by setting the <see cref="P:Xamarin.Forms.MasterDetailPage.IsPresented" /> property to <see langword="false" />; That is, the <see cref="P:Xamarin.Forms.MasterDetailPage.IsPresented" /> property controls whether or not the page that is represented by the <see cref="P:Xamarin.Forms.MasterDetailPage.Master" /> is presented to the user.</para>
+                <block type="note">The <see cref="P:Xamarin.Forms.MasterDetailPage.Master" /> page must have its <see cref="P:Xamarin.Forms.Page.Title" /> property set. Additionally, the <see cref="P:Xamarin.Forms.MasterDetailPage.Detail" /> page will only display a navigation bar if it is an instance of <see cref="T:Xamarin.Forms.NavigationPage" />.</block>
                 <example>
                     <code lang="C#"><![CDATA[
 using System;
@@ -7184,6 +7593,7 @@ namespace FormsGallery
             // Create the master page with the ListView.
             this.Master = new ContentPage
             {
+            	Title = header.Text,
                 Content = new StackLayout
                 {
                     Children = 
@@ -7194,8 +7604,9 @@ namespace FormsGallery
                 }
             };
 
-            // Create the detail page using NamedColorPage
-            this.Detail = new NamedColorPage(true);
+            // Create the detail page using NamedColorPage and wrap it in a
+            // navigation page to provide a NavigationBar and Toggle button
+            this.Detail = new NavigationPage(new NamedColorPage(true));
 
             // For Windows Phone, provide a way to get back to the master page.
             if (Device.OS == TargetPlatform.WinPhone)
@@ -7309,7 +7720,45 @@ namespace FormsGallery
         </member>
         <member name="T:Xamarin.Forms.MenuItem">
             <summary>Class that presents a menu item and associates it with a command.</summary>
-            <remarks>To be added.</remarks>
+            <remarks>
+                <para>The <see cref="T:Xamarin.Forms.MenuItem" /> class has the following XAML properties:</para>
+                <list type="table">
+                    <listheader>
+                        <term>Property</term>
+                        <description>Value</description>
+                    </listheader>
+                    <item>
+                        <term>Command</term>
+                        <description>
+                            <para>A binding to a command.</para>
+                        </description>
+                    </item>
+                    <item>
+                        <term>CommandParameter</term>
+                        <description>
+                            <para>A parameter to pass to the command.</para>
+                        </description>
+                    </item>
+                    <!-- TODO: Getting info from Jason on how to specify images
+                  <item>
+                      <term>Icon</term>
+                      <description><para></para></description>
+                  </item> -->
+                    <item>
+                        <term>IsDestructive</term>
+                        <description>
+                            <para>
+                                <c>true</c> or <c>false</c>, to indicate whether the command deletes an item in a list.</para>
+                        </description>
+                    </item>
+                    <item>
+                        <term>Text</term>
+                        <description>
+                            <para>The text to display on the menu item.</para>
+                        </description>
+                    </item>
+                </list>
+            </remarks>
         </member>
         <member name="C:Xamarin.Forms.MenuItem">
             <summary>Intitializes a new <see cref="T:Xamarin.Forms.MenuItem" /> instance.</summary>
@@ -7445,7 +7894,28 @@ Assert.AreEqual(2, subscriber.IntProperty);
         <member name="T:Xamarin.Forms.MultiPage`1">
             <typeparam name="T">The particular subclass of <see cref="T:Xamarin.Forms.Page" /> that the MultiPage services.</typeparam>
             <summary>A bindable, templatable base class for pages which contain multiple sub-pages.</summary>
-            <remarks>Provides a base implementation for binding and templating pages.</remarks>
+            <remarks>
+                <para>Provides a base implementation for binding and templating pages.</para>
+                <para>The <see cref="T:Xamarin.Forms.MultiPage`1" /> class has the following XAML properties:</para>
+                <list type="table">
+                    <listheader>
+                        <term>Property</term>
+                        <description>Value</description>
+                    </listheader>
+                    <item>
+                        <term>ItemsSource</term>
+                        <description>
+                            <para>XAML extension markup that specifies a static collection of data objects.</para>
+                        </description>
+                    </item>
+                    <item>
+                        <term>ItemTemplate</term>
+                        <description>
+                            <para>XAML markup that describes a view that has bindings to properties on the members of the collection that is specified by <c>ItemsSource</c>.</para>
+                        </description>
+                    </item>
+                </list>
+            </remarks>
         </member>
         <member name="C:Xamarin.Forms.MultiPage`1">
             <summary>Provides the base initialization for objects derived from the MultiPage&lt;T&gt; class.</summary>
@@ -7569,7 +8039,33 @@ Children = {
         </member>
         <member name="T:Xamarin.Forms.MultiTrigger">
             <summary>Class that represents a list of property and binding conditions, and a list of setters that are applied when all of the conditions in the list are met.</summary>
-            <remarks>To be added.</remarks>
+            <remarks>
+                <para>The <see cref="T:Xamarin.Forms.MultiTrigger" /> class has the following XAML properties:</para>
+                <list type="table">
+                    <listheader>
+                        <term>Property</term>
+                        <description>Value</description>
+                    </listheader>
+                    <item>
+                        <term>Property</term>
+                        <description>
+                            <para>The name of the property whose value to compare against <c>Value</c>.</para>
+                        </description>
+                    </item>
+                    <item>
+                        <term>Conditions</term>
+                        <description>
+                            <para>A list of <c>PropertyCondition</c> and/or <c>BindingCondition</c> markup instances that specify the conditions that all must be met before all of the setters that are listed in <c>Setters</c> are applied.</para>
+                        </description>
+                    </item>
+                    <item>
+                        <term>Setters</term>
+                        <description>
+                            <para>A list of setters that are applied when all of the property conditions are met. Each <c>Setter</c> tag or tag pair in the list has a <c>Property</c> and <c>Value</c> that represents the assignments to perform when the condition is met.</para>
+                        </description>
+                    </item>
+                </list>
+            </remarks>
         </member>
         <member name="C:Xamarin.Forms.MultiTrigger(System.Type)">
             <param name="targetType">To be added.</param>
@@ -8110,6 +8606,43 @@ namespace MyFirstFormsApp.WinPhone
 } </code>
                 </example>
                 <para>In addition to their role as the main pages of <see cref="N:Xamarin.Forms" /> applications, <see cref="T:Xamarin.Forms.Page" /> objects and their descendants can be used with navigation classes, such as <see cref="T:Xamarin.Forms.Navigation" /> or <see cref="T:Xamarin.Forms.MasterDetailPage" />, among others, to provide rich user experiences that conform to the expected behaviors on each platform.</para>
+                <para>The <see cref="T:Xamarin.Forms.Page" /> class has the following XAML properties:</para>
+                <list type="table">
+                    <listheader>
+                        <term>Property</term>
+                        <description>Value</description>
+                    </listheader>
+                    <item>
+                        <term>BackgroundImage</term>
+                        <description>
+                            <para>A local file specification that identifies an image.</para>
+                        </description>
+                    </item>
+                    <item>
+                        <term>Icon</term>
+                        <description>
+                            <para>A local file specification that identifies an image.</para>
+                        </description>
+                    </item>
+                    <item>
+                        <term>Padding</term>
+                        <description>
+                            <para>A comma-separated list of 4 integers that represent a <see cref="T:Xamarin.Forms.Thickness" /> structure.</para>
+                        </description>
+                    </item>
+                    <item>
+                        <term>Title</term>
+                        <description>
+                            <para>Text that represents the title of the page.</para>
+                        </description>
+                    </item>
+                    <item>
+                        <term>ToolbarItems</term>
+                        <description>
+                            <para>A list of <c>ToolBarItem</c> elements.</para>
+                        </description>
+                    </item>
+                </list>
             </remarks>
         </member>
         <member name="C:Xamarin.Forms.Page">
@@ -8350,6 +8883,31 @@ namespace FormsGallery
 }
 ]]></code>
                 </example>
+                <para>The <see cref="T:Xamarin.Forms.Picker" /> class has the following XAML properties:</para>
+                <list type="table">
+                    <listheader>
+                        <term>Property</term>
+                        <description>Value</description>
+                    </listheader>
+                    <item>
+                        <term>Items</term>
+                        <description>
+                            <para>A local file specification that identifies an image.</para>
+                        </description>
+                    </item>
+                    <item>
+                        <term>SelectedIndex</term>
+                        <description>
+                            <para>An integer, from 0 to 1 less than the count of items that are listed in <c>Items</c>. Currently, this element must be specified in a tag that appears lexically below <c>Items</c>.</para>
+                        </description>
+                    </item>
+                    <item>
+                        <term>Title</term>
+                        <description>
+                            <para>Text that represents the title of the picker.</para>
+                        </description>
+                    </item>
+                </list>
                 <para>
                     <img href="Picker.TripleScreenShot.png" />
                 </para>
@@ -8517,7 +9075,7 @@ namespace FormsGallery
             <remarks>To be added.</remarks>
         </member>
         <member name="T:Xamarin.Forms.ProgressBar">
-            <summary>A <see cref="T:Xamarin.Forms.View" /> control indicating a progress.</summary>
+            <summary>A <see cref="T:Xamarin.Forms.View" /> control that displays progress.</summary>
             <remarks>
                 <para>The following example shows the usage of a ProgressBar.</para>
                 <example>
@@ -8537,6 +9095,19 @@ Debug.WriteLine ("Animation completed");
                 <para>
                     <img href="ProgressBar.TripleScreenShot.png" />
                 </para>
+                <para>The <see cref="T:Xamarin.Forms.ProgressBar" /> class has the following XAML property:</para>
+                <list type="table">
+                    <listheader>
+                        <term>Property</term>
+                        <description>Value</description>
+                    </listheader>
+                    <item>
+                        <term>Progress</term>
+                        <description>
+                            <para>A decimal value between 0 and 1, inclusive, that specifies the fraction of the bar that is colored.</para>
+                        </description>
+                    </item>
+                </list>
             </remarks>
         </member>
         <member name="C:Xamarin.Forms.ProgressBar">
@@ -8545,8 +9116,8 @@ Debug.WriteLine ("Animation completed");
         </member>
         <member name="P:Xamarin.Forms.ProgressBar.Progress">
             <summary>Gets or sets the progress value. This is s bindable property.</summary>
-            <value>A double representing the progress on a 0 to 1 scale.</value>
-            <remarks>Values outside of the 0 to 1 range will be clamped.</remarks>
+            <value>Gets or sets a value that specifies the fraction of the bar that is colored.</value>
+            <remarks>Values less than 0 or larger than 1 will be clamped to the range [0-1].</remarks>
         </member>
         <member name="F:Xamarin.Forms.ProgressBar.ProgressProperty">
             <summary>Identifies the Progress bindable property.</summary>
@@ -8582,7 +9153,27 @@ Debug.WriteLine ("Animation completed");
         </member>
         <member name="T:Xamarin.Forms.PropertyCondition">
             <summary>Class that represents a value comparison with a property.</summary>
-            <remarks>To be added.</remarks>
+            <remarks>
+                <para>The <see cref="T:Xamarin.Forms.PropertyCondition" /> class has the following XAML properties:</para>
+                <list type="table">
+                    <listheader>
+                        <term>Property</term>
+                        <description>Value</description>
+                    </listheader>
+                    <item>
+                        <term>Property</term>
+                        <description>
+                            <para>The name of the property to check.</para>
+                        </description>
+                    </item>
+                    <item>
+                        <term>Value</term>
+                        <description>
+                            <para>The value for which the condition is met.</para>
+                        </description>
+                    </item>
+                </list>
+            </remarks>
         </member>
         <member name="C:Xamarin.Forms.PropertyCondition">
             <summary>Initializes a new <see cref="T:Xamarin.Forms.PropertyCondition" /> instance.</summary>
@@ -8608,6 +9199,7 @@ Debug.WriteLine ("Animation completed");
             <summary>Struct defining a rectangle, using doubles.</summary>
             <remarks>
                 <para>Application developers should be aware of the limits of floating-point representations, specifically the possibility of incorrect comparisons and equality checks for values with small differences. David Goldberg's paper <format type="text/html"><a href="http://docs.oracle.com/cd/E19957-01/806-3568/ncg_goldberg.html">What Every Computer Scientist Should Know About Floating-Point Arithmetic</a></format> describes the issues excellently. </para>
+                <block type="note">Where Xamarin.Forms supports XAML for <see cref="T:Xamarin.Forms.Rectangle" /> structures, app devs can represent the rectangle as a comma-separated list of the X-coordinate, Y-Coordinate, Width, and Height.</block>
             </remarks>
         </member>
         <member name="C:Xamarin.Forms.Rectangle(Xamarin.Forms.Point,Xamarin.Forms.Size)">
@@ -8908,6 +9500,37 @@ public class RelativeLayoutExample : ContentPage
 ]]></code>
                 </example>
                 <para>For a more complete example that exercises many more of the layout options for the <see cref="T:Xamarin.Forms.RelativeLayout" /> class, see the FormsGallery sample that can be found on the <format type="text/html"><a href="http://developer.xamarin.com/samples/tag/Xamarin.Forms/" target="_blank">Sample Applications</a></format> page.</para>
+                <para>The <see cref="T:Xamarin.Forms.RelativeLayout" /> class has the following XAML attached properties:</para>
+                <list type="table">
+                    <listheader>
+                        <term>AttachedProperty</term>
+                        <description>Value</description>
+                    </listheader>
+                    <item>
+                        <term>XConstraint</term>
+                        <description>
+                            <para>XAML markup extension for a constraint expression. See <see cref="T:Xamarin.Forms.ConstraintExpression" />.</para>
+                        </description>
+                    </item>
+                    <item>
+                        <term>YConstraint</term>
+                        <description>
+                            <para>XAML markup extension for a constraint expression. See <see cref="T:Xamarin.Forms.ConstraintExpression" />.</para>
+                        </description>
+                    </item>
+                    <item>
+                        <term>WidthConstraint</term>
+                        <description>
+                            <para>XAML markup extension for a constraint expression. See <see cref="T:Xamarin.Forms.ConstraintExpression" />.</para>
+                        </description>
+                    </item>
+                    <item>
+                        <term>HeightConstraint</term>
+                        <description>
+                            <para>XAML markup extension for a constraint expression. See <see cref="T:Xamarin.Forms.ConstraintExpression" />.</para>
+                        </description>
+                    </item>
+                </list>
             </remarks>
         </member>
         <member name="C:Xamarin.Forms.RelativeLayout">
@@ -9152,6 +9775,19 @@ public class RelativeLayoutExample : ContentPage
         <member name="T:Xamarin.Forms.RowDefinition">
             <summary>An <see cref="I:Xamarin.Forms.IDefinition" /> that defines properties for a row in a <see cref="T:Xamarin.Forms.Grid" />.</summary>
             <remarks>
+                <para>The <see cref="T:Xamarin.Forms.RowDefinition" /> class has the following XAML property:</para>
+                <list type="table">
+                    <listheader>
+                        <term>Property</term>
+                        <description>Value</description>
+                    </listheader>
+                    <item>
+                        <term>Height</term>
+                        <description>
+                            <para>"*" or "Auto" to indicate the corresponding <see cref="T:Xamarin.Forms.GridUnitType" /> enumeration values, or a number to indicate an absolute height.</para>
+                        </description>
+                    </item>
+                </list>
                 <example>
                     <para>App developers can specify <see cref="T:Xamarin.Forms.GridUnitType" /> values for the <see cref="P:Xamarin.Forms.ColumnDefinition.Height" /> property in XAML. This is typically done inside tags for the <see cref="P:Xamarin.Forms.Grid.RowDefinitions" /> collection property. The following example demonstrates setting three row heights to each of the three valid <see cref="T:Xamarin.Forms.GridUnitType" /> values:</para>
                     <code lang="XAML"><![CDATA[
@@ -9232,10 +9868,30 @@ for (var i=0; i<100; i++)
   stack.Children.Add (new Button { Text = "Foo"});
               ]]></code>
                 </example>
-                <para>It is not recommended to nest ScrollView elements, or other elements with scrolling capabilities, like <see cref="T:Xamarin.Forms.WebView" />.</para>
+                <block type="note">Application developers should not nest one <see cref="T:Xamarin.Forms.ScrollView" /> within another. Additinoally, they should refrain from nesting them  other elements that can scroll, such as <see cref="T:Xamarin.Forms.WebView" />.</block>
                 <para>
                     <img href="ScrollView.TripleScreenShot.png" />
                 </para>
+                <para>The <see cref="T:Xamarin.Forms.ScrollView" /> class has the following XAML properties:</para>
+                <list type="table">
+                    <listheader>
+                        <term>Property</term>
+                        <description>Value</description>
+                    </listheader>
+                    <item>
+                        <term>Content</term>
+                        <description>
+                            <para>Markup that specifies a <see cref="T:Xamarin.Forms.View" /> to display in the <see cref="T:Xamarin.Forms.ScrollView" />.</para>
+                        </description>
+                    </item>
+                    <item>
+                        <term>Orientation</term>
+                        <description>
+                            <para>
+                                <c>Horizontal</c> or <c>Vertical</c>, to indicate the scroll direction.</para>
+                        </description>
+                    </item>
+                </list>
             </remarks>
         </member>
         <member name="C:Xamarin.Forms.ScrollView">
@@ -9243,13 +9899,13 @@ for (var i=0; i<100; i++)
             <remarks />
         </member>
         <member name="P:Xamarin.Forms.ScrollView.Content">
-            <summary>Gets or sets the content of the ScrollView.</summary>
-            <value>A <see cref="T:Xamarin.Forms.View" /> used as content.</value>
+            <summary>Gets or sets a <see cref="T:Xamarin.Forms.View" /> to display in the <see cref="T:Xamarin.Forms.ScrollView" />.</summary>
+            <value>The <see cref="T:Xamarin.Forms.View" /> that is displayed.</value>
             <remarks />
         </member>
         <member name="P:Xamarin.Forms.ScrollView.ContentSize">
             <summary>Gets the size of the Content. This is a bindable property.</summary>
-            <value>A <see cref="T:Xamarin.Forms.Size" /> representing the size of the content.</value>
+            <value>A <see cref="T:Xamarin.Forms.Size" /> that represents the size of the content.</value>
             <remarks />
         </member>
         <member name="F:Xamarin.Forms.ScrollView.ContentSizeProperty">
@@ -9257,10 +9913,10 @@ for (var i=0; i<100; i++)
             <remarks>This bindable property is read-only.</remarks>
         </member>
         <member name="M:Xamarin.Forms.ScrollView.LayoutChildren(System.Double,System.Double,System.Double,System.Double)">
-            <param name="x">A value representing the x coordinate of the child region bounding box.</param>
-            <param name="y">A value representing the y coordinate of the child region bounding box.</param>
-            <param name="width">A value representing the y coordinate of the child region bounding box.</param>
-            <param name="height">A value representing the y coordinate of the child region bounding box.</param>
+            <param name="x">A value that represents the x coordinate of the child region bounding box.</param>
+            <param name="y">A value that represents the y coordinate of the child region bounding box.</param>
+            <param name="width">A value that represents  the y coordinate of the child region bounding box.</param>
+            <param name="height">A value that represents the y coordinate of the child region bounding box.</param>
             <summary>Positions and sizes the content of a ScrollView.</summary>
             <remarks />
         </member>
@@ -9401,6 +10057,43 @@ namespace FormsGallery
                 <para>
                     <img href="SearchBar.TripleScreenShot.png" />
                 </para>
+                <para>The <see cref="T:Xamarin.Forms.SearchBar" /> class has the following XAML properties:</para>
+                <list type="table">
+                    <listheader>
+                        <term>Property</term>
+                        <description>Value</description>
+                    </listheader>
+                    <item>
+                        <term>CancelButtonColor</term>
+                        <description>
+                            <para>A color specification, with or without the prefix, "Color". For example, "Color.Red" and "Red" both specify the color red.</para>
+                        </description>
+                    </item>
+                    <item>
+                        <term>Placeholder</term>
+                        <description>
+                            <para>The default text that will appear in the search bar when it is empty.</para>
+                        </description>
+                    </item>
+                    <item>
+                        <term>SearchCommand</term>
+                        <description>
+                            <para>XAML markup extension that describes a binding to a command.</para>
+                        </description>
+                    </item>
+                    <item>
+                        <term>SearchCommandParameter</term>
+                        <description>
+                            <para>The parameter for the search command.</para>
+                        </description>
+                    </item>
+                    <item>
+                        <term>Text</term>
+                        <description>
+                            <para>The initial text that will appear in the search bar.</para>
+                        </description>
+                    </item>
+                </list>
             </remarks>
         </member>
         <member name="C:Xamarin.Forms.SearchBar">
@@ -9475,20 +10168,42 @@ namespace FormsGallery
             <remarks>To be added.</remarks>
         </member>
         <member name="T:Xamarin.Forms.Setter">
-            <summary>Identifies an object used to set the value of a BindableProperty on a targeted object.</summary>
-            <remarks>Setters are used in the context of Trigger and Style.</remarks>
+            <summary>Represents an assignment of a property to a value, typically in a style or in response to a trigger.</summary>
+            <remarks>
+                <para>Setters are used with triggers and styles.</para>
+                <para>The <see cref="T:Xamarin.Forms.Setter" /> class has the following XAML properties:</para>
+                <list type="table">
+                    <listheader>
+                        <term>Property</term>
+                        <description>Value</description>
+                    </listheader>
+                    <item>
+                        <term>Property</term>
+                        <description>
+                            <para>The name of the property to set.</para>
+                        </description>
+                    </item>
+                    <item>
+                        <term>Value</term>
+                        <description>
+                            <para>The value to apply to the property.</para>
+                        </description>
+                    </item>
+                </list>
+            </remarks>
         </member>
         <member name="C:Xamarin.Forms.Setter">
-            <summary>Creates a new instnce of Setter.</summary>
+            <summary>Creates a new <see cref="T:Xamarin.Forms.Setter" /> object.</summary>
             <remarks>To be added.</remarks>
         </member>
         <member name="P:Xamarin.Forms.Setter.Property">
-            <summary>Identifes the BindableProperty of the Setter.</summary>
+            <summary>The property on which to apply the assignment.</summary>
             <value>To be added.</value>
-            <remarks>To be added.</remarks>
+            <remarks>
+                <para>Only bindable properties can be set with a <see cref="T:Xamarin.Forms.Setter" />.</para>.</remarks>
         </member>
         <member name="P:Xamarin.Forms.Setter.Value">
-            <summary>Identifies the Value of the Setter</summary>
+            <summary>The value to assign to the property.</summary>
             <value>To be added.</value>
             <remarks>To be added.</remarks>
         </member>
@@ -9661,6 +10376,31 @@ namespace FormsGallery
                 <para>
                     <img href="Slider.TripleScreenShot.png" />
                 </para>
+                <para>The <see cref="T:Xamarin.Forms.Slider" /> class has the following XAML properties:</para>
+                <list type="table">
+                    <listheader>
+                        <term>Property</term>
+                        <description>Value</description>
+                    </listheader>
+                    <item>
+                        <term>Maximum</term>
+                        <description>
+                            <para>An integer or decimal literal.</para>
+                        </description>
+                    </item>
+                    <item>
+                        <term>Minimum</term>
+                        <description>
+                            <para>An integer or decimal literal. If this value is nonnegative, it must appear lexically below <c>Maximum</c>, so that validation can succeed.</para>
+                        </description>
+                    </item>
+                    <item>
+                        <term>Value</term>
+                        <description>
+                            <para>An integer or decimal literal that represents a number that is in the range[<c>Minimum</c>,<c>Maximum</c>].</para>
+                        </description>
+                    </item>
+                </list>
             </remarks>
         </member>
         <member name="C:Xamarin.Forms.Slider">
@@ -9896,6 +10636,26 @@ StackLayout stackLayout = new StackLayout
                 <para>
                     <img href="StackLayout.TripleScreenShot.png" />
                 </para>
+                <para>The <see cref="T:Xamarin.Forms.StackLayout" /> class has the following XAML properties:</para>
+                <list type="table">
+                    <listheader>
+                        <term>Property</term>
+                        <description>Value</description>
+                    </listheader>
+                    <item>
+                        <term>Orientation</term>
+                        <description>
+                            <para>
+                                <c>Horizontal</c> or <c>Vertical</c>. The default is <c>Vertical</c>.</para>
+                        </description>
+                    </item>
+                    <item>
+                        <term>Spacing</term>
+                        <description>
+                            <para>An integer or decimal.</para>
+                        </description>
+                    </item>
+                </list>
             </remarks>
         </member>
         <member name="C:Xamarin.Forms.StackLayout">
@@ -10041,11 +10801,46 @@ namespace FormsGallery
                 <para>
                     <img href="Stepper.TripleScreenShot.png" />
                 </para>
+                <para>The <see cref="T:Xamarin.Forms.Stepper" /> class has the following XAML properties:</para>
+                <list type="table">
+                    <listheader>
+                        <term>Property</term>
+                        <description>Value</description>
+                    </listheader>
+                    <item>
+                        <term>Increment</term>
+                        <description>
+                            <para>An integer or decimal literal.</para>
+                        </description>
+                    </item>
+                    <item>
+                        <term>Maximum</term>
+                        <description>
+                            <para>An integer or decimal literal.</para>
+                        </description>
+                    </item>
+                    <item>
+                        <term>Minimum</term>
+                        <description>
+                            <para>An integer or decimal literal. If this value is nonnegative, it must appear lexically below <c>Maximum</c>, so that validation can succeed.</para>
+                        </description>
+                    </item>
+                    <item>
+                        <term>Value</term>
+                        <description>
+                            <para>An integer or decimal literal that represents a number that is in the range[<c>Minimum</c>,<c>Maximum</c>].</para>
+                        </description>
+                    </item>
+                    <item>
+                        <term>ValueChanged</term>
+                        <description>The name of an event handler. Note that this tag must appear below <c>Value</c>.</description>
+                    </item>
+                </list>
             </remarks>
         </member>
         <member name="C:Xamarin.Forms.Stepper">
             <summary>Initializes a new instance of the Stepper class.</summary>
-            <remarks />
+            <remarks>To be added.</remarks>
         </member>
         <member name="C:Xamarin.Forms.Stepper(System.Double,System.Double,System.Double,System.Double)">
             <param name="min">The minimum selectable value.</param>
@@ -10053,7 +10848,7 @@ namespace FormsGallery
             <param name="val">The current selected value.</param>
             <param name="increment">The increment by which Value is increased or decreased.</param>
             <summary>Initializes a new instance of the Stepper class.</summary>
-            <remarks />
+            <remarks>To be added.</remarks>
         </member>
         <member name="P:Xamarin.Forms.Stepper.Increment">
             <summary>Gets or sets the increment by which Value is increased or decreased. This is a bindable property.</summary>
@@ -10062,38 +10857,38 @@ namespace FormsGallery
         </member>
         <member name="F:Xamarin.Forms.Stepper.IncrementProperty">
             <summary>Identifies the Increment bindable property.</summary>
-            <remarks />
+            <remarks>To be added.</remarks>
         </member>
         <member name="P:Xamarin.Forms.Stepper.Maximum">
             <summary>Gets or sets the maximum selectable value. This is a bindable property.</summary>
             <value>A double.</value>
-            <remarks />
+            <remarks>To be added.</remarks>
         </member>
         <member name="F:Xamarin.Forms.Stepper.MaximumProperty">
             <summary>Identifies the Maximum bindable property.</summary>
-            <remarks />
+            <remarks>To be added.</remarks>
         </member>
         <member name="P:Xamarin.Forms.Stepper.Minimum">
             <summary>Gets or sets the minimum selectabel value. This is a bindable property.</summary>
             <value>A double.</value>
-            <remarks />
+            <remarks>To be added.</remarks>
         </member>
         <member name="F:Xamarin.Forms.Stepper.MinimumProperty">
             <summary>Identifies the Minimum bindable property.</summary>
-            <remarks />
+            <remarks>To be added.</remarks>
         </member>
         <member name="P:Xamarin.Forms.Stepper.Value">
             <summary>Gets or sets the current value. This is a bindable property.</summary>
             <value>A double.</value>
-            <remarks />
+            <remarks>To be added.</remarks>
         </member>
         <member name="E:Xamarin.Forms.Stepper.ValueChanged">
-            <summary>The ValueChanged event is fired when the Value has changed.</summary>
-            <remarks />
+            <summary>Raised when the <see cref="P:Xamarin.Forms.Stepper.Value" /> property changes.</summary>
+            <remarks>To be added.</remarks>
         </member>
         <member name="F:Xamarin.Forms.Stepper.ValueProperty">
             <summary>Identifies the Value bindable property.</summary>
-            <remarks />
+            <remarks>To be added.</remarks>
         </member>
         <member name="T:Xamarin.Forms.StreamImageSource">
             <summary>
@@ -10120,7 +10915,51 @@ namespace FormsGallery
         </member>
         <member name="T:Xamarin.Forms.Style">
             <summary>Class that contains triggers, setters, and behaviors that completely or partially define the appearance and behavior of a class of visual elements.</summary>
-            <remarks>To be added.</remarks>
+            <remarks>
+                <para>The <see cref="T:Xamarin.Forms.Style" /> class has the following XAML properties:</para>
+                <list type="table">
+                    <listheader>
+                        <term>Property</term>
+                        <description>Value</description>
+                    </listheader>
+                    <item>
+                        <term>BasedOn</term>
+                        <description>
+                            <para>A <c>StaticResource</c> markup extension that names the style on which this style is based.</para>
+                        </description>
+                    </item>
+                    <item>
+                        <term>BaseResourceKey</term>
+                        <description>
+                            <para>A resource dictionary key that names a dynamic base style.</para>
+                        </description>
+                    </item>
+                    <item>
+                        <term>Behaviors</term>
+                        <description>
+                            <para>Markup for the behaviors that are associated with the style.</para>
+                        </description>
+                    </item>
+                    <item>
+                        <term>Setters</term>
+                        <description>
+                            <para>A list of setters containing <c>Property</c> and <c>Value</c> elements or attributes.</para>
+                        </description>
+                    </item>
+                    <item>
+                        <term>TargetType</term>
+                        <description>
+                            <para>The name of the type that the style is intended for.</para>
+                        </description>
+                    </item>
+                    <item>
+                        <term>Triggers</term>
+                        <description>
+                            <para>A list of triggers.</para>
+                        </description>
+                    </item>
+                </list>
+            </remarks>
         </member>
         <member name="C:Xamarin.Forms.Style(System.Type)">
             <param name="targetType">To be added.</param>
@@ -10220,6 +11059,26 @@ namespace FormsGallery
                 <para>
                     <img href="Switch.TripleScreenShot.png" />
                 </para>
+                <para>The <see cref="T:Xamarin.Forms.Switch" /> class has the following XAML properties:</para>
+                <list type="table">
+                    <listheader>
+                        <term>Property</term>
+                        <description>Value</description>
+                    </listheader>
+                    <item>
+                        <term>IsToggled</term>
+                        <description>
+                            <para>
+                                <c>true</c> or <c>false</c>, to indicate whether the switch has been toggled.</para>
+                        </description>
+                    </item>
+                    <item>
+                        <term>Toggled</term>
+                        <description>
+                            <para>The name of an event handler. Note that this tag must appear below <c>IsToggled</c>.</para>
+                        </description>
+                    </item>
+                </list>
             </remarks>
         </member>
         <member name="C:Xamarin.Forms.Switch">
@@ -10294,33 +11153,59 @@ namespace FormsGallery
                 <para>
                     <img href="SwitchCell.TripleScreenShot.png" />
                 </para>
+                <para>The <see cref="T:Xamarin.Forms.SwitchCell" /> class has the following XAML properties:</para>
+                <list type="table">
+                    <listheader>
+                        <term>Property</term>
+                        <description>Value</description>
+                    </listheader>
+                    <item>
+                        <term>On</term>
+                        <description>
+                            <para>
+                                <c>true</c> or <c>false</c>, to indicate whether the switch cell is in the "on" position.</para>
+                        </description>
+                    </item>
+                    <item>
+                        <term>OnChanged</term>
+                        <description>
+                            <para>The name of an event handler. Note that this tag must appear below <c>On</c>.</para>
+                        </description>
+                    </item>
+                    <item>
+                        <term>Text</term>
+                        <description>
+                            <para>Text that represents the title of the switch cell.</para>
+                        </description>
+                    </item>
+                </list>
             </remarks>
         </member>
         <member name="C:Xamarin.Forms.SwitchCell">
             <summary>Initializes a new instance of the SwitchCell class.</summary>
-            <remarks />
+            <remarks>To be added.</remarks>
         </member>
         <member name="P:Xamarin.Forms.SwitchCell.On">
             <summary>Gets or sets the state of the switch. This is a bindable property.</summary>
             <value>Default is <see langword="false" />.</value>
-            <remarks />
+            <remarks>To be added.</remarks>
         </member>
         <member name="E:Xamarin.Forms.SwitchCell.OnChanged">
             <summary>Triggered when the switch has changed value.</summary>
-            <remarks />
+            <remarks>To be added.</remarks>
         </member>
         <member name="F:Xamarin.Forms.SwitchCell.OnProperty">
-            <summary>Identifies the On bindable property.</summary>
-            <remarks />
+            <summary>Identifies the <see cref="P:Xamarin.Forms.SwitchCell.On" /> bindable property.</summary>
+            <remarks>To be added.</remarks>
         </member>
         <member name="P:Xamarin.Forms.SwitchCell.Text">
             <summary>Gets or sets the text displayed next to the switch. This is a bindable property.</summary>
             <value />
-            <remarks />
+            <remarks>To be added.</remarks>
         </member>
         <member name="F:Xamarin.Forms.SwitchCell.TextProperty">
             <summary>Identifies the Text bindable property.</summary>
-            <remarks />
+            <remarks>To be added.</remarks>
         </member>
         <member name="T:Xamarin.Forms.TabbedPage">
             <summary>
@@ -10469,16 +11354,16 @@ class TabbedPageDemoPage2 : TabbedPage
         </member>
         <member name="T:Xamarin.Forms.TableRoot">
             <summary>A <see cref="T:Xamarin.Forms.TableSection" /> that contains either a table section or the entire table.</summary>
-            <remarks />
+            <remarks>To be added.</remarks>
         </member>
         <member name="C:Xamarin.Forms.TableRoot">
             <summary>Constructs and initializes a new instance of the <see cref="T:Xamarin.Forms.TableRoot" /> class.</summary>
-            <remarks />
+            <remarks>To be added.</remarks>
         </member>
         <member name="C:Xamarin.Forms.TableRoot(System.String)">
             <param name="title">The title of the table.</param>
             <summary>Constructs and initializes a new instance of the <see cref="T:Xamarin.Forms.TableRoot" /> class with a title.</summary>
-            <remarks />
+            <remarks>To be added.</remarks>
         </member>
         <member name="T:Xamarin.Forms.TableSection">
             <summary>A logical and visible section of a <see cref="T:Xamarin.Forms.TableView" />.</summary>
@@ -10499,6 +11384,19 @@ class TabbedPageDemoPage2 : TabbedPage
                 <para>
                     <img href="TableSectionBase.Hierarchy.png" />
                 </para>
+                <para>The <see cref="T:Xamarin.Forms.TableSectionBase" /> class has the following XAML property:</para>
+                <list type="table">
+                    <listheader>
+                        <term>Property</term>
+                        <description>Value</description>
+                    </listheader>
+                    <item>
+                        <term>Title</term>
+                        <description>
+                            <para>A title for the section.</para>
+                        </description>
+                    </item>
+                </list>
             </remarks>
         </member>
         <member name="C:Xamarin.Forms.TableSectionBase">
@@ -10644,7 +11542,7 @@ class TabbedPageDemoPage2 : TabbedPage
             <remarks>To be added.</remarks>
         </member>
         <member name="T:Xamarin.Forms.TableView">
-            <summary>A <see cref="T:Xamarin.Forms.View" /> that holds rows of <see cref="T:Xamarin.Forms.Cell" />s.</summary>
+            <summary>A <see cref="T:Xamarin.Forms.View" /> that holds rows of <see cref="T:Xamarin.Forms.Cell" /> elements.</summary>
             <remarks>
                 <para>A <see cref="T:Xamarin.Forms.TableView" /> has a <see cref="T:Xamarin.Forms.TableRoot" /> as its <see cref="P:Xamarin.Forms.TableView.Root" /> property. The <see cref="T:Xamarin.Forms.TableView.TableRoot" /> is a type of <see cref="T:Xamarin.Forms.TableSection" />. </para>
                 <para>The following example shows a basic table with two sections.</para>
@@ -10683,6 +11581,34 @@ return new ContentPage {
                 <para>
                     <img href="TableView.TripleScreenShot.png" />
                 </para>
+                <para>The <see cref="T:Xamarin.Forms.TableView" /> class has the following XAML properties:</para>
+                <list type="table">
+                    <listheader>
+                        <term>Property</term>
+                        <description>Value</description>
+                    </listheader>
+                    <item>
+                        <term>HasUnevenRows</term>
+                        <description>
+                            <para>
+                                <c>true</c> or <c>false</c>, to indicate whether rows in the table view will specify their own height.</para>
+                        </description>
+                    </item>
+                    <item>
+                        <term>Intent</term>
+                        <description>
+                            <para>
+                                <c>Data</c>, <c>Form</c>, <c>Menu</c>, or <c>Settings</c>.</para>
+                        </description>
+                    </item>
+                    <item>
+                        <term>RowHeight</term>
+                        <description>
+                            <para>
+                                <c>Horizontal</c> or <c>Vertical</c>, to indicate the scroll direction.</para>
+                        </description>
+                    </item>
+                </list>
             </remarks>
         </member>
         <member name="C:Xamarin.Forms.TableView">
@@ -10695,9 +11621,11 @@ return new ContentPage {
             <remarks>To be added.</remarks>
         </member>
         <member name="P:Xamarin.Forms.TableView.HasUnevenRows">
-            <summary>Gets or sets a value that indicates whether the table rows have different numbers of columns.</summary>
+            <summary>Gets or sets a value that indicates whether the rows that are contained in this <see cref="T:Xamarin.Forms.TableView" /> can have uneven rows.</summary>
             <value>To be added.</value>
-            <remarks>To be added.</remarks>
+            <remarks>
+                <para>When the <see cref="P:Xamarin.Forms.TableView.HasUnevenRows" /> property is <see langword="true" />, application developers can set the <see cref="P:Xamarin.Forms.Cell.Height" /> properties to control the height of <see cref="T:Xamarin.Forms.Cell" /> items in the table. When the <see cref="P:Xamarin.Forms.TableView.HasUnevenRows" /> property is <see langword="true" />, the <see cref="P:Xamarin.Forms.TableView.RowHeight" /> property is ignored. When the <see cref="P:Xamarin.Forms.TableView.HasUnevenRows" /> property is <see langword="false" />, app developers can set the <see cref="P:Xamarin.Forms.TableView.RowHeight" /> property to set the height of all Cells, and their individual <see cref="P:Xamarin.Forms.Cell.Height" /> properties are ignored.</para>
+            </remarks>
         </member>
         <member name="F:Xamarin.Forms.TableView.HasUnevenRowsProperty">
             <summary>Backing store for the HasUnevenRows property.</summary>
@@ -11191,6 +12119,7 @@ var beeroclock = new TimePicker () { Time = new TimeSpan (17,0,0) };
             <summary>An item in a toolbar or displayed on a <see cref="T:Xamarin.Forms.Page" />.</summary>
             <remarks>
                 <para>Any changes made to the properties of the toolbar item after it has been added will be ignored.</para>
+                <block type="note">Windows Phone ApplicationBarButtons and MenuItems always display an associated text. Therefore, when developing for Windows Phone, application devs should provide a value for the <see cref="P:Xamarin.Forms.ToolbarItem.Text" /> property. Otherwise, the file name of the icon image will be dixplayed as the text of the <see cref="T:Xamarin.Forms.ToolbarItem" />. (For example, the user might see "menu.png" in the user interface.)</block>
             </remarks>
         </member>
         <member name="C:Xamarin.Forms.ToolbarItem">
