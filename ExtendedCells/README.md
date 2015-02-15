@@ -3,7 +3,7 @@
 * Increased Performance
 
 # Setup
-* Available on NuGet: https://www.nuget.org/packages/Xam.Plugins.Forms.Svg/
+* Available on NuGet: https://www.nuget.org/packages/Xam.Plugins.Forms.ExtendedCell/
 * Install into your PCL project and Client projects.
 
 In your Android, and Windows Phone projects call:
