@@ -33,7 +33,7 @@ namespace SampleApp
           }
           case MenuItem.TableLayout:
           {
-            masterDetailPage.Detail = new TwoColumnCellTableLayout();
+            masterDetailPage.Detail = new TwoColumnCellTableView();
             masterDetailPage.IsPresented = false;
             return;
           }

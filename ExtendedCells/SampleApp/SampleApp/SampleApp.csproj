@@ -51,8 +51,8 @@
     <Compile Include="Pages\TwoColumnCellListview.xaml.cs">
       <DependentUpon>TwoColumnCellListview.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\TwoColumnCellTableLayout.xaml.cs">
-      <DependentUpon>TwoColumnCellTableLayout.xaml</DependentUpon>
+    <Compile Include="Pages\TwoColumnCellTableView.xaml.cs">
+      <DependentUpon>TwoColumnCellTableView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModel\ListviewViewModel.cs" />
@@ -119,7 +119,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Pages\TwoColumnCellTableLayout.xaml">
+    <EmbeddedResource Include="Pages\TwoColumnCellTableView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
