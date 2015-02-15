@@ -50,10 +50,10 @@ namespace ExtendedCells.Forms.Plugin.Android
         };
 
         if (twoColumnCell.LeftText != null || twoColumnCell.RightText != null)
-          _view.AddView(CreateRow(context, _view.LeftTextView, _view.RightTextView));
+          _view.AddView(CreateRow(context, _view.LeftTextView, _view.RightTextView, twoColumnCell.LeftColumnWidth, twoColumnCell.RightColumnWidth));
 
         if (!string.IsNullOrEmpty(twoColumnCell.LeftDetail) || !string.IsNullOrEmpty(twoColumnCell.RightDetail))
-          _view.AddView(CreateRow(context, _view.LeftDetailTextView, _view.RightDetailTextView));
+          _view.AddView(CreateRow(context, _view.LeftDetailTextView, _view.RightDetailTextView, twoColumnCell.LeftColumnWidth, twoColumnCell.RightColumnWidth));
       }
 
       _view.SetBackgroundColor(twoColumnCell.BackgroundColor.ToAndroid());
@@ -78,12 +78,26 @@ namespace ExtendedCells.Forms.Plugin.Android
       return _view;
     }
 
-    private static TableRow CreateRow(Context context, View leftTextView, View rightTextView)
+    private static TableRow CreateRow(Context context, View leftTextView, View rightTextView, GridLength leftColumnWidth, GridLength rightColumnWidth)
     {
       var tableRow = new TableRow(context);
+      var linearLayout = new LinearLayout(context) {WeightSum = (float) 1.0};
 
-      tableRow.AddView(leftTextView.WrapInFrameLayout(context));
-      tableRow.AddView(rightTextView.WrapInFrameLayout(context));
+      var leftTextViewLayout = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MatchParent,
+        ViewGroup.LayoutParams.MatchParent) {Weight = (float) rightColumnWidth.Value};
+
+      leftTextView.LayoutParameters = leftTextViewLayout;
+      
+      linearLayout.AddView(leftTextView);
+
+      var rightTextViewLayout = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MatchParent,
+        ViewGroup.LayoutParams.MatchParent) {Weight = (float) leftColumnWidth.Value};
+
+      rightTextView.LayoutParameters = rightTextViewLayout;
+      
+      linearLayout.AddView(rightTextView);
+      
+      tableRow.AddView(linearLayout);
 
       return tableRow;
     }
