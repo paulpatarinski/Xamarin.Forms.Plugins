@@ -1,6 +1,7 @@
 ﻿using Android.App;
 using Android.Content.PM;
 using Android.OS;
+using ExtendedCells.Forms.Plugin.Android;
 using SVG.Forms.Plugin.Droid;
 using Xamarin.Forms.Platform.Android;
 
@@ -16,6 +17,8 @@ namespace PluginSampleApp.Droid
             Xamarin.Forms.Forms.Init(this, bundle);
 
             SvgImageRenderer.Init();
+            TwoColumnCellRenderer.Init();
+
             LoadApplication(new App());
         }
     }

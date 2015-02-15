@@ -11,7 +11,7 @@ namespace PluginSampleApp
 
         public App()
         {
-            var listview = new ListView{RowHeight = 60};
+            var listview = new ListView {RowHeight = 60};
 
             var listviewStackLayout = new StackLayout {Padding = 10};
 
@@ -25,10 +25,12 @@ namespace PluginSampleApp
             listview.ItemsSource = new List<string>
             {
                 PageTitle.SVG,
-                PageTitle.ExtendedMap
+                PageTitle.ExtendedMap,
+                PageTitle.ExtendedCellListview,
+                PageTitle.ExtendedCellTableView,
             };
 
-            listview.ItemSelected += (sender, args) => MenuItemSelected(sender,args);
+            listview.ItemSelected += (sender, args) => MenuItemSelected(sender, args);
 
             // The root page of your application
             MainPage = _navigationPage;
@@ -43,19 +45,29 @@ namespace PluginSampleApp
             switch (args.SelectedItem.ToString())
             {
                 case PageTitle.SVG:
-                    {
-                        await _navigationPage.Navigation.PushAsync(new SVGPage());
-                        break;
-                    }
+                {
+                    await _navigationPage.Navigation.PushAsync(new SVGPage());
+                    break;
+                }
                 case PageTitle.ExtendedMap:
-                    {
-                        await _navigationPage.Navigation.PushAsync(new ExtendedMapPage());
-                        break;
-                    }
+                {
+                    await _navigationPage.Navigation.PushAsync(new ExtendedMapPage());
+                    break;
+                }
+                case PageTitle.ExtendedCellListview:
+                {
+                    await _navigationPage.Navigation.PushAsync(new TwoColumnCellListview());
+                    break;
+                }
+                case PageTitle.ExtendedCellTableView:
+                {
+                    await _navigationPage.Navigation.PushAsync(new TwoColumnCellTableView());
+                    break;
+                }
             }
 
 
-            ((ListView)(sender)).SelectedItem = null;
+            ((ListView) (sender)).SelectedItem = null;
         }
 
         protected override void OnStart()
