@@ -49,7 +49,7 @@ For a detailed example clone the repo and take a look at the Sample App.
 
 # Screenshots
 
-![ScreenShot](https://raw.githubusercontent.com/paulpatarinski/Xamarin.Forms.Plugins/master/SampleApp/Images/Screenshots/SVG.JPG)
+![ScreenShot](https://raw.githubusercontent.com/paulpatarinski/Xamarin.Forms.Plugins/master/SampleApp/Images/Screenshots/Droid_TwoColumnCell_Listview.png)
 
 # License
 Licensed under main repo license
