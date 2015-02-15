@@ -1,6 +1,18 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:abstractions="clr-namespace:ExtendedCells.Forms.Plugin.Abstractions;assembly=ExtendedCells.Forms.Plugin.Abstractions"
              x:Class="SampleApp.Pages.TwoColumnCellTableLayout">
-	<Label Text="{Binding MainText}" VerticalOptions="Center" HorizontalOptions="Center" />
+	<TableView>
+    <TableView.Root>
+      <TableSection Title="Single Row">
+        <abstractions:TwoColumnCell LeftText="Left Text" LeftTextColor="White" RightText="Right Text" RightTextColor="White"/>
+        <abstractions:TwoColumnCell LeftText="Left Text" LeftTextColor="White" RightText="Right Text" RightTextColor="White"/>
+      </TableSection>
+      <TableSection Title="Two Row">
+        <abstractions:TwoColumnCell LeftText="Left Text" LeftTextColor="White" LeftDetail="Left Detail" LeftDetailColor="White" RightText="Right Text" RightTextColor="White"/>
+        <abstractions:TwoColumnCell LeftText="Left Text" LeftTextColor="White" LeftDetail="Left Detail" LeftDetailColor="White" RightText="Right Text" RightTextColor="White"/>
+      </TableSection>
+    </TableView.Root>
+  </TableView>
 </ContentPage>
