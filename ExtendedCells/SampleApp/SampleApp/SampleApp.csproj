@@ -44,11 +44,15 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="App.cs" />
+    <Compile Include="Models\MenuItem.cs" />
     <Compile Include="Pages\StackLayoutCell.xaml.cs">
       <DependentUpon>StackLayoutCell.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\TwoColumnCellListview.xaml.cs">
       <DependentUpon>TwoColumnCellListview.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\TwoColumnCellTableLayout.xaml.cs">
+      <DependentUpon>TwoColumnCellTableLayout.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModel\ListviewViewModel.cs" />
@@ -113,6 +117,12 @@
       <Project>{14C534B6-1984-41A9-A384-D3A5508588E3}</Project>
       <Name>ExtendedCells.Forms.Plugin.Abstractions</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Pages\TwoColumnCellTableLayout.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <Import Project="..\..\packages\Xamarin.Forms.1.3.1.6296\build\portable-win+net45+wp80+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets" Condition="Exists('..\..\packages\Xamarin.Forms.1.3.1.6296\build\portable-win+net45+wp80+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets')" />
