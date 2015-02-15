@@ -18,17 +18,28 @@ namespace ExtendedCells.Forms.Plugin.Android
     /// </summary>
     public class TwoColumnCellRenderer : CellRenderer
     {
+      /// <summary>
+      /// Call this method to make sure the assembly gets loaded
+      /// </summary>
         public static void Init()
         {
         }
 
-        public TwoColumnTableLayout View { get; set; }
+      private TwoColumnTableLayout _view;
 
+      /// <summary>
+      /// This method returns the View (Controls Layout) for the current Cell
+      /// </summary>
+      /// <param name="item"></param>
+      /// <param name="convertView"></param>
+      /// <param name="parent"></param>
+      /// <param name="context"></param>
+      /// <returns></returns>
         protected override View GetCellCore(Cell item, View convertView, ViewGroup parent, Context context)
         {
-            if ((View = convertView as TwoColumnTableLayout) == null)
+            if ((_view = convertView as TwoColumnTableLayout) == null)
             {
-                View = new TwoColumnTableLayout(context)
+                _view = new TwoColumnTableLayout(context)
                 {
                     LeftTextView = new TextView(context),
                     LeftDetailTextView = new TextView(context),
@@ -36,35 +47,28 @@ namespace ExtendedCells.Forms.Plugin.Android
                     RightDetailTextView = new TextView(context)
                 };
 
-                View.AddView(CreateRow(context, View.LeftTextView, View.RightTextView));
-                View.AddView(CreateRow(context, View.LeftDetailTextView, View.RightDetailTextView));
+                _view.AddView(CreateRow(context, _view.LeftTextView, _view.RightTextView));
+                _view.AddView(CreateRow(context, _view.LeftDetailTextView, _view.RightDetailTextView));
             }
 
             var twoColumnCell = (TwoColumnCell) Cell;
 
-            View.LeftTextView.UpdateFromFormsControl(twoColumnCell.LeftText,twoColumnCell.LeftTextColor, twoColumnCell.LeftTextFont);
-            View.LeftDetailTextView.UpdateFromFormsControl(twoColumnCell.LeftDetail,twoColumnCell.LeftDetailColor, twoColumnCell.LeftDetailFont);
-            View.RightTextView.UpdateFromFormsControl(twoColumnCell.RightText,twoColumnCell.RightTextColor, twoColumnCell.RightTextFont);
-            View.RightDetailTextView.UpdateFromFormsControl(twoColumnCell.RightDetail,twoColumnCell.RightDetailColor, twoColumnCell.RightDetailFont);
+            _view.LeftTextView.UpdateFromFormsControl(twoColumnCell.LeftText,twoColumnCell.LeftTextColor, twoColumnCell.LeftTextFont);
+            _view.LeftDetailTextView.UpdateFromFormsControl(twoColumnCell.LeftDetail,twoColumnCell.LeftDetailColor, twoColumnCell.LeftDetailFont);
+            _view.RightTextView.UpdateFromFormsControl(twoColumnCell.RightText,twoColumnCell.RightTextColor, twoColumnCell.RightTextFont);
+            _view.RightDetailTextView.UpdateFromFormsControl(twoColumnCell.RightDetail,twoColumnCell.RightDetailColor, twoColumnCell.RightDetailFont);
 
-            return View;
+            return _view;
         }
 
-        private static TableRow CreateRow(Context context, TextView leftTextView, TextView rightTextView)
+        private static TableRow CreateRow(Context context, View leftTextView, View rightTextView)
         {
             var tableRow = new TableRow(context);
 
-            tableRow.AddView(WrapTextViewInFrameLayout(context, leftTextView));
-            tableRow.AddView(WrapTextViewInFrameLayout(context, rightTextView));
+            tableRow.AddView(leftTextView.WrapInFrameLayout(context));
+            tableRow.AddView(rightTextView.WrapInFrameLayout(context));
 
             return tableRow;
-        }
-
-        private static FrameLayout WrapTextViewInFrameLayout(Context context, TextView textView)
-        {
-            var frameLayout = new FrameLayout(context);
-            frameLayout.AddView(textView);
-            return frameLayout;
         }
     }
 }
