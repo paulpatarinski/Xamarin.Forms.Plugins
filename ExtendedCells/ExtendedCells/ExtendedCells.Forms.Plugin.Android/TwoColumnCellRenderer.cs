@@ -56,6 +56,9 @@ namespace ExtendedCells.Forms.Plugin.Android
           _view.AddView(CreateRow(context, _view.LeftDetailTextView, _view.RightDetailTextView));
       }
 
+      _view.SetBackgroundColor(twoColumnCell.BackgroundColor.ToAndroid());
+      _view.SetPadding((int) twoColumnCell.Thickness.Left, (int) twoColumnCell.Thickness.Top, (int) twoColumnCell.Thickness.Right, (int) twoColumnCell.Thickness.Bottom);
+
       if (twoColumnCell.LeftText != null)
         _view.LeftTextView.UpdateFromFormsControl(twoColumnCell.LeftText, twoColumnCell.LeftTextColor,
         twoColumnCell.LeftTextFont, twoColumnCell.LeftTextAlignment);
