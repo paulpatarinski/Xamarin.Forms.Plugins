@@ -4,10 +4,15 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:abstractions="clr-namespace:ExtendedCells.Forms.Plugin.Abstractions;assembly=ExtendedCells.Forms.Plugin.Abstractions"
              x:Class="SampleApp.Pages.TwoColumnCellTableView" Title="Table View Example">
-  <ScrollView>
+  <ScrollView  Orientation="Vertical">
     <StackLayout>
+      <StackLayout.HeightRequest>
+          <OnPlatform x:TypeArguments="x:Double" Android="900" WinPhone="1200"/>
+        </StackLayout.HeightRequest>
+      
       <Label Text="Cell Properties" FontSize="26" TextColor="White" HorizontalOptions="Center" />
-      <TableView HeightRequest="350">
+      <TableView>
+       
         <TableSection Title="Background Color">
           <abstractions:TwoColumnCell BackgroundColor="White"
                                       LeftText="Left Text Large" LeftTextColor="Black"
@@ -24,21 +29,21 @@
                                       RightDetail="Right Detail Bold" RightDetailColor="White" />
         </TableSection>
         <TableSection Title="Column Width">
-          <abstractions:TwoColumnCell LeftColumnWidth="0.2" RightColumnWidth="0.8"
+          <abstractions:TwoColumnCell LeftColumnWidth="0.2*" RightColumnWidth="0.8*"
                                       LeftText="Left 0.2" LeftTextColor="White"
                                       RightText="Right 0.8" RightTextColor="White" />
-          
-          <abstractions:TwoColumnCell LeftColumnWidth="0.8" RightColumnWidth="0.2"
+
+          <abstractions:TwoColumnCell LeftColumnWidth="0.8*" RightColumnWidth="0.2*"
                                       LeftText="Left 0.8" LeftTextColor="White"
                                       RightText="Right 0.2" RightTextColor="White" />
-          
+
           <abstractions:TwoColumnCell LeftText="Default 0.5" LeftTextColor="White"
                                       RightText="Default 0.5" RightTextColor="White" />
         </TableSection>
       </TableView>
 
       <Label Text="Cell Label Properties" FontSize="26" TextColor="White" HorizontalOptions="Center" />
-      <TableView HeightRequest="500">
+      <TableView>
         <TableView.Root>
           <TableSection Title="Single Row">
             <abstractions:TwoColumnCell LeftText="Left Text" LeftTextColor="White" RightText="Right Text"
