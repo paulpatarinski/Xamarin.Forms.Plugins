@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Deployment xmlns="http://schemas.microsoft.com/windowsphone/2012/deployment" AppPlatformVersion="8.0">
   <DefaultLanguage xmlns="" code="en-US" />
-  <App xmlns="" ProductID="{78ee1534-88ea-4b2a-85a1-e1d68782406f}" Title="PluginSampleApp.WinPhone" RuntimeType="Silverlight" Version="1.0.0.0" Genre="apps.normal" Author="PluginSampleApp.WinPhone author" Description="Sample description" Publisher="PluginSampleApp.WinPhone" PublisherID="{50f96066-9f2b-40d8-87ec-3a70714de943}">
+  <App xmlns="" ProductID="{78ee1534-88ea-4b2a-85a1-e1d68782406f}" Title="Plugin Sample App" RuntimeType="Silverlight" Version="1.0.0.0" Genre="apps.normal" Author="PluginSampleApp.WinPhone author" Description="Sample description" Publisher="PluginSampleApp.WinPhone" PublisherID="{50f96066-9f2b-40d8-87ec-3a70714de943}">
     <IconPath IsRelative="true" IsResource="false">Assets\ApplicationIcon.png</IconPath>
     <Capabilities>
       <Capability Name="ID_CAP_NETWORKING" />
@@ -21,7 +21,7 @@
           <SmallImageURI IsRelative="true" IsResource="false">Assets\Tiles\FlipCycleTileSmall.png</SmallImageURI>
           <Count>0</Count>
           <BackgroundImageURI IsRelative="true" IsResource="false">Assets\Tiles\FlipCycleTileMedium.png</BackgroundImageURI>
-          <Title>PluginSampleApp.WinPhone</Title>
+          <Title>Plugin Sample App</Title>
           <BackContent>
           </BackContent>
           <BackBackgroundImageURI>
