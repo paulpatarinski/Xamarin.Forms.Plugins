@@ -29,7 +29,7 @@ namespace ExtendedCells.Forms.Plugin.Abstractions
     }
 
     public static readonly BindableProperty LeftColumnWidthProperty =
-    BindableProperty.Create("LeftColumnWidth", typeof(GridLength), typeof(TextCell), default(GridLength));
+    BindableProperty.Create("LeftColumnWidth", typeof(GridLength), typeof(TextCell), new GridLength(0.5, GridUnitType.Star));
 
     public GridLength LeftColumnWidth
     {
@@ -44,7 +44,7 @@ namespace ExtendedCells.Forms.Plugin.Abstractions
     }
 
     public static readonly BindableProperty RightColumnWidthProperty =
-   BindableProperty.Create("RightColumnWidth", typeof(GridLength), typeof(TextCell), default(GridLength));
+   BindableProperty.Create("RightColumnWidth", typeof(GridLength), typeof(TextCell), new GridLength(0.5, GridUnitType.Star));
 
     public GridLength RightColumnWidth
     {
