@@ -6,15 +6,15 @@
              x:Class="SampleApp.Pages.TwoColumnCellTableView" Title="Table View Example">
   <ScrollView>
     <StackLayout>
-      <Label Text="Cell Properties" FontSize="26" TextColor="White" HorizontalOptions="Center"/>
-      <TableView HeightRequest="250" >
-          <TableSection Title="Background Color">
-            <abstractions:TwoColumnCell BackgroundColor="White"
-                                        LeftText="Left Text Large" LeftTextColor="Black"
-                                        LeftDetail="Left Detail Italic" LeftDetailColor="Black"
-                                        RightText="Right Text Micro" RightTextColor="Black"
-                                        RightDetail="Right Detail Bold" RightDetailColor="Black" />
-          </TableSection>
+      <Label Text="Cell Properties" FontSize="26" TextColor="White" HorizontalOptions="Center" />
+      <TableView HeightRequest="350">
+        <TableSection Title="Background Color">
+          <abstractions:TwoColumnCell BackgroundColor="White"
+                                      LeftText="Left Text Large" LeftTextColor="Black"
+                                      LeftDetail="Left Detail Italic" LeftDetailColor="Black"
+                                      RightText="Right Text Micro" RightTextColor="Black"
+                                      RightDetail="Right Detail Bold" RightDetailColor="Black" />
+        </TableSection>
 
         <TableSection Title="Thickness">
           <abstractions:TwoColumnCell Thickness="50,50,50,50"
@@ -23,22 +23,29 @@
                                       RightText="Right Text Micro" RightTextColor="White"
                                       RightDetail="Right Detail Bold" RightDetailColor="White" />
         </TableSection>
+        <TableSection Title="Column Width">
+          <abstractions:TwoColumnCell LeftColumnWidth="0.2" RightColumnWidth="0.8"
+                                      LeftText="Left 0.2" LeftTextColor="White"
+                                      RightText="Right 0.8" RightTextColor="White" />
+          
+          <abstractions:TwoColumnCell LeftColumnWidth="0.8" RightColumnWidth="0.2"
+                                      LeftText="Left 0.8" LeftTextColor="White"
+                                      RightText="Right 0.2" RightTextColor="White" />
+          
+          <abstractions:TwoColumnCell LeftText="Default 0.5" LeftTextColor="White"
+                                      RightText="Default 0.5" RightTextColor="White" />
+        </TableSection>
       </TableView>
 
-      <Label Text="Cell Label Properties" FontSize="26" TextColor="White" HorizontalOptions="Center"/>
+      <Label Text="Cell Label Properties" FontSize="26" TextColor="White" HorizontalOptions="Center" />
       <TableView HeightRequest="500">
         <TableView.Root>
           <TableSection Title="Single Row">
             <abstractions:TwoColumnCell LeftText="Left Text" LeftTextColor="White" RightText="Right Text"
                                         RightTextColor="White" />
-            <abstractions:TwoColumnCell LeftText="Left Text" LeftTextColor="White" RightText="Right Text"
-                                        RightTextColor="White" />
           </TableSection>
 
           <TableSection Title="Two Row">
-            <abstractions:TwoColumnCell LeftText="Left Text" LeftTextColor="White" LeftDetail="Left Detail"
-                                        LeftDetailColor="White" RightText="Right Text" RightTextColor="White"
-                                        RightDetail="Right Detail" RightDetailColor="White" />
             <abstractions:TwoColumnCell LeftText="Left Text" LeftTextColor="White" LeftDetail="Left Detail"
                                         LeftDetailColor="White" RightText="Right Text" RightTextColor="White"
                                         RightDetail="Right Detail" RightDetailColor="White" />
@@ -71,7 +78,7 @@
         </TableView.Root>
       </TableView>
     </StackLayout>
-  
+
   </ScrollView>
 
 </ContentPage>
