@@ -8,6 +8,8 @@ This is my main repo for all Xamarin Forms Plugins that I have or will be publis
 Controls:
 * **[SVG](https://github.com/paulpatarinski/Xamarin.Forms.Plugins/tree/master/SVG)** for Xamarin.Forms
  * Win Phone / Android
+* **[Extended Cells](https://github.com/paulpatarinski/Xamarin.Forms.Plugins/tree/master/ExtendedCells)** for Xamarin.Forms
+ * Win Phone / Android
 
 # How to?
 
