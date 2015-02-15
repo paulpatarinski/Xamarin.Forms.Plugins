@@ -35,7 +35,6 @@ TableView :
 
 ```
    <TableView>
-       
         <TableSection Title="Background Color">
           <abstractions:TwoColumnCell BackgroundColor="White"
                                       LeftText="Left Text Large" LeftTextColor="Black"
@@ -45,6 +44,8 @@ TableView :
         </TableSection>
    </TableView>
 ```
+
+For a detailed example clone the repo and take a look at the Sample App.
 
 # Screenshots
 
