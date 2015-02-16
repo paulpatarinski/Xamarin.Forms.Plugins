@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
     <metadata>
         <id>Xam.Plugins.Forms.ExtendedCell</id>
-        <version>1.0.0.2</version>
+        <version>1.0.0.3</version>
         <title>Extended Cells for Xamarin.Forms</title>
         <authors>Paul Patarinski</authors>
         <owners>Paul Patarinski</owners>
@@ -12,7 +12,7 @@
         <requireLicenseAcceptance>false</requireLicenseAcceptance>
         <description>Custom Cells for your Xamarin.Forms project to allow you to create highly customizable, performant Listviews and TableViews. Ensure you call TwoColumnCellRenderer.Init() on each platform! VISIT THE PROJECT URL for more info.</description>
         <summary>Use a TwoColumnCell in your Xamarin.Forms projects! Ensure you call TwoColumnCellRenderer.Init() on each platform! VISIT THE PROJECT URL for more info.</summary>
-        <releaseNotes>Updating to latest Xamarin Forms</releaseNotes>
+        <releaseNotes>New Package after successful rebuild</releaseNotes>
         <tags>xamarin, pcl, xam.pcl, windows phone, winphone, wp8, android, xamarin.forms</tags>
         <dependencies>
             <dependency id="Xamarin.Forms" version="1.3.3.6323" />
