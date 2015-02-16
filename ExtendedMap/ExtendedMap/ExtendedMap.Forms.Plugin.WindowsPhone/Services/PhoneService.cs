@@ -13,15 +13,12 @@ namespace ExtendedMap.Forms.Plugin.WindowsPhone.Services
     {
         public void OpenBrowser(string url)
         {
-            throw new NotImplementedException();
+            var webBrowserTask = new WebBrowserTask {Uri = new Uri(url, UriKind.Absolute)};
+
+            webBrowserTask.Show();
         }
 
         public void DialNumber(string number)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void SendSMS(string to, string body)
         {
             throw new NotImplementedException();
         }
