@@ -385,8 +385,8 @@ namespace ExtendedMap.Forms.Plugin.Abstractions
         BackgroundColor = Color.White
       };
 
-      var callImageButton = CreateImageButton("phone-icon.svg", "CALL", (footerTopSectionHeight / 5),
-       (footerTopSectionHeight / 5), (view, o) =>
+      var callImageButton = CreateImageButton("phone-icon.svg", "CALL", (footerTopSectionHeight / 2),
+       (footerTopSectionHeight / 2), (view, o) =>
        {
          var phoneNumber = _extendedMap.SelectedPin.PhoneNumber;
          var name = _extendedMap.SelectedPin.Label;
