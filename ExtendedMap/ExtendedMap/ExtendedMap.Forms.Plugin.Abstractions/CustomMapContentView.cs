@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Reflection;
+using ExtendedCells.Forms.Plugin.Abstractions;
 using SVG.Forms.Plugin.Abstractions;
 using Xamarin.Forms;
 
@@ -425,8 +426,6 @@ namespace ExtendedMap.Forms.Plugin.Abstractions
           {
             Width = new GridLength(1, GridUnitType.Star)
           },
-
-
         },
         BackgroundColor = Color.White
       };
@@ -438,12 +437,12 @@ namespace ExtendedMap.Forms.Plugin.Abstractions
                                                                                     listview.SelectedItem = null;
       };
 
-      var itemTemplate = new DataTemplate(typeof (TextCell));
+      var itemTemplate = new DataTemplate(typeof (TwoColumnCell));
 
-      itemTemplate.SetBinding(TextCell.TextProperty, "Day");
-      itemTemplate.SetValue(TextCell.TextColorProperty, Color.Black);
-      itemTemplate.SetBinding(TextCell.DetailProperty, "HoursOfOperation");
-      itemTemplate.SetValue(TextCell.DetailColorProperty, Color.Gray);
+      itemTemplate.SetBinding(TwoColumnCell.LeftTextProperty, "Day");
+      itemTemplate.SetValue(TwoColumnCell.LeftTextColorProperty, Color.Black);
+      itemTemplate.SetBinding(TwoColumnCell.LeftDetailProperty, "HoursOfOperation");
+      itemTemplate.SetValue(TwoColumnCell.LeftDetailColorProperty, Color.Gray);
 
       listview.ItemTemplate = itemTemplate;
       listview.BindingContext = _extendedMap;
@@ -473,12 +472,12 @@ namespace ExtendedMap.Forms.Plugin.Abstractions
         listview.SelectedItem = null;
       };
 
-      var itemTemplate = new DataTemplate(typeof (TextCell));
+      var itemTemplate = new DataTemplate(typeof (TwoColumnCell));
 
-      itemTemplate.SetBinding(TextCell.TextProperty, "Key");
-      itemTemplate.SetValue(TextCell.TextColorProperty, Color.Black);
-      itemTemplate.SetBinding(TextCell.DetailProperty, "Value");
-      itemTemplate.SetValue(TextCell.DetailColorProperty, Color.Gray);
+      itemTemplate.SetBinding(TwoColumnCell.LeftTextProperty, "Key");
+      itemTemplate.SetValue(TwoColumnCell.LeftTextColorProperty, Color.Black);
+      itemTemplate.SetBinding(TwoColumnCell.LeftDetailProperty, "Value");
+      itemTemplate.SetValue(TwoColumnCell.LeftDetailColorProperty, Color.Gray);
 
       listview.ItemTemplate = itemTemplate;
       listview.BindingContext = _extendedMap;

@@ -26,7 +26,6 @@ namespace SampleApp.Droid
 		
 		public static void UpdateIdValues()
 		{
-			global::XamSvg.Resource.String.library_name = global::SampleApp.Droid.Resource.String.library_name;
 		}
 		
 		public partial class Animation
