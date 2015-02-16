@@ -102,7 +102,7 @@ namespace ExtendedMap.Forms.Plugin.Abstractions
 
         Grid.SetRowSpan(_extendedMap, 2);
 
-        _mapGridFooterRow.GestureRecognizers.Add(new TapGestureRecognizer((view, obj) => ToogleFooter()));
+        _mapGridFooterRow.GestureRecognizers.Add(new TapGestureRecognizer {Command = new Command(ToogleFooter)});
 
         FooterMode = FooterMode.Hidden;
       }
@@ -259,7 +259,7 @@ namespace ExtendedMap.Forms.Plugin.Abstractions
       var footerTopSectionHeight = footerHeight*0.2;
 
       var navigationImageButton = CreateImageButton("navigate-icon.svg", (footerTopSectionHeight / 2.2),
-        (footerTopSectionHeight / 1.5), (view, o) =>
+        (footerTopSectionHeight / 1.5), () =>
         {
           var selectedPin = _extendedMap.SelectedPin;
           DependencyService.Get<IPhoneService>().LaunchNavigationAsync(new NavigationModel
@@ -429,11 +429,11 @@ namespace ExtendedMap.Forms.Plugin.Abstractions
         BackgroundColor = Color.White
       };
 
-      var listview = new ListView {};
+      var listview = new ListView();
 
       //Don't allow selection
-      listview.ItemSelected += (object sender, SelectedItemChangedEventArgs e) => {
-                                                                                    listview.SelectedItem = null;
+      listview.ItemSelected += (sender, e) => {
+                                                listview.SelectedItem = null;
       };
 
       var itemTemplate = new DataTemplate(typeof (TwoColumnCell));
@@ -460,7 +460,7 @@ namespace ExtendedMap.Forms.Plugin.Abstractions
       var listview = new ListView();
 
       //Don't allow selection
-      listview.ItemSelected += (object sender, SelectedItemChangedEventArgs e) =>
+      listview.ItemSelected += (sender, e) =>
       {
         var url = e.SelectedItem as ExtraDetailModel;
 
@@ -492,7 +492,7 @@ namespace ExtendedMap.Forms.Plugin.Abstractions
     }
 
     private ContentView CreateImageButton(string buttonImage, double height, double width,
-      Action<View, Object> tappedCallback)
+      Action tappedCallback)
     {
       var grid = new Grid
       {
@@ -525,7 +525,7 @@ namespace ExtendedMap.Forms.Plugin.Abstractions
         WidthRequest = width
       };
 
-      grid.GestureRecognizers.Add(new TapGestureRecognizer(tappedCallback));
+      grid.GestureRecognizers.Add(new TapGestureRecognizer{Command = new Command(tappedCallback)});
 
       grid.Children.Add(navImage, 0, 0);
 
