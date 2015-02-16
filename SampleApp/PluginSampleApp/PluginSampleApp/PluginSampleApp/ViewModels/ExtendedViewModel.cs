@@ -1,8 +1,7 @@
-﻿using System;
+﻿using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
-using System.Threading.Tasks;
 using ExtendedMap.Forms.Plugin.Abstractions;
 using PluginSampleApp.Annotations;
 using Xamarin.Forms.Maps;
@@ -16,23 +15,24 @@ namespace PluginSampleApp.ViewModels
             const double latitude = 41.788081;
             const double longitude = -87.831573;
 
-            Task.Delay(TimeSpan.FromSeconds(5)).ContinueWith((result) =>
+            for (var i = 1; i <= 9; i++)
             {
-                    SamplePins.Add(new ExtendedPin
+                SamplePins.Add(new ExtendedPin
+                {
+                    Address = string.Format("Sample Address {0}",i),
+                    Label = string.Format("Test Label {0}",i),
+                    PhoneNumber = string.Format("(773)233-123{0}",i),
+                    Position = new Position(latitude + (0.01 * i), longitude + (0.01 * i)),
+                    ScheduleEntries = new List<ScheduleEntry>
                     {
-                        Address = "Sample Address 1",
-                        Label = "Test Label",
-                        Position = new Position(latitude, longitude)
-                    });
-
-
-                    SamplePins.Add(new ExtendedPin
-                    {
-                        Address = "Sample Address 2",
-                        Label = "Test Label 2",
-                        Position = new Position(latitude + 0.1, longitude)
-                    }); 
-            });
+                        new ScheduleEntry { Day = "Monday", HoursOfOperation = "8 am - 5 pm" },
+                        new ScheduleEntry { Day = "Tuesday", HoursOfOperation = "8 am - 5 pm" },
+                        new ScheduleEntry { Day = "Wednesday", HoursOfOperation = "8 am - 5 pm" },
+                        new ScheduleEntry { Day = "Thusday", HoursOfOperation = "8 am - 5 pm" },
+                        new ScheduleEntry { Day = "Friday", HoursOfOperation = "8 am - 5 pm" },
+                    }
+                });
+            }
         }
 
         private ObservableCollection<ExtendedPin> _samplePins;
