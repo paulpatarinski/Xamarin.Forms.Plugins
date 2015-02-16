@@ -29,11 +29,10 @@ namespace ExtendedMap.Forms.Plugin.Abstractions
             Width = new GridLength(1, GridUnitType.Star)
           }
         },
-        RowSpacing = 0
+        RowSpacing = 0,
+        //Bind the footer to the ShowFooter property
+        BindingContext = this
       };
-
-      //Bind the footer to the ShowFooter property
-      _mapGrid.BindingContext = this;
 
       Content = _mapGrid;
     }
@@ -43,9 +42,8 @@ namespace ExtendedMap.Forms.Plugin.Abstractions
     private double _minimizedFooterY;
     private double _expandedFooterY;
     private double _pageHeight;
-    private double _pageWidth;
-    private Grid _mapGrid;
-    private ExtendedMap _extendedMap;
+    private readonly Grid _mapGrid;
+    private readonly ExtendedMap _extendedMap;
     private FooterMode _footerMode;
 
     public FooterMode FooterMode
@@ -86,7 +84,6 @@ namespace ExtendedMap.Forms.Plugin.Abstractions
       if (Math.Abs(_pageHeight) < 0.001 && height > 0)
       {
         _pageHeight = Bounds.Height;
-        _pageWidth = Bounds.Width;
         const double collapsedMapHeight = 0.37;
         const double expandedMapHeight = 0.86;
         const double expandedFooterHeight = 0.63;
@@ -230,9 +227,9 @@ namespace ExtendedMap.Forms.Plugin.Abstractions
         TextColor = Color.Black,
       };
 
-      Device.OnPlatform(iOS: () => placeNameLabel.Font = Font.SystemFontOfSize(20),
-        Android: () => placeNameLabel.Font = Font.SystemFontOfSize(20),
-        WinPhone: () => placeNameLabel.Font = Font.SystemFontOfSize(24));
+      Device.OnPlatform(iOS: () => placeNameLabel.FontSize = 20,
+        Android: () => placeNameLabel.FontSize = 20,
+        WinPhone: () => placeNameLabel.FontSize = 24);
 
       placeNameLabel.BindingContext = _extendedMap;
 
@@ -244,9 +241,9 @@ namespace ExtendedMap.Forms.Plugin.Abstractions
         TextColor = Color.Gray,
       };
 
-      Device.OnPlatform(iOS: () => addressLabel.Font = Font.SystemFontOfSize(14),
-        Android: () => addressLabel.Font = Font.SystemFontOfSize(14),
-        WinPhone: () => addressLabel.Font = Font.SystemFontOfSize(18));
+      Device.OnPlatform(iOS: () => addressLabel.FontSize = 14,
+        Android: () => addressLabel.FontSize = 14,
+        WinPhone: () => addressLabel.FontSize = 18);
 
       addressLabel.BindingContext = _extendedMap;
       addressLabel.SetBinding<ExtendedMap>(Label.TextProperty, vm => vm.SelectedPin.Address);
@@ -460,7 +457,7 @@ namespace ExtendedMap.Forms.Plugin.Abstractions
     {
       var contentView = new ContentView {BackgroundColor = Color.White};
 
-      var listview = new ListView {};
+      var listview = new ListView();
 
       //Don't allow selection
       listview.ItemSelected += (object sender, SelectedItemChangedEventArgs e) =>
