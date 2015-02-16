@@ -1,6 +1,6 @@
-﻿using System.Threading.Tasks;
+﻿using ExtendedMap.Forms.Plugin.Abstractions.Models;
 
-namespace ExtendedMap.Forms.Plugin.Abstractions
+namespace ExtendedMap.Forms.Plugin.Abstractions.Services
 {
 	public interface IPhoneService
 	{

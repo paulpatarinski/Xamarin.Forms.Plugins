@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using Xamarin.Forms.Maps;
 
-namespace ExtendedMap.Forms.Plugin.Abstractions
+namespace ExtendedMap.Forms.Plugin.Abstractions.Models
 {
 	public class ExtendedPin
 	{

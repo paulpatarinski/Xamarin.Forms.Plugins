@@ -4,6 +4,7 @@ using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using ExtendedMap.Forms.Plugin.Abstractions;
+using ExtendedMap.Forms.Plugin.Abstractions.Models;
 using SampleApp.Helpers;
 using Xamarin.Forms;
 using Xamarin.Forms.Maps;

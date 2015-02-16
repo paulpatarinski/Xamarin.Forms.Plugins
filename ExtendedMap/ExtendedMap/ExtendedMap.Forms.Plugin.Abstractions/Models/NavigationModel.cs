@@ -1,4 +1,4 @@
-﻿namespace ExtendedMap.Forms.Plugin.Abstractions
+﻿namespace ExtendedMap.Forms.Plugin.Abstractions.Models
 {
   public class NavigationModel
   {

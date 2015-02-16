@@ -6,6 +6,7 @@ using System.Windows.Media;
 using System.Windows.Shapes;
 using Windows.Devices.Geolocation;
 using ExtendedMap.Forms.Plugin.Abstractions;
+using ExtendedMap.Forms.Plugin.Abstractions.Models;
 using ExtendedMap.Forms.Plugin.WindowsPhone;
 using Microsoft.Phone.Maps.Controls;
 using Microsoft.Phone.Maps.Toolkit;

@@ -2,6 +2,7 @@
 using Android.Gms.Maps;
 using Android.Gms.Maps.Model;
 using ExtendedMap.Forms.Plugin.Abstractions;
+using ExtendedMap.Forms.Plugin.Abstractions.Models;
 using ExtendedMap.Forms.Plugin.Droid;
 using Xamarin.Forms;
 using Xamarin.Forms.Maps.Android;

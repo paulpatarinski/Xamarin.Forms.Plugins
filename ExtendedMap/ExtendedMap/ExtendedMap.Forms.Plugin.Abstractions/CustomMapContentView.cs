@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Reflection;
 using ExtendedCells.Forms.Plugin.Abstractions;
+using ExtendedMap.Forms.Plugin.Abstractions.Models;
+using ExtendedMap.Forms.Plugin.Abstractions.Services;
 using SVG.Forms.Plugin.Abstractions;
 using Xamarin.Forms;
 

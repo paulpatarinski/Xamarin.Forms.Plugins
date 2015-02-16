@@ -2,6 +2,8 @@ using Android.Content;
 using Android.Net;
 using Android.Telephony;
 using ExtendedMap.Forms.Plugin.Abstractions;
+using ExtendedMap.Forms.Plugin.Abstractions.Models;
+using ExtendedMap.Forms.Plugin.Abstractions.Services;
 using ExtendedMap.Forms.Plugin.Droid.Extensions;
 using ExtendedMap.Forms.Plugin.Droid.Services;
 using Xamarin.Forms;

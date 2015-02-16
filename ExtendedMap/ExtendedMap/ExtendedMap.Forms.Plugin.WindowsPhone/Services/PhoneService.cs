@@ -2,6 +2,8 @@
 using System.Device.Location;
 using System.Threading.Tasks;
 using ExtendedMap.Forms.Plugin.Abstractions;
+using ExtendedMap.Forms.Plugin.Abstractions.Models;
+using ExtendedMap.Forms.Plugin.Abstractions.Services;
 using ExtendedMap.Forms.Plugin.WindowsPhone.Services;
 using Microsoft.Phone.Tasks;
 using Xamarin.Forms;

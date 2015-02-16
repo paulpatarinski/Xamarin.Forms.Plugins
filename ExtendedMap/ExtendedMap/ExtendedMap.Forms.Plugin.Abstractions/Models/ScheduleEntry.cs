@@ -1,6 +1,6 @@
 using System;
 
-namespace ExtendedMap.Forms.Plugin.Abstractions
+namespace ExtendedMap.Forms.Plugin.Abstractions.Models
 {
 	public class ScheduleEntry
 	{

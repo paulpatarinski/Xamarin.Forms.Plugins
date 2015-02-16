@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.22310.1
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExtendedMap.Forms.Plugin.Abstractions", "ExtendedMap\ExtendedMap.Forms.Plugin.Abstractions\ExtendedMap.Forms.Plugin.Abstractions.csproj", "{14C534B6-1984-41A9-A384-D3A5508588E3}"
 EndProject
@@ -213,8 +213,8 @@ Global
 		{983B7EFF-7E75-4A87-890A-744A0B4C5232}.Debug|iPhone.Build.0 = Debug|Any CPU
 		{983B7EFF-7E75-4A87-890A-744A0B4C5232}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
 		{983B7EFF-7E75-4A87-890A-744A0B4C5232}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
-		{983B7EFF-7E75-4A87-890A-744A0B4C5232}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
-		{983B7EFF-7E75-4A87-890A-744A0B4C5232}.Debug|Mixed Platforms.Build.0 = Debug|x86
+		{983B7EFF-7E75-4A87-890A-744A0B4C5232}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{983B7EFF-7E75-4A87-890A-744A0B4C5232}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
 		{983B7EFF-7E75-4A87-890A-744A0B4C5232}.Debug|x86.ActiveCfg = Debug|x86
 		{983B7EFF-7E75-4A87-890A-744A0B4C5232}.Debug|x86.Build.0 = Debug|x86
 		{983B7EFF-7E75-4A87-890A-744A0B4C5232}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -433,9 +433,9 @@ Global
 		{278FD5B8-3EE4-454A-AE36-900C9025F313}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
 		{278FD5B8-3EE4-454A-AE36-900C9025F313}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
 		{278FD5B8-3EE4-454A-AE36-900C9025F313}.Debug|iPhoneSimulator.Deploy.0 = Debug|Any CPU
-		{278FD5B8-3EE4-454A-AE36-900C9025F313}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
-		{278FD5B8-3EE4-454A-AE36-900C9025F313}.Debug|Mixed Platforms.Build.0 = Debug|x86
-		{278FD5B8-3EE4-454A-AE36-900C9025F313}.Debug|Mixed Platforms.Deploy.0 = Debug|x86
+		{278FD5B8-3EE4-454A-AE36-900C9025F313}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{278FD5B8-3EE4-454A-AE36-900C9025F313}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{278FD5B8-3EE4-454A-AE36-900C9025F313}.Debug|Mixed Platforms.Deploy.0 = Debug|Any CPU
 		{278FD5B8-3EE4-454A-AE36-900C9025F313}.Debug|x86.ActiveCfg = Debug|x86
 		{278FD5B8-3EE4-454A-AE36-900C9025F313}.Debug|x86.Build.0 = Debug|x86
 		{278FD5B8-3EE4-454A-AE36-900C9025F313}.Debug|x86.Deploy.0 = Debug|x86

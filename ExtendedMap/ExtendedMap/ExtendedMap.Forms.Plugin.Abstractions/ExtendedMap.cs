@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.ObjectModel;
 using System.Linq;
+using ExtendedMap.Forms.Plugin.Abstractions.Models;
 using Xamarin.Forms;
 using Xamarin.Forms.Maps;
 

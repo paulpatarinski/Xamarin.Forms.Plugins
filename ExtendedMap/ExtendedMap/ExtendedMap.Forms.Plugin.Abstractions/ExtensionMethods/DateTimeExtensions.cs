@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace ExtendedMap.Forms.Plugin.Abstractions
+namespace ExtendedMap.Forms.Plugin.Abstractions.ExtensionMethods
 {
   public static class DateTimeExtensions
   {

@@ -1,6 +1,6 @@
 ﻿using Xamarin.Forms;
 
-namespace ExtendedMap.Forms.Plugin.Abstractions
+namespace ExtendedMap.Forms.Plugin.Abstractions.Models
 {
 	public struct Colors
 	{
