@@ -1,4 +1,3 @@
-using System.Threading.Tasks;
 using Android.Content;
 using Android.Net;
 using Android.Telephony;
@@ -12,11 +11,12 @@ namespace ExtendedMap.Forms.Plugin.Droid.Services
 {
   public class PhoneService : IPhoneService
   {
-    /// <summary>
-    /// Opens native dialog to dial the specified number.
-    /// </summary>
-    /// <param name="number">Number to dial.</param>
-    public void DialNumber(string number)
+      /// <summary>
+      /// Opens native dialog to dial the specified number.
+      /// </summary>
+      /// <param name="number">Number to dial.</param>
+      /// <param name="name"></param>
+      public void DialNumber(string number, string name)
     {
       number.StartActivity(new Intent(Intent.ActionDial, Uri.Parse("tel:" + number)));
     }

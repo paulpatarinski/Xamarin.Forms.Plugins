@@ -18,14 +18,16 @@ namespace ExtendedMap.Forms.Plugin.WindowsPhone.Services
             webBrowserTask.Show();
         }
 
-        public void DialNumber(string number)
+        public void DialNumber(string number, string name)
         {
-            throw new NotImplementedException();
+            var phoneCallTask = new PhoneCallTask {PhoneNumber = number, DisplayName = name};
+
+            phoneCallTask.Show();
         }
 
         public void ShareText(string text)
         {
-            var smsComposeTask = new SmsComposeTask()
+            var smsComposeTask = new SmsComposeTask
             {
                 Body = text
             };

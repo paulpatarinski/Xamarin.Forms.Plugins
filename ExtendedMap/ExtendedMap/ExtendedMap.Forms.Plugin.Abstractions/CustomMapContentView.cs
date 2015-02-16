@@ -389,7 +389,8 @@ namespace ExtendedMap.Forms.Plugin.Abstractions
        (footerTopSectionHeight / 5), (view, o) =>
        {
          var phoneNumber = _extendedMap.SelectedPin.PhoneNumber;
-         DependencyService.Get<IPhoneService>().DialNumber(phoneNumber);
+         var name = _extendedMap.SelectedPin.Label;
+         DependencyService.Get<IPhoneService>().DialNumber(phoneNumber,name);
        });
 
 
