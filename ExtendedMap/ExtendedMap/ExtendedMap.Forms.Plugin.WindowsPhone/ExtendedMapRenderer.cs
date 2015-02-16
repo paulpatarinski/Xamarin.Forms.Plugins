@@ -5,10 +5,12 @@ using System.Threading.Tasks;
 using System.Windows.Media;
 using System.Windows.Shapes;
 using Windows.Devices.Geolocation;
+using ExtendedCells.Forms.Plugin.WindowsPhone;
 using ExtendedMap.Forms.Plugin.Abstractions;
 using Forms.Plugin.WindowsPhone;
 using Microsoft.Phone.Maps.Controls;
 using Microsoft.Phone.Maps.Toolkit;
+using SVG.Forms.Plugin.WindowsPhone;
 using Xamarin.Forms;
 using Xamarin.Forms.Maps;
 using Xamarin.Forms.Platform.WinPhone;
@@ -26,7 +28,11 @@ namespace Forms.Plugin.WindowsPhone
         /// <summary>
         /// Used for registration with dependency service
         /// </summary>
-        public static void Init() { }
+        public static void Init()
+        {
+            SvgImageRenderer.Init();
+            TwoColumnCellRenderer.Init();
+        }
         private Map _nativeMap;
         private ExtendedPin _selectedPin;
         private global::ExtendedMap.Forms.Plugin.Abstractions.ExtendedMap _formsMap
