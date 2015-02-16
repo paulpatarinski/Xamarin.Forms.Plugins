@@ -11,7 +11,7 @@
     <RootNamespace>ExtendedCells.Forms.Plugin.iOS</RootNamespace>
     <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
     <AssemblyName>ExtendedCells.Forms.Plugin.iOS</AssemblyName>
-    <NuGetPackageImportStamp>f78f9730</NuGetPackageImportStamp>
+    <NuGetPackageImportStamp>27af95b5</NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>

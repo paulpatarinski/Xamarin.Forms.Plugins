@@ -1,10 +1,8 @@
 ﻿using System;
 using Android.Gms.Maps;
 using Android.Gms.Maps.Model;
-using ExtendedCells.Forms.Plugin.Android;
 using ExtendedMap.Forms.Plugin.Abstractions;
 using ExtendedMap.Forms.Plugin.Droid;
-using SVG.Forms.Plugin.Droid;
 using Xamarin.Forms;
 using Xamarin.Forms.Maps.Android;
 using Xamarin.Forms.Platform.Android;
@@ -17,8 +15,6 @@ namespace ExtendedMap.Forms.Plugin.Droid
 	{
 	    public static void Init()
 	    {
-            SvgImageRenderer.Init();
-	        TwoColumnCellRenderer.Init();
 	    }
 
 		private Marker _previouslySelectedMarker { get; set; }

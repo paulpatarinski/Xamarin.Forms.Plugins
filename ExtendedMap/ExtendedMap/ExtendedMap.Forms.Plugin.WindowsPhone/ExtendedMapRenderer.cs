@@ -5,12 +5,10 @@ using System.Threading.Tasks;
 using System.Windows.Media;
 using System.Windows.Shapes;
 using Windows.Devices.Geolocation;
-using ExtendedCells.Forms.Plugin.WindowsPhone;
 using ExtendedMap.Forms.Plugin.Abstractions;
-using Forms.Plugin.WindowsPhone;
+using ExtendedMap.Forms.Plugin.WindowsPhone;
 using Microsoft.Phone.Maps.Controls;
 using Microsoft.Phone.Maps.Toolkit;
-using SVG.Forms.Plugin.WindowsPhone;
 using Xamarin.Forms;
 using Xamarin.Forms.Maps;
 using Xamarin.Forms.Platform.WinPhone;
@@ -18,7 +16,7 @@ using Map = Microsoft.Phone.Maps.Controls.Map;
 using Point = System.Windows.Point;
 
 [assembly: ExportRenderer(typeof(global::ExtendedMap.Forms.Plugin.Abstractions.ExtendedMap), typeof(ExtendedMapRenderer))]
-namespace Forms.Plugin.WindowsPhone
+namespace ExtendedMap.Forms.Plugin.WindowsPhone
 {
     /// <summary>
     /// ExtendedMap Renderer
@@ -30,8 +28,6 @@ namespace Forms.Plugin.WindowsPhone
         /// </summary>
         public static void Init()
         {
-            SvgImageRenderer.Init();
-            TwoColumnCellRenderer.Init();
         }
         private Map _nativeMap;
         private ExtendedPin _selectedPin;

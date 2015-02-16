@@ -106,11 +106,11 @@
   <ItemGroup>
     <Reference Include="ExtendedCells.Forms.Plugin.Abstractions, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\packages\Xam.Plugins.Forms.ExtendedCell.1.0.0.2\lib\wp8\ExtendedCells.Forms.Plugin.Abstractions.dll</HintPath>
+      <HintPath>..\..\packages\Xam.Plugins.Forms.ExtendedCell.1.0.0.3\lib\wp8\ExtendedCells.Forms.Plugin.Abstractions.dll</HintPath>
     </Reference>
     <Reference Include="ExtendedCells.Forms.Plugin.WindowsPhone, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\packages\Xam.Plugins.Forms.ExtendedCell.1.0.0.2\lib\wp8\ExtendedCells.Forms.Plugin.WindowsPhone.dll</HintPath>
+      <HintPath>..\..\packages\Xam.Plugins.Forms.ExtendedCell.1.0.0.3\lib\wp8\ExtendedCells.Forms.Plugin.WindowsPhone.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Phone.Controls.Toolkit, Version=8.0.1.0, Culture=neutral, PublicKeyToken=b772ad94eb9ca604, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>

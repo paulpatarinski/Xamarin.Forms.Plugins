@@ -439,6 +439,7 @@ namespace ExtendedMap.Forms.Plugin.Abstractions
 
       var itemTemplate = new DataTemplate(typeof (TwoColumnCell));
 
+      itemTemplate.SetValue(TwoColumnCell.LeftColumnWidthProperty, new GridLength(1.0, GridUnitType.Star));
       itemTemplate.SetBinding(TwoColumnCell.LeftTextProperty, "Day");
       itemTemplate.SetValue(TwoColumnCell.LeftTextColorProperty, Color.Black);
       itemTemplate.SetBinding(TwoColumnCell.LeftDetailProperty, "HoursOfOperation");
@@ -474,6 +475,8 @@ namespace ExtendedMap.Forms.Plugin.Abstractions
 
       var itemTemplate = new DataTemplate(typeof (TwoColumnCell));
 
+      itemTemplate.SetValue(TwoColumnCell.LeftColumnWidthProperty, new GridLength(0.85, GridUnitType.Star));
+      itemTemplate.SetValue(TwoColumnCell.RightColumnWidthProperty, new GridLength(0.15, GridUnitType.Star));
       itemTemplate.SetBinding(TwoColumnCell.LeftTextProperty, "Key");
       itemTemplate.SetValue(TwoColumnCell.LeftTextColorProperty, Color.Black);
       itemTemplate.SetBinding(TwoColumnCell.LeftDetailProperty, "Value");

@@ -50,7 +50,7 @@
   </ItemGroup>
   <ItemGroup>
     <Reference Include="ExtendedCells.Forms.Plugin.Abstractions">
-      <HintPath>..\..\packages\Xam.Plugins.Forms.ExtendedCell.1.0.0.2\lib\portable-net45+wp8+win8+MonoAndroid10+MonoTouch10\ExtendedCells.Forms.Plugin.Abstractions.dll</HintPath>
+      <HintPath>..\..\packages\Xam.Plugins.Forms.ExtendedCell.1.0.0.3\lib\portable-net45+wp8+win8+MonoAndroid10+MonoTouch10\ExtendedCells.Forms.Plugin.Abstractions.dll</HintPath>
     </Reference>
     <Reference Include="SVG.Forms.Plugin.Abstractions">
       <HintPath>..\..\packages\Xam.Plugins.Forms.SVG.1.0.0.15\lib\portable-net45+wp8+win8+MonoAndroid10+MonoTouch10\SVG.Forms.Plugin.Abstractions.dll</HintPath>
