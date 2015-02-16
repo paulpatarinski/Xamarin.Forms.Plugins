@@ -4,5 +4,20 @@
         <name>ExtendedMap.Forms.Plugin.Android</name>
     </assembly>
     <members>
+        <member name="M:ExtendedMap.Forms.Plugin.Droid.Extensions.ObjectExtensions.StartActivity(System.Object,Android.Content.Intent)">
+            <summary>
+            Starts the activity using either the object itself if it a type of <see cref="T:Android.Content.Context"/>
+            or alternatively using <see cref="P:Android.App.Application.Context"/>
+            </summary>
+            <param name="o">O.</param>
+            <param name="intent">Intent.</param>
+        </member>
+        <member name="M:ExtendedMap.Forms.Plugin.Droid.Services.PhoneService.DialNumber(System.String,System.String)">
+            <summary>
+            Opens native dialog to dial the specified number.
+            </summary>
+            <param name="number">Number to dial.</param>
+            <param name="name"></param>
+        </member>
     </members>
 </doc>

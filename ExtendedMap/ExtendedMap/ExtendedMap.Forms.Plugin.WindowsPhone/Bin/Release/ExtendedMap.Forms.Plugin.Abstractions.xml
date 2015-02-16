@@ -10,51 +10,12 @@
             </summary>
             <value>The others.</value>
         </member>
-        <member name="M:ExtendedMap.Forms.Plugin.Abstractions.IPhoneService.DialNumber(System.String)">
+        <member name="M:ExtendedMap.Forms.Plugin.Abstractions.IPhoneService.DialNumber(System.String,System.String)">
             <summary>
             Opens native dialog to dial the specified number.
             </summary>
             <param name="number">Number to dial.</param>
-        </member>
-        <member name="P:ExtendedMap.Forms.Plugin.Abstractions.IPhoneService.CellularProvider">
-            <summary>
-            Gets the cellular provider.
-            </summary>
-        </member>
-        <member name="P:ExtendedMap.Forms.Plugin.Abstractions.IPhoneService.IsCellularDataEnabled">
-            <summary>
-            Gets a value indicating whether this instance has cellular data enabled.
-            </summary>
-        </member>
-        <member name="P:ExtendedMap.Forms.Plugin.Abstractions.IPhoneService.IsCellularDataRoamingEnabled">
-            <summary>
-            Gets a value indicating whether this instance has cellular data roaming enabled.
-            </summary>
-        </member>
-        <member name="P:ExtendedMap.Forms.Plugin.Abstractions.IPhoneService.IsNetworkAvailable">
-            <summary>
-            Gets a value indicating whether this instance has network available.
-            </summary>
-        </member>
-        <member name="P:ExtendedMap.Forms.Plugin.Abstractions.IPhoneService.ICC">
-            <summary>
-            Gets the ISO Country Code.
-            </summary>
-        </member>
-        <member name="P:ExtendedMap.Forms.Plugin.Abstractions.IPhoneService.MCC">
-            <summary>
-            Gets the Mobile Country Code.
-            </summary>
-        </member>
-        <member name="P:ExtendedMap.Forms.Plugin.Abstractions.IPhoneService.MNC">
-            <summary>
-            Gets the Mobile Network Code.
-            </summary>
-        </member>
-        <member name="P:ExtendedMap.Forms.Plugin.Abstractions.IPhoneService.CanSendSMS">
-            <summary>
-            Gets whether the service can send SMS
-            </summary>
+            <param name="name"></param>
         </member>
         <member name="P:ExtendedMap.Forms.Plugin.Abstractions.ScheduleEntry.HoursOfOperation">
             <summary>
