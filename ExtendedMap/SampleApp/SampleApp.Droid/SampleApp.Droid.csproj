@@ -67,11 +67,11 @@
     <Reference Include="mscorlib" />
     <Reference Include="SVG.Forms.Plugin.Abstractions, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\packages\Xam.Plugins.Forms.SVG.1.0.0.13\lib\MonoAndroid10\SVG.Forms.Plugin.Abstractions.dll</HintPath>
+      <HintPath>..\..\packages\Xam.Plugins.Forms.SVG.1.0.0.15\lib\MonoAndroid10\SVG.Forms.Plugin.Abstractions.dll</HintPath>
     </Reference>
     <Reference Include="SVG.Forms.Plugin.Android, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\packages\Xam.Plugins.Forms.SVG.1.0.0.13\lib\MonoAndroid10\SVG.Forms.Plugin.Android.dll</HintPath>
+      <HintPath>..\..\packages\Xam.Plugins.Forms.SVG.1.0.0.15\lib\MonoAndroid10\SVG.Forms.Plugin.Android.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -104,7 +104,7 @@
     </Reference>
     <Reference Include="XamSvg, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\packages\Xam.Plugins.Forms.SVG.1.0.0.13\lib\MonoAndroid10\XamSvg.dll</HintPath>
+      <HintPath>..\..\packages\Xam.Plugins.Forms.SVG.1.0.0.15\lib\MonoAndroid10\XamSvg.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
