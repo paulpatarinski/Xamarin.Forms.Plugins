@@ -28,12 +28,12 @@ namespace ExtendedMap.Forms.Plugin.WindowsPhone.Services
 
         public void ShareText(string text)
         {
-            throw new NotImplementedException();
-        }
+            var smsComposeTask = new SmsComposeTask()
+            {
+                Body = text
+            };
 
-        public void LaunchMap(string address)
-        {
-            throw new NotImplementedException();
+            smsComposeTask.Show();
         }
 
         public void LaunchNavigationAsync(NavigationModel navigationModel)
