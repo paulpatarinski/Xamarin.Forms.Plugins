@@ -18,7 +18,7 @@ namespace ExtendedMap.Forms.Plugin.Abstractions
 
 		void LaunchMap (string address);
 
-		Task LaunchNavigationAsync (NavigationModel navigationModel);
+		void LaunchNavigationAsync (NavigationModel navigationModel);
 	}
 }
 

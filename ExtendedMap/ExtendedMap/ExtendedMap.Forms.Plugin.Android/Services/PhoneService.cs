@@ -53,7 +53,7 @@ namespace ExtendedMap.Forms.Plugin.Droid.Services
       StartActivity(geoUri);
     }
 
-    public async Task LaunchNavigationAsync(NavigationModel navigationModel)
+    public void LaunchNavigationAsync(NavigationModel navigationModel)
     {
       var uri = Uri.Parse("google.navigation:q=" + navigationModel.DestinationAddress);
 
