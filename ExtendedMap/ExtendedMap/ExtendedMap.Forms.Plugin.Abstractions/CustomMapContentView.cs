@@ -71,12 +71,7 @@ namespace ExtendedMap.Forms.Plugin.Abstractions
     {
       get
       {
-        var footerRow = _mapGrid.Children[0];
-
-        Device.OnPlatform(WinPhone: () =>
-        {
-          footerRow = _mapGrid.Children[1];
-        });
+        var footerRow = _mapGrid.Children[1];
 
         return footerRow;
       }
@@ -101,16 +96,9 @@ namespace ExtendedMap.Forms.Plugin.Abstractions
         _mapGrid.RowDefinitions[0].Height = new GridLength(height*expandedMapHeight);
         _mapGrid.RowDefinitions[1].Height = new GridLength(footerHeight);
 
-        Device.OnPlatform(WinPhone: () =>
-        {
           //The rows need to be added in this order for win phone for the footer to display on top of the map
-          _mapGrid.Children.Add(_extendedMap, 0, 0);
-          _mapGrid.Children.Add(CreateFooter(footerHeight), 0, 1);
-        }, Android: () =>
-        {
-          _mapGrid.Children.Add(CreateFooter(footerHeight), 0, 1);
-          _mapGrid.Children.Add(_extendedMap, 0, 0);
-        });
+        _mapGrid.Children.Add(_extendedMap, 0, 0);
+        _mapGrid.Children.Add(CreateFooter(footerHeight), 0, 1);
 
         Grid.SetRowSpan(_extendedMap, 2);
 
