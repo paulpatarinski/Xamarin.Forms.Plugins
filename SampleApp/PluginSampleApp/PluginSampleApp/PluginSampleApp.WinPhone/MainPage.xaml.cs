@@ -1,5 +1,5 @@
 ﻿using ExtendedCells.Forms.Plugin.WindowsPhone;
-using Forms.Plugin.WindowsPhone;
+using ExtendedMap.Forms.Plugin.WindowsPhone;
 using SVG.Forms.Plugin.WindowsPhone;
 using Xamarin;
 using Xamarin.Forms.Platform.WinPhone;
@@ -15,9 +15,9 @@ namespace PluginSampleApp.WinPhone
 
             Xamarin.Forms.Forms.Init();
             FormsMaps.Init();
-            //ExtendedMapRenderer.Init();
             SvgImageRenderer.Init();
             TwoColumnCellRenderer.Init();
+            ExtendedMapRenderer.Init();
 
             LoadApplication(new PluginSampleApp.App());
         }

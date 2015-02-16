@@ -26,6 +26,7 @@ namespace PluginSampleApp.Droid
 		
 		public static void UpdateIdValues()
 		{
+			global::XamSvg.Resource.String.library_name = global::PluginSampleApp.Droid.Resource.String.library_name;
 		}
 		
 		public partial class Animation
@@ -2005,6 +2006,9 @@ namespace PluginSampleApp.Droid
 			
 			// aapt resource value: 0x7f060019
 			public const int decline = 2131099673;
+			
+			// aapt resource value: 0x7f060039
+			public const int library_name = 2131099705;
 			
 			// aapt resource value: 0x7f060000
 			public const int mr_media_route_button_content_description = 2131099648;
