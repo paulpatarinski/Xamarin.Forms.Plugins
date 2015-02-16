@@ -2,7 +2,9 @@
 using Android.Content.PM;
 using Android.OS;
 using ExtendedCells.Forms.Plugin.Android;
+using ExtendedMap.Forms.Plugin.Droid;
 using SVG.Forms.Plugin.Droid;
+using Xamarin;
 using Xamarin.Forms.Platform.Android;
 
 namespace PluginSampleApp.Droid
@@ -15,9 +17,11 @@ namespace PluginSampleApp.Droid
             base.OnCreate(bundle);
 
             Xamarin.Forms.Forms.Init(this, bundle);
+            FormsMaps.Init(this, bundle);
 
             SvgImageRenderer.Init();
             TwoColumnCellRenderer.Init();
+            ExtendedMapRenderer.Init();
 
             LoadApplication(new App());
         }
