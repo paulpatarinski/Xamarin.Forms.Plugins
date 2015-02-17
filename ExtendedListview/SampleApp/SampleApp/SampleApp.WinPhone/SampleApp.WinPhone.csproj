@@ -123,6 +123,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="ApplicationIcon.png" />
     <Content Include="Assets\AlignmentGrid.png" />
     <Content Include="Assets\ApplicationIcon.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -142,6 +143,11 @@
     <Content Include="Assets\Tiles\IconicTileSmall.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="FlipCycleTileLarge.png" />
+    <Content Include="FlipCycleTileMedium.png" />
+    <Content Include="FlipCycleTileSmall.png" />
+    <Content Include="IconicTileMediumLarge.png" />
+    <Content Include="IconicTileSmall.png" />
     <Content Include="README_FIRST.txt" />
     <Content Include="Toolkit.Content\ApplicationBar.Add.png" />
     <Content Include="Toolkit.Content\ApplicationBar.Cancel.png" />

@@ -1,8 +1,7 @@
-﻿using ExtendedListview.Forms.Plugin.Abstractions;
-using ExtendedListview.Forms.Plugin.iOSUnified;
+﻿using ExtendedListview.Forms.Plugin.iOSUnified;
 using Xamarin.Forms;
 
-[assembly: ExportRenderer(typeof (ExtendedListview), typeof (ExtendedListviewRenderer))]
+[assembly: ExportRenderer(typeof (ExtendedListview.Forms.Plugin.Abstractions.ExtendedListview), typeof (ExtendedListviewRenderer))]
 
 namespace ExtendedListview.Forms.Plugin.iOSUnified
 {
