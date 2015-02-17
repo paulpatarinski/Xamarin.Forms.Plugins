@@ -2,7 +2,7 @@
 using ExtendedListview.Forms.Plugin.iOS;
 using Xamarin.Forms;
 
-[assembly: ExportRenderer(typeof (ExtendedListviewControl), typeof (ExtendedListviewRenderer))]
+[assembly: ExportRenderer(typeof (ExtendedListview), typeof (ExtendedListviewRenderer))]
 
 namespace ExtendedListview.Forms.Plugin.iOS
 {

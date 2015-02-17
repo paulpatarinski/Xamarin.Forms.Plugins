@@ -36,7 +36,8 @@
     <DocumentationFile>bin\Release\ExtendedListview.Forms.Plugin.Abstractions.XML</DocumentationFile>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="ExtendedListviewControl.cs" />
+    <Compile Include="ExtendedListview.cs" />
+    <Compile Include="LoadMoreQuery.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

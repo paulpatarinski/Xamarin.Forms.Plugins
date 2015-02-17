@@ -1,11 +1,11 @@
-﻿using SampleApp.ViewModel;
+﻿using SampleApp.ViewModels;
 using Xamarin.Forms;
 
 namespace SampleApp.Pages
 {
-  public partial class PullToRefreshListview : ContentPage
+  public partial class IncrementalListview : ContentPage
   {
-    public PullToRefreshListview()
+    public IncrementalListview()
     {
       InitializeComponent();
       BindingContext = new ListviewViewModel();

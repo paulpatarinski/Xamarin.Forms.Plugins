@@ -8,7 +8,7 @@ namespace SampleApp
     public App()
     {
       // The root page of your application
-      MainPage = new PullToRefreshListview();
+      MainPage = new IncrementalListview();
     }
 
     protected override void OnStart()

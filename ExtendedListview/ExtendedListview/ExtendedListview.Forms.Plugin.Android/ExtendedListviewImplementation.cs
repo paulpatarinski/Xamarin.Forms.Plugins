@@ -2,7 +2,7 @@ using ExtendedListview.Forms.Plugin.Abstractions;
 using ExtendedListview.Forms.Plugin.Droid;
 using Xamarin.Forms;
 
-[assembly: ExportRenderer(typeof (ExtendedListviewControl), typeof (ExtendedListviewRenderer))]
+[assembly: ExportRenderer(typeof (ExtendedListview), typeof (ExtendedListviewRenderer))]
 
 namespace ExtendedListview.Forms.Plugin.Droid
 {

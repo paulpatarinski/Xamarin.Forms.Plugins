@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:abstractions="clr-namespace:ExtendedListview.Forms.Plugin.Abstractions;assembly=ExtendedListview.Forms.Plugin.Abstractions"
+             x:Class="SampleApp.Pages.IncrementalListview" IsBusy="{Binding IsLoading}">
+  <abstractions:ExtendedListview ItemsSource="{Binding People}" LoadMoreCommand="{Binding LoadMoreCommand}" PageSize="10" Offset="10">
+    <abstractions:ExtendedListview.ItemTemplate>
+      <DataTemplate>
+       <TextCell Text="{Binding FirstName}" Detail="{Binding LastName}"/>
+        </DataTemplate>
+    </abstractions:ExtendedListview.ItemTemplate>
+  </abstractions:ExtendedListview>
+</ContentPage>
