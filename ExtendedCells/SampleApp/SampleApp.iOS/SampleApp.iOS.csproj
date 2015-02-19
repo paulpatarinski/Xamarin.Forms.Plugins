@@ -124,13 +124,13 @@
       <Name>SampleApp</Name>
       <Project>{EBD9C7E2-C5C5-47E3-A7F0-6A6BC41FCC12}</Project>
     </ProjectReference>
-    <ProjectReference Include="..\..\ExtendedCells\ExtendedCells.Forms.Plugin.iOS\ExtendedCells.Forms.Plugin.iOS.csproj">
-      <Project>{D525F236-6A2D-4010-B1CC-4A4B8581C90B}</Project>
-      <Name>ExtendedCells.Forms.Plugin.iOS</Name>
-    </ProjectReference>
     <ProjectReference Include="..\..\ExtendedCells\ExtendedCells.Forms.Plugin.Abstractions\ExtendedCells.Forms.Plugin.Abstractions.csproj">
       <Project>{14C534B6-1984-41A9-A384-D3A5508588E3}</Project>
       <Name>ExtendedCells.Forms.Plugin.Abstractions</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\ExtendedCells\ExtendedCells.Forms.Plugin.iOSUnified\ExtendedCells.Forms.Plugin.iOSUnified.csproj">
+      <Project>{D525F236-6A2D-4010-B1CC-4A4B8581C90B}</Project>
+      <Name>ExtendedCells.Forms.Plugin.iOSUnified</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

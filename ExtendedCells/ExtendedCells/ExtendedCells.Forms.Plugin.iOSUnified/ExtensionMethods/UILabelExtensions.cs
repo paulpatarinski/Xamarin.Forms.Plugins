@@ -2,7 +2,7 @@
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.iOS;
 
-namespace ExtendedCells.Forms.Plugin.iOS
+namespace ExtendedCells.Forms.Plugin.iOSUnified
 {
 	public static class UILabelExtensions
 	{

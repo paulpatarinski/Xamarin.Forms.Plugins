@@ -3,7 +3,7 @@ using UIKit;
 using Foundation;
 using ExtendedCells.Forms.Plugin.Abstractions;
 using Xamarin.Forms.Platform.iOS;
-using ExtendedCells.Forms.Plugin.iOS;
+using ExtendedCells.Forms.Plugin.iOSUnified;
 
 namespace ExtendedCells.Forms.Plugin.Models
 {

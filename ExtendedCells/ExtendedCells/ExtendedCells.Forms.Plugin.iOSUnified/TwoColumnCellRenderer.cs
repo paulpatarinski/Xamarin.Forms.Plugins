@@ -1,5 +1,5 @@
 ﻿using ExtendedCells.Forms.Plugin.Abstractions;
-using ExtendedCells.Forms.Plugin.iOS;
+using ExtendedCells.Forms.Plugin.iOSUnified;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.iOS;
 using Foundation;
@@ -8,7 +8,7 @@ using System;
 using ExtendedCells.Forms.Plugin.Models;
 
 [assembly: ExportRenderer (typeof(TwoColumnCell), typeof(TwoColumnCellRenderer))]
-namespace ExtendedCells.Forms.Plugin.iOS
+namespace ExtendedCells.Forms.Plugin.iOSUnified
 {
 	/// <summary>
 	/// SVG Renderer

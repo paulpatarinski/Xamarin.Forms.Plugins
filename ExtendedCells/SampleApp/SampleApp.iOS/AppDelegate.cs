@@ -4,7 +4,7 @@ using System.Linq;
 
 using Foundation;
 using UIKit;
-using ExtendedCells.Forms.Plugin.iOS;
+using ExtendedCells.Forms.Plugin.iOSUnified;
 using Xamarin.Forms;
 
 namespace SampleApp.iOS
