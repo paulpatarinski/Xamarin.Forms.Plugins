@@ -6,12 +6,11 @@
     <ProjectGuid>{D525F236-6A2D-4010-B1CC-4A4B8581C90B}</ProjectGuid>
     <ProjectTypeGuids>{FEACFBD2-3405-455C-9665-78FE426C6842};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
-    <RootNamespace>ExtendedCells.Forms.Plugin.iOS</RootNamespace>
+    <RootNamespace>ExtendedCells.Forms.Plugin.iOSUnified</RootNamespace>
     <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
-    <AssemblyName>ExtendedCells.Forms.Plugin.iOS</AssemblyName>
+    <AssemblyName>ExtendedCells.Forms.Plugin.iOSUnified</AssemblyName>
     <NuGetPackageImportStamp>53692d1b</NuGetPackageImportStamp>
     <TargetFrameworkIdentifier>Xamarin.iOS</TargetFrameworkIdentifier>
-    <TargetFrameworkVersion>v1.0</TargetFrameworkVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -33,7 +32,7 @@
     <WarningLevel>4</WarningLevel>
     <ConsolePause>false</ConsolePause>
     <CodesignKey>iPhone Developer</CodesignKey>
-    <DocumentationFile>bin\iPhone\Release\ExtendedCells.Forms.Plugin.iOS.xml</DocumentationFile>
+    <DocumentationFile>bin\iPhone\Release\ExtendedCells.Forms.Plugin.iOSUnified.xml</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'WinPhoneRelease|AnyCPU'">
     <OutputPath>bin\WinPhoneRelease\</OutputPath>
@@ -79,10 +78,7 @@
     <None Include="packages.config" />
     <None Include="NativeiOSCell.sketchcs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Models\" />
-    <Folder Include="ExtensionMethods\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\ExtendedCells.Forms.Plugin.Abstractions\ExtendedCells.Forms.Plugin.Abstractions.csproj">
       <Project>{14C534B6-1984-41A9-A384-D3A5508588E3}</Project>

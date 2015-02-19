@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
-    <metadata>
+    <metadata minClientVersion="2.8.1">
         <id>Xam.Plugins.Forms.ExtendedCell</id>
         <version>1.0.0.4</version>
         <title>Extended Cells for Xamarin.Forms</title>
