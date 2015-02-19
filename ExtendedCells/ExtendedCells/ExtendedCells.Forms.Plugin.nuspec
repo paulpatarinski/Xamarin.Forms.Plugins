@@ -19,24 +19,32 @@
         </dependencies>
     </metadata>
     <files>
-        <file src="ExtendedCells.Forms.Plugin.Abstractions\bin\Release\ExtendedCells.Forms.Plugin.Abstractions.dll" target="lib\MonoAndroid10\ExtendedCells.Forms.Plugin.Abstractions.dll" />
-        <file src="ExtendedCells.Forms.Plugin.Abstractions\bin\Release\ExtendedCells.Forms.Plugin.Abstractions.pdb" target="lib\MonoAndroid10\ExtendedCells.Forms.Plugin.Abstractions.pdb" />
-        <file src="ExtendedCells.Forms.Plugin.Abstractions\bin\Release\ExtendedCells.Forms.Plugin.Abstractions.xml" target="lib\MonoAndroid10\ExtendedCells.Forms.Plugin.Abstractions.xml" />
-        <file src="ExtendedCells.Forms.Plugin.Android\bin\Release\ExtendedCells.Forms.Plugin.Android.dll" target="lib\MonoAndroid10\ExtendedCells.Forms.Plugin.Android.dll" />
+		<!-- iOS Classic -->
+		<file src="ExtendedCells.Forms.Plugin.Abstractions\bin\Release\ExtendedCells.Forms.Plugin.Abstractions.dll" target="lib\Xamarin.iOS10\ExtendedCells.Forms.Plugin.Abstractions.dll" />
+        <file src="ExtendedCells.Forms.Plugin.Abstractions\bin\Release\ExtendedCells.Forms.Plugin.Abstractions.xml" target="lib\Xamarin.iOS10\ExtendedCells.Forms.Plugin.Abstractions.xml" />
+        <file src="ExtendedCells.Forms.Plugin.iOS\bin\iPhone\Release\ExtendedCells.Forms.Plugin.iOSUnified.dll" target="lib\Xamarin.iOS10\ExtendedCells.Forms.Plugin.iOSUnified.dll" />
+        <file src="ExtendedCells.Forms.Plugin.iOS\bin\iPhone\Release\ExtendedCells.Forms.Plugin.iOSUnified.xml" target="lib\Xamarin.iOS10\ExtendedCells.Forms.Plugin.iOSUnified.xml" />
+
+		<!-- ANDROID -->
+		<file src="ExtendedCells.Forms.Plugin.Android\bin\Release\ExtendedCells.Forms.Plugin.Android.dll" target="lib\MonoAndroid10\ExtendedCells.Forms.Plugin.Android.dll" />
         <file src="ExtendedCells.Forms.Plugin.Android\bin\Release\ExtendedCells.Forms.Plugin.Android.pdb" target="lib\MonoAndroid10\ExtendedCells.Forms.Plugin.Android.pdb" />
         <file src="ExtendedCells.Forms.Plugin.Android\bin\Release\ExtendedCells.Forms.Plugin.Android.xml" target="lib\MonoAndroid10\ExtendedCells.Forms.Plugin.Android.xml" />
-        <file src="ExtendedCells.Forms.Plugin.Abstractions\bin\Release\ExtendedCells.Forms.Plugin.Abstractions.dll" target="lib\MonoTouch10\ExtendedCells.Forms.Plugin.Abstractions.dll" />
-        <file src="ExtendedCells.Forms.Plugin.Abstractions\bin\Release\ExtendedCells.Forms.Plugin.Abstractions.xml" target="lib\MonoTouch10\ExtendedCells.Forms.Plugin.Abstractions.xml" />
-        <file src="ExtendedCells.Forms.Plugin.iOS\bin\iPhone\Release\ExtendedCells.Forms.Plugin.iOS.dll" target="lib\MonoTouch10\ExtendedCells.Forms.Plugin.iOS.dll" />
-        <file src="ExtendedCells.Forms.Plugin.iOS\bin\iPhone\Release\ExtendedCells.Forms.Plugin.iOS.xml" target="lib\MonoTouch10\ExtendedCells.Forms.Plugin.iOS.xml" />
-        <file src="ExtendedCells.Forms.Plugin.Abstractions\bin\Release\ExtendedCells.Forms.Plugin.Abstractions.dll" target="lib\portable-net45+wp8+win8+MonoAndroid10+MonoTouch10\ExtendedCells.Forms.Plugin.Abstractions.dll" />
-        <file src="ExtendedCells.Forms.Plugin.Abstractions\bin\Release\ExtendedCells.Forms.Plugin.Abstractions.pdb" target="lib\portable-net45+wp8+win8+MonoAndroid10+MonoTouch10\ExtendedCells.Forms.Plugin.Abstractions.pdb" />
-        <file src="ExtendedCells.Forms.Plugin.Abstractions\bin\Release\ExtendedCells.Forms.Plugin.Abstractions.xml" target="lib\portable-net45+wp8+win8+MonoAndroid10+MonoTouch10\ExtendedCells.Forms.Plugin.Abstractions.xml" />
-        <file src="ExtendedCells.Forms.Plugin.Abstractions\bin\Release\ExtendedCells.Forms.Plugin.Abstractions.dll" target="lib\wp8\ExtendedCells.Forms.Plugin.Abstractions.dll" />
-        <file src="ExtendedCells.Forms.Plugin.Abstractions\bin\Release\ExtendedCells.Forms.Plugin.Abstractions.pdb" target="lib\wp8\ExtendedCells.Forms.Plugin.Abstractions.pdb" />
-        <file src="ExtendedCells.Forms.Plugin.Abstractions\bin\Release\ExtendedCells.Forms.Plugin.Abstractions.xml" target="lib\wp8\ExtendedCells.Forms.Plugin.Abstractions.xml" />
-        <file src="ExtendedCells.Forms.Plugin.WindowsPhone\bin\Release\ExtendedCells.Forms.Plugin.WindowsPhone.dll" target="lib\wp8\ExtendedCells.Forms.Plugin.WindowsPhone.dll" />
+		<file src="ExtendedCells.Forms.Plugin.Abstractions\bin\Release\ExtendedCells.Forms.Plugin.Abstractions.dll" target="lib\MonoAndroid10\ExtendedCells.Forms.Plugin.Abstractions.dll" />
+        <file src="ExtendedCells.Forms.Plugin.Abstractions\bin\Release\ExtendedCells.Forms.Plugin.Abstractions.pdb" target="lib\MonoAndroid10\ExtendedCells.Forms.Plugin.Abstractions.pdb" />
+        <file src="ExtendedCells.Forms.Plugin.Abstractions\bin\Release\ExtendedCells.Forms.Plugin.Abstractions.xml" target="lib\MonoAndroid10\ExtendedCells.Forms.Plugin.Abstractions.xml" />
+        
+	
+		<!-- WINPHONE -->
+		<file src="ExtendedCells.Forms.Plugin.WindowsPhone\bin\Release\ExtendedCells.Forms.Plugin.WindowsPhone.dll" target="lib\wp8\ExtendedCells.Forms.Plugin.WindowsPhone.dll" />
         <file src="ExtendedCells.Forms.Plugin.WindowsPhone\bin\Release\ExtendedCells.Forms.Plugin.WindowsPhone.pdb" target="lib\wp8\ExtendedCells.Forms.Plugin.WindowsPhone.pdb" />
         <file src="ExtendedCells.Forms.Plugin.WindowsPhone\bin\Release\ExtendedCells.Forms.Plugin.WindowsPhone.xml" target="lib\wp8\ExtendedCells.Forms.Plugin.WindowsPhone.xml" />
+		<file src="ExtendedCells.Forms.Plugin.Abstractions\bin\Release\ExtendedCells.Forms.Plugin.Abstractions.dll" target="lib\wp8\ExtendedCells.Forms.Plugin.Abstractions.dll" />
+        <file src="ExtendedCells.Forms.Plugin.Abstractions\bin\Release\ExtendedCells.Forms.Plugin.Abstractions.pdb" target="lib\wp8\ExtendedCells.Forms.Plugin.Abstractions.pdb" />
+        <file src="ExtendedCells.Forms.Plugin.Abstractions\bin\Release\ExtendedCells.Forms.Plugin.Abstractions.xml" target="lib\wp8\ExtendedCells.Forms.Plugin.Abstractions.xml" />
+    
+		<!-- ABSTRACTIONS -->
+        <file src="ExtendedCells.Forms.Plugin.Abstractions\bin\Release\ExtendedCells.Forms.Plugin.Abstractions.dll" target="lib\portable-net45+wp8+win8+MonoAndroid10+MonoTouch10+Xamarin.iOS10\ExtendedCells.Forms.Plugin.Abstractions.dll" />
+        <file src="ExtendedCells.Forms.Plugin.Abstractions\bin\Release\ExtendedCells.Forms.Plugin.Abstractions.pdb" target="lib\portable-net45+wp8+win8+MonoAndroid10+MonoTouch10+Xamarin.iOS10\ExtendedCells.Forms.Plugin.Abstractions.pdb" />
+        <file src="ExtendedCells.Forms.Plugin.Abstractions\bin\Release\ExtendedCells.Forms.Plugin.Abstractions.xml" target="lib\portable-net45+wp8+win8+MonoAndroid10+MonoTouch10+Xamarin.iOS10\ExtendedCells.Forms.Plugin.Abstractions.xml" />
     </files>
 </package>
