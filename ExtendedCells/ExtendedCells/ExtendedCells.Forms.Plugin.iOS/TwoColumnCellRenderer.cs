@@ -1,18 +1,51 @@
 ﻿using ExtendedCells.Forms.Plugin.Abstractions;
 using ExtendedCells.Forms.Plugin.iOS;
 using Xamarin.Forms;
+using Xamarin.Forms.Platform.iOS;
+using Foundation;
+using UIKit;
+using System;
+using ExtendedCells.Forms.Plugin.Models;
 
-[assembly: ExportRenderer(typeof(TwoColumnCell), typeof(TwoColumnCellRenderer))]
+[assembly: ExportRenderer (typeof(TwoColumnCell), typeof(TwoColumnCellRenderer))]
 namespace ExtendedCells.Forms.Plugin.iOS
 {
-    /// <summary>
-    /// SVG Renderer
-    /// </summary>
-    public class TwoColumnCellRenderer //: TRender (replace with renderer type
-    {
-        /// <summary>
-        /// Used for registration with dependency service
-        /// </summary>
-        public static void Init() { }
-    }
+	/// <summary>
+	/// SVG Renderer
+	/// </summary>
+	public class TwoColumnCellRenderer : CellRenderer
+	{
+		static NSString rid = new NSString ("NativeCell");
+
+		/// <summary>
+		/// Used for registration with dependency service
+		/// </summary>
+		public static void Init ()
+		{
+		}
+
+		//		public override UITableViewCell GetCell (Cell item, MonoTouch.UIKit.UITableViewCell reusableCell, MonoTouch.UIKit.UITableView tv)
+		//		{
+		//			return base.GetCell (item, reusableCell, tv);
+		//		}
+
+
+
+		public override UITableViewCell GetCell (Cell item, UITableViewCell reusableCell, UITableView tv)
+		{
+			var formsControl = (TwoColumnCell)item;
+//			Console.WriteLine (x);
+		
+			var c = reusableCell as NativeiOSCell;
+			
+			if (c == null) {
+				c = new NativeiOSCell (rid);
+			}
+			
+						
+			c.UpdateCell (formsControl.LeftText, formsControl.RightText);
+		
+			return c;
+		}
+	}
 }
