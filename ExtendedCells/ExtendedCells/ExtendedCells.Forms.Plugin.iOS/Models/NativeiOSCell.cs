@@ -40,12 +40,12 @@ namespace ExtendedCells.Forms.Plugin.Models
 		public void UpdateCell (TwoColumnCell twoColumnCell)
 		{
 			this.twoColumnCell = twoColumnCell;
-			ContentView.BackgroundColor = ColorExtensions.ToUIColor (twoColumnCell.BackgroundColor);
+			ContentView.BackgroundColor = twoColumnCell.BackgroundColor.ToUIColor ();
 
-			leftTextUILabel.UpdateFromFormsControl (twoColumnCell.LeftText, twoColumnCell.LeftTextAlignment, twoColumnCell.LeftTextColor);
-			leftDetailUILabel.UpdateFromFormsControl (twoColumnCell.LeftDetail, twoColumnCell.LeftDetailAlignment, twoColumnCell.LeftDetailColor);
-			rightTextUILabel.UpdateFromFormsControl (twoColumnCell.RightText, twoColumnCell.RightTextAlignment, twoColumnCell.RightTextColor);
-			rightDetailUILabel.UpdateFromFormsControl (twoColumnCell.RightDetail, twoColumnCell.RightDetailAlignment, twoColumnCell.RightDetailColor);
+			leftTextUILabel.UpdateFromFormsControl (twoColumnCell.LeftText, twoColumnCell.LeftTextAlignment, twoColumnCell.LeftTextColor, twoColumnCell.LeftTextFont);
+			leftDetailUILabel.UpdateFromFormsControl (twoColumnCell.LeftDetail, twoColumnCell.LeftDetailAlignment, twoColumnCell.LeftDetailColor, twoColumnCell.LeftDetailFont);
+			rightTextUILabel.UpdateFromFormsControl (twoColumnCell.RightText, twoColumnCell.RightTextAlignment, twoColumnCell.RightTextColor, twoColumnCell.RightTextFont);
+			rightDetailUILabel.UpdateFromFormsControl (twoColumnCell.RightDetail, twoColumnCell.RightDetailAlignment, twoColumnCell.RightDetailColor, twoColumnCell.RightDetailFont);
 		}
 
 		public override void LayoutSubviews ()
@@ -71,7 +71,6 @@ namespace ExtendedCells.Forms.Plugin.Models
 				leftTextUILabel.Frame = new CoreGraphics.CGRect (0, 0, leftColumnWidth, ContentView.Bounds.Height);
 				rightTextUILabel.Frame = new CoreGraphics.CGRect (rightColumnWidth, 0, rightColumnWidth, ContentView.Bounds.Height);
 			}
-
 		}
 	}
 

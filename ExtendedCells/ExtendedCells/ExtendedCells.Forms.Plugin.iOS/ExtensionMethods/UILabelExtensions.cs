@@ -6,12 +6,12 @@ namespace ExtendedCells.Forms.Plugin.iOS
 {
 	public static class UILabelExtensions
 	{
-		public static void UpdateFromFormsControl (this UILabel uiLable, string text, TextAlignment textAlignment, Color textColor)
+		public static void UpdateFromFormsControl (this UILabel uiLabel, string text, TextAlignment textAlignment, Color textColor, Font font)
 		{
-			uiLable.Text = text;
-			uiLable.TextAlignment = textAlignment.ToUITextAlignment ();
-			uiLable.TextColor = textColor.ToUIColor ();
-
+			uiLabel.Text = text;
+			uiLabel.TextAlignment = textAlignment.ToUITextAlignment ();
+			uiLabel.TextColor = textColor.ToUIColor ();
+			uiLabel.Font = font.ToUIFont ();
 		}
 	}
 }
