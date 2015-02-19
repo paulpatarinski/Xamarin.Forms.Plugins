@@ -24,28 +24,19 @@ namespace ExtendedCells.Forms.Plugin.iOS
 		{
 		}
 
-		//		public override UITableViewCell GetCell (Cell item, MonoTouch.UIKit.UITableViewCell reusableCell, MonoTouch.UIKit.UITableView tv)
-		//		{
-		//			return base.GetCell (item, reusableCell, tv);
-		//		}
-
-
-
 		public override UITableViewCell GetCell (Cell item, UITableViewCell reusableCell, UITableView tv)
 		{
 			var formsControl = (TwoColumnCell)item;
-//			Console.WriteLine (x);
 		
-			var c = reusableCell as NativeiOSCell;
+			var nativeControl = reusableCell as NativeiOSCell;
 			
-			if (c == null) {
-				c = new NativeiOSCell (rid);
+			if (nativeControl == null) {
+				nativeControl = new NativeiOSCell (rid, formsControl);
 			}
-			
 						
-			c.UpdateCell (formsControl.LeftText, formsControl.RightText);
+			nativeControl.UpdateCell (formsControl);
 		
-			return c;
+			return nativeControl;
 		}
 	}
 }

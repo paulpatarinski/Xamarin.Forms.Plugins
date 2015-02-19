@@ -1,6 +1,9 @@
 ﻿using System;
 using UIKit;
 using Foundation;
+using ExtendedCells.Forms.Plugin.Abstractions;
+using Xamarin.Forms.Platform.iOS;
+using ExtendedCells.Forms.Plugin.iOS;
 
 namespace ExtendedCells.Forms.Plugin.Models
 {
@@ -10,52 +13,66 @@ namespace ExtendedCells.Forms.Plugin.Models
 	/// </summary>
 	public class NativeiOSCell : UITableViewCell
 	{
-
-		UILabel headingLabel, subheadingLabel;
+		UILabel leftTextUILabel, leftDetailUILabel, rightTextUILabel, rightDetailUILabel;
 		UIImageView imageView;
 
-		public NativeiOSCell (NSString cellId) : base (UITableViewCellStyle.Default, cellId)
+		TwoColumnCell twoColumnCell;
+
+		public NativeiOSCell (NSString cellId, TwoColumnCell twoColumnCell) : base (UITableViewCellStyle.Default, cellId)
 		{
-			SelectionStyle = UITableViewCellSelectionStyle.Gray;
+			this.twoColumnCell = twoColumnCell;
+			SelectionStyle = UITableViewCellSelectionStyle.Default;
 
-			ContentView.BackgroundColor = UIColor.FromRGB (255, 255, 224);
+			leftTextUILabel = new UILabel ();
+			leftDetailUILabel = new UILabel ();
+			rightTextUILabel = new UILabel ();
+			rightDetailUILabel = new UILabel ();
 
-//			imageView = new UIImageView ();
+			ContentView.Add (leftTextUILabel);
+			ContentView.Add (rightTextUILabel);
 
-			headingLabel = new UILabel () {
-				Font = UIFont.FromName ("Cochin-BoldItalic", 22f),
-				TextColor = UIColor.FromRGB (127, 51, 0),
-				BackgroundColor = UIColor.Clear
-			};
-
-			subheadingLabel = new UILabel () {
-				Font = UIFont.FromName ("AmericanTypewriter", 12f),
-				TextColor = UIColor.FromRGB (38, 127, 0),
-				TextAlignment = UITextAlignment.Center,
-				BackgroundColor = UIColor.Clear
-			};
-
-			ContentView.Add (headingLabel);
-			ContentView.Add (subheadingLabel);
-//			ContentView.Add (imageView);
+			if (!string.IsNullOrEmpty (twoColumnCell.LeftDetail) || !string.IsNullOrEmpty (twoColumnCell.LeftDetail)) {
+				ContentView.Add (leftDetailUILabel);
+				ContentView.Add (rightDetailUILabel);
+			}
 		}
 
-		public void UpdateCell (string caption, string subtitle)
+		public void UpdateCell (TwoColumnCell twoColumnCell)
 		{
-//			imageView.Image = image;
-			headingLabel.Text = caption;
-			subheadingLabel.Text = subtitle;
+			this.twoColumnCell = twoColumnCell;
+			ContentView.BackgroundColor = ColorExtensions.ToUIColor (twoColumnCell.BackgroundColor);
+
+			leftTextUILabel.UpdateFromFormsControl (twoColumnCell.LeftText, twoColumnCell.LeftTextAlignment, twoColumnCell.LeftTextColor);
+			leftDetailUILabel.UpdateFromFormsControl (twoColumnCell.LeftDetail, twoColumnCell.LeftDetailAlignment, twoColumnCell.LeftDetailColor);
+			rightTextUILabel.UpdateFromFormsControl (twoColumnCell.RightText, twoColumnCell.RightTextAlignment, twoColumnCell.RightTextColor);
+			rightDetailUILabel.UpdateFromFormsControl (twoColumnCell.RightDetail, twoColumnCell.RightDetailAlignment, twoColumnCell.RightDetailColor);
 		}
 
 		public override void LayoutSubviews ()
 		{
 			base.LayoutSubviews ();
 
-//			imageView.Frame = new CoreGraphics.CGRect (ContentView.Bounds.Width - 63, 5, 33, 33);
-			headingLabel.Frame = new CoreGraphics.CGRect (5, 4, ContentView.Bounds.Width - 63, 25);
-			subheadingLabel.Frame = new CoreGraphics.CGRect (100, 18, 100, 20);
+			var leftColumnWidth = (float)(ContentView.Bounds.Width * twoColumnCell.LeftColumnWidth.Value);
+			var rightColumnWidth = (float)(ContentView.Bounds.Width * twoColumnCell.RightColumnWidth.Value);
+
+			var firstRowHeight = ContentView.Bounds.Height / 2;
+			var secondRowHeight = ContentView.Bounds.Height / 2;
+
+
+			if (!string.IsNullOrEmpty (twoColumnCell.LeftDetail) || !string.IsNullOrEmpty (twoColumnCell.LeftDetail)) {
+
+				leftTextUILabel.Frame = new CoreGraphics.CGRect (0, 0, leftColumnWidth, firstRowHeight);
+				leftDetailUILabel.Frame = new CoreGraphics.CGRect (0, firstRowHeight, leftColumnWidth, secondRowHeight);
+
+				rightTextUILabel.Frame = new CoreGraphics.CGRect (rightColumnWidth, 0, rightColumnWidth, firstRowHeight);
+				rightDetailUILabel.Frame = new CoreGraphics.CGRect (rightColumnWidth, firstRowHeight, rightColumnWidth, secondRowHeight);
+
+			} else {
+				leftTextUILabel.Frame = new CoreGraphics.CGRect (0, 0, leftColumnWidth, ContentView.Bounds.Height);
+				rightTextUILabel.Frame = new CoreGraphics.CGRect (rightColumnWidth, 0, rightColumnWidth, ContentView.Bounds.Height);
+			}
+
 		}
 	}
+
 }
-
-

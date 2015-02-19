@@ -50,6 +50,7 @@
     <Compile Include="TwoColumnCellRenderer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Models\NativeiOSCell.cs" />
+    <Compile Include="ExtensionMethods\UILabelExtensions.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -76,9 +77,11 @@
   </Target>
   <ItemGroup>
     <None Include="packages.config" />
+    <None Include="NativeiOSCell.sketchcs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Models\" />
+    <Folder Include="ExtensionMethods\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ExtendedCells.Forms.Plugin.Abstractions\ExtendedCells.Forms.Plugin.Abstractions.csproj">

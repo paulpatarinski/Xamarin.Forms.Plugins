@@ -1,0 +1,38 @@
+﻿```xml
+<Manifest>
+  <AgentType>iOSUnified_UIKit</AgentType>
+  <Guid>96a8866a-7d5f-4164-998d-6f6b437e5b92</Guid>
+  <Resources />
+</Manifest>
+```
+```csharp
+// Sketch your next great idea!
+using UIKit;
+
+var uiTableViewCell = new UITableViewCell();
+
+//uiTableViewCell.LayoutMargins.Top = 20.0;
+uiTableViewCell.BackgroundColor = UIColor.FromRGB (0, 0, 0);
+
+var label = new UILabel{Text = "test", 
+	TextColor = UIColor.White, 
+	BackgroundColor = UIColor.Orange};
+
+label.Frame = new CoreGraphics.CGRect (0, 0,
+	uiTableViewCell.ContentView.Bounds.Width, uiTableViewCell.ContentView.Bounds.Height / 2);
+
+var label2 = new UILabel{Text = "test 123", 
+	TextColor = UIColor.White, 
+	BackgroundColor = UIColor.Orange};
+
+label2.Frame = new CoreGraphics.CGRect (0, uiTableViewCell.ContentView.Bounds.Height / 2,
+	uiTableViewCell.ContentView.Bounds.Width, uiTableViewCell.ContentView.Bounds.Height / 2);
+
+
+uiTableViewCell.Add(label);
+uiTableViewCell.Add(label2);
+
+
+RootView.Add(uiTableViewCell);
+```
+
