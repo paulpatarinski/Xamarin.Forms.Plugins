@@ -1,0 +1,19 @@
+﻿<Properties StartupItem="SampleApp/SampleApp.iOS/SampleApp.iOS.csproj">
+  <DisabledProjects>
+    <String>SampleApp/SampleApp.Droid/SampleApp.Droid.csproj</String>
+  </DisabledProjects>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhone" PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneDeviceTarget.ppatarinski’s iPhone" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="ExtendedCells/ExtendedCells.Forms.Plugin.Abstractions/TwoColumnCell.cs">
+    <Files>
+      <File FileName="ExtendedCells/ExtendedCells.Forms.Plugin.iOS/TwoColumnCellRenderer.cs" Line="41" Column="41" />
+      <File FileName="ExtendedCells/ExtendedCells.Forms.Plugin.Abstractions/TwoColumnCell.cs" Line="3" Column="3" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore>
+      <Breakpoint file="/Users/mobileappcreator/Xamarin.Forms.Plugins/ExtendedCells/ExtendedCells/ExtendedCells.Forms.Plugin.iOS/TwoColumnCellRenderer.cs" line="37" column="1" />
+      <Breakpoint file="/Users/mobileappcreator/Xamarin.Forms.Plugins/ExtendedCells/ExtendedCells/ExtendedCells.Forms.Plugin.iOS/TwoColumnCellRenderer.cs" line="36" column="37" />
+    </BreakpointStore>
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>
