@@ -58,6 +58,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModel\ListviewViewModel.cs" />
     <Compile Include="Models\Person.cs" />
+    <Compile Include="Models\Colors.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Images\CoolMask.svg">

@@ -15,11 +15,11 @@
       <TableView>
        
         <TableSection Title="Background Color">
-          <abstractions:TwoColumnCell BackgroundColor="White"
-                                      LeftText="Left Text Large" LeftTextColor="Black"
-                                      LeftDetail="Left Detail Italic" LeftDetailColor="Black"
-                                      RightText="Right Text Micro" RightTextColor="Black"
-                                      RightDetail="Right Detail Bold" RightDetailColor="Black" />
+          <abstractions:TwoColumnCell BackgroundColor="{x:Static models:Colors.DefaultColor}"
+                                      LeftText="Left Text Large" LeftTextColor="{x:Static models:Colors.BlackOrWhite}"
+                                      LeftDetail="Left Detail Italic" LeftDetailColor="{x:Static models:Colors.BlackOrWhite}"
+                                      RightText="Right Text Micro" RightTextColor="{x:Static models:Colors.BlackOrWhite}"
+                                      RightDetail="Right Detail Bold" RightDetailColor="{x:Static models:Colors.BlackOrWhite}" />
         </TableSection>
 
         <TableSection Title="Thickness">
