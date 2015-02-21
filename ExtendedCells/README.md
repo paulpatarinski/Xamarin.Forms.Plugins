@@ -13,7 +13,7 @@ Xamarin.Forms.Init();//platform specific init
 TwoColumnCellRenderer.Init();
 ```
 
-You must do this AFTER you call Xamarin.Forms.Init();
+You must do this AFTER you call Xamarin.Forms.Init(). **If you are using LeftColumnWidth and RightColumnWidth make sure you use [GridUnitType.Star](http://iosapi.xamarin.com/index.aspx?link=T%3AXamarin.Forms.GridUnitType).**
 
 # Usage
 
