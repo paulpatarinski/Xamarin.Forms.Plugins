@@ -9,16 +9,26 @@ Controls:
 * **[SVG](https://github.com/paulpatarinski/Xamarin.Forms.Plugins/tree/master/SVG)** for Xamarin.Forms
  * Win Phone / Android
 * **[Extended Cells](https://github.com/paulpatarinski/Xamarin.Forms.Plugins/tree/master/ExtendedCells)** for Xamarin.Forms
- * Win Phone / Android
+ * Win Phone / Android / iOS
 
-# How to?
-
-For example usage of the Plugins check out the Plugin READMEs or the [Sample App] (https://github.com/paulpatarinski/Xamarin.Forms.Plugins/tree/master/SampleApp/PluginSampleApp) 
+# Repo structure :
+Sample App : 
+ * A solution demonstrating all the plugins in a single app
+  * Uses nuget to reference the plugins (Testing that the nuget packages work)
+  
+Plugin : 
+ * Each plugin has its own Sample App allowing you to test the plugin as you are developing it
+  * Plugin projects are referenced directly 
+ * Each Platform has a project containing the Platform Specific Code
+ * All Platform Projects reference the PCL Project (contains the Control implementation)
+  
+Each plugin has its own Readme with more details.
 
 # Contributors
 The repo structure is courtesy of
 
-* [jamesmontemagno](https://github.com/jamesmontemagno)
+* [jamesmontemagno](https://github.com/jamesmontemagno) For the Xamarin Forms Plugin repo template and VS solution template
+* [conceptdev](https://github.com/conceptdev) For [Forms2Native](https://github.com/xamarin/xamarin-forms-samples/tree/master/Forms2Native), which inspired [Extended Cells](https://github.com/paulpatarinski/Xamarin.Forms.Plugins/tree/master/ExtendedCells) 
  
 
 # License
