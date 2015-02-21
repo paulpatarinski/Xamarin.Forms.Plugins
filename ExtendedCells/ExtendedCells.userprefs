@@ -1,19 +1,8 @@
-﻿<Properties StartupItem="SampleApp/SampleApp.iOS/SampleApp.iOS.csproj">
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Release|iPhoneSimulator" PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.IPhone6.8.1" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="SampleApp/SampleApp/Models/Colors.cs">
-    <Files>
-      <File FileName="SampleApp/SampleApp/Models/Colors.cs" Line="3" Column="3" />
-      <File FileName="SampleApp/SampleApp/Pages/StackLayoutCell.xaml" Line="15" Column="15" />
-      <File FileName="SampleApp/SampleApp/Pages/TwoColumnCellListview.xaml" Line="14" Column="14" />
-      <File FileName="SampleApp/SampleApp/Pages/TwoColumnCellTableView.xaml" Line="51" Column="51" />
-    </Files>
-  </MonoDevelop.Ide.Workbench>
+﻿<Properties StartupItem="SampleApp/SampleApp.Droid/SampleApp.Droid.csproj">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|Android" PreferredExecutionTarget="Android.Nexus 5 (KitKat)" />
+  <MonoDevelop.Ide.Workbench />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <DisabledProjects>
-    <String>SampleApp/SampleApp.Droid/SampleApp.Droid.csproj</String>
-    <String>ExtendedCells/ExtendedCells.Forms.Plugin.Android/ExtendedCells.Forms.Plugin.Android.csproj</String>
-  </DisabledProjects>
 </Properties>
