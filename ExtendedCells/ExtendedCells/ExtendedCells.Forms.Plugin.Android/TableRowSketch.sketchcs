@@ -1,0 +1,54 @@
+﻿```xml
+<Manifest>
+  <AgentType>Android_Android</AgentType>
+  <Guid>be65012e-01a2-43df-87aa-1ad38e6f05f0</Guid>
+  <Resources />
+</Manifest>
+```
+```csharp
+using Android.Widget;
+using Android.App;
+using Android.Views;
+using Xamarin.Forms;
+using Xamarin.Forms.Platform.Android;
+
+//LEFT TEXTVIEW
+var leftColumnWidth = 0.7;
+var leftTextView = new TextView (RootActivity.ApplicationContext){
+	Text = "Left Text", TextSize = 24
+};
+leftTextView.SetTextColor(Color.White.ToAndroid(Color.Default));
+leftTextView.SetBackgroundColor(Color.Red.ToAndroid(Color.Default));
+
+//RIGHT TEXTVIEW
+var rightColumnWidth = 0.3;
+var rightTextView = new TextView (RootActivity.ApplicationContext){
+	Text="Right Text", TextSize = 24};
+rightTextView.SetTextColor(Color.White.ToAndroid(Color.Default));
+rightTextView.SetBackgroundColor(Color.Purple.ToAndroid(Color.Default));
+
+//LEFT TEXTVIEW LAYOUT
+var leftTextViewLayout = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MatchParent,
+	ViewGroup.LayoutParams.MatchParent) {Weight = (float) rightColumnWidth};
+
+leftTextView.LayoutParameters = leftTextViewLayout;
+
+//RIGHT TEXTVIEW LAYOUT
+var rightTextViewLayout = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MatchParent,
+	ViewGroup.LayoutParams.MatchParent) {Weight = (float) leftColumnWidth};
+
+rightTextView.LayoutParameters = rightTextViewLayout;
+
+
+var linearLayout = new LinearLayout(RootActivity.ApplicationContext) {WeightSum = (float) 1.0};
+
+linearLayout.AddView(leftTextView);
+linearLayout.AddView(rightTextView);
+
+var tableRow = new TableRow(RootActivity.ApplicationContext);
+tableRow.AddView(linearLayout);
+
+RootActivity.FindViewById<ViewGroup> (Android.Resource.Id.Content).AddView (tableRow);
+
+```
+
