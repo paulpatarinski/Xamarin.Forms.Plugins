@@ -10,29 +10,50 @@
 using UIKit;
 
 var uiTableViewCell = new UITableViewCell();
+var uiTableViewCell2 = new UITableViewCell();
 
+uiTableViewCell.SeparatorInset = UIEdgeInsets.Zero;
+uiTableViewCell2.SeparatorInset = UIEdgeInsets.Zero;
 //uiTableViewCell.LayoutMargins.Top = 20.0;
-uiTableViewCell.BackgroundColor = UIColor.FromRGB (0, 0, 0);
 
 var label = new UILabel{Text = "test", 
 	TextColor = UIColor.White, 
 	BackgroundColor = UIColor.Orange};
 
 label.Frame = new CoreGraphics.CGRect (0, 0,
-	uiTableViewCell.ContentView.Bounds.Width, uiTableViewCell.ContentView.Bounds.Height / 2);
+	uiTableViewCell.ContentView.Bounds.Width, uiTableViewCell.ContentView.Bounds.Height );
 
 var label2 = new UILabel{Text = "test 123", 
 	TextColor = UIColor.White, 
 	BackgroundColor = UIColor.Orange};
 
-label2.Frame = new CoreGraphics.CGRect (0, uiTableViewCell.ContentView.Bounds.Height / 2,
-	uiTableViewCell.ContentView.Bounds.Width, uiTableViewCell.ContentView.Bounds.Height / 2);
+label2.Frame = new CoreGraphics.CGRect (0, 50,
+	uiTableViewCell2.ContentView.Bounds.Width, uiTableViewCell2.ContentView.Bounds.Height );
 
+//
+//var label2 = new UILabel{Text = "test 123", 
+//	TextColor = UIColor.White, 
+//	BackgroundColor = UIColor.Orange};
+//
+//label2.Frame = new CoreGraphics.CGRect (0, uiTableViewCell.ContentView.Bounds.Height / 2,
+//	uiTableViewCell.ContentView.Bounds.Width, uiTableViewCell.ContentView.Bounds.Height / 2);
+//
 
 uiTableViewCell.Add(label);
-uiTableViewCell.Add(label2);
+uiTableViewCell2.Add(label2);
+//uiTableViewCell.Add(label2);
 
+var uiTable= new UITableView();
 
-RootView.Add(uiTableViewCell);
+uiTable.SeparatorStyle = UITableViewCellSeparatorStyle.None;
+uiTable.SeparatorInset = UIEdgeInsets.Zero;
+uiTable.SeparatorColor = UIColor.Brown;
+
+uiTable.Add(uiTableViewCell);
+uiTable.Add(uiTableViewCell2);
+uiTable.Frame = new CoreGraphics.CGRect(0,20,400,1000);
+
+RootView.Add(uiTable);
+
 ```
 
