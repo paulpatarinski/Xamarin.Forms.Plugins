@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionName="1.1" package="com.simpleproductionsinc.sampleApp" android:versionCode="2" android:installLocation="auto">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionName="1.1" package="com.simpleproductionsinc.ExtendedMap" android:versionCode="2" android:installLocation="auto">
 	<uses-sdk android:minSdkVersion="16" />
-	<application android:label="Sample App" android:icon="@drawable/icon">
+	<application android:icon="@drawable/icon" android:label="Extended Map">
 		<meta-data android:name="com.google.android.maps.v2.API_KEY" android:value="AIzaSyDd8OZpkInkvX4VXQ8_6FS6_0ik78LrhA8" />
 		<meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version" />
 	</application>
