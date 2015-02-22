@@ -5,17 +5,27 @@ xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
 xmlns:abstractions="clr-namespace:SVG.Forms.Plugin.Abstractions;assembly=SVG.Forms.Plugin.Abstractions"
 x:Class="SampleApp.ViaResources" Title="Via Resources">
 	
+<!--THIS PAGE CURRENTLY HAS AN ISSUE SECOND SVG/IMAGE IS NOT SHOWN-->
 	<ContentPage.Resources>
 		<ResourceDictionary>
-			<abstractions:SvgImage x:Key="CoolMask" SvgAssembly="{Binding SvgAssembly}" SvgPath="{Binding CoolMaskSvgPath}" HeightRequest="50" WidthRequest="50" BackgroundColor="White" HorizontalOptions="Center" VerticalOptions="Center"/>
-			<abstractions:SvgImage x:Key="CoolMask2" SvgAssembly="{Binding SvgAssembly}" SvgPath="{Binding CoolMaskSvgPath}" HeightRequest="50" WidthRequest="50" BackgroundColor="White" HorizontalOptions="Center" VerticalOptions="Center"/>
+			<abstractions:SvgImage x:Key="Svg" SvgAssembly="{Binding SvgAssembly}" SvgPath="{Binding CoolMaskSvgPath}" HeightRequest="100" WidthRequest="100" BackgroundColor="White" HorizontalOptions="Center" VerticalOptions="Center"/>
+			<Image x:Key="Image" Source="http://xamarin.com/content/images/pages/forms/example-app.png" HeightRequest="100" WidthRequest="100" BackgroundColor="White" HorizontalOptions="Center" VerticalOptions="Center"/>
 		</ResourceDictionary>
 	</ContentPage.Resources><ContentPage.Content>
 
 	<StackLayout>
-		<ContentView BackgroundColor="Red" HeightRequest="150" WidthRequest="150" Content="{StaticResource CoolMask}"/>
-		<ContentView BackgroundColor="Red" HeightRequest="100" WidthRequest="100" Content="{StaticResource CoolMask2}"/>
-	</StackLayout>
+		<StackLayout>
+			<Label Text="Svgs" FontSize="20" HorizontalOptions="Center"/>
+			<ContentView BackgroundColor="Red" HeightRequest="100" WidthRequest="100" Content="{StaticResource Svg}"/>
+			<ContentView BackgroundColor="Red" HeightRequest="100" WidthRequest="100" Content="{StaticResource Svg}"/>
+		
+		</StackLayout>
 
+		<StackLayout>
+			<Label Text="Images" FontSize="20" HorizontalOptions="Center"/>
+			<ContentView BackgroundColor="Red" HeightRequest="100" WidthRequest="100" Content="{StaticResource Image}"/>
+			<ContentView BackgroundColor="Red" HeightRequest="100" WidthRequest="100" Content="{StaticResource Image}"/>
+		</StackLayout>
+	</StackLayout>
 	</ContentPage.Content>
 </ContentPage>
