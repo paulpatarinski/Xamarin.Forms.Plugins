@@ -4,22 +4,26 @@ using SVG.Forms.Plugin.Abstractions;
 using SVG.Forms.Plugin.Droid;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.Android;
-using XamSvg;
 using System.Threading.Tasks;
 
 [assembly: ExportRenderer (typeof(SvgImage), typeof(SvgImageRenderer))]
 namespace SVG.Forms.Plugin.Droid
 {
-	public class SvgImageRenderer : ImageRenderer
+	public class SvgImageRenderer : ViewRenderer<SvgImage,ImageView>
 	{
 		public static void Init ()
 		{
 		}
 
 		private static bool _isGetBitmapExecuting;
-		private SvgImage _formsControl;
 
-		protected override async void OnElementChanged (ElementChangedEventArgs<Image> e)
+		private SvgImage _formsControl {
+			get {
+				return Element as SvgImage;
+			}
+		}
+
+		protected override async void OnElementChanged (ElementChangedEventArgs<SvgImage> e)
 		{
 			base.OnElementChanged (e);
 
@@ -32,14 +36,14 @@ namespace SVG.Forms.Plugin.Droid
 			}
 		}
 
+		public override SizeRequest GetDesiredSize (int widthConstraint, int heightConstraint)
+		{
+			return new SizeRequest (new Size (_formsControl.WidthRequest, _formsControl.WidthRequest));
+		}
+
 		private async Task UpdateBitmapFromSvgAsync ()
 		{
-			var imageView = Control as ImageView;
-			_formsControl = Element as SvgImage;
-
-
 			await Task.Run (async() => {
-
 				var width = (int)_formsControl.WidthRequest <= 0 ? 100 : (int)_formsControl.WidthRequest;
 				var height = (int)_formsControl.HeightRequest <= 0 ? 100 : (int)_formsControl.HeightRequest;
 
@@ -50,12 +54,17 @@ namespace SVG.Forms.Plugin.Droid
 
 				_isGetBitmapExecuting = true;
 
-				return SvgFactory.GetBitmap (SvgService.GetSvgStream (_formsControl), width, height);
+				return await BitmapService.GetBitmapAsync (_formsControl, width, height);
 			}).ContinueWith (taskResult => {
+				var imageView = new ImageView (Context);
+
 				imageView.SetScaleType (ImageView.ScaleType.FitXy);
 				imageView.SetImageBitmap (taskResult.Result);
+
+				SetNativeControl (imageView);
 				_isGetBitmapExecuting = false;
 			}, TaskScheduler.FromCurrentSynchronizationContext ());
 		}
+
 	}
 }

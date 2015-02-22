@@ -2,6 +2,7 @@
 using System.IO;
 using System.Collections.Generic;
 using SVG.Forms.Plugin.Abstractions;
+using System.Threading.Tasks;
 
 namespace SVG.Forms.Plugin.Droid
 {
@@ -23,7 +24,9 @@ namespace SVG.Forms.Plugin.Droid
 			}
 		}
 
-		public static Stream GetSvgStream (SvgImage svgImage)
+
+
+		public static async Task<Stream> GetSvgStreamAsync (SvgImage svgImage)
 		{
 			Stream stream = null;
 
@@ -39,7 +42,7 @@ namespace SVG.Forms.Plugin.Droid
 
 				SvgStreamByPath.Add (svgImage.SvgPath, stream);
 
-				return stream;
+				return await Task.FromResult<Stream> (stream);
 			}
 
 			//Get from dictionary
@@ -47,7 +50,7 @@ namespace SVG.Forms.Plugin.Droid
 			//Reset the stream position otherwise an error is thrown (SvgFactory.GetBitmap sets the position to position max)
 			stream.Position = 0;
 
-			return stream;
+			return await Task.FromResult<Stream> (stream);
 		}
 	}
 }
