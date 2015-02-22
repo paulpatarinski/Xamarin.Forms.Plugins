@@ -1,15 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.IO;
 using Android.Widget;
 using SVG.Forms.Plugin.Abstractions;
 using SVG.Forms.Plugin.Droid;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.Android;
 using XamSvg;
+using System.Threading.Tasks;
 
 [assembly: ExportRenderer (typeof(SvgImage), typeof(SvgImageRenderer))]
-
 namespace SVG.Forms.Plugin.Droid
 {
 	public class SvgImageRenderer : ImageRenderer
@@ -18,72 +16,46 @@ namespace SVG.Forms.Plugin.Droid
 		{
 		}
 
-		private bool _svgSourceSet;
-		private static Dictionary<string, Stream> _svgStreamByPath;
+		private static bool _isGetBitmapExecuting;
 		private SvgImage _formsControl;
 
-		private static Dictionary<string, Stream> SvgStreamByPath {
-			get {
-				if (_svgStreamByPath == null) {
-					_svgStreamByPath = new Dictionary<string, Stream> ();
-				}
-
-				return _svgStreamByPath;
-			}
-		}
-
-		protected override void OnElementChanged (ElementChangedEventArgs<Image> e)
+		protected override async void OnElementChanged (ElementChangedEventArgs<Image> e)
 		{
 			base.OnElementChanged (e);
 
 			if (e.OldElement == null) {
 				try {
-					UpdateBitmapFromSvg ();
+					await UpdateBitmapFromSvgAsync ();
 				} catch (Exception ex) {
-					throw new Exception ("Problem setting image source", ex);
+					System.Diagnostics.Debug.WriteLine ("Problem setting image source {0}", ex);
 				}
 			}
 		}
 
-		private void UpdateBitmapFromSvg ()
+		private async Task UpdateBitmapFromSvgAsync ()
 		{
 			var imageView = Control as ImageView;
 			_formsControl = Element as SvgImage;
 
-			_svgSourceSet = true;
 
-			var width = (int)_formsControl.WidthRequest <= 0 ? 100 : (int)_formsControl.WidthRequest;
-			var height = (int)_formsControl.HeightRequest <= 0 ? 100 : (int)_formsControl.HeightRequest;
+			await Task.Run (async() => {
 
-			var svg = SvgFactory.GetBitmap (GetSvgStream (_formsControl.SvgPath), width, height);
-			imageView.SetScaleType (ImageView.ScaleType.FitXy);
-			imageView.SetImageBitmap (svg);
-		}
+				var width = (int)_formsControl.WidthRequest <= 0 ? 100 : (int)_formsControl.WidthRequest;
+				var height = (int)_formsControl.HeightRequest <= 0 ? 100 : (int)_formsControl.HeightRequest;
 
-		private Stream GetSvgStream (string svgPath)
-		{
-			Stream stream = null;
-			//Insert into Dictionary
-			if (!SvgStreamByPath.ContainsKey (svgPath)) {
-				if (_formsControl.SvgAssembly == null)
-					throw new Exception ("Svg Assembly not specified. Please specify assembly using the SvgImage Control SvgAssembly property.");
+				//Since you can only load one svg at a time, make sure the method is not already executing before calling it
+				while (_isGetBitmapExecuting) {
+					await Task.Delay (TimeSpan.FromMilliseconds (1));
+				}
 
-				stream = _formsControl.SvgAssembly.GetManifestResourceStream (svgPath);
+				_isGetBitmapExecuting = true;
 
-				if (stream == null)
-					throw new Exception (string.Format ("Not able to retrieve svg from {0} make sure the svg is an Embedded Resource and the path is set up correctly", svgPath));
-
-				SvgStreamByPath.Add (svgPath, stream);
-
-				return stream;
-			}
-
-			//Get from dictionary
-			stream = SvgStreamByPath [svgPath];
-			//Reset the stream position otherwise an error is thrown (SvgFactory.GetBitmap sets the position to position max)
-			stream.Position = 0;
-
-			return stream;
+				return SvgFactory.GetBitmap (SvgService.GetSvgStream (_formsControl), width, height);
+			}).ContinueWith (taskResult => {
+				imageView.SetScaleType (ImageView.ScaleType.FitXy);
+				imageView.SetImageBitmap (taskResult.Result);
+				_isGetBitmapExecuting = false;
+			}, TaskScheduler.FromCurrentSynchronizationContext ());
 		}
 	}
 }
