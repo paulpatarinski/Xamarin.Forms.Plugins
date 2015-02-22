@@ -10,19 +10,19 @@ using SVG.Forms.Plugin.Droid;
 
 namespace SampleApp.Droid
 {
-    [Activity(Label = "SampleApp", Icon = "@drawable/icon", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
-    public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsApplicationActivity
-    {
-        protected override void OnCreate(Bundle bundle)
-        {
-            base.OnCreate(bundle);
+	[Activity (MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
+	public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsApplicationActivity
+	{
+		protected override void OnCreate (Bundle bundle)
+		{
+			base.OnCreate (bundle);
 
-            global::Xamarin.Forms.Forms.Init(this, bundle);
+			global::Xamarin.Forms.Forms.Init (this, bundle);
 
-            SvgImageRenderer.Init();
+			SvgImageRenderer.Init ();
 
-            LoadApplication(new App());
-        }
-    }
+			LoadApplication (new App ());
+		}
+	}
 }
 
