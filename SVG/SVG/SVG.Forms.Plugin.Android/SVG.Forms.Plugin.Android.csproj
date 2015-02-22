@@ -80,6 +80,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SvgImageRenderer.cs" />
     <Compile Include="Services\SvgService.cs" />
+    <Compile Include="Services\BitmapService.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
