@@ -1,0 +1,16 @@
+﻿<Properties StartupItem="SampleApp/SampleApp.Droid/SampleApp.Droid.csproj">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Android.Nexus 5 (KitKat)" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="ExtendedMap/ExtendedMap.Forms.Plugin.Android/ExtendedMapRenderer.cs">
+    <Files>
+      <File FileName="ExtendedMap/ExtendedMap.Forms.Plugin.Android/ExtendedMapRenderer.cs" Line="2" Column="2" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore>
+      <Breakpoint file="/Users/mobileappcreator/Xamarin.Forms.Plugins/ExtendedMap/ExtendedMap/ExtendedMap.Forms.Plugin.Android/Services/MapReadyCallback.cs" line="34" column="1" />
+      <Breakpoint file="/Users/mobileappcreator/Xamarin.Forms.Plugins/ExtendedMap/ExtendedMap/ExtendedMap.Forms.Plugin.Android/ExtendedMapRenderer.cs" line="138" column="1" />
+      <Breakpoint file="/Users/mobileappcreator/Xamarin.Forms.Plugins/ExtendedMap/ExtendedMap/ExtendedMap.Forms.Plugin.Android/ExtendedMapRenderer.cs" line="144" column="1" />
+    </BreakpointStore>
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>
