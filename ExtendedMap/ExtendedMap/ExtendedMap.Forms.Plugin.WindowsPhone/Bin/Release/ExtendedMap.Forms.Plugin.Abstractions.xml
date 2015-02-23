@@ -4,24 +4,24 @@
         <name>ExtendedMap.Forms.Plugin.Abstractions</name>
     </assembly>
     <members>
-        <member name="P:ExtendedMap.Forms.Plugin.Abstractions.ExtendedPin.Others">
+        <member name="P:ExtendedMap.Forms.Plugin.Abstractions.Models.ExtendedPin.Others">
             <summary>
             Other data relevant to the pin. ie. Website Url, 
             </summary>
             <value>The others.</value>
         </member>
-        <member name="M:ExtendedMap.Forms.Plugin.Abstractions.IPhoneService.DialNumber(System.String,System.String)">
+        <member name="P:ExtendedMap.Forms.Plugin.Abstractions.Models.ScheduleEntry.HoursOfOperation">
+            <summary>
+            The start and end time
+            </summary>
+            <value>The times.</value>
+        </member>
+        <member name="M:ExtendedMap.Forms.Plugin.Abstractions.Services.IPhoneService.DialNumber(System.String,System.String)">
             <summary>
             Opens native dialog to dial the specified number.
             </summary>
             <param name="number">Number to dial.</param>
             <param name="name"></param>
-        </member>
-        <member name="P:ExtendedMap.Forms.Plugin.Abstractions.ScheduleEntry.HoursOfOperation">
-            <summary>
-            The start and end time
-            </summary>
-            <value>The times.</value>
         </member>
     </members>
 </doc>
