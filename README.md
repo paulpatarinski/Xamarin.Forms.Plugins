@@ -12,11 +12,11 @@ Controls:
  * Win Phone / Android / iOS
 
 # Repo structure :
-Sample App : 
+**Sample App :**
  * A solution demonstrating all the plugins in a single app
   * Uses nuget to reference the plugins (Testing that the nuget packages work)
   
-Plugin : 
+**Plugins :**
  * Each plugin has its own Sample App allowing you to test the plugin as you are developing it
   * Plugin projects are referenced directly 
  * Each Platform has a project containing the Platform Specific Code
