@@ -9,22 +9,22 @@ using Xamarin.Forms.Platform.Android;
 
 namespace PluginSampleApp.Droid
 {
-    [Activity(Label = "PluginSampleApp", Icon = "@drawable/icon", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
-    public class MainActivity : FormsApplicationActivity
-    {
-        protected override void OnCreate(Bundle bundle)
-        {
-            base.OnCreate(bundle);
+	[Activity (MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
+	public class MainActivity : FormsApplicationActivity
+	{
+		protected override void OnCreate (Bundle bundle)
+		{
+			base.OnCreate (bundle);
 
-            Xamarin.Forms.Forms.Init(this, bundle);
-            FormsMaps.Init(this, bundle);
+			Xamarin.Forms.Forms.Init (this, bundle);
+			FormsMaps.Init (this, bundle);
 
-            SvgImageRenderer.Init();
-            TwoColumnCellRenderer.Init();
-            ExtendedMapRenderer.Init();
+			SvgImageRenderer.Init ();
+			TwoColumnCellRenderer.Init ();
+			ExtendedMapRenderer.Init ();
 
-            LoadApplication(new App());
-        }
-    }
+			LoadApplication (new App ());
+		}
+	}
 }
 
