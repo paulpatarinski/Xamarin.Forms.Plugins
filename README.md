@@ -12,6 +12,8 @@ Controls:
  * Win Phone / Android / iOS
 * **[Extended Map](https://github.com/paulpatarinski/Xamarin.Forms.Plugins/tree/master/ExtendedMap)** for Xamarin.Forms
  * Win Phone / Android 
+* **[Extended Listview](https://github.com/paulpatarinski/Xamarin.Forms.Plugins/tree/master/ExtendedListview)** for Xamarin.Forms
+ * Win Phone 
 
 # Repo structure :
 **Sample App :**
