@@ -1,0 +1,33 @@
+﻿<Properties StartupItem="PluginSampleApp/PluginSampleApp.iOS/PluginSampleApp.iOS.csproj">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Android.Nexus 5 (KitKat)" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Tests/UiTests/CrossPlatformTests.cs">
+    <Files>
+      <File FileName="Tests/UiTests/CrossPlatformTests.cs" Line="27" Column="27" />
+      <File FileName="Tests/UiTests/AndroidTest.cs" Line="142" Column="142" />
+      <File FileName="PluginSampleApp/PluginSampleApp.Droid/MainActivity.cs" Line="1" Column="1" />
+    </Files>
+    <Pads>
+      <Pad Id="MonoDevelop.NUnit.TestPad">
+        <State expanded="True">
+          <Node name="Tests" expanded="True">
+            <Node name="UiTests" expanded="True">
+              <Node name="UsingUITest" expanded="True">
+                <Node name="UITests" expanded="True">
+                  <Node name="AndroidTest" expanded="True">
+                    <Node name="TestCase" selected="True" />
+                  </Node>
+                </Node>
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore>
+      <Breakpoint file="/Users/mobile/WIP/Xamarin.Forms.Plugins/SampleApp/PluginSampleApp/Tests/UiTests/CrossPlatformTests.cs" line="38" column="1" />
+    </BreakpointStore>
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>

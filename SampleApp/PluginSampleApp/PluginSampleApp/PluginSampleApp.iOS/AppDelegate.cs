@@ -6,6 +6,8 @@ using Foundation;
 using UIKit;
 using Xamarin.Forms.Platform.iOS;
 using ExtendedCells.Forms.Plugin.iOSUnified;
+using Xamarin.Forms;
+using Xamarin;
 
 namespace PluginSampleApp.iOS
 {
@@ -26,6 +28,21 @@ namespace PluginSampleApp.iOS
 		{
 			global::Xamarin.Forms.Forms.Init ();
 			TwoColumnCellRenderer.Init ();
+
+			global::Xamarin.Forms.Forms.ViewInitialized += (object sender, ViewInitializedEventArgs e) => {
+
+				// http://developer.xamarin.com/recipes/testcloud/set-accessibilityidentifier-ios/
+				if (null != e.View.StyleId) {
+					e.NativeView.AccessibilityIdentifier = e.View.StyleId;
+					Console.WriteLine("Set AccessibilityIdentifier: " + e.View.StyleId);
+				}
+			};
+
+			#if DEBUG
+			// requires Xamarin Test Cloud Agent component
+			Calabash.Start();
+			#endif
+
 			LoadApplication (new App ());
 
 			return base.FinishedLaunching (app, options);
