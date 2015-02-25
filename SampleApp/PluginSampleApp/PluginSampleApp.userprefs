@@ -1,4 +1,4 @@
-﻿<Properties StartupItem="PluginSampleApp/PluginSampleApp.iOS/PluginSampleApp.iOS.csproj">
+﻿<Properties StartupItem="PluginSampleApp/PluginSampleApp.Droid/PluginSampleApp.Droid.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Android.Nexus 5 (KitKat)" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Tests/UiTests/CrossPlatformTests.cs">
     <Files>

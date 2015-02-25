@@ -23,13 +23,15 @@ namespace PluginSampleApp.Pages
                 ColumnDefinitions = new ColumnDefinitionCollection()
             };
 
+			var svgId = 0;
+
             for (var rowIndex = 0; rowIndex < svgPaths.Count; rowIndex++)
             {
                 var svgPath = svgPaths[rowIndex];
 
                 grid.RowDefinitions.Add(new RowDefinition {Height = GridLength.Auto});
 
-                for (var columnIndex = 0; columnIndex <= 4; columnIndex++)
+                for (var columnIndex = 0; columnIndex <= 4; columnIndex++,svgId++)
                 {
                     grid.ColumnDefinitions.Add(new ColumnDefinition {Width = GridLength.Auto});
 
@@ -37,6 +39,7 @@ namespace PluginSampleApp.Pages
                     var svgImage = new SvgImage
                     {
                         SvgPath = svgPath,
+						StyleId = string.Format("svg" + svgId),
                         SvgAssembly = typeof (App).GetTypeInfo().Assembly,
                         HeightRequest = columnIndex*50,
                         WidthRequest = columnIndex*50,

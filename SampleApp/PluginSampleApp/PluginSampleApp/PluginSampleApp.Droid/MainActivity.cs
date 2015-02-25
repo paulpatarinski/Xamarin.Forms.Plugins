@@ -25,7 +25,10 @@ namespace PluginSampleApp.Droid
 			// http://forums.xamarin.com/discussion/21148/calabash-and-xamarin-forms-what-am-i-missing
 			global::Xamarin.Forms.Forms.ViewInitialized += (object sender, Xamarin.Forms.ViewInitializedEventArgs e) => {
 				if (!string.IsNullOrWhiteSpace(e.View.StyleId)) {
-					e.NativeView.ContentDescription = e.View.StyleId;
+					if(e.NativeView != null)
+					{
+						e.NativeView.ContentDescription = e.View.StyleId;
+					}
 				}
 			};
 

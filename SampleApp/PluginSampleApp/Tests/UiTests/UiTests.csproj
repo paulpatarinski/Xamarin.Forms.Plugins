@@ -35,11 +35,20 @@
     <Reference Include="Xamarin.UITest">
       <HintPath>..\..\packages\Xamarin.UITest.0.6.9\lib\Xamarin.UITest.dll</HintPath>
     </Reference>
+    <Reference Include="FluentAssertions.Core">
+      <HintPath>..\..\packages\FluentAssertions.3.3.0\lib\net45\FluentAssertions.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="FluentAssertions">
+      <HintPath>..\..\packages\FluentAssertions.3.3.0\lib\net45\FluentAssertions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CrossPlatformTests.cs" />
     <Compile Include="AndroidTest.cs" />
     <Compile Include="iOSTest.cs" />
+    <Compile Include="ExtensionMethods\IAppExtensions.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>

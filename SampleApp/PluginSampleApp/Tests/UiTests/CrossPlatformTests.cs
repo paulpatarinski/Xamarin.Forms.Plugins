@@ -3,17 +3,14 @@ using NUnit.Framework;
 using Xamarin.UITest;
 using Xamarin.UITest.Queries;
 using System.Linq;
+using UiTests;
+using FluentAssertions;
 
 namespace UsingUITest.UITests
 {
 	public class CrossPlatformTests
 	{
 		protected IApp app;
-
-		static readonly Func<AppQuery, AppQuery> InitialMessage = c => c.Marked("MyLabel").Text("Hello, Xamarin.Forms!");
-
-		static readonly Func<AppQuery, AppQuery> Button = c => c.Marked("MyButton");
-		static readonly Func<AppQuery, AppQuery> DoneMessage = c => c.Marked("MyLabel").Text("Was clicked");
 
 		/// <summary>
 		/// We do 'Ignore' in the base class so that these set of tests aren't actually *run*
@@ -25,18 +22,21 @@ namespace UsingUITest.UITests
 			Assert.Ignore ("This class requires a platform-specific bootstrapper to override the `SetUp` method");
 		}
 
+		[Test ()]
+		public void Svg_ShouldBeGreatedThen_2Images ()
+		{
+			app.Tap("SVG");
 
-		//
-		// All the tests go here:
-		//
+			var images = app.FindAllImages ();
 
+			images.Count ().Should ().BeGreaterThan (2);
+		}
 
 		[Test ()]
-		public void Svg_ShouldContain_9Images ()
+		public void ExtendedMap_ShouldOpen ()
 		{
-			app.Tap(c => c.Marked("SVG"));
+			app.Tap("Extended Map");
 
-			app.Repl ();
 		}
 	}
 }
