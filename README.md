@@ -1,4 +1,5 @@
-# Plugins for Xamarin Forms
+# Plugins for Xamarin Forms 
+[Xamarin Test Cloud Report](https://testcloud.xamarin.com/test/9f867053-9a6f-45d5-98ba-9bd36c83c3a5/)
 
 # What is this?
 This is my main repo for all Xamarin Forms Plugins that I have or will be publishing. These PCL plugins will allow you to add rich cross platform functionality to Xamarin.Forms.
