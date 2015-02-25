@@ -2,6 +2,7 @@
 using Xamarin.UITest;
 using Xamarin.UITest.Queries;
 using Xamarin.UITest.Android;
+using System.Threading;
 
 namespace UiTests
 {
@@ -24,6 +25,11 @@ namespace UiTests
 		{
 			return app.DeviceType() == UiTests.DeviceType.Android ? app.Query (c => c.Class ("ImageView")) : app.Query (c => c.Class ("UiImage"));
 
+		}
+
+		public static void WaitFor(this IApp app, TimeSpan waitTime)
+		{
+			Thread.Sleep (waitTime);
 		}
 	}
 

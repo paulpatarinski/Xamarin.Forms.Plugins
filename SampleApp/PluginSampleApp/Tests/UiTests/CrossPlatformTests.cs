@@ -27,9 +27,11 @@ namespace UsingUITest.UITests
 		{
 			app.Tap("SVG");
 
-			var images = app.FindAllImages ();
+			app.WaitFor (() => {
+				var images = app.FindAllImages ();
 
-			images.Count ().Should ().BeGreaterThan (2);
+				return images.Count() > 2;
+			}, "Not able to find all images", TimeSpan.FromSeconds(10));
 		}
 
 		[Test ()]
@@ -37,6 +39,34 @@ namespace UsingUITest.UITests
 		{
 			app.Tap("Extended Map");
 
+			app.WaitFor (TimeSpan.FromSeconds (20));
+
+			app.DoubleTapCoordinates (300, 300);
+
+			app.Screenshot ("Map screenshot");
+		}
+
+		[Test ()]
+		public void ExtendedListview_ShouldOpen ()
+		{
+			app.Tap("Extended Cell Listview");
+
+			app.WaitFor (TimeSpan.FromSeconds (20));
+
+			app.ScrollDown ();
+			app.ScrollDown ();
+			app.ScrollUp ();
+		}
+
+		[Test ()]
+		public void ExtendedTableView_ShouldOpen ()
+		{
+			app.Tap("Extended Cell TableView");
+
+			app.WaitFor (TimeSpan.FromSeconds (20));
+
+			app.ScrollDown ();
+			app.ScrollDown ();
 		}
 	}
 }
