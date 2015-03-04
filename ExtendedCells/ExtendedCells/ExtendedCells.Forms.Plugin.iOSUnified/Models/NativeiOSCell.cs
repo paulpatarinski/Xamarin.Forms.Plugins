@@ -52,8 +52,14 @@ namespace ExtendedCells.Forms.Plugin.Models
 		{
 			base.LayoutSubviews ();
 
+			var widthWithMargins = ContentView.Bounds.Width- (nfloat)(twoColumnCell.Thickness.Left + twoColumnCell.Thickness.Right);
+			var xWithMargin = ContentView.Bounds.X + (nfloat)(twoColumnCell.Thickness.Left);
+
+			ContentView.Bounds = new CoreGraphics.CGRect(xWithMargin,ContentView.Bounds.Y, widthWithMargins, ContentView.Bounds.Height);
+
 			var leftColumnWidth = (float)(ContentView.Bounds.Width * twoColumnCell.LeftColumnWidth.Value);
 			var rightColumnWidth = (float)(ContentView.Bounds.Width * twoColumnCell.RightColumnWidth.Value);
+			var rightColumnX = leftColumnWidth + xWithMargin;
 
 			var firstRowHeight = ContentView.Bounds.Height / 2;
 			var secondRowHeight = ContentView.Bounds.Height / 2;
@@ -61,15 +67,15 @@ namespace ExtendedCells.Forms.Plugin.Models
 
 			if (!string.IsNullOrEmpty (twoColumnCell.LeftDetail) || !string.IsNullOrEmpty (twoColumnCell.LeftDetail)) {
 
-				leftTextUILabel.Frame = new CoreGraphics.CGRect (0, 0, leftColumnWidth, firstRowHeight);
-				leftDetailUILabel.Frame = new CoreGraphics.CGRect (0, firstRowHeight, leftColumnWidth, secondRowHeight);
+				leftTextUILabel.Frame = new CoreGraphics.CGRect (xWithMargin, 0, leftColumnWidth, firstRowHeight);
+				leftDetailUILabel.Frame = new CoreGraphics.CGRect (xWithMargin, firstRowHeight, leftColumnWidth, secondRowHeight);
 
-				rightTextUILabel.Frame = new CoreGraphics.CGRect (rightColumnWidth, 0, rightColumnWidth, firstRowHeight);
-				rightDetailUILabel.Frame = new CoreGraphics.CGRect (rightColumnWidth, firstRowHeight, rightColumnWidth, secondRowHeight);
+				rightTextUILabel.Frame = new CoreGraphics.CGRect (rightColumnX, 0, rightColumnWidth, firstRowHeight);
+				rightDetailUILabel.Frame = new CoreGraphics.CGRect (rightColumnX, firstRowHeight, rightColumnWidth, secondRowHeight);
 
 			} else {
-				leftTextUILabel.Frame = new CoreGraphics.CGRect (0, 0, leftColumnWidth, ContentView.Bounds.Height);
-				rightTextUILabel.Frame = new CoreGraphics.CGRect (rightColumnWidth, 0, rightColumnWidth, ContentView.Bounds.Height);
+				leftTextUILabel.Frame = new CoreGraphics.CGRect (xWithMargin, 0, leftColumnWidth, ContentView.Bounds.Height);
+				rightTextUILabel.Frame = new CoreGraphics.CGRect (rightColumnX, 0, rightColumnWidth, ContentView.Bounds.Height);
 			}
 		}
 	}
