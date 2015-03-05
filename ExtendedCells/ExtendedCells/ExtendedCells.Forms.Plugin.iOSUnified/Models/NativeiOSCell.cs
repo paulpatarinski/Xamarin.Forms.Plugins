@@ -31,7 +31,7 @@ namespace ExtendedCells.Forms.Plugin.Models
 			ContentView.Add (leftTextUILabel);
 			ContentView.Add (rightTextUILabel);
 
-			if (!string.IsNullOrEmpty (twoColumnCell.LeftDetail) || !string.IsNullOrEmpty (twoColumnCell.LeftDetail)) {
+			if (!string.IsNullOrEmpty (twoColumnCell.LeftDetail) || !string.IsNullOrEmpty (twoColumnCell.RightDetail)) {
 				ContentView.Add (leftDetailUILabel);
 				ContentView.Add (rightDetailUILabel);
 			}
