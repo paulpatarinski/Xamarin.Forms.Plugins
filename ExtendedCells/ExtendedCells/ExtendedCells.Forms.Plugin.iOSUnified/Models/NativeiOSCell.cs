@@ -14,7 +14,6 @@ namespace ExtendedCells.Forms.Plugin.Models
 	public class NativeiOSCell : UITableViewCell
 	{
 		UILabel leftTextUILabel, leftDetailUILabel, rightTextUILabel, rightDetailUILabel;
-		UIImageView imageView;
 
 		TwoColumnCell twoColumnCell;
 
