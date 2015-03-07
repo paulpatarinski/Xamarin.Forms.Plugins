@@ -44,8 +44,8 @@ namespace SVG.Forms.Plugin.Droid
 		private async Task UpdateBitmapFromSvgAsync ()
 		{
 			await Task.Run (async() => {
-				var width = (int)_formsControl.WidthRequest <= 0 ? 100 : (int)_formsControl.WidthRequest;
-				var height = (int)_formsControl.HeightRequest <= 0 ? 100 : (int)_formsControl.HeightRequest;
+				var width = PixelToDP((int)_formsControl.WidthRequest <= 0 ? 100 : (int)_formsControl.WidthRequest);
+				var height =  PixelToDP((int)_formsControl.HeightRequest <= 0 ? 100 : (int)_formsControl.HeightRequest);
 
 				//Since you can only load one svg at a time, make sure the method is not already executing before calling it
 				while (_isGetBitmapExecuting) {
@@ -65,6 +65,16 @@ namespace SVG.Forms.Plugin.Droid
 				_isGetBitmapExecuting = false;
 			}, TaskScheduler.FromCurrentSynchronizationContext ());
 		}
+
+    /// <summary>
+    /// http://stackoverflow.com/questions/24465513/how-to-get-detect-screen-size-in-xamarin-forms
+    /// </summary>
+    /// <param name="pixel"></param>
+    /// <returns></returns>
+    private int PixelToDP(int pixel) {
+      var scale =Resources.DisplayMetrics.Density;
+      return (int) ((pixel * scale) + 0.5f);
+    }
 
 	}
 }
