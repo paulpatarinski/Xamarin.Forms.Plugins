@@ -1,4 +1,6 @@
-﻿using System;
+﻿using System.Collections.Specialized;
+using System.ComponentModel;
+using Android.App;
 using Android.Gms.Maps;
 using Android.Gms.Maps.Model;
 using ExtendedMap.Forms.Plugin.Abstractions;
@@ -50,7 +52,7 @@ namespace ExtendedMap.Forms.Plugin.Droid
       LoadPins();
 	  }
 
-	  protected override void OnElementPropertyChanged (object sender, System.ComponentModel.PropertyChangedEventArgs e)
+	  protected override void OnElementPropertyChanged (object sender, PropertyChangedEventArgs e)
 		{
       if (e.PropertyName.Equals(Abstractions.ExtendedMap.CenterOnPositionProperty.PropertyName) || e.PropertyName.Equals(Abstractions.ExtendedMap.CameraFocusYOffsetProperty.PropertyName))
       {
@@ -70,7 +72,9 @@ namespace ExtendedMap.Forms.Plugin.Droid
 			markerWithIcon.SetSnippet (formsPin.Address);
 
 			if (!string.IsNullOrEmpty (formsPin.PinIcon))
-				markerWithIcon.InvokeIcon (BitmapDescriptorFactory.FromAsset (String.Format ("{0}.png", formsPin.PinIcon)));
+      {
+        markerWithIcon.InvokeIcon(BitmapDescriptorFactory.FromResource(GetResourceIdByName(formsPin.PinIcon)));
+      }
 			else
 				markerWithIcon.InvokeIcon (BitmapDescriptorFactory.DefaultMarker ());
 
@@ -87,9 +91,9 @@ namespace ExtendedMap.Forms.Plugin.Droid
 			}
 		}
 
-		void HandleCollectionChanged (object sender, System.Collections.Specialized.NotifyCollectionChangedEventArgs e)
+		void HandleCollectionChanged (object sender, NotifyCollectionChangedEventArgs e)
 		{
-			if (e.Action == System.Collections.Specialized.NotifyCollectionChangedAction.Add) {
+			if (e.Action == NotifyCollectionChangedAction.Add) {
 				var pin = e.NewItems [0] as ExtendedPin;
 				AddPin (pin);
 			}
@@ -102,12 +106,18 @@ namespace ExtendedMap.Forms.Plugin.Droid
 			ResetPrevioslySelectedMarker ();
 		}
 
+	  private int GetResourceIdByName(string resourceName)
+	  {
+      var resourceId = Resources.GetIdentifier(resourceName.ToLower(), "drawable", ((Activity)Context).PackageName);
+
+	    return resourceId;
+	  }
+
 		private void ResetPrevioslySelectedMarker ()
 		{
 			//todo : This should reset to the default icon for the pin (right now the icon is hard coded)
 			if (_previouslySelectedMarker != null && !string.IsNullOrEmpty (_previouslySelectedPin.PinIcon)) {
-				_previouslySelectedMarker.SetIcon (
-					BitmapDescriptorFactory.FromAsset (String.Format ("{0}.png", _previouslySelectedPin.PinIcon)));
+        _previouslySelectedMarker.SetIcon(BitmapDescriptorFactory.FromResource(GetResourceIdByName(_previouslySelectedPin.PinIcon)));
 			}
 
 			_previouslySelectedMarker = null;

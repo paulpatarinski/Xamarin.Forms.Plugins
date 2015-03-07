@@ -126,9 +126,9 @@
     <AndroidResource Include="Resources\drawable-xxhdpi\icon.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidAsset Include="Assets\FoodBowl.png" />
-    <AndroidAsset Include="Assets\Chicken.png" />
     <Content Include="Properties\AndroidManifest.xml" />
+    <AndroidResource Include="Resources\drawable\Chicken.png" />
+    <AndroidResource Include="Resources\drawable\FoodBowl.png" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\ExtendedMap\ExtendedMap.Forms.Plugin.Android\ExtendedMap.Forms.Plugin.Android.csproj">
