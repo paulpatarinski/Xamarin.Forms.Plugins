@@ -46,21 +46,14 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="ExtendedCells.Forms.Plugin.Abstractions, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\packages\Xam.Plugins.Forms.ExtendedCell.1.0.0.3\lib\MonoTouch10\ExtendedCells.Forms.Plugin.Abstractions.dll</HintPath>
-    </Reference>
-    <Reference Include="ExtendedCells.Forms.Plugin.iOS, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\packages\Xam.Plugins.Forms.ExtendedCell.1.0.0.3\lib\MonoTouch10\ExtendedCells.Forms.Plugin.iOS.dll</HintPath>
+    <Reference Include="ExtendedCells.Forms.Plugin.Abstractions">
+      <HintPath>..\..\packages\Xam.Plugins.Forms.ExtendedCell.1.0.0.10\lib\portable-net45+wp8+win8+MonoAndroid10+MonoTouch10+Xamarin.iOS10\ExtendedCells.Forms.Plugin.Abstractions.dll</HintPath>
     </Reference>
     <Reference Include="SVG.Forms.Plugin.Abstractions">
-      <HintPath>..\..\packages\Xam.Plugins.Forms.SVG.1.0.0.16\lib\MonoTouch10\SVG.Forms.Plugin.Abstractions.dll</HintPath>
-      <Private>True</Private>
+      <HintPath>..\..\packages\Xam.Plugins.Forms.SVG.1.0.0.17\lib\MonoTouch10\SVG.Forms.Plugin.Abstractions.dll</HintPath>
     </Reference>
-    <Reference Include="SVG.Forms.Plugin.iOS, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\packages\Xam.Plugins.Forms.SVG.1.0.0.16\lib\MonoTouch10\SVG.Forms.Plugin.iOS.dll</HintPath>
+    <Reference Include="SVG.Forms.Plugin.iOS">
+      <HintPath>..\..\packages\Xam.Plugins.Forms.SVG.1.0.0.17\lib\MonoTouch10\SVG.Forms.Plugin.iOS.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Xml" />
