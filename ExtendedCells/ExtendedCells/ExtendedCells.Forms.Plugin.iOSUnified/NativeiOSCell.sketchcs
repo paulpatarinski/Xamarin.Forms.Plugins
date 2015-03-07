@@ -8,52 +8,99 @@
 ```csharp
 // Sketch your next great idea!
 using UIKit;
-
-var uiTableViewCell = new UITableViewCell();
-var uiTableViewCell2 = new UITableViewCell();
-
-uiTableViewCell.SeparatorInset = UIEdgeInsets.Zero;
-uiTableViewCell2.SeparatorInset = UIEdgeInsets.Zero;
-//uiTableViewCell.LayoutMargins.Top = 20.0;
-
-var label = new UILabel{Text = "test", 
-	TextColor = UIColor.White, 
-	BackgroundColor = UIColor.Orange};
-
-label.Frame = new CoreGraphics.CGRect (0, 0,
-	uiTableViewCell.ContentView.Bounds.Width, uiTableViewCell.ContentView.Bounds.Height );
-
-var label2 = new UILabel{Text = "test 123", 
-	TextColor = UIColor.White, 
-	BackgroundColor = UIColor.Orange};
-
-label2.Frame = new CoreGraphics.CGRect (0, 50,
-	uiTableViewCell2.ContentView.Bounds.Width, uiTableViewCell2.ContentView.Bounds.Height );
-
-//
-//var label2 = new UILabel{Text = "test 123", 
-//	TextColor = UIColor.White, 
-//	BackgroundColor = UIColor.Orange};
-//
-//label2.Frame = new CoreGraphics.CGRect (0, uiTableViewCell.ContentView.Bounds.Height / 2,
-//	uiTableViewCell.ContentView.Bounds.Width, uiTableViewCell.ContentView.Bounds.Height / 2);
-//
-
-uiTableViewCell.Add(label);
-uiTableViewCell2.Add(label2);
-//uiTableViewCell.Add(label2);
+using Foundation;
 
 var uiTable= new UITableView();
 
-uiTable.SeparatorStyle = UITableViewCellSeparatorStyle.None;
-uiTable.SeparatorInset = UIEdgeInsets.Zero;
-uiTable.SeparatorColor = UIColor.Brown;
+ int cellIndex = 0;
 
-uiTable.Add(uiTableViewCell);
-uiTable.Add(uiTableViewCell2);
-uiTable.Frame = new CoreGraphics.CGRect(0,20,400,1000);
+uiTable.Frame = new CoreGraphics.CGRect(0,20,300,1000);
+//
+//for(int i = 0; i <= 100; i++)
+//{
+//	var uiTableViewCell = new UITableViewCell();
+//		var cellY = 100 * cellIndex;
+//		if (cellY != 0)
+//			cellY += 20;
+//	
+////	CaptureValue("Cell Index", cellIndex);
+//	uiTableViewCell.ContentView.Bounds = new CoreGraphics.CGRect(0,cellY, 200, 80 );
+////	uiTableViewCell.BackgroundColor = UIColor.Orange;
+//
+//	var label = new UILabel{Text = "test", 
+//		TextColor = UIColor.White, 
+//		BackgroundColor = UIColor.Orange};
+//
+//	label.Frame = new CoreGraphics.CGRect (0,uiTableViewCell.ContentView.Bounds.Y,
+//		uiTableViewCell.ContentView.Bounds.Width, uiTableViewCell.ContentView.Bounds.Height  );
+//
+//	uiTableViewCell.Add(label);
+//
+//	uiTable.Add(uiTableViewCell);
+//
+//	cellIndex++;
+//}
+
+UILabel leftTextUILabel, leftDetailUILabel, rightTextUILabel, rightDetailUILabel;
+
+
+for(int i = 0; i <= 20; i++)
+{
+	 leftDetailUILabel = new UILabel {Text = "Left Details Text", TextColor = UIColor.White, BackgroundColor = UIColor.Orange};
+	 leftTextUILabel = new UILabel {Text = "Left Text", TextColor = UIColor.White, BackgroundColor = UIColor.Orange};
+	 rightTextUILabel = new UILabel {Text = "Right Text", TextColor = UIColor.White, BackgroundColor = UIColor.Orange};
+	 rightDetailUILabel = new UILabel {Text = "Right Details", TextColor = UIColor.White, BackgroundColor = UIColor.Orange};
+
+
+	var uiTableViewCell = new UITableViewCell();
+	var cellY = 100 * cellIndex;
+//	if (cellY != 0)
+//		cellY += 20;
+
+	uiTableViewCell.Add(leftTextUILabel);
+	uiTableViewCell.Add(leftDetailUILabel);
+	uiTableViewCell.Add(rightTextUILabel);
+	uiTableViewCell.Add(rightDetailUILabel);
+
+	var widthWithMargins = uiTableViewCell.ContentView.Bounds.Width+ (nfloat)(10 + 10);
+	var leftColumnXWithMargin = uiTableViewCell.ContentView.Bounds.X + (nfloat)(10);
+
+	uiTableViewCell.ContentView.Bounds = new CoreGraphics.CGRect(leftColumnXWithMargin,cellY, widthWithMargins, 80);
+
+	CaptureValue("Test", cellY);
+	var leftColumnWidth = (float)(uiTableViewCell.ContentView.Bounds.Width * 0.5);
+	var rightColumnWidth = (float)(uiTableViewCell.ContentView.Bounds.Width * 0.5);
+	var rightColumnX = leftColumnWidth + leftColumnXWithMargin;
+
+	var firstRowHeight = uiTableViewCell.ContentView.Bounds.Height / 2;
+	var secondRowHeight = uiTableViewCell.ContentView.Bounds.Height / 2;
+
+	leftTextUILabel.Frame = new CoreGraphics.CGRect (leftColumnXWithMargin,uiTableViewCell.ContentView.Bounds.Y,
+				uiTableViewCell.ContentView.Bounds.Width, uiTableViewCell.ContentView.Bounds.Height  );
+	leftTextUILabel.Frame = new CoreGraphics.CGRect (leftColumnXWithMargin, cellY, leftColumnWidth, firstRowHeight);
+	leftDetailUILabel.Frame = new CoreGraphics.CGRect (leftColumnXWithMargin, uiTableViewCell.ContentView.Bounds.Y+ firstRowHeight, leftColumnWidth, secondRowHeight);
+
+	rightTextUILabel.Frame = new CoreGraphics.CGRect (rightColumnX, uiTableViewCell.ContentView.Bounds.Y , rightColumnWidth, firstRowHeight);
+	rightDetailUILabel.Frame = new CoreGraphics.CGRect (rightColumnX,uiTableViewCell.ContentView.Bounds.Y + firstRowHeight, rightColumnWidth, secondRowHeight);
+
+
+
+
+//		uiTableViewCell.ContentView.Bounds = new CoreGraphics.CGRect(0,cellY, 200, 80 );
+//
+//
+//	leftTextUILabel.Frame = new CoreGraphics.CGRect (0,uiTableViewCell.ContentView.Bounds.Y,
+//				uiTableViewCell.ContentView.Bounds.Width, uiTableViewCell.ContentView.Bounds.Height  );
+//		
+//	uiTableViewCell.Add(leftTextUILabel);
+
+	uiTable.Add(uiTableViewCell);
+
+	cellIndex++;
+}
+
+
 
 RootView.Add(uiTable);
-
 ```
 
