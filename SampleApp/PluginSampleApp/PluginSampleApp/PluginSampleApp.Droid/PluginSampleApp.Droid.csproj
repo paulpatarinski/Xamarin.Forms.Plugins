@@ -51,17 +51,21 @@
     <AndroidUseSharedRuntime>false</AndroidUseSharedRuntime>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="ExtendedCells.Forms.Plugin.Abstractions">
-      <HintPath>..\..\packages\Xam.Plugins.Forms.ExtendedCell.1.0.0.3\lib\MonoAndroid10\ExtendedCells.Forms.Plugin.Abstractions.dll</HintPath>
+    <Reference Include="ExtendedCells.Forms.Plugin.Abstractions, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\Xam.Plugins.Forms.ExtendedCell.1.0.0.10\lib\MonoAndroid10\ExtendedCells.Forms.Plugin.Abstractions.dll</HintPath>
     </Reference>
     <Reference Include="ExtendedCells.Forms.Plugin.Android">
-      <HintPath>..\..\packages\Xam.Plugins.Forms.ExtendedCell.1.0.0.3\lib\MonoAndroid10\ExtendedCells.Forms.Plugin.Android.dll</HintPath>
+      <HintPath>..\..\packages\Xam.Plugins.Forms.ExtendedCell.1.0.0.10\lib\MonoAndroid10\ExtendedCells.Forms.Plugin.Android.dll</HintPath>
+      <Private>True</Private>
     </Reference>
-    <Reference Include="ExtendedMap.Forms.Plugin.Abstractions">
-      <HintPath>..\..\packages\Xam.Plugins.Forms.ExtendedMap.1.0.0.9\lib\MonoAndroid10\ExtendedMap.Forms.Plugin.Abstractions.dll</HintPath>
+    <Reference Include="ExtendedMap.Forms.Plugin.Abstractions, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\Xam.Plugins.Forms.ExtendedMap.1.0.0.11\lib\MonoAndroid10\ExtendedMap.Forms.Plugin.Abstractions.dll</HintPath>
     </Reference>
-    <Reference Include="ExtendedMap.Forms.Plugin.Android">
-      <HintPath>..\..\packages\Xam.Plugins.Forms.ExtendedMap.1.0.0.9\lib\MonoAndroid10\ExtendedMap.Forms.Plugin.Android.dll</HintPath>
+    <Reference Include="ExtendedMap.Forms.Plugin.Android, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\Xam.Plugins.Forms.ExtendedMap.1.0.0.11\lib\MonoAndroid10\ExtendedMap.Forms.Plugin.Android.dll</HintPath>
     </Reference>
     <Reference Include="FormsViewGroup">
       <HintPath>..\..\packages\Xamarin.Forms.1.3.3.6323\lib\MonoAndroid10\FormsViewGroup.dll</HintPath>
