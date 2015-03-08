@@ -1,0 +1,7 @@
+﻿<#@ template language="C#" #>
+
+
+<# string startFolder = @"C:\Xamarin.Forms.Plugins\StyleIdGenerator";
+
+#>
+<#@include file="StyleIdGenerator.t4" #>
