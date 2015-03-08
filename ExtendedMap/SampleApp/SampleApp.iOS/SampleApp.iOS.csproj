@@ -3,8 +3,6 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">iPhoneSimulator</Platform>
-    <ProductVersion>8.0.30703</ProductVersion>
-    <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{6AA265CB-1AB8-458F-9CC8-017E802E7733}</ProjectGuid>
     <ProjectTypeGuids>{FEACFBD2-3405-455C-9665-78FE426C6842};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <OutputType>Exe</OutputType>
@@ -95,17 +93,18 @@
     <None Include="Info.plist" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <ITunesArtwork Include="iTunesArtwork" />
-    <ITunesArtwork Include="iTunesArtwork@2x" />
     <None Include="packages.config" />
+    <ITunesArtwork Include="iTunesArtwork%402x" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\ExtendedMap\ExtendedMap.Forms.Plugin.iOS\ExtendedMap.Forms.Plugin.iOS.csproj">
-      <Project>{d525f236-6a2d-4010-b1cc-4a4b8581c90b}</Project>
-      <Name>ExtendedMap.Forms.Plugin.iOS</Name>
-      <IsAppExtension>false</IsAppExtension>
-    </ProjectReference>
     <ProjectReference Include="..\SampleApp\SampleApp.csproj">
       <Name>SampleApp</Name>
+      <Project>{64D5C866-6DA0-46AE-B862-D02D3D187B8E}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\..\ExtendedMap\ExtendedMap.Forms.Plugin.iOS\ExtendedMap.Forms.Plugin.iOS.csproj">
+      <Project>{D525F236-6A2D-4010-B1CC-4A4B8581C90B}</Project>
+      <Name>ExtendedMap.Forms.Plugin.iOS</Name>
+      <IsAppExtension>False</IsAppExtension>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
@@ -127,40 +126,34 @@
     <InterfaceDefinition Include="Resources\LaunchScreen.storyboard" />
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="ExtendedCells.Forms.Plugin.Abstractions, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\packages\Xam.Plugins.Forms.ExtendedCell.1.0.0.10\lib\Xamarin.iOS10\ExtendedCells.Forms.Plugin.Abstractions.dll</HintPath>
-    </Reference>
-    <Reference Include="ExtendedCells.Forms.Plugin.iOSUnified, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\packages\Xam.Plugins.Forms.ExtendedCell.1.0.0.10\lib\Xamarin.iOS10\ExtendedCells.Forms.Plugin.iOSUnified.dll</HintPath>
-    </Reference>
-    <Reference Include="SVG.Forms.Plugin.Abstractions, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\packages\Xam.Plugins.Forms.SVG.1.0.0.17\lib\portable-net45+wp8+win8+MonoAndroid10+MonoTouch10\SVG.Forms.Plugin.Abstractions.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
-    <Reference Include="Xamarin.Forms.Core, Version=1.3.3.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\packages\Xamarin.Forms.1.3.3.6323\lib\Xamarin.iOS10\Xamarin.Forms.Core.dll</HintPath>
-    </Reference>
     <Reference Include="Xamarin.Forms.Maps">
       <HintPath>..\..\packages\Xamarin.Forms.Maps.1.3.3.6323\lib\Xamarin.iOS10\Xamarin.Forms.Maps.dll</HintPath>
     </Reference>
     <Reference Include="Xamarin.Forms.Maps.iOS">
       <HintPath>..\..\packages\Xamarin.Forms.Maps.1.3.3.6323\lib\Xamarin.iOS10\Xamarin.Forms.Maps.iOS.dll</HintPath>
     </Reference>
-    <Reference Include="Xamarin.Forms.Platform.iOS, Version=1.3.3.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
+    <Reference Include="Xamarin.iOS" />
+    <Reference Include="ExtendedCells.Forms.Plugin.Abstractions">
+      <HintPath>..\..\packages\Xam.Plugins.Forms.ExtendedCell.1.0.0.10\lib\Xamarin.iOS10\ExtendedCells.Forms.Plugin.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="ExtendedCells.Forms.Plugin.iOSUnified">
+      <HintPath>..\..\packages\Xam.Plugins.Forms.ExtendedCell.1.0.0.10\lib\Xamarin.iOS10\ExtendedCells.Forms.Plugin.iOSUnified.dll</HintPath>
+    </Reference>
+    <Reference Include="SVG.Forms.Plugin.Abstractions">
+      <HintPath>..\..\packages\Xam.Plugins.Forms.SVG.1.0.0.17\lib\portable-net45+wp8+win8+MonoAndroid10+MonoTouch10\SVG.Forms.Plugin.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Forms.Core">
+      <HintPath>..\..\packages\Xamarin.Forms.1.3.3.6323\lib\Xamarin.iOS10\Xamarin.Forms.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Forms.Platform.iOS">
       <HintPath>..\..\packages\Xamarin.Forms.1.3.3.6323\lib\Xamarin.iOS10\Xamarin.Forms.Platform.iOS.dll</HintPath>
     </Reference>
-    <Reference Include="Xamarin.Forms.Xaml, Version=1.3.3.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
+    <Reference Include="Xamarin.Forms.Xaml">
       <HintPath>..\..\packages\Xamarin.Forms.1.3.3.6323\lib\Xamarin.iOS10\Xamarin.Forms.Xaml.dll</HintPath>
     </Reference>
-    <Reference Include="Xamarin.iOS" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <Import Project="..\..\packages\Xamarin.Forms.1.3.3.6323\build\portable-win+net45+wp80+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets" Condition="Exists('..\..\packages\Xamarin.Forms.1.3.3.6323\build\portable-win+net45+wp80+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets')" />

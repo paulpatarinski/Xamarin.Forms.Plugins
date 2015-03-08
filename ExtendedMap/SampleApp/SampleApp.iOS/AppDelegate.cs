@@ -4,6 +4,9 @@ using System.Linq;
 
 using Foundation;
 using UIKit;
+using Xamarin;
+using ExtendedCells.Forms.Plugin.iOSUnified;
+using ExtendedMap.Forms.Plugin.iOS;
 
 namespace SampleApp.iOS
 {
@@ -22,7 +25,11 @@ namespace SampleApp.iOS
         //
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
-            global::Xamarin.Forms.Forms.Init();
+			global::Xamarin.Forms.Forms.Init ();
+			FormsMaps.Init ();
+//			SvgImageRenderer.Init ();
+			TwoColumnCellRenderer.Init ();
+			ExtendedMapRenderer.Init ();
             LoadApplication(new App());
 
             return base.FinishedLaunching(app, options);
