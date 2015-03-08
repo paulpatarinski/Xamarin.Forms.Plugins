@@ -5,7 +5,7 @@ namespace UiTests
 {
     public partial class CrossPlatformTests
     {
-        public  IApp _app;
+        public IApp _app;
 
         /// <summary>
         ///     We do 'Ignore' in the base class so that these set of tests aren't actually *run*
