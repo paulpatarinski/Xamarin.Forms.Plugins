@@ -55,7 +55,7 @@ public struct <#= fileMatch.nameWithoutExtension #>
 {
 #>
 
-public static string <#=styleId#> = "<#=styleId#>";
+public static string <#=styleId.Replace(" ","")#> = "<#=styleId#>";
 <#
 }
 #>

@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-using Xamarin.Forms;
+﻿using Xamarin.Forms;
 
 namespace SampleApp
 {
@@ -11,20 +6,13 @@ namespace SampleApp
     {
         public App()
         {
+            var tabbedPage = new TabbedPage();
+
+            tabbedPage.Children.Add(new Page1());
+            tabbedPage.Children.Add(new Page2());
+
             // The root page of your application
-            MainPage = new ContentPage
-            {
-                Content = new StackLayout
-                {
-                    VerticalOptions = LayoutOptions.Center,
-                    Children = {
-						new Label {
-							XAlign = TextAlignment.Center,
-							Text = "Welcome to Xamarin Forms!"
-						}
-					}
-                }
-            };
+            MainPage = tabbedPage;
         }
 
         protected override void OnStart()

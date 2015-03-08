@@ -8,9 +8,9 @@ using Xamarin.Forms;
 
 namespace SampleApp
 {
-    public partial class SamplePage : ContentPage
+    public partial class Page2 : ContentPage
     {
-        public SamplePage()
+        public Page2()
         {
             InitializeComponent();
         }
