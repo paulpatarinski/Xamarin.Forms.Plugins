@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Drawing;
+using System.IO;
 using System.Linq;
 using MapKit;
 using UIKit;
@@ -25,9 +27,22 @@ namespace ExtendedMap.Forms.Plugin.iOS
 			annotationView.CanShowCallout = false;
 			(annotationView as MKPinAnnotationView).AnimatesDrop = true;
 			annotationView.Selected = true;
+		  annotationView.Image = GetImage("Chicken.png");
 		
 			return annotationView;
 		}
+
+    public UIImage GetImage(string imageName)
+    {
+      var documents =
+        Environment.GetFolderPath(Environment.SpecialFolder.Resources);
+
+      var filename = Path.Combine(documents, imageName);
+
+      var image = UIImage.FromFile(filename).Scale(new SizeF() { Height = 20, Width = 30 });
+
+      return image;
+    }
 
 		public override void DidSelectAnnotationView (MKMapView mapView, MKAnnotationView view)
 		{
