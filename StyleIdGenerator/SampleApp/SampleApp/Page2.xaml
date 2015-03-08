@@ -1,8 +1,9 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
+
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="SampleApp.Page2" Title="Page 2">
-  <StackLayout>
-    <Label StyleId="lblPage2" Text="Style Id Page 2" VerticalOptions="Center" HorizontalOptions="Center" />
-  </StackLayout>
+    <StackLayout>
+        <Label StyleId="lblPage2" Text="Style Id Page 2" VerticalOptions="Center" HorizontalOptions="Center" />
+    </StackLayout>
 </ContentPage>
