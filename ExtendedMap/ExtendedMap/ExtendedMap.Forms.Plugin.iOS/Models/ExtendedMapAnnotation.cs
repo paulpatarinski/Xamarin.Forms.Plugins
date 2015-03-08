@@ -1,16 +1,36 @@
 ﻿using System;
-using MapKit;
 using CoreLocation;
+using MapKit;
 
-namespace ExtendedMap.Forms.Plugin.iOS
+namespace ExtendedMap.Forms.Plugin.iOS.Models
 {
 	public class ExtendedMapAnnotation : MKAnnotation
 	{
-		private CLLocationCoordinate2D _coordinate;
-		public override CLLocationCoordinate2D Coordinate {get{return _coordinate;}}
-		private string _title, _subtitle;
-		public override string Title { get{ return _title; }}
+    public ExtendedMapAnnotation(CLLocationCoordinate2D coordinate, string title, string subtitle, string pinIcon)
+    {
+      _coordinate = coordinate;
+      _title = title;
+      _subtitle = subtitle;
+      _pinIcon = pinIcon;
+    }
+
+		private readonly CLLocationCoordinate2D _coordinate;
+	  private readonly string _title;
+	  private readonly string _subtitle;
+	  private readonly string _pinIcon;
+
+	  public override string Title { get{ return _title; }}
 		public override string Subtitle { get{ return _subtitle; }}
+
+	  public string PinIcon
+	  {
+	    get
+	    {
+	      return _pinIcon;
+	    }
+	  }
+
+	  public override CLLocationCoordinate2D Coordinate { get { return _coordinate; } }
 
 		public event EventHandler<ExtendedMapAnnotation> Clicked;
 
@@ -20,12 +40,5 @@ namespace ExtendedMap.Forms.Plugin.iOS
 				Clicked.Invoke (sender, this);
 			}
 		}
-
-		public ExtendedMapAnnotation (CLLocationCoordinate2D coordinate, string title, string subtitle) {
-			_coordinate = coordinate;
-			_title = title;
-			_subtitle = subtitle;
-		}
 	}
 }
-

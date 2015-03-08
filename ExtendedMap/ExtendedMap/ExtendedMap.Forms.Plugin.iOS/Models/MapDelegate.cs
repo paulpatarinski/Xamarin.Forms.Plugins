@@ -1,65 +1,74 @@
-﻿using System;
-using System.Drawing;
-using System.IO;
-using System.Linq;
+﻿using CoreGraphics;
 using MapKit;
 using UIKit;
-using Foundation;
 
-namespace ExtendedMap.Forms.Plugin.iOS
+namespace ExtendedMap.Forms.Plugin.iOS.Models
 {
 	public class MapDelegate : MKMapViewDelegate 
 	{
-		protected string annotationIdentifier = "BasicAnnotation";
-		UIButton detailButton; // avoid GC
+	  private ExtendedMapAnnotation _previouslySelectedPin;
+	  private const string AnnotationIdentifier = "BasicAnnotation";
 
-		public override MKAnnotationView GetViewForAnnotation (MKMapView mapView, IMKAnnotation annotation)
+	  public override MKAnnotationView GetViewForAnnotation (MKMapView mapView, IMKAnnotation annotation)
 		{
-			// try and dequeue the annotation view
-			MKAnnotationView annotationView = mapView.DequeueReusableAnnotation(annotationIdentifier);   
-			// if we couldn't dequeue one, create a new one
-			if (annotationView == null)
-				annotationView = new MKPinAnnotationView(annotation, annotationIdentifier);
-			else // if we did dequeue one for reuse, assign the annotation to it
-				annotationView.Annotation = annotation;
+      var extendedAnnotation = annotation as ExtendedMapAnnotation;
 
-			// configure our annotation view properties
-			annotationView.CanShowCallout = false;
-			(annotationView as MKPinAnnotationView).AnimatesDrop = true;
-			annotationView.Selected = true;
-		  annotationView.Image = GetImage("Chicken.png");
-		
-			return annotationView;
+	    if (extendedAnnotation == null) return null;
+
+	    // try and dequeue the annotation view
+	    var annotationView = mapView.DequeueReusableAnnotation(AnnotationIdentifier);
+
+	    // if we couldn't dequeue one, create a new one
+	    if (annotationView == null)
+	    {
+	      annotationView = new MKAnnotationView(extendedAnnotation, AnnotationIdentifier);
+	    }
+	    else // if we did dequeue one for reuse, assign the annotation to it
+	      annotationView.Annotation = extendedAnnotation;
+
+	    // configure our annotation view properties
+	    annotationView.CanShowCallout = false;
+	    annotationView.Selected = true;
+
+	    if (!string.IsNullOrEmpty(extendedAnnotation.PinIcon))
+	    {
+	      annotationView.Image = UIImage.FromFile(extendedAnnotation.PinIcon);
+	    }
+
+	    return annotationView;
 		}
-
-    public UIImage GetImage(string imageName)
-    {
-      var documents =
-        Environment.GetFolderPath(Environment.SpecialFolder.Resources);
-
-      var filename = Path.Combine(documents, imageName);
-
-      var image = UIImage.FromFile(filename).Scale(new SizeF() { Height = 20, Width = 30 });
-
-      return image;
-    }
 
 		public override void DidSelectAnnotationView (MKMapView mapView, MKAnnotationView view)
 		{
-			var pinAnnotationView = view as MKPinAnnotationView;
+			var pinAnnotationView = view;
 
-			if (pinAnnotationView != null) {
-				var extendedMapAnnotation = pinAnnotationView.Annotation as ExtendedMapAnnotation;
+		  if (pinAnnotationView == null) return;
 
-				if (extendedMapAnnotation != null) {
-					extendedMapAnnotation.AnnotationClicked (mapView);
-				}
-			}
+      ResetPrevioslySelectedPin();
+      view.Image = UIImage.FromFile("defaultPin.png").Scale(new CGSize(100,100));
+      var extendedMapAnnotation = pinAnnotationView.Annotation as ExtendedMapAnnotation;
+
+		  if (extendedMapAnnotation != null) {
+		    extendedMapAnnotation.AnnotationClicked (mapView);
+		  }
+
+      _previouslySelectedPin = extendedMapAnnotation;
+      _previouslySelectedNativePin = view;
 		}
-//	
-		// as an optimization, you should override this method to add or remove annotations as the
-		// map zooms in or out.
-		public override void RegionChanged (MKMapView mapView, bool animated) {}
+
+	  private void ResetPrevioslySelectedPin()
+    {
+      //todo : This should reset to the default icon for the pin (right now the icon is hard coded)
+      if (_previouslySelectedNativePin != null && !string.IsNullOrEmpty(_previouslySelectedPin.PinIcon))
+      {
+        _previouslySelectedNativePin.Image = UIImage.FromFile(_previouslySelectedPin.PinIcon);
+      }
+
+      _previouslySelectedNativePin = null;
+    }
+
+    private MKAnnotationView _previouslySelectedNativePin { get; set; }
+
 	}
 }
 

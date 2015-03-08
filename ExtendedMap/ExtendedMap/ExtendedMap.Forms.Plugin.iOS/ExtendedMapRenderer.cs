@@ -1,10 +1,13 @@
 ﻿using System.Collections.Specialized;
 using System.ComponentModel;
+using System.Reflection;
 using CoreLocation;
 using ExtendedMap.Forms.Plugin.Abstractions;
 using ExtendedMap.Forms.Plugin.Abstractions.Models;
 using ExtendedMap.Forms.Plugin.iOS;
+using ExtendedMap.Forms.Plugin.iOS.Models;
 using MapKit;
+using UIKit;
 using Xamarin.Forms;
 using Xamarin.Forms.Maps.iOS;
 using Xamarin.Forms.Platform.iOS;
@@ -18,9 +21,6 @@ namespace ExtendedMap.Forms.Plugin.iOS
   /// </summary>
   public class ExtendedMapRenderer : MapRenderer
   {
-    /// <summary>
-    ///   Used for registration with dependency service
-    /// </summary>
     public static void Init()
     {
     }
@@ -79,28 +79,11 @@ namespace ExtendedMap.Forms.Plugin.iOS
     {
       var nativePin =
         new ExtendedMapAnnotation(new CLLocationCoordinate2D(formsPin.Position.Latitude, formsPin.Position.Longitude),
-          formsPin.Label, formsPin.Address);
+          formsPin.Label, formsPin.Address, formsPin.PinIcon);
 
       nativePin.Clicked += HandleAnnotationClick;
 
       _nativeMapView.AddAnnotation(nativePin);
-
-//			var androidMapView = (MapView)Control;
-//
-//			var markerWithIcon = new MarkerOptions ();
-//
-//			markerWithIcon.SetPosition (new LatLng (formsPin.Position.Latitude, formsPin.Position.Longitude));
-//			markerWithIcon.SetTitle (formsPin.Label);
-//			markerWithIcon.SetSnippet (formsPin.Address);
-//
-//			if (!string.IsNullOrEmpty (formsPin.PinIcon))
-//			{
-//				markerWithIcon.InvokeIcon(BitmapDescriptorFactory.FromResource(GetResourceIdByName(formsPin.PinIcon)));
-//			}
-//			else
-//				markerWithIcon.InvokeIcon (BitmapDescriptorFactory.DefaultMarker ());
-//
-//			androidMapView.Map.AddMarker (markerWithIcon);
     }
 
     private void HandleAnnotationClick(object sender, ExtendedMapAnnotation e)
