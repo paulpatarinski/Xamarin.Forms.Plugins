@@ -2,7 +2,7 @@
 
 namespace SampleApp
 {
-    public class Page1 : ContentPage
+    public partial class Page1 : ContentPage
     {
         public Page1()
         {

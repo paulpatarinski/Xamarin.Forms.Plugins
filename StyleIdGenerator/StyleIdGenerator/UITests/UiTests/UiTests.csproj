@@ -53,14 +53,29 @@
   </Choose>
   <ItemGroup>
     <Compile Include="Bootstrappers\AndroidTest.cs" />
-    <Compile Include="Bootstrappers\CrossPlatformTests.cs" />
+    <Compile Include="CrossPlatformTests.cs" />
     <Compile Include="Bootstrappers\iOSTest.cs" />
     <Compile Include="ExtensionsMethods\IAppExtensions.cs" />
-    <Compile Include="SampleTest.cs" />
+    <Compile Include="Page1Tests.cs" />
+    <Compile Include="Page2Tests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Generator\StyleIdGenerator.cs">
+      <DependentUpon>StyleIdGenerator.tt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Generator\StyleIdGenerator.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>StyleIdGenerator.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
