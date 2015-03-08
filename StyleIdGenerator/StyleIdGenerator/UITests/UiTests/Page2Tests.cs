@@ -10,7 +10,7 @@ namespace UiTests
         [Test]
         public void LabelPage2_ShouldBeSelectable()
         {
-            AppResult[] lblPage2 = _app.Query(StyleIds.Page2.lblPage2);
+            var lblPage2 = _app.Query(StyleIds.Page2.lblPage2);
 
             Assert.IsNotNull(lblPage2);
             Assert.IsTrue(lblPage2.Any());
