@@ -2,7 +2,6 @@
 using System.Threading.Tasks;
 using CoreGraphics;
 using MapKit;
-using ObjCRuntime;
 using UIKit;
 using Xamarin.Forms;
 
@@ -12,6 +11,9 @@ namespace ExtendedMap.Forms.Plugin.iOS.Models
 	{
 	  private ExtendedMapAnnotation _previouslySelectedPin;
 	  private const string AnnotationIdentifier = "BasicAnnotation";
+	  private MKAnnotationView _previouslySelectedNativePin;
+
+    public event EventHandler MapTapped;
 
 	  public override MKAnnotationView GetViewForAnnotation (MKMapView mapView, IMKAnnotation annotation)
 		{
@@ -90,11 +92,5 @@ namespace ExtendedMap.Forms.Plugin.iOS.Models
 
       _previouslySelectedNativePin = null;
     }
-
-    public event EventHandler MapTapped;
-
-    private MKAnnotationView _previouslySelectedNativePin { get; set; }
-
 	}
 }
-
