@@ -13,7 +13,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SampleApp.iOS", "SampleApp\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SampleApp.WinPhone", "SampleApp\SampleApp.WinPhone\SampleApp.WinPhone.csproj", "{4BD60983-3FBD-4B35-A3A4-60BE48F9118F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UiTests", "StyleIdGenerator\UITests\UiTests\UiTests.csproj", "{238F898B-3F70-4F9C-8E00-EE9BB16A66C6}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StyleIdGenerator", "StyleIdGenerator\StyleIdGenerator\StyleIdGenerator.csproj", "{A6F1D717-817D-4638-A342-99FAC72B7372}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UiTests", "StyleIdGenerator\UITests\UiTests.csproj", "{238F898B-3F70-4F9C-8E00-EE9BB16A66C6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -207,6 +209,38 @@ Global
 		{4BD60983-3FBD-4B35-A3A4-60BE48F9118F}.Release|x86.ActiveCfg = Release|x86
 		{4BD60983-3FBD-4B35-A3A4-60BE48F9118F}.Release|x86.Build.0 = Release|x86
 		{4BD60983-3FBD-4B35-A3A4-60BE48F9118F}.Release|x86.Deploy.0 = Release|x86
+		{A6F1D717-817D-4638-A342-99FAC72B7372}.Ad-Hoc|Any CPU.ActiveCfg = Release|Any CPU
+		{A6F1D717-817D-4638-A342-99FAC72B7372}.Ad-Hoc|Any CPU.Build.0 = Release|Any CPU
+		{A6F1D717-817D-4638-A342-99FAC72B7372}.Ad-Hoc|ARM.ActiveCfg = Release|Any CPU
+		{A6F1D717-817D-4638-A342-99FAC72B7372}.Ad-Hoc|iPhone.ActiveCfg = Release|Any CPU
+		{A6F1D717-817D-4638-A342-99FAC72B7372}.Ad-Hoc|iPhoneSimulator.ActiveCfg = Release|Any CPU
+		{A6F1D717-817D-4638-A342-99FAC72B7372}.Ad-Hoc|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{A6F1D717-817D-4638-A342-99FAC72B7372}.Ad-Hoc|Mixed Platforms.Build.0 = Release|Any CPU
+		{A6F1D717-817D-4638-A342-99FAC72B7372}.Ad-Hoc|x86.ActiveCfg = Release|Any CPU
+		{A6F1D717-817D-4638-A342-99FAC72B7372}.AppStore|Any CPU.ActiveCfg = Release|Any CPU
+		{A6F1D717-817D-4638-A342-99FAC72B7372}.AppStore|Any CPU.Build.0 = Release|Any CPU
+		{A6F1D717-817D-4638-A342-99FAC72B7372}.AppStore|ARM.ActiveCfg = Release|Any CPU
+		{A6F1D717-817D-4638-A342-99FAC72B7372}.AppStore|iPhone.ActiveCfg = Release|Any CPU
+		{A6F1D717-817D-4638-A342-99FAC72B7372}.AppStore|iPhoneSimulator.ActiveCfg = Release|Any CPU
+		{A6F1D717-817D-4638-A342-99FAC72B7372}.AppStore|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{A6F1D717-817D-4638-A342-99FAC72B7372}.AppStore|Mixed Platforms.Build.0 = Release|Any CPU
+		{A6F1D717-817D-4638-A342-99FAC72B7372}.AppStore|x86.ActiveCfg = Release|Any CPU
+		{A6F1D717-817D-4638-A342-99FAC72B7372}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A6F1D717-817D-4638-A342-99FAC72B7372}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A6F1D717-817D-4638-A342-99FAC72B7372}.Debug|ARM.ActiveCfg = Debug|Any CPU
+		{A6F1D717-817D-4638-A342-99FAC72B7372}.Debug|iPhone.ActiveCfg = Debug|Any CPU
+		{A6F1D717-817D-4638-A342-99FAC72B7372}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
+		{A6F1D717-817D-4638-A342-99FAC72B7372}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{A6F1D717-817D-4638-A342-99FAC72B7372}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{A6F1D717-817D-4638-A342-99FAC72B7372}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{A6F1D717-817D-4638-A342-99FAC72B7372}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A6F1D717-817D-4638-A342-99FAC72B7372}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A6F1D717-817D-4638-A342-99FAC72B7372}.Release|ARM.ActiveCfg = Release|Any CPU
+		{A6F1D717-817D-4638-A342-99FAC72B7372}.Release|iPhone.ActiveCfg = Release|Any CPU
+		{A6F1D717-817D-4638-A342-99FAC72B7372}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
+		{A6F1D717-817D-4638-A342-99FAC72B7372}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{A6F1D717-817D-4638-A342-99FAC72B7372}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{A6F1D717-817D-4638-A342-99FAC72B7372}.Release|x86.ActiveCfg = Release|Any CPU
 		{238F898B-3F70-4F9C-8E00-EE9BB16A66C6}.Ad-Hoc|Any CPU.ActiveCfg = Release|Any CPU
 		{238F898B-3F70-4F9C-8E00-EE9BB16A66C6}.Ad-Hoc|Any CPU.Build.0 = Release|Any CPU
 		{238F898B-3F70-4F9C-8E00-EE9BB16A66C6}.Ad-Hoc|ARM.ActiveCfg = Release|Any CPU
