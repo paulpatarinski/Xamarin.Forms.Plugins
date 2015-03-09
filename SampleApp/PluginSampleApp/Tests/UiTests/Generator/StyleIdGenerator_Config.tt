@@ -1,0 +1,8 @@
+﻿<#@ template language="C#" #>
+
+<#
+//Point this path to the root folder for your project
+var startFolder = @"C:\Xamarin.Forms.Plugins\SampleApp"; 
+#>
+
+<#@include file="StyleIdGenerator.t4" #>

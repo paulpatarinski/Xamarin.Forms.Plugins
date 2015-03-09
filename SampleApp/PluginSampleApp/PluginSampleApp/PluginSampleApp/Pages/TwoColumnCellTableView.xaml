@@ -5,7 +5,7 @@
              xmlns:abstractions="clr-namespace:ExtendedCells.Forms.Plugin.Abstractions;assembly=ExtendedCells.Forms.Plugin.Abstractions"
              x:Class="PluginSampleApp.Pages.TwoColumnCellTableView" Title="Table View Example">
   <ScrollView  Orientation="Vertical">
-    <StackLayout>
+    <StackLayout StyleId="stackLayoutCellTableView">
       <StackLayout.HeightRequest>
           <OnPlatform x:TypeArguments="x:Double" Android="900" WinPhone="1200"/>
         </StackLayout.HeightRequest>

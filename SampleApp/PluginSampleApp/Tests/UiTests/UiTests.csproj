@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -47,14 +47,27 @@
   <ItemGroup>
     <Compile Include="CrossPlatformTests.cs" />
     <Compile Include="AndroidTest.cs" />
+    <Compile Include="Generator\StyleIdGenerator_Config.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>StyleIdGenerator_Config.tt</DependentUpon>
+    </Compile>
     <Compile Include="iOSTest.cs" />
     <Compile Include="ExtensionMethods\IAppExtensions.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
+    <None Include="Generator\StyleIdGenerator.t4" />
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="ExtensionMethods\" />
+    <Content Include="Generator\StyleIdGenerator_Config.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>StyleIdGenerator_Config.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
 </Project>

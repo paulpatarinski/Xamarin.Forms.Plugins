@@ -4,7 +4,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:abstractions="clr-namespace:ExtendedCells.Forms.Plugin.Abstractions;assembly=ExtendedCells.Forms.Plugin.Abstractions"
              x:Class="PluginSampleApp.Pages.TwoColumnCellListview" Title="Native Cell" BackgroundColor="Black">
-  <ListView ItemsSource="{Binding People}" RowHeight="60">
+  <ListView StyleId="cellListview" ItemsSource="{Binding People}" RowHeight="60">
     <ListView.ItemTemplate>
       <DataTemplate>
         <abstractions:TwoColumnCell LeftText="{Binding FirstName}" LeftTextColor="White" LeftTextFont="26"
