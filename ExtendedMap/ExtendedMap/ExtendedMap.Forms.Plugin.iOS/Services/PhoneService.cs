@@ -17,7 +17,7 @@ namespace ExtendedMap.Forms.Plugin.iOS.Services
   {
     public void OpenBrowser(string url)
     {
-      throw new NotImplementedException();
+      UIApplication.SharedApplication.OpenUrl(new NSUrl(url));
     }
 
     public void DialNumber(string number, string name)
