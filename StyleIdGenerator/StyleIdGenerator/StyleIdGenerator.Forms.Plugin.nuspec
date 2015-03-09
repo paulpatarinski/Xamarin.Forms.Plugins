@@ -2,23 +2,21 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
     <metadata>
         <id>Xam.Plugins.Forms.StyleIdGenerator</id>
-        <version>1.0.0.1</version>
+        <version>1.0.0.2</version>
         <title>StyleId Generator for Xamarin.Forms</title>
         <authors>Paul Patarinski</authors>
         <owners>Paul Patarinski</owners>
         <licenseUrl>https://github.com/paulpatarinski/Xamarin.Forms.Plugins/blob/master/LICENSE.md</licenseUrl>
         <projectUrl>https://github.com/paulpatarinski/Xamarin.Forms.Plugins/tree/master/StyleIdGenerator</projectUrl>
-        <iconUrl>https://raw.githubusercontent.com/paulpatarinski/Xamarin.Forms.Plugins/master/SampleApp/Images/ExtendedCellsNugetIcon.png</iconUrl>
+        <iconUrl>https://raw.githubusercontent.com/paulpatarinski/Xamarin.Forms.Plugins/master/SampleApp/Images/StyleIdGeneratorNugetIcon.png</iconUrl>
         <requireLicenseAcceptance>false</requireLicenseAcceptance>
         <description>StyleId Generator for Xamarin.Forms allows you to generate strongly typed StyleId references for your UITest project.</description>
         <summary>StyleId Generator for Xamarin.Forms allows you to generate strongly typed StyleId references for your UITest project. VISIT THE PROJECT URL for more info.</summary>
-        <releaseNotes>Initial release</releaseNotes>
+        <releaseNotes>Updating the icon</releaseNotes>
         <tags>xamarin, pcl, xam.pcl, windows phone, winphone, wp8, android, xamarin.forms, xamarin.uitest</tags>
-        <dependencies>         
-        </dependencies>
     </metadata>
     <files>
         <file src="StyleIdGenerator\bin\Release\Generator\StyleIdGenerator.t4" target="Content\Generator\StyleIdGenerator.t4" />
-		<file src="StyleIdGenerator\bin\Release\Generator\StyleIdGenerator_Config.tt" target="Content\Generator\StyleIdGenerator_Config.tt" />
-     </files>
+        <file src="StyleIdGenerator\bin\Release\Generator\StyleIdGenerator_Config.tt" target="Content\Generator\StyleIdGenerator_Config.tt" />
+    </files>
 </package>
