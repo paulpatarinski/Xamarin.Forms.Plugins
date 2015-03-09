@@ -81,5 +81,14 @@ namespace ExtendedMap.Forms.Plugin.Abstractions
         base.SetValue(SelectedPinProperty, selectedPin);
       }
     }
+
+	  public static readonly BindableProperty ShareTextProperty =
+	    BindableProperty.Create("ShareText", typeof (string), typeof (ExtendedMap), default(string));
+
+	  public string ShareText
+	  {
+	    get { return (string) GetValue(ShareTextProperty); }
+	    set { SetValue(ShareTextProperty, value); }
+	  }
 	}
 }

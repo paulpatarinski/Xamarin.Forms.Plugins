@@ -341,8 +341,12 @@ namespace ExtendedMap.Forms.Plugin.Abstractions
 			var shareImageButton = CreateImageButton ("share-icon.svg", "SHARE", (footerTopSectionHeight / 2),
 				                       (footerTopSectionHeight / 2), (view, o) => {
 				var selectedPin = _extendedMap.SelectedPin;
-				var text = string.Format ("Get some food at {0}, {1}?", selectedPin.Label, selectedPin.Address);
-				DependencyService.Get<IPhoneService> ().ShareText (text);
+	    var shareText =
+		    string.IsNullOrEmpty(_extendedMap.ShareText)
+			    ? string.Format("Let's meet at {0},{1}",
+				    selectedPin.Label, selectedPin.Address)
+			    : _extendedMap.ShareText;
+				DependencyService.Get<IPhoneService> ().ShareText (shareText);
 			});
 
 			actionButtonsGrid.Children.Add (callImageButton, 1, 0);
