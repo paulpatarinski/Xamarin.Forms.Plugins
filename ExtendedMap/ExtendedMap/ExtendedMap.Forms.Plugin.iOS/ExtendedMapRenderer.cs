@@ -1,6 +1,6 @@
-﻿using System.Collections.Specialized;
-using System.ComponentModel;
-using System.Reflection;
+﻿using System;
+using System.Collections.Specialized;
+using System.Linq;
 using CoreLocation;
 using ExtendedMap.Forms.Plugin.Abstractions;
 using ExtendedMap.Forms.Plugin.Abstractions.Models;
@@ -27,9 +27,6 @@ namespace ExtendedMap.Forms.Plugin.iOS
 
     #region private properties
 
-    private ExtendedMapAnnotation _previouslySelectedNativePin;
-    private ExtendedPin _previouslySelectedPin { get; set; }
-
     private MKMapView _nativeMapView
     {
       get { return Control as MKMapView; }
@@ -51,8 +48,16 @@ namespace ExtendedMap.Forms.Plugin.iOS
     {
       base.OnElementChanged(e);
 
-      _nativeMapView.Delegate = new MapDelegate();
+      var mapDelegate = new MapDelegate();
+      mapDelegate.MapTapped += MapDelegateOnMapTapped;
+      _nativeMapView.Delegate = mapDelegate;
+
       _customMap.CustomPins.CollectionChanged += HandleCollectionChanged;
+    }
+
+    private void MapDelegateOnMapTapped(object sender, EventArgs eventArgs)
+    {
+     _customMapContentView.FooterMode = FooterMode.Hidden;
     }
 
     //todo implement map center
@@ -88,21 +93,12 @@ namespace ExtendedMap.Forms.Plugin.iOS
 
     private void HandleAnnotationClick(object sender, ExtendedMapAnnotation e)
     {
-//			ResetPrevioslySelectedMarker ();
-
-//			var currentMarker = e.Marker;
-//
-//			currentMarker.SetIcon (BitmapDescriptorFactory.DefaultMarker ());
-
       _customMap.SelectedPinAddress = e.Subtitle;
 
       if (_customMapContentView.FooterMode == FooterMode.Hidden)
       {
         _customMapContentView.FooterMode = FooterMode.Minimized;
       }
-
-      _previouslySelectedPin = _customMap.SelectedPin;
-      _previouslySelectedNativePin = e;
     }
   }
 }

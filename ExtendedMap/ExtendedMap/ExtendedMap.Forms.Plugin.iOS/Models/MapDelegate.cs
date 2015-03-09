@@ -1,6 +1,10 @@
-﻿using CoreGraphics;
+﻿using System;
+using System.Threading.Tasks;
+using CoreGraphics;
 using MapKit;
+using ObjCRuntime;
 using UIKit;
+using Xamarin.Forms;
 
 namespace ExtendedMap.Forms.Plugin.iOS.Models
 {
@@ -38,13 +42,33 @@ namespace ExtendedMap.Forms.Plugin.iOS.Models
 	    return annotationView;
 		}
 
-		public override void DidSelectAnnotationView (MKMapView mapView, MKAnnotationView view)
+	  public override async void DidDeselectAnnotationView(MKMapView mapView, MKAnnotationView view)
+	  {
+      //Call reset with delay in case another pin is selected
+	    await Task.Delay(TimeSpan.FromMilliseconds(100)).ContinueWith((result) =>
+	    {
+         Device.BeginInvokeOnMainThread(() =>
+         {
+           if (_previouslySelectedNativePin != null && view == _previouslySelectedNativePin)
+           {
+             if (MapTapped != null)
+               MapTapped.Invoke(this, new EventArgs());
+
+             ResetPrevioslySelectedPin();
+           }
+         });
+	    });
+	  }
+
+	  public override void DidSelectAnnotationView (MKMapView mapView, MKAnnotationView view)
 		{
 			var pinAnnotationView = view;
 
 		  if (pinAnnotationView == null) return;
 
-      ResetPrevioslySelectedPin();
+      if(_previouslySelectedNativePin != null)
+        ResetPrevioslySelectedPin();
+      
       view.Image = UIImage.FromFile("defaultPin.png").Scale(new CGSize(100,100));
       var extendedMapAnnotation = pinAnnotationView.Annotation as ExtendedMapAnnotation;
 
@@ -66,6 +90,8 @@ namespace ExtendedMap.Forms.Plugin.iOS.Models
 
       _previouslySelectedNativePin = null;
     }
+
+    public event EventHandler MapTapped;
 
     private MKAnnotationView _previouslySelectedNativePin { get; set; }
 
