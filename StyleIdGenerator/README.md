@@ -7,7 +7,15 @@
 The startFolder path is scanned for all xaml files containing usages of StyleId="%value%". A struct is then created for each file, allowing you to reference the ids via a strongly typed class (StyleIds).
 
 # Setup
-Setup for now is manual (nuget coming soon). Copy the StyleIdGenerator.t4 and StyleIdGenerator_Config.tt to your solution. 
+* Available on NuGet: https://www.nuget.org/packages/Xam.Plugins.Forms.StyleIdGenerator
+* Install into your UI Test project.
+* Open the StyleIdGenerator_Config.tt in the Generator Folder 
+* Point the startFolder to the root solution path. 
+ 
+Example : 
+```
+var startFolder = @"C:\Xamarin.Forms.Plugins\StyleIdGenerator";     
+```
 
 # Usage
 Update the startFolder variable in the StyleIdGenerator_Config.tt to point to the root of your solution. Kicking off the generation by saving the file. Use the StyleIds struct to access the ids.
