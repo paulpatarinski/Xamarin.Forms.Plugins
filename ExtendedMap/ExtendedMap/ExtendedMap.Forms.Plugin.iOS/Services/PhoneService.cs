@@ -22,7 +22,7 @@ namespace ExtendedMap.Forms.Plugin.iOS.Services
 
     public void DialNumber(string number, string name)
     {
-      throw new NotImplementedException();
+      UIApplication.SharedApplication.OpenUrl(new NSUrl("tel:" + number));
     }
    
     public void ShareText(string text)
