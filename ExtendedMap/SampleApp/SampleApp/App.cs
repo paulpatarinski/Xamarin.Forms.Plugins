@@ -40,6 +40,8 @@ namespace SampleApp
 
             _map.StyleId = "CustomMap";
 
+            _map.ShareText = string.Format("This is a custom message text");
+            
             _map.BindingContext = BindingContext;
 
             _map.SetBinding<ExtendedMapViewModel>(ExtendedMap.Forms.Plugin.Abstractions.ExtendedMap.CustomPinsProperty, x => x.SamplePins);
