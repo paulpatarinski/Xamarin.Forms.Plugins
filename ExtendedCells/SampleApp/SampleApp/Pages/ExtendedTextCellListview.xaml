@@ -8,10 +8,11 @@
   <ListView ItemsSource="{Binding People}" RowHeight="60">
     <ListView.ItemTemplate>
       <DataTemplate>
-        <abstractions:ExtendedTextCell LeftText="{Binding FirstName}" LeftTextColor="{x:Static models:Colors.DefaultColor}" LeftTextFont="26"
-                                    LeftDetail="{Binding PhoneNumber}" LeftDetailColor="Silver" LeftDetailFont="Italic"
-                                    RightText="{Binding LastName}" RightTextColor="Fuchsia" RightTextFont="26"
-                                    RightDetail="{Binding Address}" RightDetailColor="Pink" />
+        
+        <abstractions:ExtendedTextCell Style="{StaticResource DefaultStyle}" LeftText="{Binding FirstName}"
+                                    LeftDetail="{Binding PhoneNumber}" 
+                                    RightText="{Binding LastName}" 
+                                    RightDetail="{Binding Address}" />
       </DataTemplate>
     </ListView.ItemTemplate>
   </ListView>

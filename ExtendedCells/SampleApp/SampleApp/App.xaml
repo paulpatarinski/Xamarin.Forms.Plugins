@@ -8,10 +8,29 @@
 
       <Color x:Key="White">White</Color>
       <Color x:Key="Red">Red</Color>
+      <Color x:Key="Black">Black</Color>
+      <Color x:Key="Gray">Gray</Color>
       
-      <Style TargetType="abstractions:ExtendedTextCell">
-        <Setter Property="RightTextColor" Value="{StaticResource Red}"/>
+      <Font x:Key="Large">30</Font>
+      <Font x:Key="Medium">20</Font>
+      
+      <Style x:Key="DefaultStyle" TargetType="abstractions:ExtendedTextCell">
+        <Setter Property="BackgroundColor" Value="{StaticResource Black}"/>
+        
+        <Setter Property="LeftTextColor" Value="{StaticResource White}"/>
+        <Setter Property="LeftTextFont" Value="{StaticResource Large}"/>
+
+        <Setter Property="RightTextColor" Value="{StaticResource White}"/>
+        <Setter Property="RightTextFont" Value="{StaticResource Large}"/>
+
+        <Setter Property="LeftDetailColor" Value="{StaticResource Gray}"/>
+        <Setter Property="LeftDetailFont" Value="{StaticResource Medium}"/>
+        
+        <Setter Property="RightDetailColor" Value="{StaticResource Gray}"/>
+        <Setter Property="RightDetailFont" Value="{StaticResource Medium}"/>
+
       </Style>
+      
       <Style x:Key="CellWithThickness" TargetType="abstractions:ExtendedTextCell">
         <Setter Property="BackgroundColor" Value="{StaticResource Red}"/>
         <Setter Property="LeftTextColor" Value="{StaticResource White}"/>
