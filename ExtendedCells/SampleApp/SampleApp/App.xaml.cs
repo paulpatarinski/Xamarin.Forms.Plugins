@@ -5,10 +5,12 @@ using MenuItem = SampleApp.Models.MenuItem;
 
 namespace SampleApp
 {
-  public class App : Application
+  public partial class App : Application
   {
     public App()
     {
+      InitializeComponent();
+
       var listviewTabbedPage = new TabbedPage();
 
       listviewTabbedPage.Children.Add(new TwoColumnCellListview());
@@ -18,7 +20,7 @@ namespace SampleApp
 
       var menuItemListview = new ListView
       {
-        ItemsSource = new List<string> {MenuItem.Listview, MenuItem.TableLayout}
+        ItemsSource = new List<string> { MenuItem.Listview, MenuItem.TableLayout }
       };
 
       menuItemListview.ItemSelected += (sender, args) =>
@@ -26,29 +28,29 @@ namespace SampleApp
         switch (args.SelectedItem.ToString())
         {
           case MenuItem.Listview:
-          {
-            masterDetailPage.Detail = listviewTabbedPage;
-            masterDetailPage.IsPresented = false;
-            return;
-          }
+            {
+              masterDetailPage.Detail = listviewTabbedPage;
+              masterDetailPage.IsPresented = false;
+              return;
+            }
           case MenuItem.TableLayout:
-          {
-            masterDetailPage.Detail = new TwoColumnCellTableView();
-            masterDetailPage.IsPresented = false;
-            return;
-          }
+            {
+              masterDetailPage.Detail = new TwoColumnCellTableView();
+              masterDetailPage.IsPresented = false;
+              return;
+            }
 
           default:
-          {
-            masterDetailPage.Detail = listviewTabbedPage;
-            masterDetailPage.IsPresented = false;
-            return;
-          }
+            {
+              masterDetailPage.Detail = listviewTabbedPage;
+              masterDetailPage.IsPresented = false;
+              return;
+            }
         }
       };
 
-      masterDetailPage.Master = new ContentPage {Content = menuItemListview, Title = "Menu"};
-      masterDetailPage.Detail =listviewTabbedPage;
+      masterDetailPage.Master = new ContentPage { Content = menuItemListview, Title = "Menu" };
+      masterDetailPage.Detail = listviewTabbedPage;
 
 
       MainPage = masterDetailPage;

@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:abstractions="clr-namespace:ExtendedCells.Forms.Plugin.Abstractions;assembly=ExtendedCells.Forms.Plugin.Abstractions"
+             x:Class="SampleApp.App">
+	<Application.Resources>
+    <ResourceDictionary>
+
+      <Color x:Key="TestColor">#333333</Color>
+      
+      <Style x:Key="YellowCell" TargetType="abstractions:TwoColumnCell">
+          <Setter Property="BackgroundColor" Value="{StaticResource TestColor}"/>
+		  </Style>
+      <Style x:Key="RedCell" TargetType="abstractions:TwoColumnCell">
+        <Setter Property="BackgroundColor" >
+          <Setter.Value>
+            <Color>Red</Color>
+          </Setter.Value>
+        </Setter>
+      </Style>
+    </ResourceDictionary>
+    </Application.Resources>
+  </Application>
