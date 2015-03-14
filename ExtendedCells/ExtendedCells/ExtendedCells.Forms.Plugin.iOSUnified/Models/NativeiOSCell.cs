@@ -30,7 +30,7 @@ namespace ExtendedCells.Forms.Plugin.Models
 			ContentView.Add (leftTextUILabel);
 			ContentView.Add (rightTextUILabel);
 
-			if (!string.IsNullOrEmpty (extendedTextCell.LeftDetail) || !string.IsNullOrEmpty (extendedTextCell.RightDetail)) {
+			if (extendedTextCell.LeftDetail != null || extendedTextCell.RightDetail != null) {
 				ContentView.Add (leftDetailUILabel);
 				ContentView.Add (rightDetailUILabel);
 			}
@@ -64,7 +64,7 @@ namespace ExtendedCells.Forms.Plugin.Models
 			var secondRowHeight = ContentView.Bounds.Height / 2;
 
 
-			if (!string.IsNullOrEmpty (extendedTextCell.LeftDetail) || !string.IsNullOrEmpty (extendedTextCell.LeftDetail)) {
+			if (extendedTextCell.LeftDetail != null || extendedTextCell.RightDetail != null) {
 
 				leftTextUILabel.Frame = new CoreGraphics.CGRect (leftColumnXWithMargin, 0, leftColumnWidth, firstRowHeight);
 				leftDetailUILabel.Frame = new CoreGraphics.CGRect (leftColumnXWithMargin, firstRowHeight, leftColumnWidth, secondRowHeight);
