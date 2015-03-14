@@ -1,6 +1,8 @@
 # Why Native Cells?
 * Highly Customizable
 * Increased Performance
+* Support for Styles
+    * Currently no support for Implicit Styles   
 
 # Setup
 * Available on NuGet: https://www.nuget.org/packages/Xam.Plugins.Forms.ExtendedCell/
@@ -10,7 +12,7 @@ In your Android, and Windows Phone projects call:
 
 ```
 Xamarin.Forms.Init();//platform specific init
-TwoColumnCellRenderer.Init();
+ExtendedTextCellRenderer.Init();
 ```
 
 You must do this AFTER you call Xamarin.Forms.Init(). **If you are using LeftColumnWidth and RightColumnWidth make sure you use [GridUnitType.Star](http://iosapi.xamarin.com/index.aspx?link=T%3AXamarin.Forms.GridUnitType).**
@@ -22,7 +24,7 @@ Listview :
 <ListView ItemsSource="{Binding People}" RowHeight="60">
     <ListView.ItemTemplate>
       <DataTemplate>
-        <abstractions:TwoColumnCell LeftText="{Binding FirstName}" LeftTextColor="White" LeftTextFont="26"
+        <abstractions:ExtendedTextCell LeftText="{Binding FirstName}" LeftTextColor="White" LeftTextFont="26"
                                     LeftDetail="{Binding PhoneNumber}" LeftDetailColor="Silver" LeftDetailFont="Italic"
                                     RightText="{Binding LastName}" RightTextColor="Fuchsia" RightTextFont="26"
                                     RightDetail="{Binding Address}" RightDetailColor="Pink" />
@@ -36,7 +38,7 @@ TableView :
 ```
    <TableView>
         <TableSection Title="Background Color">
-          <abstractions:TwoColumnCell BackgroundColor="White"
+          <abstractions:ExtendedTextCell BackgroundColor="White"
                                       LeftText="Left Text Large" LeftTextColor="Black"
                                       LeftDetail="Left Detail Italic" LeftDetailColor="Black"
                                       RightText="Right Text Micro" RightTextColor="Black"
