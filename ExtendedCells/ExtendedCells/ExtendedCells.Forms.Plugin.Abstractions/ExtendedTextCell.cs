@@ -17,7 +17,14 @@ namespace ExtendedCells.Forms.Plugin.Abstractions
     {
       if (newvalue is Style)
       {
-        ApplyStyle(bindable, (Style)newvalue);
+        var style = (Style) newvalue;
+
+        if (style.BasedOn != null)
+        {
+          ApplyStyle(bindable,style.BasedOn );
+        }
+
+        ApplyStyle(bindable, style);
       }
       if (newvalue != null )
         return;
