@@ -4,6 +4,33 @@ namespace ExtendedCells.Forms.Plugin.Abstractions
 {
   public class TwoColumnCell : ViewCell
   {
+    public static readonly BindableProperty StyleProperty =
+      BindableProperty.Create("Style", typeof(Style), typeof(TwoColumnCell), default(Style), propertyChanged: OnStylePropertyChanged);
+
+    public Style Style
+    {
+      get { return (Style)GetValue(StyleProperty); }
+      set { SetValue(StyleProperty, value); }
+    }
+
+    private static void OnStylePropertyChanged(BindableObject bindable, object oldvalue, object newvalue)
+    {
+      if (newvalue is Style)
+      {
+        ApplyStyle(bindable, (Style)newvalue);
+      }
+      if (newvalue != null )
+        return;
+    }
+
+    private static void ApplyStyle(BindableObject bindable, Style newvalue)
+    {
+      foreach (var setter in newvalue.Setters )
+      {
+          bindable.SetValue(setter.Property, setter.Value);
+      }
+    }
+
     public static readonly BindableProperty BackgroundColorProperty =
     BindableProperty.Create("BackgroundColor", typeof(Color), typeof(TextCell), Color.Default);
 

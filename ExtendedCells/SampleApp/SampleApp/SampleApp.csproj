@@ -82,6 +82,9 @@
     <Compile Include="Pages\StackLayoutCell.xaml.cs">
       <DependentUpon>StackLayoutCell.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\Styles.xaml.cs">
+      <DependentUpon>Styles.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\TwoColumnCellListview.xaml.cs">
       <DependentUpon>TwoColumnCellListview.xaml</DependentUpon>
     </Compile>
@@ -161,6 +164,12 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="App.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Pages\Styles.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>

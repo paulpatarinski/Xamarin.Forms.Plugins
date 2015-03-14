@@ -4,5 +4,6 @@
   {
     public const string Listview = "Listview";
     public const string TableLayout = "TableLayout";
+    public const string Styles = "Styles";
   }
 }

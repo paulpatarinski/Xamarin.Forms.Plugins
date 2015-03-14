@@ -6,17 +6,24 @@
 	<Application.Resources>
     <ResourceDictionary>
 
-      <Color x:Key="TestColor">#333333</Color>
+      <Color x:Key="White">White</Color>
+      <Color x:Key="Red">Red</Color>
       
-      <Style x:Key="YellowCell" TargetType="abstractions:TwoColumnCell">
-          <Setter Property="BackgroundColor" Value="{StaticResource TestColor}"/>
-		  </Style>
-      <Style x:Key="RedCell" TargetType="abstractions:TwoColumnCell">
-        <Setter Property="BackgroundColor" >
+      <Style TargetType="abstractions:TwoColumnCell">
+        <Setter Property="RightTextColor" Value="{StaticResource Red}"/>
+      </Style>
+      <Style x:Key="CellWithThickness" TargetType="abstractions:TwoColumnCell">
+        <Setter Property="BackgroundColor" Value="{StaticResource Red}"/>
+        <Setter Property="LeftTextColor" Value="{StaticResource White}"/>
+        <Setter Property="Thickness" >
           <Setter.Value>
-            <Color>Red</Color>
+            <Thickness>50,50,50,50</Thickness>
           </Setter.Value>
         </Setter>
+      </Style>
+      <Style x:Key="CellWithBackground" TargetType="abstractions:TwoColumnCell">
+        <Setter Property="BackgroundColor" Value="{StaticResource Red}"/>
+        <Setter Property="LeftTextColor" Value="{StaticResource White}"/>
       </Style>
     </ResourceDictionary>
     </Application.Resources>

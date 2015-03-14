@@ -20,7 +20,7 @@ namespace SampleApp
 
       var menuItemListview = new ListView
       {
-        ItemsSource = new List<string> { MenuItem.Listview, MenuItem.TableLayout }
+        ItemsSource = new List<string> { MenuItem.Listview, MenuItem.TableLayout, MenuItem.Styles }
       };
 
       menuItemListview.ItemSelected += (sender, args) =>
@@ -36,6 +36,12 @@ namespace SampleApp
           case MenuItem.TableLayout:
             {
               masterDetailPage.Detail = new TwoColumnCellTableView();
+              masterDetailPage.IsPresented = false;
+              return;
+            }
+          case MenuItem.Styles:
+            {
+              masterDetailPage.Detail = new Styles();
               masterDetailPage.IsPresented = false;
               return;
             }
