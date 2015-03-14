@@ -1,8 +1,0 @@
-﻿<Properties StartupItem="SampleApp/SampleApp.Droid/SampleApp.Droid.csproj">
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|Android" PreferredExecutionTarget="Android.Nexus 5 (KitKat)" />
-  <MonoDevelop.Ide.Workbench />
-  <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
-  </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-</Properties>
