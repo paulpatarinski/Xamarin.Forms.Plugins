@@ -23,16 +23,15 @@
                                       LeftText="Cell With Thickness Specified" />
         </TableSection>
         <TableSection Title="Column Width">
-          <abstractions:ExtendedTextCell LeftColumnWidth="0.2*" RightColumnWidth="0.8*"
-                                      LeftText="Left 0.2" LeftTextColor="{x:Static models:Colors.DefaultColor}"
-                                      RightText="Right 0.8" RightTextColor="{x:Static models:Colors.DefaultColor}" />
+          <abstractions:ExtendedTextCell Style="{StaticResource CellWithSmallLeft}"
+                                      LeftText="Left 0.3"
+                                      RightText="Right 0.7"  />
+          <abstractions:ExtendedTextCell Style="{StaticResource CellWithSmallRight}"
+                                      LeftText="Left 0.7"
+                                      RightText="Right 0.3"  />
 
-          <abstractions:ExtendedTextCell LeftColumnWidth="0.8*" RightColumnWidth="0.2*"
-                                      LeftText="Left 0.8" LeftTextColor="{x:Static models:Colors.DefaultColor}"
-                                      RightText="Right 0.2" RightTextColor="{x:Static models:Colors.DefaultColor}" />
-
-          <abstractions:ExtendedTextCell LeftText="Default 0.5" LeftTextColor="{x:Static models:Colors.DefaultColor}"
-                                      RightText="Default 0.5" RightTextColor="{x:Static models:Colors.DefaultColor}" />
+          <abstractions:ExtendedTextCell Style="{StaticResource DefaultStyle}" LeftText="Default 0.5" 
+                                      RightText="Default 0.5"  />
         </TableSection>
       </TableView>
 

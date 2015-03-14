@@ -31,19 +31,42 @@
 
       </Style>
       
-      <Style x:Key="CellWithThickness" TargetType="abstractions:ExtendedTextCell">
-        <Setter Property="BackgroundColor" Value="{StaticResource Red}"/>
-        <Setter Property="LeftTextColor" Value="{StaticResource White}"/>
+     <!-- Cell Level Styles--> 
+      <Style x:Key="CellWithThickness" BasedOn="{StaticResource DefaultStyle}" TargetType="abstractions:ExtendedTextCell">
         <Setter Property="Thickness" >
           <Setter.Value>
             <Thickness>50,50,50,50</Thickness>
           </Setter.Value>
         </Setter>
       </Style>
-      <Style x:Key="CellWithBackground" TargetType="abstractions:ExtendedTextCell">
+      
+      <Style x:Key="CellWithBackground" BasedOn="{StaticResource DefaultStyle}"  TargetType="abstractions:ExtendedTextCell">
         <Setter Property="BackgroundColor" Value="{StaticResource Red}"/>
-        <Setter Property="LeftTextColor" Value="{StaticResource White}"/>
       </Style>
+      <Style x:Key="CellWithSmallLeft" BasedOn="{StaticResource DefaultStyle}" TargetType="abstractions:ExtendedTextCell">
+        <Setter Property="LeftColumnWidth" >
+          <Setter.Value> <GridLength>0.3*</GridLength> </Setter.Value>
+        </Setter>
+        <Setter Property="RightColumnWidth" >
+          <Setter.Value>
+            <GridLength>0.7*</GridLength>
+          </Setter.Value>
+        </Setter>
+      </Style>
+      <Style x:Key="CellWithSmallRight" BasedOn="{StaticResource DefaultStyle}" TargetType="abstractions:ExtendedTextCell">
+        <Setter Property="LeftColumnWidth" >
+          <Setter.Value>
+            <GridLength>0.7*</GridLength>
+          </Setter.Value>
+        </Setter>
+        <Setter Property="RightColumnWidth" >
+          <Setter.Value>
+            <GridLength>0.3*</GridLength>
+          </Setter.Value>
+        </Setter>
+      </Style>
+      
+      <!--Label Level Styles-->
     </ResourceDictionary>
     </Application.Resources>
   </Application>
