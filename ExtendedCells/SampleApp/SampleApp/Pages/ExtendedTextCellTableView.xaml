@@ -4,7 +4,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:abstractions="clr-namespace:ExtendedCells.Forms.Plugin.Abstractions;assembly=ExtendedCells.Forms.Plugin.Abstractions"
              xmlns:models="clr-namespace:SampleApp.Models;assembly=SampleApp"
-             x:Class="SampleApp.Pages.TwoColumnCellTableView" Title="Table View Example">
+             x:Class="SampleApp.Pages.ExtendedTextCellTableView" Title="Table View Example">
   <ScrollView  Orientation="Vertical">
     <StackLayout>
       <StackLayout.HeightRequest>
@@ -15,7 +15,7 @@
       <TableView>
        
         <TableSection Title="Background Color">
-          <abstractions:TwoColumnCell BackgroundColor="{x:Static models:Colors.DefaultColor}"
+          <abstractions:ExtendedTextCell BackgroundColor="{x:Static models:Colors.DefaultColor}"
                                       LeftText="Left Text Large" LeftTextColor="{x:Static models:Colors.BlackOrWhite}"
                                       LeftDetail="Left Detail Italic" LeftDetailColor="{x:Static models:Colors.BlackOrWhite}"
                                       RightText="Right Text Micro" RightTextColor="{x:Static models:Colors.BlackOrWhite}"
@@ -23,22 +23,22 @@
         </TableSection>
 
         <TableSection Title="Thickness">
-          <abstractions:TwoColumnCell Thickness="50,50,50,50"
+          <abstractions:ExtendedTextCell Thickness="50,50,50,50"
                                       LeftText="Left Text Large" LeftTextColor="{x:Static models:Colors.DefaultColor}"
                                       LeftDetail="Left Detail Italic" LeftDetailColor="{x:Static models:Colors.DefaultColor}"
                                       RightText="Right Text Micro" RightTextColor="{x:Static models:Colors.DefaultColor}"
                                       RightDetail="Right Detail Bold" RightDetailColor="{x:Static models:Colors.DefaultColor}" />
         </TableSection>
         <TableSection Title="Column Width">
-          <abstractions:TwoColumnCell LeftColumnWidth="0.2*" RightColumnWidth="0.8*"
+          <abstractions:ExtendedTextCell LeftColumnWidth="0.2*" RightColumnWidth="0.8*"
                                       LeftText="Left 0.2" LeftTextColor="{x:Static models:Colors.DefaultColor}"
                                       RightText="Right 0.8" RightTextColor="{x:Static models:Colors.DefaultColor}" />
 
-          <abstractions:TwoColumnCell LeftColumnWidth="0.8*" RightColumnWidth="0.2*"
+          <abstractions:ExtendedTextCell LeftColumnWidth="0.8*" RightColumnWidth="0.2*"
                                       LeftText="Left 0.8" LeftTextColor="{x:Static models:Colors.DefaultColor}"
                                       RightText="Right 0.2" RightTextColor="{x:Static models:Colors.DefaultColor}" />
 
-          <abstractions:TwoColumnCell LeftText="Default 0.5" LeftTextColor="{x:Static models:Colors.DefaultColor}"
+          <abstractions:ExtendedTextCell LeftText="Default 0.5" LeftTextColor="{x:Static models:Colors.DefaultColor}"
                                       RightText="Default 0.5" RightTextColor="{x:Static models:Colors.DefaultColor}" />
         </TableSection>
       </TableView>
@@ -47,18 +47,18 @@
       <TableView>
         <TableView.Root>
           <TableSection Title="Single Row">
-            <abstractions:TwoColumnCell LeftText="Left Text" LeftTextColor="{x:Static models:Colors.DefaultColor}" RightText="Right Text"
+            <abstractions:ExtendedTextCell LeftText="Left Text" LeftTextColor="{x:Static models:Colors.DefaultColor}" RightText="Right Text"
                                         RightTextColor="{x:Static models:Colors.DefaultColor}" />
           </TableSection>
 
           <TableSection Title="Two Row">
-            <abstractions:TwoColumnCell LeftText="Left Text" LeftTextColor="{x:Static models:Colors.DefaultColor}" LeftDetail="Left Detail"
+            <abstractions:ExtendedTextCell LeftText="Left Text" LeftTextColor="{x:Static models:Colors.DefaultColor}" LeftDetail="Left Detail"
                                         LeftDetailColor="{x:Static models:Colors.DefaultColor}" RightText="Right Text" RightTextColor="{x:Static models:Colors.DefaultColor}"
                                         RightDetail="Right Detail" RightDetailColor="{x:Static models:Colors.DefaultColor}" />
           </TableSection>
 
           <TableSection Title="Text Alignment">
-            <abstractions:TwoColumnCell LeftText="Left Text Start" LeftTextColor="{x:Static models:Colors.DefaultColor}" LeftTextAlignment="Start"
+            <abstractions:ExtendedTextCell LeftText="Left Text Start" LeftTextColor="{x:Static models:Colors.DefaultColor}" LeftTextAlignment="Start"
                                         LeftDetail="Left Detail Center" LeftDetailColor="{x:Static models:Colors.DefaultColor}"
                                         LeftDetailAlignment="Center"
                                         RightText="Right Text End" RightTextColor="{x:Static models:Colors.DefaultColor}" RightTextAlignment="End"
@@ -67,14 +67,14 @@
           </TableSection>
 
           <TableSection Title="Font">
-            <abstractions:TwoColumnCell LeftText="Left Text Large" LeftTextColor="{x:Static models:Colors.DefaultColor}" LeftTextFont="Large"
+            <abstractions:ExtendedTextCell LeftText="Left Text Large" LeftTextColor="{x:Static models:Colors.DefaultColor}" LeftTextFont="Large"
                                         LeftDetail="Left Detail Italic" LeftDetailColor="{x:Static models:Colors.DefaultColor}" LeftDetailFont="Italic"
                                         RightText="Right Text Micro" RightTextColor="{x:Static models:Colors.DefaultColor}" RightTextFont="Micro"
                                         RightDetail="Right Detail Bold" RightDetailColor="{x:Static models:Colors.DefaultColor}" RightDetailFont="Bold" />
           </TableSection>
 
           <TableSection Title="Text Color">
-            <abstractions:TwoColumnCell LeftText="Left Text Large" LeftTextColor="Red"
+            <abstractions:ExtendedTextCell LeftText="Left Text Large" LeftTextColor="Red"
                                         LeftDetail="Left Detail Italic" LeftDetailColor="Blue"
                                         RightText="Right Text Micro" RightTextColor="Aqua"
                                         RightDetail="Right Detail Bold" RightDetailColor="Lime" />

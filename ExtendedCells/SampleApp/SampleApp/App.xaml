@@ -9,10 +9,10 @@
       <Color x:Key="White">White</Color>
       <Color x:Key="Red">Red</Color>
       
-      <Style TargetType="abstractions:TwoColumnCell">
+      <Style TargetType="abstractions:ExtendedTextCell">
         <Setter Property="RightTextColor" Value="{StaticResource Red}"/>
       </Style>
-      <Style x:Key="CellWithThickness" TargetType="abstractions:TwoColumnCell">
+      <Style x:Key="CellWithThickness" TargetType="abstractions:ExtendedTextCell">
         <Setter Property="BackgroundColor" Value="{StaticResource Red}"/>
         <Setter Property="LeftTextColor" Value="{StaticResource White}"/>
         <Setter Property="Thickness" >
@@ -21,7 +21,7 @@
           </Setter.Value>
         </Setter>
       </Style>
-      <Style x:Key="CellWithBackground" TargetType="abstractions:TwoColumnCell">
+      <Style x:Key="CellWithBackground" TargetType="abstractions:ExtendedTextCell">
         <Setter Property="BackgroundColor" Value="{StaticResource Red}"/>
         <Setter Property="LeftTextColor" Value="{StaticResource White}"/>
       </Style>

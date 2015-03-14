@@ -3,7 +3,7 @@ using Xamarin.Forms;
 
 namespace ExtendedCells.Forms.Plugin.WindowsPhone.Models
 {
-  public class TwoColumnCellSampleModel
+  public class ExtendedTextCellSampleModel
   {
     public string LeftText { get; set; }
     public Color LeftTextColor { get; set; }
@@ -15,11 +15,11 @@ namespace ExtendedCells.Forms.Plugin.WindowsPhone.Models
     public Color RightDetailColor { get; set; }
   }
 
-  public class TwoColumnCellSampleModelCollection : ObservableCollection<TwoColumnCellSampleModel>
+  public class ExtendedTextCellSampleModelCollection : ObservableCollection<ExtendedTextCellSampleModel>
   {
-    public TwoColumnCellSampleModelCollection()
+    public ExtendedTextCellSampleModelCollection()
     {
-      Add(new TwoColumnCellSampleModel
+      Add(new ExtendedTextCellSampleModel
       {
         LeftText = "Clock in",
         LeftTextColor = Color.Yellow,
@@ -31,7 +31,7 @@ namespace ExtendedCells.Forms.Plugin.WindowsPhone.Models
         RightDetailColor = Color.Lime
       });
 
-      Add(new TwoColumnCellSampleModel
+      Add(new ExtendedTextCellSampleModel
       {
         LeftText = "Clock out lalalalal",
         LeftTextColor = Color.Yellow,

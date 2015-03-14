@@ -14,7 +14,7 @@
 
   <Grid>
     <Grid.Resources>
-      <models:TwoColumnCellSampleModelCollection x:Key="punchHistoryItems" />
+      <models:ExtendedTextCellSampleModelCollection x:Key="punchHistoryItems" />
       <valueConverters:ToNativeColorConverter x:Key="toNativeColorConverter" />
       <valueConverters:TextToVisibilityConverter x:Key="textToVisibilityConverter" />
       <valueConverters:ToNativeGridLengthConverter x:Key="toNativeGridLengthConverter" />

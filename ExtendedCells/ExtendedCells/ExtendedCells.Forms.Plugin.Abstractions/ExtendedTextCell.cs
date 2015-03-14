@@ -2,10 +2,10 @@
 
 namespace ExtendedCells.Forms.Plugin.Abstractions
 {
-  public class TwoColumnCell : ViewCell
+  public class ExtendedTextCell : ViewCell
   {
     public static readonly BindableProperty StyleProperty =
-      BindableProperty.Create("Style", typeof(Style), typeof(TwoColumnCell), default(Style), propertyChanged: OnStylePropertyChanged);
+      BindableProperty.Create("Style", typeof(Style), typeof(ExtendedTextCell), default(Style), propertyChanged: OnStylePropertyChanged);
 
     public Style Style
     {
@@ -47,7 +47,7 @@ namespace ExtendedCells.Forms.Plugin.Abstractions
     }
 
     public static readonly BindableProperty ThicknessProperty =
-     BindableProperty.Create("Thickness", typeof(Thickness), typeof(TwoColumnCell), default(Thickness));
+     BindableProperty.Create("Thickness", typeof(Thickness), typeof(ExtendedTextCell), default(Thickness));
 
     public Thickness Thickness
     {
@@ -88,7 +88,7 @@ namespace ExtendedCells.Forms.Plugin.Abstractions
     #region LeftText
 
     public static readonly BindableProperty LeftTextProperty =
-    BindableProperty.Create("LeftText", typeof(string), typeof(TwoColumnCell), "");
+    BindableProperty.Create("LeftText", typeof(string), typeof(ExtendedTextCell), "");
 
     public string LeftText
     {
@@ -112,7 +112,7 @@ namespace ExtendedCells.Forms.Plugin.Abstractions
     }
 
     public static readonly BindableProperty LeftTextFontProperty =
-    BindableProperty.Create("LeftTextFont", typeof(Font), typeof(TwoColumnCell), Font.SystemFontOfSize(NamedSize.Medium));
+    BindableProperty.Create("LeftTextFont", typeof(Font), typeof(ExtendedTextCell), Font.SystemFontOfSize(NamedSize.Medium));
 
     public Font LeftTextFont
     {
@@ -121,7 +121,7 @@ namespace ExtendedCells.Forms.Plugin.Abstractions
     }
 
     public static readonly BindableProperty LeftTextAlignmentProperty =
-    BindableProperty.Create("LeftTextAlignment", typeof(TextAlignment), typeof(TwoColumnCell), default(TextAlignment));
+    BindableProperty.Create("LeftTextAlignment", typeof(TextAlignment), typeof(ExtendedTextCell), default(TextAlignment));
 
     public TextAlignment LeftTextAlignment
     {
@@ -133,7 +133,7 @@ namespace ExtendedCells.Forms.Plugin.Abstractions
     #region Left Detail
 
     public static readonly BindableProperty LeftDetailProperty =
-      BindableProperty.Create("LeftDetail", typeof(string), typeof(TwoColumnCell), "");
+      BindableProperty.Create("LeftDetail", typeof(string), typeof(ExtendedTextCell), "");
 
     public string LeftDetail
     {
@@ -157,7 +157,7 @@ namespace ExtendedCells.Forms.Plugin.Abstractions
     }
 
     public static readonly BindableProperty LeftDetailFontProperty =
-   BindableProperty.Create("LeftDetailFont", typeof(Font), typeof(TwoColumnCell), Font.SystemFontOfSize(NamedSize.Medium));
+   BindableProperty.Create("LeftDetailFont", typeof(Font), typeof(ExtendedTextCell), Font.SystemFontOfSize(NamedSize.Medium));
 
     public Font LeftDetailFont
     {
@@ -166,7 +166,7 @@ namespace ExtendedCells.Forms.Plugin.Abstractions
     }
 
     public static readonly BindableProperty LeftDetailAlignmentProperty =
-   BindableProperty.Create("LeftDetailAlignment", typeof(TextAlignment), typeof(TwoColumnCell), default(TextAlignment));
+   BindableProperty.Create("LeftDetailAlignment", typeof(TextAlignment), typeof(ExtendedTextCell), default(TextAlignment));
 
     public TextAlignment LeftDetailAlignment
     {
@@ -179,7 +179,7 @@ namespace ExtendedCells.Forms.Plugin.Abstractions
     #region Right Text
 
     public static readonly BindableProperty RightTextProperty =
-     BindableProperty.Create("RightText", typeof(string), typeof(TwoColumnCell), "");
+     BindableProperty.Create("RightText", typeof(string), typeof(ExtendedTextCell), "");
 
     public string RightText
     {
@@ -203,7 +203,7 @@ namespace ExtendedCells.Forms.Plugin.Abstractions
     }
 
     public static readonly BindableProperty RightTextFontProperty =
-BindableProperty.Create("RightTextFont", typeof(Font), typeof(TwoColumnCell), Font.SystemFontOfSize(NamedSize.Medium));
+BindableProperty.Create("RightTextFont", typeof(Font), typeof(ExtendedTextCell), Font.SystemFontOfSize(NamedSize.Medium));
 
     public Font RightTextFont
     {
@@ -212,7 +212,7 @@ BindableProperty.Create("RightTextFont", typeof(Font), typeof(TwoColumnCell), Fo
     }
 
     public static readonly BindableProperty RightTextAlignmentProperty =
-  BindableProperty.Create("RightTextAlignment", typeof(TextAlignment), typeof(TwoColumnCell), default(TextAlignment));
+  BindableProperty.Create("RightTextAlignment", typeof(TextAlignment), typeof(ExtendedTextCell), default(TextAlignment));
 
     public TextAlignment RightTextAlignment
     {
@@ -225,7 +225,7 @@ BindableProperty.Create("RightTextFont", typeof(Font), typeof(TwoColumnCell), Fo
     #region Right Detail
 
     public static readonly BindableProperty RightDetailProperty =
-    BindableProperty.Create("RightDetail", typeof(string), typeof(TwoColumnCell), "");
+    BindableProperty.Create("RightDetail", typeof(string), typeof(ExtendedTextCell), "");
 
     public string RightDetail
     {
@@ -249,7 +249,7 @@ BindableProperty.Create("RightTextFont", typeof(Font), typeof(TwoColumnCell), Fo
     }
 
     public static readonly BindableProperty RightDetailFontProperty =
-BindableProperty.Create("RightDetailFont", typeof(Font), typeof(TwoColumnCell), Font.SystemFontOfSize(NamedSize.Medium));
+BindableProperty.Create("RightDetailFont", typeof(Font), typeof(ExtendedTextCell), Font.SystemFontOfSize(NamedSize.Medium));
 
     public Font RightDetailFont
     {
@@ -258,7 +258,7 @@ BindableProperty.Create("RightDetailFont", typeof(Font), typeof(TwoColumnCell), 
     }
 
     public static readonly BindableProperty RightDetailAlignmentProperty =
- BindableProperty.Create("RightDetailAlignment", typeof(TextAlignment), typeof(TwoColumnCell), default(TextAlignment));
+ BindableProperty.Create("RightDetailAlignment", typeof(TextAlignment), typeof(ExtendedTextCell), default(TextAlignment));
 
     public TextAlignment RightDetailAlignment
     {

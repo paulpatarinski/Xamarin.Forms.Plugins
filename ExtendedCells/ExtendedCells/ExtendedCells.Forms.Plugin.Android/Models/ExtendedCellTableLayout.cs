@@ -4,9 +4,9 @@ using Android.Widget;
 
 namespace ExtendedCells.Forms.Plugin.Android.Models
 {
-    public class TwoColumnTableLayout : TableLayout
+    public class ExtendedCellTableLayout : TableLayout
     {
-        public TwoColumnTableLayout(Context context)
+        public ExtendedCellTableLayout(Context context)
             : base(context)
         {
             StretchAllColumns = true;

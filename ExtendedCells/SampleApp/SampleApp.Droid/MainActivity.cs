@@ -16,7 +16,7 @@ namespace SampleApp.Droid
 
             Forms.Init(this, bundle);
 
-            TwoColumnCellRenderer.Init();
+            ExtendedTextCellRenderer.Init();
 
             LoadApplication(new App());
         }

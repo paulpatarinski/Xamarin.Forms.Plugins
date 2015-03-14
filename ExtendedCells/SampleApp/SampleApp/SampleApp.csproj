@@ -85,11 +85,11 @@
     <Compile Include="Pages\Styles.xaml.cs">
       <DependentUpon>Styles.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\TwoColumnCellListview.xaml.cs">
-      <DependentUpon>TwoColumnCellListview.xaml</DependentUpon>
+    <Compile Include="Pages\ExtendedTextCellListview.xaml.cs">
+      <DependentUpon>ExtendedTextCellListview.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\TwoColumnCellTableView.xaml.cs">
-      <DependentUpon>TwoColumnCellTableView.xaml</DependentUpon>
+    <Compile Include="Pages\ExtendedTextCellTableView.xaml.cs">
+      <DependentUpon>ExtendedTextCellTableView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModel\ListviewViewModel.cs" />
@@ -134,7 +134,7 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Pages\TwoColumnCellListview.xaml">
+    <EmbeddedResource Include="Pages\ExtendedTextCellListview.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </EmbeddedResource>
@@ -146,7 +146,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Pages\TwoColumnCellTableView.xaml">
+    <EmbeddedResource Include="Pages\ExtendedTextCellTableView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>

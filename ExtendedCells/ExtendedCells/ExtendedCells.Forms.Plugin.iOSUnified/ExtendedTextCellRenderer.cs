@@ -7,13 +7,13 @@ using UIKit;
 using System;
 using ExtendedCells.Forms.Plugin.Models;
 
-[assembly: ExportRenderer (typeof(TwoColumnCell), typeof(TwoColumnCellRenderer))]
+[assembly: ExportRenderer (typeof(ExtendedTextCell), typeof(ExtendedTextCellRenderer))]
 namespace ExtendedCells.Forms.Plugin.iOSUnified
 {
 	/// <summary>
 	/// SVG Renderer
 	/// </summary>
-	public class TwoColumnCellRenderer : CellRenderer
+	public class ExtendedTextCellRenderer : CellRenderer
 	{
 		static NSString rid = new NSString ("NativeCell");
 
@@ -26,7 +26,7 @@ namespace ExtendedCells.Forms.Plugin.iOSUnified
 
 		public override UITableViewCell GetCell (Cell item, UITableViewCell reusableCell, UITableView tv)
 		{
-			var formsControl = (TwoColumnCell)item;
+			var formsControl = (ExtendedTextCell)item;
 		
 			var nativeControl = reusableCell as NativeiOSCell;
 			

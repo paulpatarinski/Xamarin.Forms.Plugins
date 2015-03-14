@@ -13,7 +13,7 @@ namespace SampleApp
 
       var listviewTabbedPage = new TabbedPage();
 
-      listviewTabbedPage.Children.Add(new TwoColumnCellListview());
+      listviewTabbedPage.Children.Add(new ExtendedTextCellListview());
       listviewTabbedPage.Children.Add(new StackLayoutCell());
 
       var masterDetailPage = new MasterDetailPage();
@@ -35,7 +35,7 @@ namespace SampleApp
             }
           case MenuItem.TableLayout:
             {
-              masterDetailPage.Detail = new TwoColumnCellTableView();
+              masterDetailPage.Detail = new ExtendedTextCellTableView();
               masterDetailPage.IsPresented = false;
               return;
             }

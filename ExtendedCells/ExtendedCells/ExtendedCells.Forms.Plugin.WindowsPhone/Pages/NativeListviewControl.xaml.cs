@@ -5,23 +5,23 @@ namespace ExtendedCells.Forms.Plugin.WindowsPhone.Pages
 {
   public partial class NativeListviewControl : UserControl
   {
-     private DataTemplate _twoColumnCellDataTemplate;
+     private DataTemplate _extendedTextCellDataTemplate;
 
     public NativeListviewControl()
     {
       InitializeComponent();
     }
 
-    public DataTemplate TwoColumnCellTemplate
+    public DataTemplate ExtendedTextCellTemplate
     {
       get
       {
-        if (_twoColumnCellDataTemplate == null)
+        if (_extendedTextCellDataTemplate == null)
         {
-          _twoColumnCellDataTemplate = NativeLongListSelector.ItemTemplate;
+          _extendedTextCellDataTemplate = NativeLongListSelector.ItemTemplate;
         }
 
-        return _twoColumnCellDataTemplate;
+        return _extendedTextCellDataTemplate;
       }
     }
   }

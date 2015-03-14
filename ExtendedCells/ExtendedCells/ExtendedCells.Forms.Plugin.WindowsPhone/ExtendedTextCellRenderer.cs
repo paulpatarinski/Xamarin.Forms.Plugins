@@ -5,14 +5,14 @@ using Xamarin.Forms;
 using Xamarin.Forms.Platform.WinPhone;
 using DataTemplate = System.Windows.DataTemplate;
 
-[assembly: ExportRenderer(typeof(TwoColumnCell), typeof(TwoColumnCellRenderer))]
+[assembly: ExportRenderer(typeof(ExtendedTextCell), typeof(ExtendedTextCellRenderer))]
 
 namespace ExtendedCells.Forms.Plugin.WindowsPhone
 {
     /// <summary>
     /// Two Column Cell
     /// </summary>
-  public class TwoColumnCellRenderer : ViewCellRenderer
+  public class ExtendedTextCellRenderer : ViewCellRenderer
   {
       public static void Init()
       {
@@ -35,7 +35,7 @@ namespace ExtendedCells.Forms.Plugin.WindowsPhone
 
     public override DataTemplate GetTemplate(Cell cell)
     {
-      return NativeListviewControl.TwoColumnCellTemplate;
+      return NativeListviewControl.ExtendedTextCellTemplate;
     }
 
       

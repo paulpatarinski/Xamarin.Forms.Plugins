@@ -15,11 +15,11 @@ namespace ExtendedCells.Forms.Plugin.Models
 	{
 		UILabel leftTextUILabel, leftDetailUILabel, rightTextUILabel, rightDetailUILabel;
 
-		TwoColumnCell twoColumnCell;
+		ExtendedTextCell extendedTextCell;
 
-		public NativeiOSCell (NSString cellId, TwoColumnCell twoColumnCell) : base (UITableViewCellStyle.Default, cellId)
+		public NativeiOSCell (NSString cellId, ExtendedTextCell extendedTextCell) : base (UITableViewCellStyle.Default, cellId)
 		{
-			this.twoColumnCell = twoColumnCell;
+			this.extendedTextCell = extendedTextCell;
 			SelectionStyle = UITableViewCellSelectionStyle.Default;
 
 			leftTextUILabel = new UILabel ();
@@ -30,41 +30,41 @@ namespace ExtendedCells.Forms.Plugin.Models
 			ContentView.Add (leftTextUILabel);
 			ContentView.Add (rightTextUILabel);
 
-			if (!string.IsNullOrEmpty (twoColumnCell.LeftDetail) || !string.IsNullOrEmpty (twoColumnCell.RightDetail)) {
+			if (!string.IsNullOrEmpty (extendedTextCell.LeftDetail) || !string.IsNullOrEmpty (extendedTextCell.RightDetail)) {
 				ContentView.Add (leftDetailUILabel);
 				ContentView.Add (rightDetailUILabel);
 			}
 		}
 
-		public void UpdateCell (TwoColumnCell twoColumnCell)
+		public void UpdateCell (ExtendedTextCell extendedTextCell)
 		{
-			this.twoColumnCell = twoColumnCell;
-			ContentView.BackgroundColor = twoColumnCell.BackgroundColor.ToUIColor ();
+			this.extendedTextCell = extendedTextCell;
+			ContentView.BackgroundColor = extendedTextCell.BackgroundColor.ToUIColor ();
 
-			leftTextUILabel.UpdateFromFormsControl (twoColumnCell.LeftText, twoColumnCell.LeftTextAlignment, twoColumnCell.LeftTextColor, twoColumnCell.LeftTextFont);
-			leftDetailUILabel.UpdateFromFormsControl (twoColumnCell.LeftDetail, twoColumnCell.LeftDetailAlignment, twoColumnCell.LeftDetailColor, twoColumnCell.LeftDetailFont);
-			rightTextUILabel.UpdateFromFormsControl (twoColumnCell.RightText, twoColumnCell.RightTextAlignment, twoColumnCell.RightTextColor, twoColumnCell.RightTextFont);
-			rightDetailUILabel.UpdateFromFormsControl (twoColumnCell.RightDetail, twoColumnCell.RightDetailAlignment, twoColumnCell.RightDetailColor, twoColumnCell.RightDetailFont);
+			leftTextUILabel.UpdateFromFormsControl (extendedTextCell.LeftText, extendedTextCell.LeftTextAlignment, extendedTextCell.LeftTextColor, extendedTextCell.LeftTextFont);
+			leftDetailUILabel.UpdateFromFormsControl (extendedTextCell.LeftDetail, extendedTextCell.LeftDetailAlignment, extendedTextCell.LeftDetailColor, extendedTextCell.LeftDetailFont);
+			rightTextUILabel.UpdateFromFormsControl (extendedTextCell.RightText, extendedTextCell.RightTextAlignment, extendedTextCell.RightTextColor, extendedTextCell.RightTextFont);
+			rightDetailUILabel.UpdateFromFormsControl (extendedTextCell.RightDetail, extendedTextCell.RightDetailAlignment, extendedTextCell.RightDetailColor, extendedTextCell.RightDetailFont);
 		}
 
 		public override void LayoutSubviews ()
 		{
 			base.LayoutSubviews ();
 
-			var widthWithMargins = ContentView.Bounds.Width- (nfloat)(twoColumnCell.Thickness.Left + twoColumnCell.Thickness.Right);
-			var leftColumnXWithMargin = ContentView.Bounds.X + (nfloat)(twoColumnCell.Thickness.Left);
+			var widthWithMargins = ContentView.Bounds.Width- (nfloat)(extendedTextCell.Thickness.Left + extendedTextCell.Thickness.Right);
+			var leftColumnXWithMargin = ContentView.Bounds.X + (nfloat)(extendedTextCell.Thickness.Left);
 
 			ContentView.Bounds = new CoreGraphics.CGRect(leftColumnXWithMargin,ContentView.Bounds.Y, widthWithMargins, ContentView.Bounds.Height);
 
-			var leftColumnWidth = (float)(ContentView.Bounds.Width * twoColumnCell.LeftColumnWidth.Value);
-			var rightColumnWidth = (float)(ContentView.Bounds.Width * twoColumnCell.RightColumnWidth.Value);
+			var leftColumnWidth = (float)(ContentView.Bounds.Width * extendedTextCell.LeftColumnWidth.Value);
+			var rightColumnWidth = (float)(ContentView.Bounds.Width * extendedTextCell.RightColumnWidth.Value);
 			var rightColumnX = leftColumnWidth + leftColumnXWithMargin;
 
 			var firstRowHeight = ContentView.Bounds.Height / 2;
 			var secondRowHeight = ContentView.Bounds.Height / 2;
 
 
-			if (!string.IsNullOrEmpty (twoColumnCell.LeftDetail) || !string.IsNullOrEmpty (twoColumnCell.LeftDetail)) {
+			if (!string.IsNullOrEmpty (extendedTextCell.LeftDetail) || !string.IsNullOrEmpty (extendedTextCell.LeftDetail)) {
 
 				leftTextUILabel.Frame = new CoreGraphics.CGRect (leftColumnXWithMargin, 0, leftColumnWidth, firstRowHeight);
 				leftDetailUILabel.Frame = new CoreGraphics.CGRect (leftColumnXWithMargin, firstRowHeight, leftColumnWidth, secondRowHeight);

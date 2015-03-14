@@ -13,7 +13,7 @@ namespace SampleApp.WinPhone
             SupportedOrientations = SupportedPageOrientation.PortraitOrLandscape;
 
             Forms.Init();
-            TwoColumnCellRenderer.Init();
+            ExtendedTextCellRenderer.Init();
 
             LoadApplication(new SampleApp.App());
         }

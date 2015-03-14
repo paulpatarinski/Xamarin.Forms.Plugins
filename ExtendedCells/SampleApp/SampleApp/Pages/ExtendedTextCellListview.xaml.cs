@@ -2,9 +2,9 @@
 
 namespace SampleApp.Pages
 {
-  public partial class TwoColumnCellListview
+  public partial class ExtendedTextCellListview
   {
-    public TwoColumnCellListview()
+    public ExtendedTextCellListview()
     {
       InitializeComponent();
       BindingContext = new ListviewViewModel();

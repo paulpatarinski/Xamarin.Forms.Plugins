@@ -9,14 +9,14 @@ using Xamarin.Forms;
 using Xamarin.Forms.Platform.Android;
 using View = Android.Views.View;
 
-[assembly: ExportRenderer (typeof(TwoColumnCell), typeof(TwoColumnCellRenderer))]
+[assembly: ExportRenderer (typeof(ExtendedTextCell), typeof(ExtendedTextCellRenderer))]
 
 namespace ExtendedCells.Forms.Plugin.Android
 {
 	/// <summary>
-	///   TwoColumn Cell renderer for Android
+	///   Extended Text Cell renderer for Android
 	/// </summary>
-	public class TwoColumnCellRenderer : CellRenderer
+	public class ExtendedTextCellRenderer : CellRenderer
 	{
 		/// <summary>
 		///   Call this method to make sure the assembly gets loaded
@@ -25,7 +25,7 @@ namespace ExtendedCells.Forms.Plugin.Android
 		{
 		}
 
-		private TwoColumnTableLayout _view;
+		private ExtendedCellTableLayout _view;
 
 		/// <summary>
 		///   This method returns the View (Controls Layout) for the current Cell
@@ -37,41 +37,41 @@ namespace ExtendedCells.Forms.Plugin.Android
 		/// <returns></returns>
 		protected override View GetCellCore (Cell item, View convertView, ViewGroup parent, Context context)
 		{
-			var twoColumnCell = (TwoColumnCell)Cell;
+			var extendedTextCell = (ExtendedTextCell)Cell;
 
-			if ((_view = convertView as TwoColumnTableLayout) == null) {
-				_view = new TwoColumnTableLayout (context) {
+			if ((_view = convertView as ExtendedCellTableLayout) == null) {
+				_view = new ExtendedCellTableLayout (context) {
 					LeftTextView = new TextView (context),
 					LeftDetailTextView = new TextView (context),
 					RightTextView = new TextView (context),
 					RightDetailTextView = new TextView (context)
 				};
 
-				if (twoColumnCell.LeftText != null || twoColumnCell.RightText != null)
-					_view.AddView (CreateRow (context, _view.LeftTextView, _view.RightTextView, twoColumnCell.LeftColumnWidth, twoColumnCell.RightColumnWidth));
+				if (extendedTextCell.LeftText != null || extendedTextCell.RightText != null)
+					_view.AddView (CreateRow (context, _view.LeftTextView, _view.RightTextView, extendedTextCell.LeftColumnWidth, extendedTextCell.RightColumnWidth));
 
-				if (!string.IsNullOrEmpty (twoColumnCell.LeftDetail) || !string.IsNullOrEmpty (twoColumnCell.RightDetail))
-					_view.AddView (CreateRow (context, _view.LeftDetailTextView, _view.RightDetailTextView, twoColumnCell.LeftColumnWidth, twoColumnCell.RightColumnWidth));
+				if (!string.IsNullOrEmpty (extendedTextCell.LeftDetail) || !string.IsNullOrEmpty (extendedTextCell.RightDetail))
+					_view.AddView (CreateRow (context, _view.LeftDetailTextView, _view.RightDetailTextView, extendedTextCell.LeftColumnWidth, extendedTextCell.RightColumnWidth));
 			}
 
-			_view.SetBackgroundColor (twoColumnCell.BackgroundColor.ToAndroid ());
-			_view.SetPadding ((int)twoColumnCell.Thickness.Left, (int)twoColumnCell.Thickness.Top, (int)twoColumnCell.Thickness.Right, (int)twoColumnCell.Thickness.Bottom);
+			_view.SetBackgroundColor (extendedTextCell.BackgroundColor.ToAndroid ());
+			_view.SetPadding ((int)extendedTextCell.Thickness.Left, (int)extendedTextCell.Thickness.Top, (int)extendedTextCell.Thickness.Right, (int)extendedTextCell.Thickness.Bottom);
 
-			if (twoColumnCell.LeftText != null)
-				_view.LeftTextView.UpdateFromFormsControl (twoColumnCell.LeftText, twoColumnCell.LeftTextColor,
-					twoColumnCell.LeftTextFont, twoColumnCell.LeftTextAlignment);
+			if (extendedTextCell.LeftText != null)
+				_view.LeftTextView.UpdateFromFormsControl (extendedTextCell.LeftText, extendedTextCell.LeftTextColor,
+					extendedTextCell.LeftTextFont, extendedTextCell.LeftTextAlignment);
 
-			if (twoColumnCell.LeftDetail != null)
-				_view.LeftDetailTextView.UpdateFromFormsControl (twoColumnCell.LeftDetail, twoColumnCell.LeftDetailColor,
-					twoColumnCell.LeftDetailFont, twoColumnCell.LeftDetailAlignment);
+			if (extendedTextCell.LeftDetail != null)
+				_view.LeftDetailTextView.UpdateFromFormsControl (extendedTextCell.LeftDetail, extendedTextCell.LeftDetailColor,
+					extendedTextCell.LeftDetailFont, extendedTextCell.LeftDetailAlignment);
 
-			if (twoColumnCell.RightText != null)
-				_view.RightTextView.UpdateFromFormsControl (twoColumnCell.RightText, twoColumnCell.RightTextColor,
-					twoColumnCell.RightTextFont, twoColumnCell.RightTextAlignment);
+			if (extendedTextCell.RightText != null)
+				_view.RightTextView.UpdateFromFormsControl (extendedTextCell.RightText, extendedTextCell.RightTextColor,
+					extendedTextCell.RightTextFont, extendedTextCell.RightTextAlignment);
 
-			if (twoColumnCell.RightDetail != null)
-				_view.RightDetailTextView.UpdateFromFormsControl (twoColumnCell.RightDetail, twoColumnCell.RightDetailColor,
-					twoColumnCell.RightDetailFont, twoColumnCell.RightDetailAlignment);
+			if (extendedTextCell.RightDetail != null)
+				_view.RightDetailTextView.UpdateFromFormsControl (extendedTextCell.RightDetail, extendedTextCell.RightDetailColor,
+					extendedTextCell.RightDetailFont, extendedTextCell.RightDetailAlignment);
 
 			return _view;
 		}
