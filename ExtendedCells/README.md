@@ -49,7 +49,7 @@ TableView :
 
 Styles : 
 
-- AppXaml : 
+- App.xaml : 
 ```
 <Style x:Key="DefaultStyle" TargetType="abstractions:ExtendedTextCell">
   <Setter Property="BackgroundColor" Value="{StaticResource Black}"/>
