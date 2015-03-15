@@ -79,9 +79,8 @@ Styles :
 ```
 - Style Usage
 ```
-        <abstractions:ExtendedTextCell Style="{StaticResource CellWithThickness}"
-                                         LeftText="Cell With Thickness Specified" />
-  
+<abstractions:ExtendedTextCell Style="{StaticResource CellWithThickness}"
+                                LeftText="Cell With Thickness Specified" />
 ```
 
 For a detailed example clone the repo and take a look at the Sample App.
