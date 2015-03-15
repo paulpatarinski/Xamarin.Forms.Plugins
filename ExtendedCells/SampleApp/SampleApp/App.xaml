@@ -10,9 +10,15 @@
       <Color x:Key="Red">Red</Color>
       <Color x:Key="Black">Black</Color>
       <Color x:Key="Gray">Gray</Color>
+      <Color x:Key="Blue">Blue</Color>
+      <Color x:Key="Lime">Lime</Color>
+      <Color x:Key="Aqua">Aqua</Color>
       
       <Font x:Key="Large">30</Font>
+      <Font x:Key="LargeItalic">30,Italic</Font>
       <Font x:Key="Medium">20</Font>
+      <Font x:Key="MediumBold">20,Bold</Font>
+      <Font x:Key="Micro">12</Font>
       
       <Style x:Key="DefaultStyle" TargetType="abstractions:ExtendedTextCell">
         <Setter Property="BackgroundColor" Value="{StaticResource Black}"/>
@@ -67,6 +73,44 @@
       </Style>
       
       <!--Label Level Styles-->
+      <Style x:Key="SingleRow" BasedOn="{StaticResource DefaultStyle}" TargetType="abstractions:ExtendedTextCell">
+        <Setter Property="BackgroundColor" Value="{StaticResource Red}"/>
+      </Style>
+      
+      <Style x:Key="WithTextAlignment" BasedOn="{StaticResource DefaultStyle}" TargetType="abstractions:ExtendedTextCell">
+         <Setter Property="LeftTextAlignment">
+            <Setter.Value>
+              <TextAlignment>Start</TextAlignment>
+            </Setter.Value>
+          </Setter>
+         <Setter Property="LeftDetailAlignment">
+            <Setter.Value>
+              <TextAlignment>Center</TextAlignment>
+            </Setter.Value>
+          </Setter>
+          <Setter Property="RightTextAlignment">
+            <Setter.Value>
+              <TextAlignment>End</TextAlignment>
+            </Setter.Value>
+          </Setter>
+          <Setter Property="RightDetailAlignment">
+            <Setter.Value>
+              <TextAlignment>Center</TextAlignment>
+            </Setter.Value>
+          </Setter>
+      </Style>
+        <Style x:Key="WithFonts" BasedOn="{StaticResource DefaultStyle}" TargetType="abstractions:ExtendedTextCell">
+          <Setter Property="LeftTextFont" Value="{StaticResource Large}"/>
+          <Setter Property="LeftDetailFont" Value="{StaticResource LargeItalic}"/>
+          <Setter Property="RightTextFont" Value="{StaticResource Micro}"/>
+          <Setter Property="RightDetailFont" Value="{StaticResource MediumBold}"/>
+       </Style>
+     <Style x:Key="WithColors" BasedOn="{StaticResource DefaultStyle}" TargetType="abstractions:ExtendedTextCell">
+          <Setter Property="LeftTextColor" Value="{StaticResource Red}"/>
+          <Setter Property="LeftDetailColor" Value="{StaticResource Blue}"/>
+          <Setter Property="RightTextColor" Value="{StaticResource Aqua}"/>
+          <Setter Property="RightDetailColor" Value="{StaticResource Lime}"/>
+       </Style>
     </ResourceDictionary>
     </Application.Resources>
   </Application>
