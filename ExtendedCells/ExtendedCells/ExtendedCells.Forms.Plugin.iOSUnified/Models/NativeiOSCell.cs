@@ -23,14 +23,15 @@ namespace ExtendedCells.Forms.Plugin.Models
 			SelectionStyle = UITableViewCellSelectionStyle.Default;
 
 			leftTextUILabel = new UILabel ();
-			leftDetailUILabel = new UILabel ();
 			rightTextUILabel = new UILabel ();
-			rightDetailUILabel = new UILabel ();
 
 			ContentView.Add (leftTextUILabel);
 			ContentView.Add (rightTextUILabel);
 
 			if (extendedTextCell.LeftDetail != null || extendedTextCell.RightDetail != null) {
+                leftDetailUILabel = new UILabel();
+                rightDetailUILabel = new UILabel();
+
 				ContentView.Add (leftDetailUILabel);
 				ContentView.Add (rightDetailUILabel);
 			}
@@ -42,9 +43,14 @@ namespace ExtendedCells.Forms.Plugin.Models
 			ContentView.BackgroundColor = extendedTextCell.BackgroundColor.ToUIColor ();
 
 			leftTextUILabel.UpdateFromFormsControl (extendedTextCell.LeftText, extendedTextCell.LeftTextAlignment, extendedTextCell.LeftTextColor, extendedTextCell.LeftTextFont);
-			leftDetailUILabel.UpdateFromFormsControl (extendedTextCell.LeftDetail, extendedTextCell.LeftDetailAlignment, extendedTextCell.LeftDetailColor, extendedTextCell.LeftDetailFont);
-			rightTextUILabel.UpdateFromFormsControl (extendedTextCell.RightText, extendedTextCell.RightTextAlignment, extendedTextCell.RightTextColor, extendedTextCell.RightTextFont);
-			rightDetailUILabel.UpdateFromFormsControl (extendedTextCell.RightDetail, extendedTextCell.RightDetailAlignment, extendedTextCell.RightDetailColor, extendedTextCell.RightDetailFont);
+
+            if (extendedTextCell.LeftDetail != null)
+                leftDetailUILabel.UpdateFromFormsControl(extendedTextCell.LeftDetail, extendedTextCell.LeftDetailAlignment, extendedTextCell.LeftDetailColor, extendedTextCell.LeftDetailFont);
+			
+            rightTextUILabel.UpdateFromFormsControl (extendedTextCell.RightText, extendedTextCell.RightTextAlignment, extendedTextCell.RightTextColor, extendedTextCell.RightTextFont);
+			
+            if(extendedTextCell.RightDetail != null)
+                rightDetailUILabel.UpdateFromFormsControl (extendedTextCell.RightDetail, extendedTextCell.RightDetailAlignment, extendedTextCell.RightDetailColor, extendedTextCell.RightDetailFont);
 		}
 
 		public override void LayoutSubviews ()

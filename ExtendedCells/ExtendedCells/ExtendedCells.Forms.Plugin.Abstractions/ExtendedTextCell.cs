@@ -140,7 +140,7 @@ namespace ExtendedCells.Forms.Plugin.Abstractions
     #region Left Detail
 
     public static readonly BindableProperty LeftDetailProperty =
-      BindableProperty.Create("LeftDetail", typeof(string), typeof(ExtendedTextCell), "");
+      BindableProperty.Create("LeftDetail", typeof(string), typeof(ExtendedTextCell), null);
 
     public string LeftDetail
     {
@@ -232,7 +232,7 @@ BindableProperty.Create("RightTextFont", typeof(Font), typeof(ExtendedTextCell),
     #region Right Detail
 
     public static readonly BindableProperty RightDetailProperty =
-    BindableProperty.Create("RightDetail", typeof(string), typeof(ExtendedTextCell), "");
+    BindableProperty.Create("RightDetail", typeof(string), typeof(ExtendedTextCell), null);
 
     public string RightDetail
     {
