@@ -50,8 +50,8 @@ namespace ExtendedCells.Forms.Plugin.Android
 				if (extendedTextCell.LeftText != null || extendedTextCell.RightText != null)
 					_view.AddView (CreateRow (context, _view.LeftTextView, _view.RightTextView, extendedTextCell.LeftColumnWidth, extendedTextCell.RightColumnWidth));
 
-				if (extendedTextCell.LeftDetail != null || extendedTextCell.RightDetail != null) {
-				_view.AddView (CreateRow (context, _view.LeftDetailTextView, _view.RightDetailTextView, extendedTextCell.LeftColumnWidth, extendedTextCell.RightColumnWidth));
+				if (extendedTextCell.LeftDetail != null || extendedTextCell.RightDetail != null)
+					_view.AddView (CreateRow (context, _view.LeftDetailTextView, _view.RightDetailTextView, extendedTextCell.LeftColumnWidth, extendedTextCell.RightColumnWidth));
 			}
 
 			_view.SetBackgroundColor (extendedTextCell.BackgroundColor.ToAndroid ());
@@ -66,16 +66,12 @@ namespace ExtendedCells.Forms.Plugin.Android
 					extendedTextCell.LeftDetailFont, extendedTextCell.LeftDetailAlignment);
 
 			if (extendedTextCell.RightText != null)
-			{
-                _view.RightTextView.UpdateFromFormsControl(extendedTextCell.RightText, extendedTextCell.RightTextColor,
-                extendedTextCell.RightTextFont, extendedTextCell.RightTextAlignment);
-			}
+				_view.RightTextView.UpdateFromFormsControl (extendedTextCell.RightText, extendedTextCell.RightTextColor,
+					extendedTextCell.RightTextFont, extendedTextCell.RightTextAlignment);
 
 			if (extendedTextCell.RightDetail != null)
-			{
-			        _view.RightDetailTextView.UpdateFromFormsControl (extendedTextCell.RightDetail, extendedTextCell.RightDetailColor,
-				extendedTextCell.RightDetailFont, extendedTextCell.RightDetailAlignment);
-			}
+				_view.RightDetailTextView.UpdateFromFormsControl (extendedTextCell.RightDetail, extendedTextCell.RightDetailColor,
+					extendedTextCell.RightDetailFont, extendedTextCell.RightDetailAlignment);
 
 			return _view;
 		}
