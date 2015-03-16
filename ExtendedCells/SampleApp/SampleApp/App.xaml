@@ -14,33 +14,17 @@
       <Color x:Key="Lime">Lime</Color>
       <Color x:Key="Aqua">Aqua</Color>
 
-    <OnPlatform x:Key="Large" x:TypeArguments="Font">
-	      <OnPlatform.iOS>26</OnPlatform.iOS>
-	      <OnPlatform.Android>26</OnPlatform.Android>
-	      <OnPlatform.WinPhone>30</OnPlatform.WinPhone>
-    </OnPlatform>
-
-     <OnPlatform x:Key="LargeItalic" x:TypeArguments="Font">
-	      <OnPlatform.iOS>26,Italic</OnPlatform.iOS>
-	      <OnPlatform.Android>26,Italic</OnPlatform.Android>
-	      <OnPlatform.WinPhone>30,Italic</OnPlatform.WinPhone>
-    </OnPlatform>
-      <OnPlatform x:Key="Medium" x:TypeArguments="Font">
-	      <OnPlatform.iOS>18</OnPlatform.iOS>
-	      <OnPlatform.Android>18</OnPlatform.Android>
-	      <OnPlatform.WinPhone>20</OnPlatform.WinPhone>
-    </OnPlatform>
-      <OnPlatform x:Key="MediumBold" x:TypeArguments="Font">
-	      <OnPlatform.iOS>18,Bold</OnPlatform.iOS>
-	      <OnPlatform.Android>18,Bold</OnPlatform.Android>
-	      <OnPlatform.WinPhone>20,Bold</OnPlatform.WinPhone>
-    </OnPlatform>
-     <OnPlatform x:Key="Micro" x:TypeArguments="Font">
-	      <OnPlatform.iOS>12</OnPlatform.iOS>
-	      <OnPlatform.Android>12</OnPlatform.Android>
-	      <OnPlatform.WinPhone>12</OnPlatform.WinPhone>
-    </OnPlatform>
-
+      <!--<OnPlatform x:Key="Large" x:TypeArguments="Font">
+        <OnPlatform.iOS>HelveticaNeue,48</OnPlatform.iOS>
+        <OnPlatform.Android>sans-serif,48</OnPlatform.Android>
+        <OnPlatform.WinPhone>Segoe UI,66</OnPlatform.WinPhone>
+      </OnPlatform>-->
+      <Font x:Key="Large">26</Font>
+      <Font x:Key="LargeItalic">26,Italic</Font>
+      <Font x:Key="Medium">20</Font>
+      <Font x:Key="MediumBold">20,Bold</Font>
+      <Font x:Key="Micro">12</Font>
+      
       <Style x:Key="DefaultStyle" TargetType="abstractions:ExtendedTextCell">
         <Setter Property="BackgroundColor" Value="{StaticResource Black}"/>
         
@@ -99,7 +83,10 @@
       </Style>
       
       <Style x:Key="WithTextAlignment" BasedOn="{StaticResource DefaultStyle}" TargetType="abstractions:ExtendedTextCell">
-         <Setter Property="LeftTextAlignment">
+        <Setter Property="LeftTextFont" Value="{StaticResource Medium}"/>
+        <Setter Property="RightTextFont" Value="{StaticResource Medium}"/>
+
+        <Setter Property="LeftTextAlignment">
             <Setter.Value>
               <TextAlignment>Start</TextAlignment>
             </Setter.Value>
