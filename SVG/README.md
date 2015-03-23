@@ -14,7 +14,7 @@ SvgImageRenderer.Init();
 
 You must do this AFTER you call Xamarin.Forms.Init();
 
-**NO SUPPORT FOR iOS YET**
+**NO SUPPORT FOR iOS YET** for updates follow [THIS ISSUE](https://github.com/paulpatarinski/Xamarin.Forms.Plugins/issues/17)
 
 # Usage
 Instead of using an Image simply use a SvgImage instead!
