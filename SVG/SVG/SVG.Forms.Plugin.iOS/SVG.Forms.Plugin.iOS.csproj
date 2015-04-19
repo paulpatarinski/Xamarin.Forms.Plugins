@@ -55,6 +55,11 @@
     <Reference Include="Xamarin.Forms.Xaml">
       <HintPath>..\..\packages\Xamarin.Forms.1.3.3.6323\lib\Xamarin.iOS10\Xamarin.Forms.Xaml.dll</HintPath>
     </Reference>
+    <Reference Include="NGraphics">
+      <HintPath>ext_bin\NGraphics.dll</HintPath>
+    </Reference>
+    <Reference Include="NGraphics.iOS">
+      <HintPath>ext_bin\NGraphics.iOS.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
