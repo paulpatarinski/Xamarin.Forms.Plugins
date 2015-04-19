@@ -52,6 +52,7 @@
     <EmbeddedResource Include="Pages\ViaResources.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Include="Images\ErulisseuiinSpaceshipPack.svg" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Images\CoolMask.xaml">

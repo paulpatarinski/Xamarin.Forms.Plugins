@@ -24,5 +24,10 @@ namespace SampleApp.ViewModel
       get { return "SampleApp.Images.tiger.svg"; }
     }
 
+		public string ErulisseuiinSpaceshipPackPath
+		{
+			get { return "SampleApp.Images.ErulisseuiinSpaceshipPack.svg"; }
+		}
+
   }
 }

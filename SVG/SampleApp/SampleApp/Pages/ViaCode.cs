@@ -17,6 +17,7 @@ namespace SampleApp.Pages
 				"SampleApp.Images.CoolMask.svg",
                 "SampleApp.Images.Elvis.svg",
 				"SampleApp.Images.tiger.svg",
+				"SampleApp.Images.ErulisseuiinSpaceshipPack.svg",
             };
 
       var grid = new Grid
