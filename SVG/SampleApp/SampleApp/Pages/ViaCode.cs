@@ -14,9 +14,9 @@ namespace SampleApp.Pages
       //Get SVGs from http://thenounproject.com/
       var svgPaths = new List<string>
             {
-                "SampleApp.Images.CoolMask.svg",
+				"SampleApp.Images.CoolMask.svg",
                 "SampleApp.Images.Elvis.svg",
-                "SampleApp.Images.tiger.svg",
+				"SampleApp.Images.tiger.svg",
             };
 
       var grid = new Grid
