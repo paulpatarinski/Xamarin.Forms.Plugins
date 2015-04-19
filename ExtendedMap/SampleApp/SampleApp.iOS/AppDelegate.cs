@@ -7,6 +7,7 @@ using UIKit;
 using Xamarin;
 using ExtendedCells.Forms.Plugin.iOSUnified;
 using ExtendedMap.Forms.Plugin.iOS;
+using SVG.Forms.Plugin.iOS;
 
 namespace SampleApp.iOS
 {
@@ -27,7 +28,7 @@ namespace SampleApp.iOS
         {
 			global::Xamarin.Forms.Forms.Init ();
 			FormsMaps.Init ();
-//			SvgImageRenderer.Init ();
+      SvgImageRenderer.Init();
 			TwoColumnCellRenderer.Init ();
 			ExtendedMapRenderer.Init ();
             LoadApplication(new App());
