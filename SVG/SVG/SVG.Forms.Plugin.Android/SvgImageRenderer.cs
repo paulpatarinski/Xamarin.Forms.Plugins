@@ -1,10 +1,13 @@
 ﻿using System;
+using System.IO;
 using Android.Widget;
 using SVG.Forms.Plugin.Abstractions;
 using SVG.Forms.Plugin.Droid;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.Android;
 using System.Threading.Tasks;
+using NGraphics;
+using NGraphics.Parsers;
 
 [assembly: ExportRenderer (typeof(SvgImage), typeof(SvgImageRenderer))]
 namespace SVG.Forms.Plugin.Droid
@@ -14,8 +17,6 @@ namespace SVG.Forms.Plugin.Droid
 		public static void Init ()
 		{
 		}
-
-		private static bool _isGetBitmapExecuting;
 
 		private SvgImage _formsControl {
 			get {
@@ -27,43 +28,59 @@ namespace SVG.Forms.Plugin.Droid
 		{
 			base.OnElementChanged (e);
 
-			if (e.OldElement == null) {
-				try {
-					await UpdateBitmapFromSvgAsync ();
-				} catch (Exception ex) {
-					System.Diagnostics.Debug.WriteLine ("Problem setting image source {0}", ex);
-				}
-			}
+      var svgImage = (SvgImage)Element;
+
+		  await Task.Run(async () =>
+		  {
+		    var svgStream = svgImage.SvgAssembly.GetManifestResourceStream(svgImage.SvgPath);
+
+		    if (svgStream == null)
+		    {
+		      throw new Exception(string.Format("Error retrieving {0} make sure Build Action is Embedded Resource",
+		        svgImage.SvgPath));
+		    }
+
+		    var r = new SvgReader(new StreamReader(svgStream), new StylesParser(new ValuesParser()), new ValuesParser());
+
+		    var graphics = r.Graphic;
+
+		    var width = PixelToDP((int) _formsControl.WidthRequest <= 0 ? 100 : (int) _formsControl.WidthRequest);
+		    var height = PixelToDP((int) _formsControl.HeightRequest <= 0 ? 100 : (int) _formsControl.HeightRequest);
+
+		    var scale = 1.0;
+
+		    if (height >= width)
+		    {
+		      scale = height/graphics.Size.Height;
+		    }
+		    else
+		    {
+		      scale = width/graphics.Size.Width;
+		    }
+
+		    var canvas = new AndroidPlatform().CreateImageCanvas(graphics.Size, scale);
+		    graphics.Draw(canvas);
+		    var image = (BitmapImage) canvas.GetImage();
+
+		    return image;
+		  }).ContinueWith(taskResult =>
+		  {
+        Device.BeginInvokeOnMainThread(() =>
+        {
+          var imageView = new ImageView(Context);
+
+          imageView.SetScaleType(ImageView.ScaleType.FitXy);
+          imageView.SetImageBitmap(taskResult.Result.Bitmap);
+
+          SetNativeControl(imageView);
+        });
+		   
+		  });
 		}
 
 		public override SizeRequest GetDesiredSize (int widthConstraint, int heightConstraint)
 		{
 			return new SizeRequest (new Size (_formsControl.WidthRequest, _formsControl.WidthRequest));
-		}
-
-		private async Task UpdateBitmapFromSvgAsync ()
-		{
-			await Task.Run (async() => {
-				var width = PixelToDP((int)_formsControl.WidthRequest <= 0 ? 100 : (int)_formsControl.WidthRequest);
-				var height =  PixelToDP((int)_formsControl.HeightRequest <= 0 ? 100 : (int)_formsControl.HeightRequest);
-
-				//Since you can only load one svg at a time, make sure the method is not already executing before calling it
-				while (_isGetBitmapExecuting) {
-					await Task.Delay (TimeSpan.FromMilliseconds (1));
-				}
-
-				_isGetBitmapExecuting = true;
-
-				return await BitmapService.GetBitmapAsync (_formsControl, width, height);
-			}).ContinueWith (taskResult => {
-				var imageView = new ImageView (Context);
-
-				imageView.SetScaleType (ImageView.ScaleType.FitXy);
-				imageView.SetImageBitmap (taskResult.Result);
-
-				SetNativeControl (imageView);
-				_isGetBitmapExecuting = false;
-			}, TaskScheduler.FromCurrentSynchronizationContext ());
 		}
 
     /// <summary>
@@ -75,6 +92,5 @@ namespace SVG.Forms.Plugin.Droid
       var scale =Resources.DisplayMetrics.Density;
       return (int) ((pixel * scale) + 0.5f);
     }
-
 	}
 }
