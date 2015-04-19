@@ -4,6 +4,7 @@ using System.Linq;
 
 using Foundation;
 using UIKit;
+using SVG.Forms.Plugin.iOS;
 
 namespace SampleApp.iOS
 {
@@ -23,6 +24,7 @@ namespace SampleApp.iOS
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
             global::Xamarin.Forms.Forms.Init();
+			SvgImageRenderer.Init ();
             LoadApplication(new App());
 
             return base.FinishedLaunching(app, options);
