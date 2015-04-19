@@ -2,7 +2,7 @@
 
 namespace ExtendedCells.Forms.Plugin.Abstractions
 {
-  public class ExtendedTextCell : ViewCell
+  public class ExtendedTextCell : Cell
   {
     public static readonly BindableProperty StyleProperty =
       BindableProperty.Create("Style", typeof(Style), typeof(ExtendedTextCell), default(Style), propertyChanged: OnStylePropertyChanged);
