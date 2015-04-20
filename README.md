@@ -40,4 +40,4 @@ The repo structure is courtesy of
  
 
 # License
-Licensed under MIT see License file
+Licensed under MIT see [License File](https://raw.githubusercontent.com/paulpatarinski/Xamarin.Forms.Plugins/master/LICENSE.md)
