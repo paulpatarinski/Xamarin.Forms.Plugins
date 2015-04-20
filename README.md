@@ -11,7 +11,7 @@ Generators:
 
 Controls:
 * **[SVG](https://github.com/paulpatarinski/Xamarin.Forms.Plugins/tree/master/SVG)** for Xamarin.Forms
- * Win Phone / Android
+ * Win Phone / Android / iOS
 * **[Extended Cells](https://github.com/paulpatarinski/Xamarin.Forms.Plugins/tree/master/ExtendedCells)** for Xamarin.Forms
  * Win Phone / Android / iOS
 * **[Extended Map](https://github.com/paulpatarinski/Xamarin.Forms.Plugins/tree/master/ExtendedMap)** for Xamarin.Forms
