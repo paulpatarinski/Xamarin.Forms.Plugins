@@ -5,7 +5,7 @@
 * Available on NuGet: https://www.nuget.org/packages/Xam.Plugins.Forms.Svg/
 * Install into your PCL project and Client projects.
 
-In your Android, and Windows Phone projects call:
+In your Android,iOS and Windows Phone projects call:
 
 ```
 Xamarin.Forms.Init();//platform specific init
@@ -14,14 +14,12 @@ SvgImageRenderer.Init();
 
 You must do this AFTER you call Xamarin.Forms.Init();
 
-**NO SUPPORT FOR iOS YET** for updates follow [THIS ISSUE](https://github.com/paulpatarinski/Xamarin.Forms.Plugins/issues/17)
-
 # Usage
-Instead of using an Image simply use a SvgImage instead!
+Instead of using an Image Control simply use a SvgImage instead!
 
 You **MUST** : 
 - Set Height and Width
-- Set Build Action to Embedded Resource 
+- Set Build Action to Embedded Resource for your svg files 
 - SvgPath to {Project}.{Folder}.{FileName}.{Extension}
 - SvgAssembly to the assembly containing the file
 - For Win Phone make sure you include a XAML file equivalent of the SVG with the root element being a Viewbox
