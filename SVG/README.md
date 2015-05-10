@@ -15,7 +15,7 @@ SvgImageRenderer.Init();
 You must do this AFTER you call Xamarin.Forms.Init();
 
 # Usage
-Instead of using an Image Control simply use a SvgImage instead!
+Instead of using an Image Control simply use SvgImage!
 
 ### You MUST :
 
