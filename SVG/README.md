@@ -17,7 +17,8 @@ You must do this AFTER you call Xamarin.Forms.Init();
 # Usage
 Instead of using an Image Control simply use a SvgImage instead!
 
-You **MUST** : 
+### You MUST :
+
 - Set Height and Width
 - Set Build Action to Embedded Resource for your svg files 
 - SvgPath to {Project}.{Folder}.{FileName}.{Extension}
