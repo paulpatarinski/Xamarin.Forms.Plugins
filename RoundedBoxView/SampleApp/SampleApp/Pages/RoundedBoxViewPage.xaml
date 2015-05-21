@@ -26,7 +26,6 @@
         <Label Style="{StaticResource LabelStyle}" Text="Slightly Rounded" />
         <abstractions:RoundedBoxView Style="{StaticResource RoundedBoxViewStyle}" CornerRadius="10" />
 
-
         <Label Style="{StaticResource LabelStyle}" Text="Circle" />
         <abstractions:RoundedBoxView Style="{StaticResource RoundedBoxViewStyle}" CornerRadius="50" />
 
