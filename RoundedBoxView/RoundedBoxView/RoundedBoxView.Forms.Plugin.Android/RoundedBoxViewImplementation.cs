@@ -42,7 +42,8 @@ namespace RoundedBoxView.Forms.Plugin.Droid
                     return;
 
                 var rect = new Rect();
-                var paint = new Paint()
+
+                var paint = new Paint
                 {
                     Color = roundedBoxView.BackgroundColor.ToAndroid(),
                     AntiAlias = true,
