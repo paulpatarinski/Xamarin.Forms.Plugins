@@ -1,7 +1,7 @@
 ﻿using Android.App;
 using Android.Content.PM;
 using Android.OS;
-using RoundedBoxView.Forms.Plugin.Android;
+using RoundedBoxView.Forms.Plugin.Droid;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.Android;
 
