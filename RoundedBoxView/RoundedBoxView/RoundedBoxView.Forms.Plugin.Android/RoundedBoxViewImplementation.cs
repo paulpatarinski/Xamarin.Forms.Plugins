@@ -4,7 +4,7 @@ using Xamarin.Forms;
 using RoundedBoxView.Forms.Plugin.Android;
 using Xamarin.Forms.Platform.Android;
 
-[assembly: ExportRenderer(typeof(RoundedBoxView.Forms.Plugin.Abstractions.RoundedBoxViewControl), typeof(RoundedBoxViewRenderer))]
+[assembly: ExportRenderer(typeof(RoundedBoxView.Forms.Plugin.Abstractions.RoundedBoxView), typeof(RoundedBoxViewRenderer))]
 namespace RoundedBoxView.Forms.Plugin.Android
 {
     /// <summary>

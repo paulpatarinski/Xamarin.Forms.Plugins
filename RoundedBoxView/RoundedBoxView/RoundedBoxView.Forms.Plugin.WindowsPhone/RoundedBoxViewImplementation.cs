@@ -1,9 +1,8 @@
-﻿using RoundedBoxView.Forms.Plugin.Abstractions;
-using RoundedBoxView.Forms.Plugin.WindowsPhone;
+﻿using RoundedBoxView.Forms.Plugin.WindowsPhone;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.WinPhone;
 
-[assembly: ExportRenderer(typeof(RoundedBoxViewControl), typeof(RoundedBoxViewRenderer))]
+[assembly: ExportRenderer(typeof(RoundedBoxView.Forms.Plugin.Abstractions.RoundedBoxView), typeof(RoundedBoxViewRenderer))]
 namespace RoundedBoxView.Forms.Plugin.WindowsPhone
 {
     /// <summary>

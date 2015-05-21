@@ -4,7 +4,7 @@ using Xamarin.Forms;
 using RoundedBoxView.Forms.Plugin.iOS;
 using Xamarin.Forms.Platform.iOS;
 
-[assembly: ExportRenderer(typeof(RoundedBoxView.Forms.Plugin.Abstractions.RoundedBoxViewControl), typeof(RoundedBoxViewRenderer))]
+[assembly: ExportRenderer(typeof(RoundedBoxView.Forms.Plugin.Abstractions.RoundedBoxView), typeof(RoundedBoxViewRenderer))]
 namespace RoundedBoxView.Forms.Plugin.iOS
 {
     /// <summary>
