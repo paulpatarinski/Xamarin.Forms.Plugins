@@ -69,6 +69,7 @@ Global
 		{14C534B6-1984-41A9-A384-D3A5508588E3}.Debug|Android.ActiveCfg = Debug|Any CPU
 		{14C534B6-1984-41A9-A384-D3A5508588E3}.Debug|Android.Build.0 = Debug|Any CPU
 		{14C534B6-1984-41A9-A384-D3A5508588E3}.Debug|iPhone.ActiveCfg = Debug|Any CPU
+		{14C534B6-1984-41A9-A384-D3A5508588E3}.Debug|iPhone.Build.0 = Debug|Any CPU
 		{14C534B6-1984-41A9-A384-D3A5508588E3}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
 		{14C534B6-1984-41A9-A384-D3A5508588E3}.Debug|WinPhone.ActiveCfg = Debug|Any CPU
 		{14C534B6-1984-41A9-A384-D3A5508588E3}.Debug|WinPhone.Build.0 = Debug|Any CPU
@@ -128,6 +129,7 @@ Global
 		{BB864987-FD1A-4303-A4FC-B1F7E120E78D}.Debug Win|WinPhone.ActiveCfg = Debug|Any CPU
 		{BB864987-FD1A-4303-A4FC-B1F7E120E78D}.Debug|Android.ActiveCfg = Debug|Any CPU
 		{BB864987-FD1A-4303-A4FC-B1F7E120E78D}.Debug|iPhone.ActiveCfg = Debug|Any CPU
+		{BB864987-FD1A-4303-A4FC-B1F7E120E78D}.Debug|iPhone.Build.0 = Debug|Any CPU
 		{BB864987-FD1A-4303-A4FC-B1F7E120E78D}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
 		{BB864987-FD1A-4303-A4FC-B1F7E120E78D}.Debug|WinPhone.ActiveCfg = Debug|Any CPU
 		{BB864987-FD1A-4303-A4FC-B1F7E120E78D}.Release|Android.ActiveCfg = Release|Any CPU
@@ -223,6 +225,7 @@ Global
 		{EBD9C7E2-C5C5-47E3-A7F0-6A6BC41FCC12}.Debug|Android.ActiveCfg = Debug|Any CPU
 		{EBD9C7E2-C5C5-47E3-A7F0-6A6BC41FCC12}.Debug|Android.Build.0 = Debug|Any CPU
 		{EBD9C7E2-C5C5-47E3-A7F0-6A6BC41FCC12}.Debug|iPhone.ActiveCfg = Debug|Any CPU
+		{EBD9C7E2-C5C5-47E3-A7F0-6A6BC41FCC12}.Debug|iPhone.Build.0 = Debug|Any CPU
 		{EBD9C7E2-C5C5-47E3-A7F0-6A6BC41FCC12}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
 		{EBD9C7E2-C5C5-47E3-A7F0-6A6BC41FCC12}.Debug|WinPhone.ActiveCfg = Debug|Any CPU
 		{EBD9C7E2-C5C5-47E3-A7F0-6A6BC41FCC12}.Debug|WinPhone.Build.0 = Debug|Any CPU
