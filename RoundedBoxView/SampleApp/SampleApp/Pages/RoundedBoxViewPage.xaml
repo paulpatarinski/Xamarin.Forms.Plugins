@@ -22,7 +22,13 @@
     <StackLayout Spacing="20">
         <Label Style="{StaticResource LabelStyle}" Text="Default" />
         <abstractions:RoundedBoxView Style="{StaticResource RoundedBoxViewStyle}" />
+
+        <Label Style="{StaticResource LabelStyle}" Text="Slightly Rounded" />
+        <abstractions:RoundedBoxView Style="{StaticResource RoundedBoxViewStyle}" CornerRadius="10" />
+
+
         <Label Style="{StaticResource LabelStyle}" Text="Circle" />
         <abstractions:RoundedBoxView Style="{StaticResource RoundedBoxViewStyle}" CornerRadius="50" />
+
     </StackLayout>
 </ContentPage>
