@@ -36,10 +36,11 @@
       <abstractions:SvgImage Grid.Row="2" Grid.Column="2" SvgAssembly="{Binding SvgAssembly}" SvgPath="{Binding TigerSvgPath}" HeightRequest="150" WidthRequest="150" BackgroundColor="White" HorizontalOptions="Center" VerticalOptions="Center"/>
       <abstractions:SvgImage Grid.Row="2" Grid.Column="3" SvgAssembly="{Binding SvgAssembly}" SvgPath="{Binding TigerSvgPath}" HeightRequest="200" WidthRequest="200" BackgroundColor="White" HorizontalOptions="Center" VerticalOptions="Center"/>
 
-      <abstractions:SvgImage Grid.Row="3" Grid.Column="0" SvgAssembly="{Binding SvgAssembly}" SvgPath="{Binding ErulisseuiinSpaceshipPackPath}" HeightRequest="50" WidthRequest="50" BackgroundColor="White" HorizontalOptions="Center" VerticalOptions="Center"/>
+      <!--TEMP REMOVING THE SPACE SHIPS UNTIL SUPPORT FOR svg is better for Win Phone-->
+      <!--<abstractions:SvgImage Grid.Row="3" Grid.Column="0" SvgAssembly="{Binding SvgAssembly}" SvgPath="{Binding ErulisseuiinSpaceshipPackPath}" HeightRequest="50" WidthRequest="50" BackgroundColor="White" HorizontalOptions="Center" VerticalOptions="Center"/>
       <abstractions:SvgImage Grid.Row="3" Grid.Column="1" SvgAssembly="{Binding SvgAssembly}" SvgPath="{Binding ErulisseuiinSpaceshipPackPath}" HeightRequest="100" WidthRequest="100" BackgroundColor="White" HorizontalOptions="Center" VerticalOptions="Center"/>
       <abstractions:SvgImage Grid.Row="3" Grid.Column="2" SvgAssembly="{Binding SvgAssembly}" SvgPath="{Binding ErulisseuiinSpaceshipPackPath}" HeightRequest="150" WidthRequest="150" BackgroundColor="White" HorizontalOptions="Center" VerticalOptions="Center"/>
-      <abstractions:SvgImage Grid.Row="3" Grid.Column="3" SvgAssembly="{Binding SvgAssembly}" SvgPath="{Binding ErulisseuiinSpaceshipPackPath}" HeightRequest="200" WidthRequest="200" BackgroundColor="White" HorizontalOptions="Center" VerticalOptions="Center"/>
+      <abstractions:SvgImage Grid.Row="3" Grid.Column="3" SvgAssembly="{Binding SvgAssembly}" SvgPath="{Binding ErulisseuiinSpaceshipPackPath}" HeightRequest="200" WidthRequest="200" BackgroundColor="White" HorizontalOptions="Center" VerticalOptions="Center"/>-->
 
     </Grid>
   </ScrollView>
