@@ -26,7 +26,13 @@ namespace SVG.Forms.Plugin.iOS
 		{
 			base.OnElementChanged (e);
 
-			var svgImage = (SvgImage)Element;
+			var svgImage = Element as SvgImage;
+
+			if (svgImage == null) {
+				//Add an SVGImage to a StackLayout and call Children.RemoveAt(0) (or Remove(item))
+				//and you'll get a nullpointer exception below so bail out if the item is being disposed
+				return;
+			}
 
 			var svgStream = svgImage.SvgAssembly.GetManifestResourceStream(svgImage.SvgPath);
 
