@@ -1,0 +1,12 @@
+﻿<Properties StartupItem="SVG/SVG.Forms.Plugin.Abstractions/SVG.Forms.Plugin.Abstractions.csproj">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="SVG/SVG.Forms.Plugin.iOS/SvgImageRenderer.cs">
+    <Files>
+      <File FileName="SVG/SVG.Forms.Plugin.iOS/SvgImageRenderer.cs" Line="32" Column="79" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>
