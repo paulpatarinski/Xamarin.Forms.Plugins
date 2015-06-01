@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:abstractions="clr-namespace:RoundedBoxView.Forms.Plugin.Abstractions;assembly=RoundedBoxView.Forms.Plugin.Abstractions"
+             x:Class="PluginSampleApp.Pages.RoundedBoxViewPage" Title="Native Cell" BackgroundColor="Black">
+  <ContentPage.Resources>
+    <ResourceDictionary>
+      <Style x:Key="LabelStyle" TargetType="Label">
+        <Setter Property="TextColor" Value="Black" />
+        <Setter Property="HorizontalOptions" Value="Center" />
+      </Style>
+      <Style x:Key="RoundedBoxViewStyle" TargetType="abstractions:RoundedBoxView">
+        <Setter Property="BackgroundColor" Value="Red" />
+        <Setter Property="HorizontalOptions" Value="Center" />
+        <Setter Property="HeightRequest" Value="100" />
+        <Setter Property="WidthRequest" Value="100" />
+      </Style>
+    </ResourceDictionary>
+  </ContentPage.Resources>
+
+  <StackLayout Spacing="20">
+    <Label Style="{StaticResource LabelStyle}" Text="Default" />
+    <abstractions:RoundedBoxView Style="{StaticResource RoundedBoxViewStyle}" />
+
+    <Label Style="{StaticResource LabelStyle}" Text="Slightly Rounded" />
+    <abstractions:RoundedBoxView Style="{StaticResource RoundedBoxViewStyle}" CornerRadius="10" />
+
+    <Label Style="{StaticResource LabelStyle}" Text="Circle" />
+    <abstractions:RoundedBoxView Style="{StaticResource RoundedBoxViewStyle}" CornerRadius="50" />
+
+  </StackLayout>
+</ContentPage>

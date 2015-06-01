@@ -28,6 +28,7 @@ namespace PluginSampleApp
                 PageTitle.ExtendedMap,
                 PageTitle.ExtendedCellListview,
                 PageTitle.ExtendedCellTableView,
+                PageTitle.RoundedBoxView,
             };
 
             listview.ItemSelected += (sender, args) => MenuItemSelected(sender, args);
@@ -62,6 +63,11 @@ namespace PluginSampleApp
                 case PageTitle.ExtendedCellTableView:
                 {
                     await _navigationPage.Navigation.PushAsync(new TwoColumnCellTableView());
+                    break;
+                }
+                case PageTitle.RoundedBoxView:
+                {
+                    await _navigationPage.Navigation.PushAsync(new RoundedBoxViewPage());
                     break;
                 }
             }

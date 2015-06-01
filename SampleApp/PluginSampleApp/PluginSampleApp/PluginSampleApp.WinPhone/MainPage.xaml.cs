@@ -1,5 +1,6 @@
 ﻿using ExtendedCells.Forms.Plugin.WindowsPhone;
 using ExtendedMap.Forms.Plugin.WindowsPhone;
+using RoundedBoxView.Forms.Plugin.WindowsPhone;
 using SVG.Forms.Plugin.WindowsPhone;
 using Xamarin;
 using Xamarin.Forms.Platform.WinPhone;
@@ -18,6 +19,7 @@ namespace PluginSampleApp.WinPhone
             SvgImageRenderer.Init();
             TwoColumnCellRenderer.Init();
             ExtendedMapRenderer.Init();
+            RoundedBoxViewRenderer.Init();
 
             LoadApplication(new PluginSampleApp.App());
         }

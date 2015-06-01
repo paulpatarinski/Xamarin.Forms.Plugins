@@ -3,6 +3,7 @@ using Android.Content.PM;
 using Android.OS;
 using ExtendedCells.Forms.Plugin.Android;
 using ExtendedMap.Forms.Plugin.Droid;
+using RoundedBoxView.Forms.Plugin.Droid;
 using SVG.Forms.Plugin.Droid;
 using Xamarin;
 using Xamarin.Forms.Platform.Android;
@@ -21,6 +22,7 @@ namespace PluginSampleApp.Droid
 			SvgImageRenderer.Init ();
 			TwoColumnCellRenderer.Init ();
 			ExtendedMapRenderer.Init ();
+            RoundedBoxViewRenderer.Init();
 
 			// http://forums.xamarin.com/discussion/21148/calabash-and-xamarin-forms-what-am-i-missing
 			global::Xamarin.Forms.Forms.ViewInitialized += (object sender, Xamarin.Forms.ViewInitializedEventArgs e) => {
