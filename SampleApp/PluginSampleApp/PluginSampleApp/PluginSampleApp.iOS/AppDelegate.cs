@@ -6,6 +6,7 @@ using Foundation;
 using UIKit;
 using Xamarin.Forms.Platform.iOS;
 using ExtendedCells.Forms.Plugin.iOSUnified;
+using RoundedBoxView.Forms.Plugin.iOSUnified;
 using Xamarin.Forms;
 using Xamarin;
 
@@ -28,6 +29,7 @@ namespace PluginSampleApp.iOS
 		{
 			global::Xamarin.Forms.Forms.Init ();
 			TwoColumnCellRenderer.Init ();
+      RoundedBoxViewRenderer.Init();
 
 			global::Xamarin.Forms.Forms.ViewInitialized += (object sender, ViewInitializedEventArgs e) => {
 
