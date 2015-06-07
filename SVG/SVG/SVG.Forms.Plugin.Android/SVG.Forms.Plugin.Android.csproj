@@ -40,11 +40,11 @@
   <ItemGroup>
     <Reference Include="Mono.Android" />
     <Reference Include="mscorlib" />
-    <Reference Include="NGraphics">
-      <HintPath>ext_bin\NGraphics.dll</HintPath>
+    <Reference Include="NGraphics.Android.Custom">
+      <HintPath>ext_bin\NGraphics.Android.Custom.dll</HintPath>
     </Reference>
-    <Reference Include="NGraphics.Android">
-      <HintPath>ext_bin\NGraphics.Android.dll</HintPath>
+    <Reference Include="NGraphics.Custom">
+      <HintPath>ext_bin\NGraphics.Custom.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
