@@ -75,12 +75,11 @@
     </Reference>
     <Reference Include="Mono.Android" />
     <Reference Include="mscorlib" />
-    <Reference Include="NGraphics">
-      <HintPath>..\..\packages\Xam.Plugins.Forms.Svg.1.0.0.21\lib\MonoAndroid10\NGraphics.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="NGraphics.Android.Custom">
+      <HintPath>..\..\packages\Xam.Plugins.Forms.Svg.1.0.0.23\lib\MonoAndroid10\NGraphics.Android.Custom.dll</HintPath>
     </Reference>
-    <Reference Include="NGraphics.Android">
-      <HintPath>..\..\packages\Xam.Plugins.Forms.Svg.1.0.0.21\lib\MonoAndroid10\NGraphics.Android.dll</HintPath>
+    <Reference Include="NGraphics.Custom">
+      <HintPath>..\..\packages\Xam.Plugins.Forms.Svg.1.0.0.23\lib\MonoAndroid10\NGraphics.Custom.dll</HintPath>
     </Reference>
     <Reference Include="RoundedBoxView.Forms.Plugin.Abstractions, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Xam.Plugins.Forms.RoundedBoxView.1.0.0.2\lib\MonoAndroid10\RoundedBoxView.Forms.Plugin.Abstractions.dll</HintPath>
@@ -90,13 +89,13 @@
       <HintPath>..\..\packages\Xam.Plugins.Forms.RoundedBoxView.1.0.0.2\lib\MonoAndroid10\RoundedBoxView.Forms.Plugin.Android.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="SVG.Forms.Plugin.Abstractions, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\packages\Xam.Plugins.Forms.Svg.1.0.0.21\lib\MonoAndroid10\SVG.Forms.Plugin.Abstractions.dll</HintPath>
+    <Reference Include="SVG.Forms.Plugin.Abstractions">
+      <HintPath>..\..\packages\Xam.Plugins.Forms.Svg.1.0.0.23\lib\MonoAndroid10\SVG.Forms.Plugin.Abstractions.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="SVG.Forms.Plugin.Android, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\packages\Xam.Plugins.Forms.Svg.1.0.0.21\lib\MonoAndroid10\SVG.Forms.Plugin.Android.dll</HintPath>
+      <HintPath>..\..\packages\Xam.Plugins.Forms.Svg.1.0.0.23\lib\MonoAndroid10\SVG.Forms.Plugin.Android.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
