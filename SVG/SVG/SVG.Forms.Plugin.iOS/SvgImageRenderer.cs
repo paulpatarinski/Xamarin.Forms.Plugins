@@ -15,48 +15,61 @@ namespace SVG.Forms.Plugin.iOS
     /// <summary>
     /// SVG Renderer
     /// </summary>
-	public class SvgImageRenderer :  ImageRenderer
+    public class SvgImageRenderer : ImageRenderer
     {
-        /// <summary>
-        /// Used for registration with dependency service
-        /// </summary>
-        public static void Init() { }
+      /// <summary>
+      ///   Used for registration with dependency service
+      /// </summary>
+      public static void Init()
+      {
+      }
 
-		protected override void OnElementChanged (ElementChangedEventArgs<Image> e)
-		{
-			base.OnElementChanged (e);
+      private SvgImage _formsControl
+      {
+        get { return Element as SvgImage; }
+      }
 
-			var svgImage = (SvgImage)Element;
+      protected override void OnElementChanged(ElementChangedEventArgs<Image> e)
+      {
+        base.OnElementChanged(e);
 
-			var svgStream = svgImage.SvgAssembly.GetManifestResourceStream(svgImage.SvgPath);
+        if (_formsControl != null)
+        {
+          var svgStream = _formsControl.SvgAssembly.GetManifestResourceStream(_formsControl.SvgPath);
 
-			if (svgStream == null) {
-				throw new Exception (string.Format ("Error retrieving {0} make sure Build Action is Embedded Resource", svgImage.SvgPath));
-			}
+          if (svgStream == null)
+          {
+            throw new Exception(string.Format("Error retrieving {0} make sure Build Action is Embedded Resource",
+              _formsControl.SvgPath));
+          }
 
-			var r = new SvgReader(new StreamReader(svgStream), new StylesParser(new ValuesParser()),new ValuesParser());
+          var r = new SvgReader(new StreamReader(svgStream), new StylesParser(new ValuesParser()), new ValuesParser());
 
-			var graphics = r.Graphic;
+          var graphics = r.Graphic;
 
-			var width = svgImage.WidthRequest == 0 ? 100 : svgImage.WidthRequest;
-			var height = svgImage.HeightRequest == 0 ? 100 : svgImage.HeightRequest;
+          var width = _formsControl.WidthRequest == 0 ? 100 : _formsControl.WidthRequest;
+          var height = _formsControl.HeightRequest == 0 ? 100 : _formsControl.HeightRequest;
 
-			var scale = 1.0;
+          var scale = 1.0;
 
-			if (height >= width) {
-					scale = height / graphics.Size.Height;
-			} else {
-				scale = width / graphics.Size.Width;
-			}
+          if (height >= width)
+          {
+            scale = height/graphics.Size.Height;
+          }
+          else
+          {
+            scale = width/graphics.Size.Width;
+          }
 
-			var scaleFactor = UIScreen.MainScreen.Scale;
+          var scaleFactor = UIScreen.MainScreen.Scale;
 
-			var canvas = new ApplePlatform().CreateImageCanvas(graphics.Size, scale * scaleFactor);
-			graphics.Draw(canvas);
-			var image = canvas.GetImage ();
+          var canvas = new ApplePlatform().CreateImageCanvas(graphics.Size, scale*scaleFactor);
+          graphics.Draw(canvas);
+          var image = canvas.GetImage();
 
-			var uiImage = image.GetUIImage ();
-			Control.Image = uiImage;
-		}
+          var uiImage = image.GetUIImage();
+          Control.Image = uiImage;
+        }
+      }
     }
 }
