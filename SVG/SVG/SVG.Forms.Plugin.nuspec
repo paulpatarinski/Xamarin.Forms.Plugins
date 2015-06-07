@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
     <metadata>
-        <id>Xam.Plugins.Forms.SVG</id>
-        <version>1.0.0.20</version>
+        <id>Xam.Plugins.Forms.Svg</id>
+        <version>1.0.0.21</version>
         <title>SVG Control Plugin for Xamarin.Forms</title>
         <authors>Paul Patarinski</authors>
         <owners>Paul Patarinski</owners>
