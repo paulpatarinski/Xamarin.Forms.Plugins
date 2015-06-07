@@ -2,7 +2,7 @@
 
 <#
 //Point this path to the root folder for your project
-var startFolder = @"C:\Xamarin.Forms.Plugins\SampleApp"; 
+var startFolder = @"C:\Xamarin.Forms.Plugins\StyleIdGenerator"; 
 #>
 
 <#@include file="StyleIdGenerator.t4" #>

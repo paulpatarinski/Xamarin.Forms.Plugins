@@ -7,6 +7,7 @@ using UIKit;
 using Xamarin.Forms.Platform.iOS;
 using ExtendedCells.Forms.Plugin.iOSUnified;
 using RoundedBoxView.Forms.Plugin.iOSUnified;
+using SVG.Forms.Plugin.iOS;
 using Xamarin.Forms;
 using Xamarin;
 
@@ -28,9 +29,11 @@ namespace PluginSampleApp.iOS
 		public override bool FinishedLaunching (UIApplication app, NSDictionary options)
 		{
 			global::Xamarin.Forms.Forms.Init ();
-			TwoColumnCellRenderer.Init ();
+      FormsMaps.Init();
+      SvgImageRenderer.Init();
+      TwoColumnCellRenderer.Init();
       RoundedBoxViewRenderer.Init();
-
+    
 			global::Xamarin.Forms.Forms.ViewInitialized += (object sender, ViewInitializedEventArgs e) => {
 
 				// http://developer.xamarin.com/recipes/testcloud/set-accessibilityidentifier-ios/
