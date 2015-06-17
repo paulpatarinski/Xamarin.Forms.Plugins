@@ -21,9 +21,5 @@ For a detailed example clone the repo and take a look at the Sample App.
 
 Coming soon...
 
-#Contributors 
-
-Coming soon...
-
 # License
 Licensed under main repo license
