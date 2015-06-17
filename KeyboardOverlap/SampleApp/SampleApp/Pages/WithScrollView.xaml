@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="SampleApp.WithScrollView" Title="With Scroll View">
+	<ContentPage.Content>
+		<ScrollView>
+			<StackLayout>
+				<Entry Text="Entry 1"/>
+				<Entry Text="Entry 2"/>
+				<Entry Text="Entry 3"/>
+				<Entry Text="Entry 4"/>
+				<Entry Text="Entry 5"/>
+				<Entry Text="Entry 6"/>
+				<Entry Text="Entry 7"/>
+				<Entry Text="Entry 8"/>
+				<Entry Text="Entry 9"/>
+				<Entry Text="Entry 10"/>
+				<Entry Text="Entry 11"/>
+				<Entry Text="Entry 12"/>
+				<Entry Text="Entry 13"/>
+				<Entry Text="Entry 14"/>
+				<Entry Text="Entry 15"/>
+			</StackLayout>
+		</ScrollView>
+	</ContentPage.Content>
+</ContentPage>
