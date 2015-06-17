@@ -19,6 +19,10 @@ Controls:
 * **[Extended Listview](https://github.com/paulpatarinski/Xamarin.Forms.Plugins/tree/master/ExtendedListview)** for Xamarin.Forms
  * Win Phone 
 
+Helpers:
+* **[Keyboard Overlap](https://github.com/paulpatarinski/Xamarin.Forms.Plugins/tree/master/KeyboardOverlap)** for Xamarin.Forms
+ * iOS
+
 # Repo structure :
 **Sample App :**
  * A solution demonstrating all the plugins in a single app
