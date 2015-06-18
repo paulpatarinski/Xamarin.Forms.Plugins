@@ -35,9 +35,15 @@ namespace KeyboardOverlap.Forms.Plugin.iOSUnified
 		/// </summary>
 		/// <returns>The view Y value.</returns>
 		/// <param name="view">View.</param>
-		private static CGRect GetFrameWithPositiveYValue (this UIView view)
+		public static CGRect GetFrameWithPositiveYValue (this UIView view)
 		{
 			return view.Frame.Y > 0 ? view.Frame : view.Superview.GetFrameWithPositiveYValue ();
+		}
+
+		public static double GetViewBottomEdgeY (this UIView view)
+		{
+			var activeViewFrame = view.GetFrameWithPositiveYValue ();
+			return activeViewFrame.Y + activeViewFrame.Height;
 		}
 
 
