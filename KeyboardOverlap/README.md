@@ -1,6 +1,6 @@
 # Setup
-* Available on NuGet: Coming soon...
-* Install into your iOS project.
+* Available on NuGet: https://www.nuget.org/packages/Xam.Plugins.Forms.KeyboardOverlap/
+* Add to your iOS project.
 
 In your iOS project call:
 
