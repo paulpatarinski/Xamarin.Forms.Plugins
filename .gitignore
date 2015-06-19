@@ -5,3 +5,5 @@ Components/
 packages/
 SVG/SVG.sln.ide/
 Resource.Designer.cs
+.DS_Store
+.userprefs
