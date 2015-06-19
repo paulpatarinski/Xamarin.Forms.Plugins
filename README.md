@@ -16,6 +16,8 @@ Controls:
  * Win Phone / Android / iOS
 * **[Extended Map](https://github.com/paulpatarinski/Xamarin.Forms.Plugins/tree/master/ExtendedMap)** for Xamarin.Forms
  * Win Phone / Android 
+* **[RoundedBoxView](https://github.com/paulpatarinski/Xamarin.Forms.Plugins/tree/master/RoundedBoxView)** for Xamarin.Forms
+ * Win Phone / Android / iOS
 * **[Extended Listview](https://github.com/paulpatarinski/Xamarin.Forms.Plugins/tree/master/ExtendedListview)** for Xamarin.Forms
  * Win Phone 
 
