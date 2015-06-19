@@ -8,7 +8,7 @@
     <OutputType>Library</OutputType>
     <RootNamespace>KeyboardOverlap.Forms.Plugin.iOSUnified</RootNamespace>
     <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
-    <AssemblyName>RoundedBoxView.Forms.Plugin.iOSUnified</AssemblyName>
+    <AssemblyName>KeyboardOverlap.Forms.Plugin.iOSUnified</AssemblyName>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
   </PropertyGroup>
