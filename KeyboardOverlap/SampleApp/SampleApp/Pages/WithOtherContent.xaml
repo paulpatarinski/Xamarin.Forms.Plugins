@@ -1,13 +1,33 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="SampleApp.WithOtherContent" Title="With Other Content">
 	<ContentPage.Content>
-	<StackLayout>
-		<StackLayout VerticalOptions="StartAndExpand">
-			<Label Text="Page with other controls at the top of the page"/>
-		</StackLayout>
-		<StackLayout VerticalOptions="End">
-			<Entry Text="Bottom Entry"/>
-		</StackLayout>
-	</StackLayout>
+	 <Grid>
+        <Grid.RowDefinitions>
+          <RowDefinition Height="0.3*" />
+          <RowDefinition Height="0.05*" />
+          <RowDefinition Height="0.3*" />
+          <RowDefinition Height="0.05*" />
+          <RowDefinition Height="0.3*" />
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+          <ColumnDefinition Width="0.1*" />
+          <ColumnDefinition Width="0.8*" />
+          <ColumnDefinition Width="0.1*" />
+        </Grid.ColumnDefinitions>
+
+        <Image Grid.Row="0" Grid.Column="1" HeightRequest="150"  />
+
+        <StackLayout Grid.Row="2" Grid.Column="1" HorizontalOptions="FillAndExpand" Spacing="20" Padding="0,0,0,0">
+          <Entry Placeholder="Username"/>
+          <Entry Placeholder="Password" IsPassword="true"/>
+        </StackLayout>
+
+        <StackLayout Grid.Row="4" Grid.Column="1" Spacing="20" >
+          <Entry Placeholder="Bottom Entry" IsPassword="true"  />
+          <Button Text="Login"/>
+        </StackLayout>
+
+      </Grid>
 	</ContentPage.Content>
 </ContentPage>
