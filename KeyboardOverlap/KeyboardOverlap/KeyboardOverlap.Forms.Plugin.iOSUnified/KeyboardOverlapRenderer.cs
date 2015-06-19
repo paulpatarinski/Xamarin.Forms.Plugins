@@ -5,12 +5,11 @@ using UIKit;
 using Xamarin.Forms;
 using CoreGraphics;
 using KeyboardOverlap.Forms.Plugin.iOSUnified;
-using Xamarin.Forms.Xaml;
 
-[assembly: ExportRenderer (typeof(Page), typeof(KeyboardOverlapPageRenderer))]
+[assembly: ExportRenderer (typeof(Page), typeof(KeyboardOverlapRenderer))]
 namespace KeyboardOverlap.Forms.Plugin.iOSUnified
 {
-	public class KeyboardOverlapPageRenderer : PageRenderer
+	public class KeyboardOverlapRenderer : PageRenderer
 	{
 		NSObject _keyboardShowObserver;
 		NSObject _keyboardHideObserver;

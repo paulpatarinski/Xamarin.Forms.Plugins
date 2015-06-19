@@ -37,7 +37,7 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Extensions\ViewExtensions.cs" />
-    <Compile Include="KeyboardOverlapPageRenderer.cs" />
+    <Compile Include="KeyboardOverlapRenderer.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
