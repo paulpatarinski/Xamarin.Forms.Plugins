@@ -19,7 +19,9 @@ For a detailed example clone the repo and take a look at the Sample App.
 
 # Screenshots
 
-Coming soon...
+![ScreenShot](https://raw.githubusercontent.com/paulpatarinski/Xamarin.Forms.Plugins/master/SampleApp/Images/Screenshots/KeyboardOverlap1.png)
+
+![ScreenShot](https://raw.githubusercontent.com/paulpatarinski/Xamarin.Forms.Plugins/master/SampleApp/Images/Screenshots/KeyboardOverlap2.png)
 
 # License
 Licensed under main repo license
