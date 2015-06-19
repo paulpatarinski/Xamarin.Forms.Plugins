@@ -6,7 +6,7 @@ In your iOS project call:
 
 ```
 Xamarin.Forms.Init();//platform specific init
-KeyboardOverlapPageRenderer.Init ();
+KeyboardOverlapRenderer.Init ();
 ```
 
 You must do this AFTER you call Xamarin.Forms.Init(). 
