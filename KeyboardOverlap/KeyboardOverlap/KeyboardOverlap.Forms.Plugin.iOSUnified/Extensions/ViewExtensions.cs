@@ -30,22 +30,18 @@ namespace KeyboardOverlap.Forms.Plugin.iOSUnified
 		}
 
 		/// <summary>
-		/// It is possible the Y value of a view is specified on its SuperView
-		/// This method will traverse the hierarchy and return the View containing the positive Y 
+		/// Returns the new view Bottom (Y + Height) coordinates relative to the rootView
 		/// </summary>
-		/// <returns>The view Y value.</returns>
+		/// <returns>The view relative bottom.</returns>
 		/// <param name="view">View.</param>
-		public static CGRect GetFrameWithPositiveYValue (this UIView view)
+		/// <param name="rootView">Root view.</param>
+		public static double GetViewRelativeBottom (this UIView view, UIView rootView)
 		{
-			return view.Frame.Y > 0 ? view.Frame : view.Superview.GetFrameWithPositiveYValue ();
-		}
+			var viewRelativeCoordinates = rootView.ConvertPointFromView (view.Frame.Location, view);
+			var activeViewRoundedY = Math.Round (viewRelativeCoordinates.Y, 2);
 
-		public static double GetViewBottomEdgeY (this UIView view)
-		{
-			var activeViewFrame = view.GetFrameWithPositiveYValue ();
-			return activeViewFrame.Y + activeViewFrame.Height;
+			return activeViewRoundedY + view.Frame.Height;
 		}
-
 
 		/// <summary>
 		/// Determines if the UIView is overlapped by the keyboard
@@ -56,16 +52,13 @@ namespace KeyboardOverlap.Forms.Plugin.iOSUnified
 		/// <param name="keyboardFrame">Keyboard frame.</param>
 		public static bool IsKeyboardOverlapping (this UIView activeView, UIView rootView, CGRect keyboardFrame)
 		{
-			var activeViewFrame = activeView.GetFrameWithPositiveYValue ();
-			var entryBottomEdge = activeViewFrame.Y + activeViewFrame.Height;
+			var viewBottom = activeView.GetViewRelativeBottom (rootView);
 			var pageHeight = rootView.Frame.Height;
 			var keyboardHeight = keyboardFrame.Height;
 
-			var isOverlapping = entryBottomEdge >= (pageHeight - keyboardHeight);
+			var isOverlapping = viewBottom >= (pageHeight - keyboardHeight);
 
 			return isOverlapping;
 		}
-
-
 	}
 }

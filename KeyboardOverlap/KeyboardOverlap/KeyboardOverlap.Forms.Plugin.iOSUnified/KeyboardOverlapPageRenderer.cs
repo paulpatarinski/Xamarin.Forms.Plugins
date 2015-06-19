@@ -85,7 +85,7 @@ namespace KeyboardOverlap.Forms.Plugin.iOSUnified
 
 			if (isOverlapping) {
 				
-				_activeViewBottomEdge = activeView.GetViewBottomEdgeY ();
+				_activeViewBottomEdge = activeView.GetViewRelativeBottom (View);
 				ShiftPageUp (keyboardFrame.Height, _activeViewBottomEdge);
 			}
 		}
