@@ -52,11 +52,11 @@ namespace KeyboardOverlap.Forms.Plugin.iOSUnified
 		/// <param name="keyboardFrame">Keyboard frame.</param>
 		public static bool IsKeyboardOverlapping (this UIView activeView, UIView rootView, CGRect keyboardFrame)
 		{
-			var viewBottom = activeView.GetViewRelativeBottom (rootView);
+			var activeViewBottom = activeView.GetViewRelativeBottom (rootView);
 			var pageHeight = rootView.Frame.Height;
 			var keyboardHeight = keyboardFrame.Height;
 
-			var isOverlapping = viewBottom >= (pageHeight - keyboardHeight);
+			var isOverlapping = activeViewBottom >= (pageHeight - keyboardHeight);
 
 			return isOverlapping;
 		}
