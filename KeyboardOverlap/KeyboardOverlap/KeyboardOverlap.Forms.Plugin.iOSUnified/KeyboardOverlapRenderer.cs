@@ -14,7 +14,7 @@ namespace KeyboardOverlap.Forms.Plugin.iOSUnified
 		NSObject _keyboardShowObserver;
 		NSObject _keyboardHideObserver;
 		private bool _pageWasShiftedUp;
-		private double _activeViewBottomEdge;
+		private double _activeViewBottom;
 
 		public static void Init ()
 		{
@@ -84,8 +84,8 @@ namespace KeyboardOverlap.Forms.Plugin.iOSUnified
 
 			if (isOverlapping) {
 				
-				_activeViewBottomEdge = activeView.GetViewRelativeBottom (View);
-				ShiftPageUp (keyboardFrame.Height, _activeViewBottomEdge);
+				_activeViewBottom = activeView.GetViewRelativeBottom (View);
+				ShiftPageUp (keyboardFrame.Height, _activeViewBottom);
 			}
 		}
 
@@ -97,15 +97,15 @@ namespace KeyboardOverlap.Forms.Plugin.iOSUnified
 			var keyboardFrame = UIKeyboard.FrameBeginFromNotification (notification);
 
 			if (_pageWasShiftedUp) {
-				ShiftPageDown (keyboardFrame.Height, _activeViewBottomEdge);
+				ShiftPageDown (keyboardFrame.Height, _activeViewBottom);
 			}
 		}
 
-		private void ShiftPageUp (nfloat keyboardHeight, double activeViewBottomEdge)
+		private void ShiftPageUp (nfloat keyboardHeight, double activeViewBottom)
 		{
 			var pageFrame = Element.Bounds;
 
-			var newY = pageFrame.Y + CalculateShiftByAmount (pageFrame.Height, keyboardHeight, activeViewBottomEdge);
+			var newY = pageFrame.Y + CalculateShiftByAmount (pageFrame.Height, keyboardHeight, activeViewBottom);
 
 			Element.LayoutTo (new Rectangle (pageFrame.X, newY,
 				pageFrame.Width, pageFrame.Height));
@@ -113,11 +113,11 @@ namespace KeyboardOverlap.Forms.Plugin.iOSUnified
 			_pageWasShiftedUp = true;
 		}
 
-		private void ShiftPageDown (nfloat keyboardHeight, double activeViewBottomEdge)
+		private void ShiftPageDown (nfloat keyboardHeight, double activeViewBottom)
 		{
 			var pageFrame = Element.Bounds;
 
-			var newY = pageFrame.Y - CalculateShiftByAmount (pageFrame.Height, keyboardHeight, activeViewBottomEdge);
+			var newY = pageFrame.Y - CalculateShiftByAmount (pageFrame.Height, keyboardHeight, activeViewBottom);
 
 			Element.LayoutTo (new Rectangle (pageFrame.X, newY,
 				pageFrame.Width, pageFrame.Height));
@@ -125,9 +125,9 @@ namespace KeyboardOverlap.Forms.Plugin.iOSUnified
 			_pageWasShiftedUp = false;
 		}
 
-		private double CalculateShiftByAmount (double pageHeight, nfloat keyboardHeight, double activeViewBottomEdge)
+		private double CalculateShiftByAmount (double pageHeight, nfloat keyboardHeight, double activeViewBottom)
 		{
-			return (pageHeight - activeViewBottomEdge) - keyboardHeight;
+			return (pageHeight - activeViewBottom) - keyboardHeight;
 		}
 	}
 }
