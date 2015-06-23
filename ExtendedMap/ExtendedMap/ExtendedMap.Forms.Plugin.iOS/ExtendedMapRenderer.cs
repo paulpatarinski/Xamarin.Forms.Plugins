@@ -50,6 +50,7 @@ namespace ExtendedMap.Forms.Plugin.iOS
 
       var mapDelegate = new MapDelegate();
       mapDelegate.MapTapped += MapDelegateOnMapTapped;
+	_nativeMapView.Delegate = null;
       _nativeMapView.Delegate = mapDelegate;
 
       _customMap.CustomPins.CollectionChanged += HandleCollectionChanged;

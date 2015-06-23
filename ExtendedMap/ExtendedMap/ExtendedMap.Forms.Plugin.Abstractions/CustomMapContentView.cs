@@ -378,13 +378,13 @@ namespace ExtendedMap.Forms.Plugin.Abstractions
 				listview.SelectedItem = null;
 			};
 
-			var itemTemplate = new DataTemplate (typeof(TwoColumnCell));
+			var itemTemplate = new DataTemplate (typeof(ExtendedTextCell));
 
-			itemTemplate.SetValue (TwoColumnCell.LeftColumnWidthProperty, new GridLength (1.0, GridUnitType.Star));
-			itemTemplate.SetBinding (TwoColumnCell.LeftTextProperty, "Day");
-			itemTemplate.SetValue (TwoColumnCell.LeftTextColorProperty, Color.Black);
-			itemTemplate.SetBinding (TwoColumnCell.LeftDetailProperty, "HoursOfOperation");
-			itemTemplate.SetValue (TwoColumnCell.LeftDetailColorProperty, Color.Gray);
+			itemTemplate.SetValue (ExtendedTextCell.LeftColumnWidthProperty, new GridLength (1.0, GridUnitType.Star));
+			itemTemplate.SetBinding (ExtendedTextCell.LeftTextProperty, "Day");
+			itemTemplate.SetValue (ExtendedTextCell.LeftTextColorProperty, Color.Black);
+			itemTemplate.SetBinding (ExtendedTextCell.LeftDetailProperty, "HoursOfOperation");
+			itemTemplate.SetValue (ExtendedTextCell.LeftDetailColorProperty, Color.Gray);
 
 			listview.ItemTemplate = itemTemplate;
 			listview.BindingContext = _extendedMap;
@@ -412,14 +412,14 @@ namespace ExtendedMap.Forms.Plugin.Abstractions
 				listview.SelectedItem = null;
 			};
 
-			var itemTemplate = new DataTemplate (typeof(TwoColumnCell));
+			var itemTemplate = new DataTemplate (typeof(ExtendedTextCell));
 
-			itemTemplate.SetValue (TwoColumnCell.LeftColumnWidthProperty, new GridLength (0.85, GridUnitType.Star));
-			itemTemplate.SetValue (TwoColumnCell.RightColumnWidthProperty, new GridLength (0.15, GridUnitType.Star));
-			itemTemplate.SetBinding (TwoColumnCell.LeftTextProperty, "Key");
-			itemTemplate.SetValue (TwoColumnCell.LeftTextColorProperty, Color.Black);
-			itemTemplate.SetBinding (TwoColumnCell.LeftDetailProperty, "Value");
-			itemTemplate.SetValue (TwoColumnCell.LeftDetailColorProperty, Color.Gray);
+			itemTemplate.SetValue (ExtendedTextCell.LeftColumnWidthProperty, new GridLength (0.85, GridUnitType.Star));
+			itemTemplate.SetValue (ExtendedTextCell.RightColumnWidthProperty, new GridLength (0.15, GridUnitType.Star));
+			itemTemplate.SetBinding (ExtendedTextCell.LeftTextProperty, "Key");
+			itemTemplate.SetValue (ExtendedTextCell.LeftTextColorProperty, Color.Black);
+			itemTemplate.SetBinding (ExtendedTextCell.LeftDetailProperty, "Value");
+			itemTemplate.SetValue (ExtendedTextCell.LeftDetailColorProperty, Color.Gray);
 
 			listview.ItemTemplate = itemTemplate;
 			listview.BindingContext = _extendedMap;

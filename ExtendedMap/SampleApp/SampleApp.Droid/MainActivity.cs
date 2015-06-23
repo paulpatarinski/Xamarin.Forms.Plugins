@@ -18,7 +18,7 @@ namespace SampleApp.Droid
 			global::Xamarin.Forms.Forms.Init (this, bundle);
 			FormsMaps.Init (this, bundle);
 			SvgImageRenderer.Init ();
-			TwoColumnCellRenderer.Init ();
+			ExtendedTextCellRenderer.Init ();
 			ExtendedMapRenderer.Init ();
 
 			LoadApplication (new App ());
