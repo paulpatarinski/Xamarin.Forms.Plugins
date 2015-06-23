@@ -14,21 +14,7 @@ namespace ExtendedMap.Forms.Plugin.Abstractions
 		{
 			_extendedMap = extendedMap;
 
-			//The Heights of the rows are overwritten
-			_mapGrid = new Grid {
-				RowDefinitions = new RowDefinitionCollection {
-					new RowDefinition (),
-					new RowDefinition ()
-				},
-				ColumnDefinitions = new ColumnDefinitionCollection {
-					new ColumnDefinition {
-						Width = new GridLength (1, GridUnitType.Star)
-					}
-				},
-				RowSpacing = 0,
-				//Bind the footer to the ShowFooter property
-				BindingContext = this
-			};
+			_mapGrid = new RelativeLayout {BindingContext = this};
 
 			Content = _mapGrid;
 		}
@@ -38,7 +24,8 @@ namespace ExtendedMap.Forms.Plugin.Abstractions
 		private double _minimizedFooterY;
 		private double _expandedFooterY;
 		private double _pageHeight;
-		private readonly Grid _mapGrid;
+		//		private readonly Grid _mapGrid;
+		private readonly RelativeLayout _mapGrid;
 		private readonly ExtendedMap _extendedMap;
 		private FooterMode _footerMode;
 
@@ -81,25 +68,59 @@ namespace ExtendedMap.Forms.Plugin.Abstractions
 				_minimizedFooterY = _pageHeight * expandedMapHeight;
 				_expandedFooterY = _pageHeight * collapsedMapHeight;
 
-				var footerHeight = height * expandedFooterHeight;
+				_mapGrid.Children.Add (
+					_extendedMap,
+					Constraint.RelativeToParent ((parent) => {
+						return (parent.Width * 0);
+					}),
+					Constraint.RelativeToParent ((parent) => {
+						return (parent.Height * 0);
+					}),
+					Constraint.RelativeToParent ((parent) => {
+						return (parent.Width * 1);
+					}),
+					Constraint.RelativeToParent ((parent) => {
+						return (parent.Height * 1);
+					})
+				);
 
-				_mapGrid.RowDefinitions [0].Height = new GridLength (height * expandedMapHeight);
-				_mapGrid.RowDefinitions [1].Height = new GridLength (footerHeight);
+				_mapGrid.Children.Add (
+					CreateFooter (),
+					Constraint.RelativeToParent ((parent) => {
+						return (parent.Width * 0);
+					}),
+					Constraint.RelativeToParent ((parent) => {
+						return (parent.Height * expandedMapHeight);
+					}),
+					Constraint.RelativeToParent ((parent) => {
+						return (parent.Width * 1);
+					}),
+					Constraint.RelativeToParent ((parent) => {
+						return (parent.Height * 1);
+					})
+				);
 
-				//The rows need to be added in this order for win phone for the footer to display on top of the map
-				_mapGrid.Children.Add (_extendedMap, 0, 0);
-				_mapGrid.Children.Add (CreateFooter (footerHeight), 0, 1);
-
-				Grid.SetRowSpan (_extendedMap, 2);
-
-				_mapGridFooterRow.GestureRecognizers.Add (new TapGestureRecognizer { Command = new Command (ToogleFooter) });
 
 				FooterMode = FooterMode.Hidden;
+//				var footerHeight = height * expandedFooterHeight;
+
+//				_mapGrid.RowDefinitions [0].Height = new GridLength (height * expandedMapHeight);
+//				_mapGrid.RowDefinitions [1].Height = new GridLength (footerHeight);
+//
+//				//The rows need to be added in this order for win phone for the footer to display on top of the map
+//				_mapGrid.Children.Add (_extendedMap, 0, 0);
+//				_mapGrid.Children.Add (CreateFooter (), 0, 1);
+//
+//				Grid.SetRowSpan (_extendedMap, 2);
+//
+//				_mapGridFooterRow.GestureRecognizers.Add (new TapGestureRecognizer { Command = new Command (ToogleFooter) });
+//
+//				FooterMode = FooterMode.Hidden;
 			}
 
 			base.OnSizeAllocated (width, height);
 		}
-
+//
 		private void ToogleFooter ()
 		{
 			FooterMode = FooterMode == FooterMode.Expanded ? FooterMode.Minimized : FooterMode.Expanded;
@@ -139,126 +160,170 @@ namespace ExtendedMap.Forms.Plugin.Abstractions
 
 		#region UI Creation
 
-		private ContentView CreateFooter (double footerHeight)
+		private ContentView CreateFooter ()
 		{
-			var footerMainGrid = new Grid {
-				RowDefinitions = new RowDefinitionCollection {
-					new RowDefinition {
-						Height = new GridLength (0.2, GridUnitType.Star)
-					},
-					new RowDefinition {
-						Height = new GridLength (0.8, GridUnitType.Star)
-					},
-				},
-				ColumnDefinitions = new ColumnDefinitionCollection {
-					new ColumnDefinition {
-						Width = new GridLength (1, GridUnitType.Star)
-					}
-				}, RowSpacing = 10
-			};
+		var footerMasterLayout = new RelativeLayout ();
 
-			var footerMasterGrid = new Grid {
-				RowDefinitions = new RowDefinitionCollection {
-					new RowDefinition {
-						Height = new GridLength (1, GridUnitType.Star)
-					},
-				},
-				ColumnDefinitions = new ColumnDefinitionCollection {
-					new ColumnDefinition {
-						Width = new GridLength (0.025, GridUnitType.Star)
-					},
-					new ColumnDefinition {
-						Width = new GridLength (0.95, GridUnitType.Star)
-					},
-				},
-				RowSpacing = 10,
-				StyleId = "FooterGrid"
-			};
+		var placeNameLabel = new Label {
+					Text = "Pin Label Shows Here",
+					TextColor = Color.Black,
+				};
+	
+		Device.OnPlatform (iOS: () => placeNameLabel.FontSize = 20,
+			Android: () => placeNameLabel.FontSize = 20,
+			WinPhone: () => placeNameLabel.FontSize = 24);
 
-			var footerGrid = new Grid {
-				RowDefinitions = new RowDefinitionCollection {
-					new RowDefinition {
-						Height = new GridLength (1, GridUnitType.Star)
-					}
-				},
-				ColumnDefinitions = new ColumnDefinitionCollection {
-					new ColumnDefinition {
-						Width = new GridLength (0.75, GridUnitType.Star)
-					},
-					new ColumnDefinition {
-						Width = new GridLength (0.25, GridUnitType.Star)
-					},
-				},
-				BackgroundColor = Color.White
-			};
+		placeNameLabel.BindingContext = _extendedMap;
+
+		placeNameLabel.SetBinding<ExtendedMap> (Label.TextProperty, vm => vm.SelectedPin.Label);
+
+		var addressLabel = new Label {
+			Text = "Address Shows Here",
+			TextColor = Color.Gray,
+		};
+
+		Device.OnPlatform (iOS: () => addressLabel.FontSize = 14,
+			Android: () => addressLabel.FontSize = 14,
+			WinPhone: () => addressLabel.FontSize = 18);
+
+		addressLabel.BindingContext = _extendedMap;
+		addressLabel.SetBinding<ExtendedMap> (Label.TextProperty, vm => vm.SelectedPin.Address);
+
+			footerMasterLayout.Children.Add (
+				placeNameLabel,
+				Constraint.RelativeToParent ((parent) => {
+					return (parent.Width * 0.05);
+				}),
+				Constraint.RelativeToParent ((parent) => {
+					return (parent.Height * 0.12);
+				}),
+				Constraint.RelativeToParent ((parent) => {
+					return (parent.Width * 0.9);
+				}),
+				Constraint.RelativeToParent ((parent) => {
+					return (parent.Height * 1);
+				})
+			);
+
+			footerMasterLayout.Children.Add (
+				addressLabel,
+				Constraint.RelativeToParent ((parent) => {
+					return (parent.Width * 0.05);
+				}),
+				Constraint.RelativeToParent ((parent) => {
+					return (parent.Height * 0.52);
+				}),
+				Constraint.RelativeToParent ((parent) => {
+					return (parent.Width * 0.9);
+				}),
+				Constraint.RelativeToParent ((parent) => {
+					return (parent.Height * 1);
+				})
+			);
+
+			var tappableRegion = new StackLayout { BackgroundColor = Color.Transparent };
+
+			tappableRegion.GestureRecognizers.Add (new TapGestureRecognizer {
+								Command = new Command (ToogleFooter)
+							});
+
+			footerMasterLayout.Children.Add (
+				tappableRegion,
+				Constraint.RelativeToParent ((parent) => {
+					return (parent.Width * 0);
+				}),
+				Constraint.RelativeToParent ((parent) => {
+					return (parent.Height * 0);
+				}),
+				Constraint.RelativeToParent ((parent) => {
+					return (parent.Width * 0.85);
+				}),
+				Constraint.RelativeToParent ((parent) => {
+					return (parent.Height * 1);
+				})
+			);
 
 
-			var placeNameLabel = new Label {
-				Text = "Pin Label Shows Here",
-				TextColor = Color.Black,
-			};
+		var navigationImageButton = CreateImageButton ("navigate-icon.svg", (200),
+							                            (200), () => {
+							var selectedPin = _extendedMap.SelectedPin;
+							DependencyService.Get<IPhoneService> ().LaunchNavigationAsync (new NavigationModel {
+								Latitude = selectedPin.Position.Latitude,
+								Longitude = selectedPin.Position.Longitude,
+								DestinationAddress = selectedPin.Address,
+								DestinationName = selectedPin.Label
+							});
+						});
+			
 
-			Device.OnPlatform (iOS: () => placeNameLabel.FontSize = 20,
-				Android: () => placeNameLabel.FontSize = 20,
-				WinPhone: () => placeNameLabel.FontSize = 24);
+		footerMasterLayout.Children.Add (
+			navigationImageButton,
+			Constraint.RelativeToParent ((parent) => {
+				return (parent.Width * 0.8);
+			}),
+			Constraint.RelativeToParent ((parent) => {
+				return (parent.Height * -0.4);
+			}),
+			Constraint.RelativeToParent ((parent) => {
+				return (parent.Width * 0.16);
+			}),
+			Constraint.RelativeToParent ((parent) => {
+				return (parent.Height * 0.7);
+			})
+		);
 
-			placeNameLabel.BindingContext = _extendedMap;
 
-			placeNameLabel.SetBinding<ExtendedMap> (Label.TextProperty, vm => vm.SelectedPin.Label);
+		var footerHeight = 0.23;
 
-			var addressLabel = new Label {
-				Text = "Address Shows Here",
-				TextColor = Color.Gray,
-			};
+		Device.OnPlatform (iOS: () => footerHeight = 0.16,
+			Android: () => footerHeight = 0.16,
+			WinPhone: () => footerHeight = 0.23);
 
-			Device.OnPlatform (iOS: () => addressLabel.FontSize = 14,
-				Android: () => addressLabel.FontSize = 14,
-				WinPhone: () => addressLabel.FontSize = 18);
+		var footerLayout = new RelativeLayout ();
 
-			addressLabel.BindingContext = _extendedMap;
-			addressLabel.SetBinding<ExtendedMap> (Label.TextProperty, vm => vm.SelectedPin.Address);
+		footerLayout.Children.Add (
+			footerMasterLayout,
+			Constraint.RelativeToParent ((parent) => {
+				return (parent.Width * 0);
+			}),
+			Constraint.RelativeToParent ((parent) => {
+				return (parent.Height * 0);
+			}),
+			Constraint.RelativeToParent ((parent) => {
+				return (parent.Width * 1);
+			}),
+			Constraint.RelativeToParent ((parent) => {
+				return (parent.Height * footerHeight);
+			})
+		);
 
-			var pinInfoStackLayout = new StackLayout { Padding = new Thickness (0, 5, 0, 0) };
+			var footerDetailsHeight = Math.Round (1 - footerHeight, 2);
 
-			pinInfoStackLayout.Children.Add (placeNameLabel);
-			pinInfoStackLayout.Children.Add (addressLabel);
-			pinInfoStackLayout.Spacing = 0;
+			footerLayout.Children.Add (CreateFooterDetails (footerDetailsHeight),
+				Constraint.RelativeToParent ((parent) => {
+					return (parent.Width * 0);
+				}),
+				Constraint.RelativeToParent ((parent) => {
+					return (parent.Height * footerHeight);
+				}),
+				Constraint.RelativeToParent ((parent) => {
+					return (parent.Width * 1);
+				}),
+				Constraint.RelativeToParent ((parent) => {
+					return (parent.Height * footerDetailsHeight);
+				})
+			);
 
-			footerGrid.Children.Add (pinInfoStackLayout, 0, 0);
+//			footerMainGrid.Children.Add (CreateFooterDetails (footerHeight, footerTopSectionHeight), 0, 1);
+//
+//			footerMainGrid.Children [1].GestureRecognizers.Add (new TapGestureRecognizer {
+//				Command = new Command (ToogleFooter)
+//			});
 
-			var footerTopSectionHeight = footerHeight * 0.2;
-
-			var navigationImageButton = CreateImageButton ("navigate-icon.svg", (footerTopSectionHeight / 2),
-				                            (footerTopSectionHeight / 1.5), () => {
-				var selectedPin = _extendedMap.SelectedPin;
-				DependencyService.Get<IPhoneService> ().LaunchNavigationAsync (new NavigationModel {
-					Latitude = selectedPin.Position.Latitude,
-					Longitude = selectedPin.Position.Longitude,
-					DestinationAddress = selectedPin.Address,
-					DestinationName = selectedPin.Label
-				});
-			});
-
-			navigationImageButton.Padding = new Thickness (0, (footerTopSectionHeight / 2) * -1, 0, (footerTopSectionHeight / 2));
-			footerGrid.Children.Add (navigationImageButton, 1, 0);
-
-			footerMasterGrid.Children.Add (footerGrid, 1, 0);
-
-			footerMasterGrid.Children [0].GestureRecognizers.Add (new TapGestureRecognizer {
-				Command = new Command (ToogleFooter)
-			});
-
-			footerMainGrid.Children.Add (CreateFooterDetails (footerHeight, footerTopSectionHeight), 0, 1);
-			footerMainGrid.Children.Add (footerMasterGrid, 0, 0);
-
-			footerMainGrid.Children [1].GestureRecognizers.Add (new TapGestureRecognizer {
-				Command = new Command (ToogleFooter)
-			});
-
-			return new ContentView { Content = footerMainGrid, BackgroundColor = Color.White };
+			return new ContentView { Content = footerLayout, BackgroundColor = Color.Red };
 		}
 
-		private ScrollView CreateFooterDetails (double footerDetailsHeight, double footerTopSectionHeight)
+		private ScrollView CreateFooterDetails (double footerDetailsHeight)
 		{
 			var footerDetailsGrid = new Grid {
 				RowDefinitions = new RowDefinitionCollection {
@@ -290,15 +355,30 @@ namespace ExtendedMap.Forms.Plugin.Abstractions
 				Padding = new Thickness (0, 0, 0, 0)
 			};
 
-			footerDetailsGrid.Children.Add (CreateActionButtonsGrid (footerTopSectionHeight), 1, 0);
-			footerDetailsGrid.Children.Add (CreateScheduleGrid (), 1, 1);
-			footerDetailsGrid.Children.Add (CreateOtherView (), 1, 2);
+			var relativeLayout = new RelativeLayout ();
+			//todo : change height from 200 to relative
+			relativeLayout.Children.Add (CreateActionButtonsGrid (200),
+				Constraint.RelativeToParent ((parent) => {
+					return (parent.Width * 0);
+				}),
+				Constraint.RelativeToParent ((parent) => {
+					return (parent.Height * 0);
+				}),
+				Constraint.RelativeToParent ((parent) => {
+					return (parent.Width * 1);
+				}),
+				Constraint.RelativeToParent ((parent) => {
+					return (parent.Height * 0.15);
+				})
+			);
+
+
+//			footerDetailsGrid.Children.Add (CreateActionButtonsGrid (footerTopSectionHeight), 1, 0);
+//			footerDetailsGrid.Children.Add (CreateScheduleGrid (), 1, 1);
+//			footerDetailsGrid.Children.Add (CreateOtherView (), 1, 2);
 
 			return new ScrollView {
-				Content = new ContentView {
-					Content = footerDetailsGrid,
-					HeightRequest = footerDetailsHeight
-				},
+				Content = relativeLayout
 			};
 		}
 

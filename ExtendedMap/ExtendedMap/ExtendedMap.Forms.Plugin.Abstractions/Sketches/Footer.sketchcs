@@ -1,0 +1,110 @@
+﻿```xml
+<Manifest>
+  <AgentType>Android_Forms</AgentType>
+  <Resources />
+  <TimeoutSeconds>0</TimeoutSeconds>
+</Manifest>
+```
+```csharp
+// Sketch your next great idea!
+
+using Xamarin.Forms;
+
+
+var footerMasterLayout = new RelativeLayout ();
+
+var placeNameLabel = new Label {
+	Text = "Pin Label Shows Here",
+	TextColor = Color.Black,
+};
+
+Device.OnPlatform (iOS: () => placeNameLabel.FontSize = 20,
+	Android: () => placeNameLabel.FontSize = 20,
+	WinPhone: () => placeNameLabel.FontSize = 24);
+
+var addressLabel = new Label {
+	Text = "Address Shows Here",
+	TextColor = Color.Gray,
+};
+
+Device.OnPlatform (iOS: () => addressLabel.FontSize = 14,
+	Android: () => addressLabel.FontSize = 14,
+	WinPhone: () => addressLabel.FontSize = 18);
+
+
+var pinInfoStackLayout = new StackLayout { BackgroundColor = Color.Blue };
+
+pinInfoStackLayout.Children.Add (placeNameLabel);
+pinInfoStackLayout.Children.Add (addressLabel);
+pinInfoStackLayout.Spacing = 0;
+
+footerMasterLayout.Children.Add (
+	pinInfoStackLayout,
+	Constraint.RelativeToParent ((parent) => {
+		return (parent.Width * 0.03);
+	}),
+	Constraint.RelativeToParent ((parent) => {
+		return (parent.Height * 0);
+	}),
+	Constraint.RelativeToParent ((parent) => {
+		return (parent.Width * 0.9);
+	}),
+	Constraint.RelativeToParent ((parent) => {
+		return (parent.Height * 1);
+	})
+);
+
+
+var navigationImageButton = new BoxView {BackgroundColor = Color.Red};
+
+footerMasterLayout.Children.Add (
+	navigationImageButton,
+	Constraint.RelativeToParent ((parent) => {
+		return (parent.Width * 0.85);
+	}),
+	Constraint.RelativeToParent ((parent) => {
+		return (parent.Height * -0.5);
+	}),
+	Constraint.RelativeToParent ((parent) => {
+		return (parent.Width * 0.15);
+	}),
+	Constraint.RelativeToParent ((parent) => {
+		return (parent.Height * 0.9);
+	})
+);
+
+var footerLayout = new RelativeLayout ();
+
+footerLayout.Children.Add (
+	footerMasterLayout,
+	Constraint.RelativeToParent ((parent) => {
+		return (parent.Width * 0.03);
+	}),
+	Constraint.RelativeToParent ((parent) => {
+		return (parent.Height * 0);
+	}),
+	Constraint.RelativeToParent ((parent) => {
+		return (parent.Width * 0.9);
+	}),
+	Constraint.RelativeToParent ((parent) => {
+		return (parent.Height * 0.1);
+	})
+);
+
+//
+//			footerMasterGrid.Children.Add (footerGrid, 1, 0);
+//
+//			footerMasterGrid.Children [0].GestureRecognizers.Add (new TapGestureRecognizer {
+//				Command = new Command (ToogleFooter)
+//			});
+//
+//			footerMainGrid.Children.Add (CreateFooterDetails (footerHeight, footerTopSectionHeight), 0, 1);
+//			footerMainGrid.Children.Add (footerMasterGrid, 0, 0);
+//
+//			footerMainGrid.Children [1].GestureRecognizers.Add (new TapGestureRecognizer {
+//				Command = new Command (ToogleFooter)
+//			});
+
+RootPage.Children.Add(new ContentPage {Content = footerLayout})
+```
+
