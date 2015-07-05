@@ -150,13 +150,14 @@ namespace ExtendedMap.Forms.Plugin.Abstractions
 
 
 			_footer.FooterModeChanged += (e, footerMode) => {
+
 				if(footerMode == FooterMode.Minimized || footerMode == FooterMode.Hidden)
 				{
 					footerMasterLayout.BackgroundColor = Color.White;
 					placeNameLabel.TextColor = Color.Black;
 					addressLabel.TextColor = Color.Gray;
 					navigationImageButtonExpanded.IsVisible = false;
-					navigationImageButton.IsVisible = true;
+					navigationImageButton.IsVisible = footerMode != FooterMode.Hidden;
 				}
 				else{
 					footerMasterLayout.BackgroundColor = Color.FromHex ("#4a8bf5");

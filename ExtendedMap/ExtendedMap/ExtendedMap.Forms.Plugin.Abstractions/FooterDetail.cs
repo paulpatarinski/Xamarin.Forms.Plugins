@@ -156,7 +156,7 @@ namespace ExtendedMap.Forms.Plugin.Abstractions
 				BackgroundColor = Color.White
 			};
 
-			var listview = new ListView ();
+			var listview = new ListView {SeparatorVisibility = SeparatorVisibility.None};
 
 			//Don't allow selection
 			listview.ItemSelected += (sender, e) => {
@@ -184,12 +184,10 @@ namespace ExtendedMap.Forms.Plugin.Abstractions
 		{
 			var contentView = new ContentView { BackgroundColor = Color.White };
 
-			var listview = new ListView ();
+			var listview = new ListView {SeparatorVisibility = SeparatorVisibility.None};
 
 			//Don't allow selection
 			listview.ItemSelected += (sender, e) => {
-				
-
 				listview.SelectedItem = null;
 			};
 
