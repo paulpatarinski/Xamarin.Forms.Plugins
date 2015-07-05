@@ -45,10 +45,10 @@ namespace ExtendedMap.Forms.Plugin.Abstractions
 
 			relativeLayout.Children.Add (CreateScheduleGrid (),
 				Constraint.RelativeToParent ((parent) => {
-					return (parent.Width * 0.05);
+					return (parent.Width * 0);
 				}),
 				Constraint.RelativeToParent ((parent) => {
-					return (parent.Height * 0.15);
+					return (parent.Height * 0.12);
 				}),
 				Constraint.RelativeToParent ((parent) => {
 					return (parent.Width * 1);
@@ -165,6 +165,7 @@ namespace ExtendedMap.Forms.Plugin.Abstractions
 
 			var itemTemplate = new DataTemplate (typeof(ExtendedTextCell));
 
+			itemTemplate.SetValue (ExtendedTextCell.ThicknessProperty, new Thickness(40,0,0,0));
 			itemTemplate.SetValue (ExtendedTextCell.LeftColumnWidthProperty, new GridLength (1.0, GridUnitType.Star));
 			itemTemplate.SetBinding (ExtendedTextCell.LeftTextProperty, "Day");
 			itemTemplate.SetValue (ExtendedTextCell.LeftTextColorProperty, Color.Black);
