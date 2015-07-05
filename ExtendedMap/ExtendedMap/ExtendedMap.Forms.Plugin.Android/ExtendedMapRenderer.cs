@@ -109,7 +109,7 @@ namespace ExtendedMap.Forms.Plugin.Droid
 
     private void HandleMapClick(object sender, GoogleMap.MapClickEventArgs e)
     {
-      _customMapContentView.FooterMode = FooterMode.Hidden;
+      _customMapContentView.Footer.FooterMode = FooterMode.Hidden;
 
       ResetPrevioslySelectedMarker();
     }
@@ -143,9 +143,9 @@ namespace ExtendedMap.Forms.Plugin.Droid
 
       _customMap.SelectedPinAddress = currentMarker.Snippet;
 
-      if (_customMapContentView.FooterMode == FooterMode.Hidden)
+      if (_customMapContentView.Footer.FooterMode == FooterMode.Hidden)
       {
-        _customMapContentView.FooterMode = FooterMode.Minimized;
+        _customMapContentView.Footer.FooterMode = FooterMode.Minimized;
       }
 
       _previouslySelectedPin = _customMap.SelectedPin;

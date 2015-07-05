@@ -58,7 +58,7 @@ namespace ExtendedMap.Forms.Plugin.iOS
 
     private void MapDelegateOnMapTapped(object sender, EventArgs eventArgs)
     {
-     _customMapContentView.FooterMode = FooterMode.Hidden;
+		_customMapContentView.Footer.FooterMode = FooterMode.Hidden;
     }
 
     //todo implement map center
@@ -96,9 +96,9 @@ namespace ExtendedMap.Forms.Plugin.iOS
     {
       _customMap.SelectedPinAddress = e.Subtitle;
 
-      if (_customMapContentView.FooterMode == FooterMode.Hidden)
+      if (_customMapContentView.Footer.FooterMode == FooterMode.Hidden)
       {
-        _customMapContentView.FooterMode = FooterMode.Minimized;
+        _customMapContentView.Footer.FooterMode = FooterMode.Minimized;
       }
     }
   }

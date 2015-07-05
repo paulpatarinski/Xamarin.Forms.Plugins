@@ -71,9 +71,9 @@ namespace ExtendedMap.Forms.Plugin.Abstractions
           throw new Exception("Not able to retrieve the parent of the ExtendedMap");
 
         //Set the Expanded to Expanded (otherwise for some reason the footer minimizes)
-        if (parent.FooterMode == FooterMode.Expanded)
+        if (parent.Footer.FooterMode == FooterMode.Expanded)
         {
-          parent.FooterMode = FooterMode.Expanded;
+					parent.Footer.FooterMode = FooterMode.Expanded;
         }
 
         CenterOnPosition = selectedPin.Position;
