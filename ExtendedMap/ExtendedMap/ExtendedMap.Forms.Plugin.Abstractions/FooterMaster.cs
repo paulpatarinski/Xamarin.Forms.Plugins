@@ -99,30 +99,8 @@ namespace ExtendedMap.Forms.Plugin.Abstractions
 				})
 			);
 
-			var tappableRegion = new StackLayout { BackgroundColor = Color.Transparent };
 
-			tappableRegion.GestureRecognizers.Add (new TapGestureRecognizer {
-				Command = new Command (_footer.ToogleFooter)
-			});	
-
-			footerMasterLayout.Children.Add (
-				tappableRegion,
-				Constraint.RelativeToParent ((parent) => {
-					return (parent.Width * 0);
-				}),
-				Constraint.RelativeToParent ((parent) => {
-					return (parent.Height * 0);
-				}),
-				Constraint.RelativeToParent ((parent) => {
-					return (parent.Width * 0.85);
-				}),
-				Constraint.RelativeToParent ((parent) => {
-					return (parent.Height * 1);
-				})
-			);
-
-
-			var navigationImageButton = _uiHelper.CreateImageButton ("navigate-icon.svg", (250),
+			var navigationImageButton = _uiHelper.CreateImageButton ("navigate-icon.svg", (200),
 				(200), () => {
 					var selectedPin = _extendedMap.SelectedPin;
 					DependencyService.Get<IPhoneService> ().LaunchNavigationAsync (new NavigationModel {
@@ -136,14 +114,69 @@ namespace ExtendedMap.Forms.Plugin.Abstractions
 
 			footerMasterLayout.Children.Add (
 				navigationImageButton,
+				Constraint.RelativeToParent ((parent) => (parent.Width * 0.79)),
+				Constraint.RelativeToParent ((parent) => (parent.Height * -0.5)),
+				Constraint.RelativeToParent ((parent) => (parent.Width * 0.168)),
+				Constraint.RelativeToParent ((parent) => (parent.Height * 1))
+			);
+
+
+			var navigationImageButtonExpanded = _uiHelper.CreateImageButton ("navigate-icon-expanded.svg", (200),
+				(200), () => {
+					var selectedPin = _extendedMap.SelectedPin;
+					DependencyService.Get<IPhoneService> ().LaunchNavigationAsync (new NavigationModel {
+						Latitude = selectedPin.Position.Latitude,
+						Longitude = selectedPin.Position.Longitude,
+						DestinationAddress = selectedPin.Address,
+						DestinationName = selectedPin.Label
+					});
+				});
+
+			navigationImageButtonExpanded.IsVisible = false;
+
+			footerMasterLayout.Children.Add (
+				navigationImageButtonExpanded,
+				Constraint.RelativeToParent ((parent) => (parent.Width * 0.79)),
+				Constraint.RelativeToParent ((parent) => (parent.Height * -0.5)),
+				Constraint.RelativeToParent ((parent) => (parent.Width * 0.168)),
+				Constraint.RelativeToParent ((parent) => (parent.Height * 1))
+			);
+
+			var tappableRegion = new StackLayout { BackgroundColor = Color.Transparent };
+
+			tappableRegion.GestureRecognizers.Add (new TapGestureRecognizer {
+				Command = new Command (_footer.ToogleFooter)
+			});
+
+
+			_footer.FooterModeChanged += (e, footerMode) => {
+				if(footerMode == FooterMode.Minimized || footerMode == FooterMode.Hidden)
+				{
+					footerMasterLayout.BackgroundColor = Color.White;
+					placeNameLabel.TextColor = Color.Black;
+					addressLabel.TextColor = Color.Gray;
+					navigationImageButtonExpanded.IsVisible = false;
+					navigationImageButton.IsVisible = true;
+				}
+				else{
+					footerMasterLayout.BackgroundColor = Color.FromHex ("#4a8bf5");
+					placeNameLabel.TextColor = Color.White;
+					addressLabel.TextColor = Color.White;
+					navigationImageButtonExpanded.IsVisible = true;
+					navigationImageButton.IsVisible = false;
+				}	
+			};
+
+			footerMasterLayout.Children.Add (
+				tappableRegion,
 				Constraint.RelativeToParent ((parent) => {
-					return (parent.Width * 0.79);
+					return (parent.Width * 0);
 				}),
 				Constraint.RelativeToParent ((parent) => {
-					return (parent.Height * -0.5);
+					return (parent.Height * 0);
 				}),
 				Constraint.RelativeToParent ((parent) => {
-					return (parent.Width * 0.168);
+					return (parent.Width * 0.85);
 				}),
 				Constraint.RelativeToParent ((parent) => {
 					return (parent.Height * 1);

@@ -1,7 +1,6 @@
-﻿using System;
-using Xamarin.Forms;
+﻿using Xamarin.Forms;
 using ExtendedMap.Forms.Plugin.Abstractions.Services;
-using ExtendedMap.Forms.Plugin.Abstractions.Models;
+using System;
 
 namespace ExtendedMap.Forms.Plugin.Abstractions
 {
@@ -20,34 +19,18 @@ namespace ExtendedMap.Forms.Plugin.Abstractions
 
 			footerLayout.Children.Add (
 				new FooterMaster(_extendedMap, _uiHelper, this),
-				Constraint.RelativeToParent ((parent) => {
-					return (parent.Width * 0);
-				}),
-				Constraint.RelativeToParent ((parent) => {
-					return (parent.Height * 0);
-				}),
-				Constraint.RelativeToParent ((parent) => {
-					return (parent.Width * 1);
-				}),
-				Constraint.RelativeToParent ((parent) => {
-					return (parent.Height * 0.15);
-				})
+				Constraint.RelativeToParent ((parent) => (parent.Width * 0)),
+				Constraint.RelativeToParent ((parent) => (parent.Height * 0)),
+				Constraint.RelativeToParent ((parent) => (parent.Width * 1)),
+				Constraint.RelativeToParent ((parent) => (parent.Height * 0.15))
 			);
 
 			footerLayout.Children.Add (
 				new FooterDetail(_uiHelper, _extendedMap, this),
-				Constraint.RelativeToParent ((parent) => {
-					return (parent.Width * 0);
-				}),
-				Constraint.RelativeToParent ((parent) => {
-					return (parent.Height * 0.149);
-				}),
-				Constraint.RelativeToParent ((parent) => {
-					return (parent.Width * 1);
-				}),
-				Constraint.RelativeToParent ((parent) => {
-					return (parent.Height * 1);
-				})
+				Constraint.RelativeToParent ((parent) => (parent.Width * 0)),
+				Constraint.RelativeToParent ((parent) => (parent.Height * 0.149)),
+				Constraint.RelativeToParent ((parent) => (parent.Width * 1)),
+				Constraint.RelativeToParent ((parent) => (parent.Height * 1))
 			);
 
 			Content = footerLayout;
@@ -58,6 +41,7 @@ namespace ExtendedMap.Forms.Plugin.Abstractions
 		private double _pageHeight;
 		private double _minimizedFooterY;
 		private double _expandedFooterY;
+		public event EventHandler<FooterMode> FooterModeChanged;
 
 		private const uint COLLAPSE_ANIMATION_SPEED = 400;
 		private const uint EXPAND_ANIMATION_SPEED = 400;
@@ -80,8 +64,15 @@ namespace ExtendedMap.Forms.Plugin.Abstractions
 					HideFooter ();
 					break;
 				}
+
+				if(FooterModeChanged != null)
+				{
+					FooterModeChanged (this, value);
+				}
 			}
 		}
+
+	 
 
 		private void HideFooter ()
 		{
