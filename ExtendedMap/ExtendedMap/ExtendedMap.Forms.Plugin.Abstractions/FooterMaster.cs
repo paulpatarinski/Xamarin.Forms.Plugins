@@ -55,7 +55,7 @@ namespace ExtendedMap.Forms.Plugin.Abstractions
 					return (parent.Width * 0.05);
 				}),
 				Constraint.RelativeToParent ((parent) => {
-					return (parent.Height * 0.12);
+					return (parent.Height * 0.16);
 				}),
 				Constraint.RelativeToParent ((parent) => {
 					return (parent.Width * 0.9);
@@ -85,7 +85,7 @@ namespace ExtendedMap.Forms.Plugin.Abstractions
 
 			tappableRegion.GestureRecognizers.Add (new TapGestureRecognizer {
 				Command = new Command (_footer.ToogleFooter)
-			});
+			});	
 
 			footerMasterLayout.Children.Add (
 				tappableRegion,
