@@ -109,13 +109,9 @@ namespace ExtendedMap.Forms.Plugin.Abstractions
 
 			var websiteButton = _uiHelper.CreateImageButton ("browser-icon.svg", "WEBSITE", (footerTopSectionHeight / 2),
 				(footerTopSectionHeight / 2), (view, o) => {
-					var selectedPin = _extendedMap.SelectedPin;
-					var shareText =
-						string.IsNullOrEmpty(_extendedMap.ShareText)
-						? string.Format("Let's meet at {0},{1}",
-							selectedPin.Label, selectedPin.Address)
-						: _extendedMap.ShareText;
-					DependencyService.Get<IPhoneService> ().ShareText (shareText);
+					var websiteUrl = _extendedMap.SelectedPin.Website;
+
+					DependencyService.Get<IPhoneService> ().OpenBrowser (websiteUrl);
 				});
 
 
@@ -192,11 +188,7 @@ namespace ExtendedMap.Forms.Plugin.Abstractions
 
 			//Don't allow selection
 			listview.ItemSelected += (sender, e) => {
-				var url = e.SelectedItem as ExtraDetailModel;
-
-				if (url != null && url.Value.Contains ("www")) {
-					DependencyService.Get<IPhoneService> ().OpenBrowser (url.Value);
-				}
+				
 
 				listview.SelectedItem = null;
 			};

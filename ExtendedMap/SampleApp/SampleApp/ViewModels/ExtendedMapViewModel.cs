@@ -24,6 +24,7 @@ namespace SampleApp.ViewModels
             Position = new Position(42.0412592, -87.8534305),
             PinIcon = Icons.FoodBowl,
             PhoneNumber = "(847)795-0600",
+			Website = "http://www.portillos.com/",
             ScheduleEntries = new List<ScheduleEntry>
             {
               new ScheduleEntry
@@ -37,14 +38,14 @@ namespace SampleApp.ViewModels
                 HoursOfOperation = "9:00 am - 5:00pm"
               }
             },
-            Others = new List<ExtraDetailModel>
-            {
-              new ExtraDetailModel
-              {
-                Key = "Website",
-                Value = "http://www.portillos.com/"
-              }
-            }
+//            Others = new List<ExtraDetailModel>
+//            {
+//              new ExtraDetailModel
+//              {
+//                Key = "Website",
+//                Value = "http://www.portillos.com/"
+//              }
+//            }
           });
 
 
@@ -55,7 +56,8 @@ namespace SampleApp.ViewModels
             Position = new Position(42.0399843, -87.8444183),
             PinIcon = Icons.Chicken,
             PhoneNumber = "(847)324-4150",
-            ScheduleEntries = new List<ScheduleEntry>
+			Website = "http://www.himalayanrestaurant.com/",
+			ScheduleEntries = new List<ScheduleEntry>
             {
               new ScheduleEntry
               {
@@ -68,14 +70,14 @@ namespace SampleApp.ViewModels
                 HoursOfOperation = "9:00 am - 5:00pm"
               }
             },
-            Others = new List<ExtraDetailModel>
-            {
-              new ExtraDetailModel
-              {
-                Key = "Website",
-                Value = "http://www.himalayanrestaurant.com/"
-              }
-            }
+//            Others = new List<ExtraDetailModel>
+//            {
+//              new ExtraDetailModel
+//              {
+//                Key = "Website",
+//                Value = "http://www.himalayanrestaurant.com/"
+//              }
+//            }
           });
         });
       }

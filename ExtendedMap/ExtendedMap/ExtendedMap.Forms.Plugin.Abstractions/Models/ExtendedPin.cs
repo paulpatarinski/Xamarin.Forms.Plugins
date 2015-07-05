@@ -13,12 +13,14 @@ namespace ExtendedMap.Forms.Plugin.Abstractions.Models
 
 		public string PhoneNumber { get; set; }
 
+		public string Website { get; set; }
+
 		public Position Position { get; set; }
 
 		public List<ScheduleEntry> ScheduleEntries { get; set; }
 
 		/// <summary>
-		/// Other data relevant to the pin. ie. Website Url, 
+		/// Other data relevant to the pin. 
 		/// </summary>
 		/// <value>The others.</value>
 		public List<ExtraDetailModel> Others { get; set; }

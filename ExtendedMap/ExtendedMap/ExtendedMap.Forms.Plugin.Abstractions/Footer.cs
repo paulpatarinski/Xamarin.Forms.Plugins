@@ -40,7 +40,7 @@ namespace ExtendedMap.Forms.Plugin.Abstractions
 					return (parent.Width * 0);
 				}),
 				Constraint.RelativeToParent ((parent) => {
-					return (parent.Height * 0.15);
+					return (parent.Height * 0.149);
 				}),
 				Constraint.RelativeToParent ((parent) => {
 					return (parent.Width * 1);
