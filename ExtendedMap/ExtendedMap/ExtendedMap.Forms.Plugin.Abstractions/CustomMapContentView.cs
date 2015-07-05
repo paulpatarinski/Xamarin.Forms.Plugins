@@ -39,7 +39,7 @@ namespace ExtendedMap.Forms.Plugin.Abstractions
 			if (Math.Abs (_pageHeight) < 0.001 && height > 0) {
 				_pageHeight = Bounds.Height;
 				const double collapsedMapHeight = 0.37;
-				const double expandedMapHeight = 0.86;
+				const double expandedMapHeight = 0.87;
 				const double expandedFooterHeight = 0.63;
 
 				var minimizedFooterY = _pageHeight * expandedMapHeight;
