@@ -35,7 +35,7 @@ namespace ExtendedMap.Forms.Plugin.Abstractions
 			);
 
 			footerLayout.Children.Add (
-				new FooterDetail(_uiHelper, _extendedMap),
+				new FooterDetail(_uiHelper, _extendedMap, this),
 				Constraint.RelativeToParent ((parent) => {
 					return (parent.Width * 0);
 				}),

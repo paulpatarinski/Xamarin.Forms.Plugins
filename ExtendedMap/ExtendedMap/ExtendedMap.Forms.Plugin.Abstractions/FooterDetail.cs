@@ -8,10 +8,11 @@ namespace ExtendedMap.Forms.Plugin.Abstractions
 {
 	public class FooterDetail : ContentView
 	{
-		public FooterDetail (UIHelper uiHelper, ExtendedMap extendedMap)
+		public FooterDetail (UIHelper uiHelper, ExtendedMap extendedMap, Footer footer)
 		{
 			_uiHelper = uiHelper;
 			_extendedMap = extendedMap;
+			_footer = footer;
 
 			Content = CreateFooterDetails ();
 		}
@@ -19,6 +20,8 @@ namespace ExtendedMap.Forms.Plugin.Abstractions
 		UIHelper _uiHelper;
 
 		ExtendedMap _extendedMap;
+
+		Footer _footer;
 
 		private ScrollView CreateFooterDetails ()
 		{
@@ -68,6 +71,11 @@ namespace ExtendedMap.Forms.Plugin.Abstractions
 					return (parent.Height * 0.15);
 				})
 			);
+
+			//Make the Details section Toggle the footer when tapped
+			relativeLayout.GestureRecognizers.Add (new TapGestureRecognizer {
+				Command = new Command (_footer.ToogleFooter)
+			});
 
 			return new ScrollView {
 				Content = relativeLayout, BackgroundColor = Color.White

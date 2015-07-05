@@ -157,30 +157,7 @@ namespace ExtendedMap.Forms.Plugin.Abstractions
 				})
 			);
 
-//			var footerDetailsHeight = Math.Round (1 - footerHeight, 2);
-//
-//			footerLayout.Children.Add (new FooterDetail (_uiHelper, _extendedMap),
-//				Constraint.RelativeToParent ((parent) => {
-//					return (parent.Width * 0);
-//				}),
-//				Constraint.RelativeToParent ((parent) => {
-//					return (parent.Height * footerHeight);
-//				}),
-//				Constraint.RelativeToParent ((parent) => {
-//					return (parent.Width * 1);
-//				}),
-//				Constraint.RelativeToParent ((parent) => {
-//					return (parent.Height * footerDetailsHeight);
-//				})
-//			);
-
-			//			footerMainGrid.Children.Add (CreateFooterDetails (footerHeight, footerTopSectionHeight), 0, 1);
-			//
-			//			footerMainGrid.Children [1].GestureRecognizers.Add (new TapGestureRecognizer {
-			//				Command = new Command (ToogleFooter)
-			//			});
-
-			return new ContentView { Content = footerLayout, BackgroundColor = Color.Red };
+			return new ContentView { Content = footerLayout, BackgroundColor = Color.White };
 		}
 
 	}
