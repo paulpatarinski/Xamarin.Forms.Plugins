@@ -25,7 +25,7 @@ namespace ExtendedMap.Forms.Plugin.Abstractions.Services
 				},
 				BackgroundColor = Color.Transparent,
 				HorizontalOptions = LayoutOptions.Center,
-				RowSpacing = 0
+				RowSpacing = 5
 			};
 
 			var navImage = new SvgImage {
@@ -61,7 +61,7 @@ namespace ExtendedMap.Forms.Plugin.Abstractions.Services
 				},
 				BackgroundColor = Color.Transparent,
 				HorizontalOptions = LayoutOptions.Center,
-				RowSpacing = 0
+				RowSpacing = 5
 			};
 
 			var navImageGrid = new Grid {
@@ -93,7 +93,7 @@ namespace ExtendedMap.Forms.Plugin.Abstractions.Services
 
 			var label = new Label {
 				Text = buttonText,
-				Font = Font.SystemFontOfSize (16),
+				Font = Font.SystemFontOfSize (14),
 				TextColor = Colors.DarkBlue,
 				HorizontalOptions = LayoutOptions.Center
 			};

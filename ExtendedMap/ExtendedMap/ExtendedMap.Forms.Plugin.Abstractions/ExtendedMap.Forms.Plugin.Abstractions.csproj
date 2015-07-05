@@ -80,6 +80,9 @@
     <EmbeddedResource Include="Images\phone-icon.svg">
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="Images\browser-icon.svg">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Images\navigate-icon.svg">

@@ -26,6 +26,7 @@ namespace ExtendedMap.Forms.Plugin.Abstractions
 		private ScrollView CreateFooterDetails ()
 		{
 			var relativeLayout = new RelativeLayout ();
+
 			//todo : change height from 200 to relative
 			relativeLayout.Children.Add (CreateActionButtonsGrid (200),
 				Constraint.RelativeToParent ((parent) => {
@@ -38,7 +39,7 @@ namespace ExtendedMap.Forms.Plugin.Abstractions
 					return (parent.Width * 1);
 				}),
 				Constraint.RelativeToParent ((parent) => {
-					return (parent.Height * 0.15);
+					return (parent.Height * 0.12);
 				})
 			);
 
@@ -83,33 +84,9 @@ namespace ExtendedMap.Forms.Plugin.Abstractions
 		}
 
 
-		private Grid CreateActionButtonsGrid (double footerTopSectionHeight)
+		private RelativeLayout CreateActionButtonsGrid (double footerTopSectionHeight)
 		{
-			var actionButtonsGrid = new Grid {
-				RowDefinitions = new RowDefinitionCollection {
-					new RowDefinition {
-						Height = new GridLength (1, GridUnitType.Star)
-					}
-				},
-				ColumnDefinitions = new ColumnDefinitionCollection {
-					new ColumnDefinition {
-						Width = new GridLength (0.2, GridUnitType.Star)
-					},
-					new ColumnDefinition {
-						Width = new GridLength (0.25, GridUnitType.Star)
-					},
-					new ColumnDefinition {
-						Width = new GridLength (0.1, GridUnitType.Star)
-					},
-					new ColumnDefinition {
-						Width = new GridLength (0.25, GridUnitType.Star)
-					},
-					new ColumnDefinition {
-						Width = new GridLength (0.2, GridUnitType.Star)
-					},
-				},
-				BackgroundColor = Color.White
-			};
+			var relativeLayout = new RelativeLayout {BackgroundColor = Color.White};
 
 			var callImageButton = _uiHelper.CreateImageButton ("phone-icon.svg", "CALL", (footerTopSectionHeight / 2),
 				(footerTopSectionHeight / 2), (view, o) => {
@@ -130,10 +107,41 @@ namespace ExtendedMap.Forms.Plugin.Abstractions
 					DependencyService.Get<IPhoneService> ().ShareText (shareText);
 				});
 
-			actionButtonsGrid.Children.Add (callImageButton, 1, 0);
-			actionButtonsGrid.Children.Add (shareImageButton, 3, 0);
+			var websiteButton = _uiHelper.CreateImageButton ("browser-icon.svg", "WEBSITE", (footerTopSectionHeight / 2),
+				(footerTopSectionHeight / 2), (view, o) => {
+					var selectedPin = _extendedMap.SelectedPin;
+					var shareText =
+						string.IsNullOrEmpty(_extendedMap.ShareText)
+						? string.Format("Let's meet at {0},{1}",
+							selectedPin.Label, selectedPin.Address)
+						: _extendedMap.ShareText;
+					DependencyService.Get<IPhoneService> ().ShareText (shareText);
+				});
 
-			return actionButtonsGrid;
+
+			relativeLayout.Children.Add (callImageButton,
+				Constraint.RelativeToParent ((parent) => (parent.Width * 0.08)),
+				Constraint.RelativeToParent ((parent) => (parent.Height * 0.2)),
+				Constraint.RelativeToParent ((parent) => (parent.Width * 0.2)),
+				Constraint.RelativeToParent ((parent) => (parent.Height * 0.65))
+			);
+
+			relativeLayout.Children.Add (shareImageButton,
+				Constraint.RelativeToParent ((parent) => (parent.Width * 0.4)),
+				Constraint.RelativeToParent ((parent) => (parent.Height * 0.2)),
+				Constraint.RelativeToParent ((parent) => (parent.Width * 0.2)),
+				Constraint.RelativeToParent ((parent) => (parent.Height * 0.65))
+			);
+
+
+			relativeLayout.Children.Add (websiteButton,
+				Constraint.RelativeToParent ((parent) => (parent.Width * 0.73)),
+				Constraint.RelativeToParent ((parent) => (parent.Height * 0.2)),
+				Constraint.RelativeToParent ((parent) => (parent.Width * 0.2)),
+				Constraint.RelativeToParent ((parent) => (parent.Height * 0.65))
+			);
+
+			return relativeLayout;
 		}
 
 		private Grid CreateScheduleGrid ()

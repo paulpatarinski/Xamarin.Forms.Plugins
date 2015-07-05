@@ -24,6 +24,24 @@ namespace ExtendedMap.Forms.Plugin.Abstractions
 		{
 			var footerMasterLayout = new RelativeLayout ();
 
+			var topBorder = new BoxView { BackgroundColor = Color.Black.MultiplyAlpha(0.2) };
+
+			footerMasterLayout.Children.Add (
+				topBorder,
+				Constraint.RelativeToParent ((parent) => {
+					return (parent.Width * 0);
+				}),
+				Constraint.RelativeToParent ((parent) => {
+					return (parent.Height * -0.01);
+				}),
+				Constraint.RelativeToParent ((parent) => {
+					return (parent.Width * 1);
+				}),
+				Constraint.RelativeToParent ((parent) => {
+					return (parent.Height * 0.02);
+				})
+			);
+
 			var placeNameLabel = new Label {
 				Text = "Pin Label Shows Here",
 				TextColor = Color.Black,
@@ -55,7 +73,7 @@ namespace ExtendedMap.Forms.Plugin.Abstractions
 					return (parent.Width * 0.05);
 				}),
 				Constraint.RelativeToParent ((parent) => {
-					return (parent.Height * 0.16);
+					return (parent.Height * 0.17);
 				}),
 				Constraint.RelativeToParent ((parent) => {
 					return (parent.Width * 0.9);
@@ -71,7 +89,7 @@ namespace ExtendedMap.Forms.Plugin.Abstractions
 					return (parent.Width * 0.05);
 				}),
 				Constraint.RelativeToParent ((parent) => {
-					return (parent.Height * 0.52);
+					return (parent.Height * 0.51);
 				}),
 				Constraint.RelativeToParent ((parent) => {
 					return (parent.Width * 0.9);
@@ -104,7 +122,7 @@ namespace ExtendedMap.Forms.Plugin.Abstractions
 			);
 
 
-			var navigationImageButton = _uiHelper.CreateImageButton ("navigate-icon.svg", (200),
+			var navigationImageButton = _uiHelper.CreateImageButton ("navigate-icon.svg", (250),
 				(200), () => {
 					var selectedPin = _extendedMap.SelectedPin;
 					DependencyService.Get<IPhoneService> ().LaunchNavigationAsync (new NavigationModel {
@@ -119,45 +137,26 @@ namespace ExtendedMap.Forms.Plugin.Abstractions
 			footerMasterLayout.Children.Add (
 				navigationImageButton,
 				Constraint.RelativeToParent ((parent) => {
-					return (parent.Width * 0.8);
+					return (parent.Width * 0.79);
 				}),
 				Constraint.RelativeToParent ((parent) => {
-					return (parent.Height * -0.4);
+					return (parent.Height * -0.5);
 				}),
 				Constraint.RelativeToParent ((parent) => {
-					return (parent.Width * 0.16);
-				}),
-				Constraint.RelativeToParent ((parent) => {
-					return (parent.Height * 0.7);
-				})
-			);
-
-
-			var footerHeight = 0.23;
-
-			Device.OnPlatform (iOS: () => footerHeight = 0.16,
-				Android: () => footerHeight = 0.16,
-				WinPhone: () => footerHeight = 0.23);
-
-			var footerLayout = new RelativeLayout ();
-
-			footerLayout.Children.Add (
-				footerMasterLayout,
-				Constraint.RelativeToParent ((parent) => {
-					return (parent.Width * 0);
-				}),
-				Constraint.RelativeToParent ((parent) => {
-					return (parent.Height * 0);
-				}),
-				Constraint.RelativeToParent ((parent) => {
-					return (parent.Width * 1);
+					return (parent.Width * 0.168);
 				}),
 				Constraint.RelativeToParent ((parent) => {
 					return (parent.Height * 1);
 				})
 			);
 
-			return new ContentView { Content = footerLayout, BackgroundColor = Color.White };
+			var footerHeight = 0.23;
+
+			Device.OnPlatform (iOS: () => footerHeight = 0.16,
+				Android: () => footerHeight = 0.16,
+				WinPhone: () => footerHeight = 0.23);
+			
+			return new ContentView { Content = footerMasterLayout, BackgroundColor = Color.White };
 		}
 
 	}
