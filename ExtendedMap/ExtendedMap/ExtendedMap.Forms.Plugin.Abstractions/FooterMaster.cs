@@ -114,7 +114,7 @@ namespace ExtendedMap.Forms.Plugin.Abstractions
 			double navImageY = 0;
 
 			Device.OnPlatform (iOS: () => {
-				navImageY = -0.5;
+				navImageY = -0.35;
 			}, Android:() => {
 				navImageY = -0.35;
 			}, WinPhone: () => {
