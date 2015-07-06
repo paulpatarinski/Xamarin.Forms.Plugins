@@ -70,8 +70,8 @@ namespace ExtendedMap.Forms.Plugin.iOS.Models
 
       if(_previouslySelectedNativePin != null)
         ResetPrevioslySelectedPin();
-      
-      view.Image = UIImage.FromFile("defaultPin.png").Scale(new CGSize(100,100));
+			
+      view.Image = UIImage.FromFile("defaultPin.png").Scale(new CGSize(40,50));
       var extendedMapAnnotation = pinAnnotationView.Annotation as ExtendedMapAnnotation;
 
 		  if (extendedMapAnnotation != null) {
