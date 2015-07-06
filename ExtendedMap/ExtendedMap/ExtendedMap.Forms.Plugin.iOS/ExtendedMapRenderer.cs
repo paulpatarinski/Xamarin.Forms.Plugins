@@ -61,16 +61,32 @@ namespace ExtendedMap.Forms.Plugin.iOS
 		_customMapContentView.Footer.FooterMode = FooterMode.Hidden;
     }
 
-    //todo implement map center
-    //protected override void OnElementPropertyChanged(object sender, PropertyChangedEventArgs e)
-    //{
-    //  if (e.PropertyName.Equals(Abstractions.ExtendedMap.CenterOnPositionProperty.PropertyName) ||
-    //      e.PropertyName.Equals(Abstractions.ExtendedMap.CameraFocusYOffsetProperty.PropertyName))
-    //  {
-    //    CenterOnLocation(new LatLng(_customMap.CenterOnPosition.Latitude, _customMap.CenterOnPosition.Longitude),
-    //      _customMap.CameraFocusYOffset);
-    //  }
-    //}
+	protected override void OnElementPropertyChanged (object sender, System.ComponentModel.PropertyChangedEventArgs e)
+	{
+		base.OnElementPropertyChanged (sender, e);
+
+			if (e.PropertyName.Equals(Abstractions.ExtendedMap.CenterOnPositionProperty.PropertyName) )
+		{
+				CenterOnLocation(new CLLocationCoordinate2D(_customMap.CenterOnPosition.Latitude, _customMap.CenterOnPosition.Longitude),
+				_customMapContentView.Footer.FooterMode);
+		}
+	}
+
+		private void CenterOnLocation(CLLocationCoordinate2D coordinates, FooterMode footerMode)
+		{
+			var center = coordinates;
+
+			if(footerMode == FooterMode.Hidden || footerMode == FooterMode.Minimized)
+			{
+				center.Latitude -= _nativeMapView.Region.Span.LatitudeDelta * 0.10;
+			}
+			else{
+				center.Latitude -= _nativeMapView.Region.Span.LatitudeDelta * 0.35;
+			}
+
+			_nativeMapView.SetCenterCoordinate (center, true);
+		}
+    
 
     private void HandleCollectionChanged(object sender, NotifyCollectionChangedEventArgs e)
     {

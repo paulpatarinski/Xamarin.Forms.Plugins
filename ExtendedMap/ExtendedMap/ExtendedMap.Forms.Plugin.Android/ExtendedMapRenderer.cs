@@ -60,11 +60,10 @@ namespace ExtendedMap.Forms.Plugin.Droid
 
     protected override void OnElementPropertyChanged(object sender, PropertyChangedEventArgs e)
     {
-      if (e.PropertyName.Equals(Abstractions.ExtendedMap.CenterOnPositionProperty.PropertyName) ||
-          e.PropertyName.Equals(Abstractions.ExtendedMap.CameraFocusYOffsetProperty.PropertyName))
+			if (e.PropertyName.Equals(Abstractions.ExtendedMap.CenterOnPositionProperty.PropertyName))
       {
         CenterOnLocation(new LatLng(_customMap.CenterOnPosition.Latitude, _customMap.CenterOnPosition.Longitude),
-          _customMap.CameraFocusYOffset);
+					_customMapContentView.Footer.FooterMode);
       }
     }
 
@@ -152,14 +151,23 @@ namespace ExtendedMap.Forms.Plugin.Droid
       _previouslySelectedNativePin = currentMarker;
     }
 
-    private void CenterOnLocation(LatLng location, int yOffset = 100)
+    private void CenterOnLocation(LatLng location, FooterMode footerMode)
     {
       var mapView = (MapView) Control;
 
       var projection = mapView.Map.Projection;
 
       var screenLocation = projection.ToScreenLocation(location);
-      screenLocation.Y += yOffset;
+
+			//todo change this to use % like iOS
+			if(footerMode == FooterMode.Hidden || footerMode == FooterMode.Minimized)
+			{
+				screenLocation.Y += 500;
+			}
+			else
+			{
+				screenLocation.Y += 1000;
+			}
 
       var offsetTarget = projection.FromScreenLocation(screenLocation);
 

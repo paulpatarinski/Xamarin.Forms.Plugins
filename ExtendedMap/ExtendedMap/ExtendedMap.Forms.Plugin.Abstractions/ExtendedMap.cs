@@ -23,7 +23,8 @@ namespace ExtendedMap.Forms.Plugin.Abstractions
       }
       set
       {
-        SetValue(CenterOnPositionProperty, value);
+				        SetValue(CenterOnPositionProperty, value);
+				OnPropertyChanged ("CenterOnPosition");	
       }
 		}
 
@@ -40,19 +41,6 @@ namespace ExtendedMap.Forms.Plugin.Abstractions
 			set{ base.SetValue (CustomPinsProperty, value); }
 		}
 
-    public static readonly BindableProperty CameraFocusYOffsetProperty = BindableProperty.Create("CameraFocusYOffsetProperty", typeof(int), typeof(ExtendedMap), default(int));
-
-    public int CameraFocusYOffset
-    {
-      get
-      {
-        return (int)GetValue(CameraFocusYOffsetProperty);
-      }
-      set
-      {
-        SetValue(CameraFocusYOffsetProperty, value);
-      }
-    }
 
     string _selectedPinAddress;
 

@@ -90,7 +90,6 @@ namespace ExtendedMap.Forms.Plugin.Abstractions
 
 			this.LayoutTo (footerNewBounds, EXPAND_ANIMATION_SPEED, Easing.SinIn);
 
-			_extendedMap.CameraFocusYOffset = 1000;
 			_extendedMap.CenterOnPosition = _extendedMap.SelectedPin.Position;
 		}
 
@@ -102,7 +101,6 @@ namespace ExtendedMap.Forms.Plugin.Abstractions
 
 			this.LayoutTo (footerNewBounds, COLLAPSE_ANIMATION_SPEED, Easing.SinIn);
 
-			_extendedMap.CameraFocusYOffset = 500;
 			_extendedMap.CenterOnPosition = _extendedMap.SelectedPin.Position;
 		}
 
