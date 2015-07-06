@@ -46,39 +46,9 @@ namespace ExtendedMap.Forms.Plugin.Abstractions.Services
 		public ContentView CreateImageButton (string buttonImage, string buttonText, double height, double width,
 			Action<View, Object> tappedCallback)
 		{
-			var grid = new Grid {
-				RowDefinitions = new RowDefinitionCollection {
-					new RowDefinition {
-						Height = new GridLength (1, GridUnitType.Star)
-					},
+			var relativeLayout = new RelativeLayout ();
 
-				},
-				ColumnDefinitions = new ColumnDefinitionCollection {
-					new ColumnDefinition {
-						Width = new GridLength (1, GridUnitType.Star)
-					},
-
-				},
-				BackgroundColor = Color.Transparent,
-				HorizontalOptions = LayoutOptions.Center,
-				RowSpacing = 5
-			};
-
-			var navImageGrid = new Grid {
-				RowDefinitions = new RowDefinitionCollection {
-					new RowDefinition {
-						Height = new GridLength (1, GridUnitType.Star)
-					}
-				},
-				ColumnDefinitions = new ColumnDefinitionCollection {
-
-					new ColumnDefinition {
-						Width = new GridLength (1, GridUnitType.Star)
-					},
-
-
-				}
-			};
+			relativeLayout.GestureRecognizers.Add (new TapGestureRecognizer (tappedCallback));
 
 			var navImage = new SvgImage {
 				SvgPath = string.Format ("ExtendedMap.Forms.Plugin.Abstractions.Images.{0}", buttonImage),
@@ -87,9 +57,13 @@ namespace ExtendedMap.Forms.Plugin.Abstractions.Services
 				WidthRequest = width
 			};
 
-			grid.GestureRecognizers.Add (new TapGestureRecognizer (tappedCallback));
+			relativeLayout.Children.Add (navImage,
+				Constraint.RelativeToParent ((parent) => (parent.Width * 0.3)),
+				Constraint.RelativeToParent ((parent) => (parent.Height * 0)),
+				Constraint.RelativeToParent ((parent) => (parent.Width * 0.45)),
+				Constraint.RelativeToParent ((parent) => (parent.Height * 0.45))
+			);
 
-			navImageGrid.Children.Add (navImage, 0, 0);
 
 			var label = new Label {
 				Text = buttonText,
@@ -98,10 +72,22 @@ namespace ExtendedMap.Forms.Plugin.Abstractions.Services
 				HorizontalOptions = LayoutOptions.Center
 			};
 
-			grid.Children.Add (navImageGrid, 0, 0);
-			grid.Children.Add (label, 0, 1);
+			var stackLayout = new StackLayout ();
 
-			return new ContentView { Content = grid };
+			stackLayout.Children.Add (label);
+
+			relativeLayout.Children.Add (stackLayout,
+				Constraint.RelativeToParent ((parent) => (parent.Width * 0)),
+				Constraint.RelativeToParent ((parent) => (parent.Height * 0.6)),
+				Constraint.RelativeToParent ((parent) => (parent.Width * 1)),
+				Constraint.RelativeToParent ((parent) => (parent.Height * 0.4))
+			);
+
+
+//			grid.Children.Add (navImageGrid, 0, 0);
+//			grid.Children.Add (label, 0, 1);
+
+			return new ContentView { Content = relativeLayout };
 		}
 
 	}

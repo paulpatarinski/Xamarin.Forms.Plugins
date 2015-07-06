@@ -111,13 +111,22 @@ namespace ExtendedMap.Forms.Plugin.Abstractions
 					});
 				});
 
+			double navImageY = 0;
+
+			Device.OnPlatform (iOS: () => {
+				navImageY = -0.5;
+			}, Android:() => {
+				navImageY = -0.35;
+			}, WinPhone: () => {
+				navImageY = -0.4;
+			});
 
 			footerMasterLayout.Children.Add (
 				navigationImageButton,
 				Constraint.RelativeToParent ((parent) => (parent.Width * 0.79)),
-				Constraint.RelativeToParent ((parent) => (parent.Height * -0.5)),
+				Constraint.RelativeToParent ((parent) => (parent.Height * navImageY)),
 				Constraint.RelativeToParent ((parent) => (parent.Width * 0.168)),
-				Constraint.RelativeToParent ((parent) => (parent.Height * 1))
+				Constraint.RelativeToParent ((parent) => (parent.Height * 0.7))
 			);
 
 
@@ -137,9 +146,9 @@ namespace ExtendedMap.Forms.Plugin.Abstractions
 			footerMasterLayout.Children.Add (
 				navigationImageButtonExpanded,
 				Constraint.RelativeToParent ((parent) => (parent.Width * 0.79)),
-				Constraint.RelativeToParent ((parent) => (parent.Height * -0.5)),
+				Constraint.RelativeToParent ((parent) => (parent.Height * navImageY)),
 				Constraint.RelativeToParent ((parent) => (parent.Width * 0.168)),
-				Constraint.RelativeToParent ((parent) => (parent.Height * 1))
+				Constraint.RelativeToParent ((parent) => (parent.Height * 0.7))
 			);
 
 			var tappableRegion = new StackLayout { BackgroundColor = Color.Transparent };
