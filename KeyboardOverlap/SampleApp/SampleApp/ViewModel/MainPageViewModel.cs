@@ -14,7 +14,8 @@ namespace SampleApp
 					_pages = new List<string> { PageTitle.EntriesOnlyPage,
 						PageTitle.TabbedPage,
 						PageTitle.WithOtherContent,
-						PageTitle.WithScrollView
+						PageTitle.WithScrollView,
+						PageTitle.SearchBar
 					};
 
 				}

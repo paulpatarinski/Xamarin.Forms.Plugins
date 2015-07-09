@@ -8,5 +8,6 @@ namespace SampleApp
 		public const string TabbedPage = "Tabbed";
 		public const string WithOtherContent = "With Other Content";
 		public const string WithScrollView = "With Scroll View";
+		public const string SearchBar = "Search Bar";
 	}
 }

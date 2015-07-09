@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 
 using Xamarin.Forms;
+using SampleApp.Pages;
 
 namespace SampleApp
 {
@@ -38,6 +39,11 @@ namespace SampleApp
 			case PageTitle.WithScrollView:
 				{
 					await Navigation.PushAsync (new WithScrollView ());
+					break;
+				}
+			case PageTitle.SearchBar:
+				{
+					await Navigation.PushAsync (new SearchBarPage ());
 					break;
 				}
 			}

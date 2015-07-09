@@ -22,7 +22,7 @@ namespace SampleApp.iOS
 		public override bool FinishedLaunching (UIApplication app, NSDictionary options)
 		{
 			Forms.Init ();
-			KeyboardOverlapPageRenderer.Init ();
+			KeyboardOverlapRenderer.Init ();
 			LoadApplication (new App ());
 
 			return base.FinishedLaunching (app, options);
