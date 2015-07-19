@@ -120,6 +120,9 @@
     <Compile Include="Pages\SearchBarPage.xaml.cs">
       <DependentUpon>SearchBarPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\MultiLineText.xaml.cs">
+      <DependentUpon>MultiLineText.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="App.xaml">
@@ -139,6 +142,9 @@
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Include="Pages\SearchBarPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\MultiLineText.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>

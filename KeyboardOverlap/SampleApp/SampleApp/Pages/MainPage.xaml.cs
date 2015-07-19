@@ -46,6 +46,11 @@ namespace SampleApp
 					await Navigation.PushAsync (new SearchBarPage ());
 					break;
 				}
+			case PageTitle.Editor:
+				{
+					await Navigation.PushAsync (new MultiLineText ());
+					break;
+				}
 			}
 		}
 	}

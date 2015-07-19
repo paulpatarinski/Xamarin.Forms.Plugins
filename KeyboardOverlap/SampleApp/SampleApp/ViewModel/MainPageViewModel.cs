@@ -15,7 +15,8 @@ namespace SampleApp
 						PageTitle.TabbedPage,
 						PageTitle.WithOtherContent,
 						PageTitle.WithScrollView,
-						PageTitle.SearchBar
+						PageTitle.SearchBar,
+						PageTitle.Editor
 					};
 
 				}

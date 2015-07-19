@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="SampleApp.Pages.MultiLineText">
+	<ContentPage.Content>
+	<StackLayout VerticalOptions="End">
+		<Editor Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc at rutrum nibh, ac gravida massa. Nam sit amet condimentum mauris. Aliquam sed lacus non elit fermentum feugiat. Nunc id lacinia nisi, id consectetur sapien. Morbi nisi justo, tincidunt et lectus in, blandit pharetra urna. Sed eget urna orci. Quisque sodales eget eros eget euismod. Maecenas vitae facilisis libero, non ornare mauris. Duis lectus nunc, ultricies at laoreet quis, ultrices et neque.
+
+Phasellus non dui consequat felis malesuada bibendum eu vel nibh. Vestibulum et mauris nec turpis malesuada suscipit vel at orci. Interdum et malesuada fames ac ante ipsum primis in faucibus. Suspendisse tempor augue vitae ipsum euismod, sed mattis turpis interdum. Mauris lacinia, dolor elementum sodales tincidunt, est nunc elementum nisi, eu mollis eros nulla fringilla magna. Nulla orci sapien, interdum vitae pellentesque eget, porttitor in diam. Duis ac lacus odio. Nam feugiat erat id quam commodo ullamcorper. Sed feugiat tempor lacinia. Sed id finibus turpis, sit amet ultrices eros. Mauris cursus mi hendrerit dui consectetur sollicitudin. Morbi sed sodales odio. Maecenas a nunc enim. Cras ut pharetra orci, vitae tempus massa. Nullam risus magna, interdum a felis ac, pellentesque aliquet nulla. Etiam imperdiet tincidunt sodales.
+
+Nunc a mauris mi. Donec malesuada diam quis tincidunt tristique. Aliquam et urna vestibulum, semper risus sed, egestas arcu. Sed vel libero congue justo accumsan porta ac nec dui. Ut venenatis turpis non rhoncus mattis. Etiam nec finibus diam, eu mollis nisi. Nulla quis dignissim nisi, vitae consectetur nisl. Proin gravida hendrerit mauris in laoreet. Vivamus sapien lacus, tincidunt eu porta a, sollicitudin et dui. Maecenas arcu erat, laoreet ac magna ac, lobortis sagittis quam. Aliquam rhoncus convallis placerat. Praesent a venenatis velit. Curabitur sit amet cursus erat. Praesent iaculis felis mi, ultricies sodales odio bibendum sit amet." HeightRequest="200"  BackgroundColor="Red"/>	
+	</StackLayout>
+	</ContentPage.Content>
+</ContentPage>
