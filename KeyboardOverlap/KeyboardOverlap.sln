@@ -181,6 +181,7 @@ Global
 		{EBD9C7E2-C5C5-47E3-A7F0-6A6BC41FCC12}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
 		{EBD9C7E2-C5C5-47E3-A7F0-6A6BC41FCC12}.Release|Nuget.ActiveCfg = Release|Any CPU
 		{EBD9C7E2-C5C5-47E3-A7F0-6A6BC41FCC12}.Release|WinPhone.ActiveCfg = Release|Any CPU
+		{EBD9C7E2-C5C5-47E3-A7F0-6A6BC41FCC12}.Release|WinPhone.Build.0 = Release|Any CPU
 		{EBD9C7E2-C5C5-47E3-A7F0-6A6BC41FCC12}.WinPhoneRelease|Android.ActiveCfg = WinPhoneRelease|Any CPU
 		{EBD9C7E2-C5C5-47E3-A7F0-6A6BC41FCC12}.WinPhoneRelease|Android.Build.0 = WinPhoneRelease|Any CPU
 		{EBD9C7E2-C5C5-47E3-A7F0-6A6BC41FCC12}.WinPhoneRelease|iPhone.ActiveCfg = WinPhoneRelease|Any CPU
