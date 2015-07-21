@@ -9,6 +9,7 @@ using ExtendedMap.Forms.Plugin.Droid;
 using Xamarin.Forms;
 using Xamarin.Forms.Maps.Android;
 using Xamarin.Forms.Platform.Android;
+using Java.Lang;
 
 [assembly: ExportRenderer(typeof (ExtendedMap.Forms.Plugin.Abstractions.ExtendedMap), typeof (ExtendedMapRenderer))]
 
@@ -45,6 +46,9 @@ namespace ExtendedMap.Forms.Plugin.Droid
       var androidMapView = (MapView) Control;
 
       _customMap.CustomPins.CollectionChanged += HandleCollectionChanged;
+
+	  if (androidMapView.Map == null)
+		  throw new Exception ("Failed initilializing the map, please make sure Google Play Services is installed on your device");
 
       androidMapView.Map.Clear();
 
