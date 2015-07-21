@@ -163,11 +163,11 @@ namespace ExtendedMap.Forms.Plugin.WindowsPhone
 
             _formsMap.SelectedPinAddress= description;
 
-            if (_customMapContentView.FooterMode == FooterMode.Hidden)
+            if (_customMapContentView.Footer.FooterMode == FooterMode.Hidden)
             {
                 Device.BeginInvokeOnMainThread(() =>
                 {
-                    _customMapContentView.FooterMode = FooterMode.Minimized;
+                    _customMapContentView.Footer.FooterMode = FooterMode.Minimized;
                 });
             }
         }
