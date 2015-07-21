@@ -165,7 +165,14 @@ namespace ExtendedMap.Forms.Plugin.Abstractions
 
 			var itemTemplate = new DataTemplate (typeof(ExtendedTextCell));
 
-			itemTemplate.SetValue (ExtendedTextCell.ThicknessProperty, new Thickness(40,0,0,0));
+		    var cellPadding = new Thickness(40, 0, 0, 0);
+
+            Device.OnPlatform(WinPhone:() =>
+		    {
+		        cellPadding = new Thickness(25,0,0,0);
+		    });
+
+			itemTemplate.SetValue (ExtendedTextCell.ThicknessProperty, cellPadding);
 			itemTemplate.SetValue (ExtendedTextCell.LeftColumnWidthProperty, new GridLength (1.0, GridUnitType.Star));
 			itemTemplate.SetBinding (ExtendedTextCell.LeftTextProperty, "Day");
 			itemTemplate.SetValue (ExtendedTextCell.LeftTextColorProperty, Color.Black);
