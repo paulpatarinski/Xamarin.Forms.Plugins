@@ -60,9 +60,21 @@ namespace ExtendedMap.Forms.Plugin.Abstractions
 				TextColor = Color.Gray,
 			};
 
-			Device.OnPlatform (iOS: () => addressLabel.FontSize = 14,
-				Android: () => addressLabel.FontSize = 14,
-				WinPhone: () => addressLabel.FontSize = 18);
+			var addressLabelY = 0.0;
+
+			Device.OnPlatform (iOS: () => {
+				addressLabel.FontSize = 14;
+				addressLabelY = 0.17;
+			},
+				Android: () => {
+					addressLabel.FontSize = 14;
+					addressLabelY = 0.12;
+				},
+				WinPhone: () => 
+				{
+					addressLabel.FontSize = 18;
+					addressLabelY = 0.17;
+				});
 
 			addressLabel.BindingContext = _extendedMap;
 			addressLabel.SetBinding<ExtendedMap> (Label.TextProperty, vm => vm.SelectedPin.Address);
@@ -73,7 +85,7 @@ namespace ExtendedMap.Forms.Plugin.Abstractions
 					return (parent.Width * 0.05);
 				}),
 				Constraint.RelativeToParent ((parent) => {
-					return (parent.Height * 0.17);
+					return (parent.Height * addressLabelY);
 				}),
 				Constraint.RelativeToParent ((parent) => {
 					return (parent.Width * 0.9);
