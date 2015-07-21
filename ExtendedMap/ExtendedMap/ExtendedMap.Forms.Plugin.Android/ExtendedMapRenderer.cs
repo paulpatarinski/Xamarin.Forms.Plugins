@@ -153,6 +153,8 @@ namespace ExtendedMap.Forms.Plugin.Droid
 
     private void CenterOnLocation(LatLng location, FooterMode footerMode)
     {
+			if (footerMode == FooterMode.Hidden)
+				return;
       var mapView = (MapView) Control;
 
       var projection = mapView.Map.Projection;
@@ -160,13 +162,13 @@ namespace ExtendedMap.Forms.Plugin.Droid
       var screenLocation = projection.ToScreenLocation(location);
 
 			//todo change this to use % like iOS
-			if(footerMode == FooterMode.Hidden || footerMode == FooterMode.Minimized)
+			if(footerMode == FooterMode.Minimized)
 			{
-				screenLocation.Y += 500;
+				screenLocation.Y -= (int)(screenLocation.Y * 0.10);
 			}
 			else
 			{
-				screenLocation.Y += 1000;
+				screenLocation.Y += (int)(screenLocation.Y * 0.55);
 			}
 
       var offsetTarget = projection.FromScreenLocation(screenLocation);
