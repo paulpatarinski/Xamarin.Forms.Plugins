@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+				x:Class="ExtendedMap.Forms.Plugin.Abstractions.Views.FooterMasterContentView"
+				 xmlns:svg="clr-namespace:SVG.Forms.Plugin.Abstractions;assembly=SVG.Forms.Plugin.Abstractions">
+	<ContentPage.Resources>
+        <ResourceDictionary>
+        <OnPlatform x:Key="LargeFontSize"
+                  x:TypeArguments="x:Double"
+                  iOS="20"
+                  Android="20"
+                  WinPhone="24" />
+
+            <Style x:Key="LargeLabelStyle" TargetType="Label">
+                <Setter Property="FontSize" Value="20"/>
+                <Setter Property="TextColor" Value="Black"/>
+            </Style>
+            <Style x:Key="DescriptionLabel" TargetType="Label">
+                <Setter Property="FontSize" Value="14"/>
+                <Setter Property="TextColor" Value="Gray"/>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+	<ContentView.Content>
+	<RelativeLayout BackgroundColor="White">
+		<BoxView 
+		 RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0}" 
+		 RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=-0.01}" 
+		 RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}" 
+		 RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=.02}" 
+		 BackgroundColor="Black"/> 
+	<Label
+	 	 RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=.05}" 
+		 RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.17}" 
+		 RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=.9}" 
+		 RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=1}" 
+	   	 Text="{Binding Address}" Style="{StaticResource LargeLabelStyle}"/>
+
+   	 <Label
+	 	 RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=.05}" 
+		 RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=.51}" 
+		 RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=.9}" 
+		 RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=1}" 
+	   	 Text="{Binding SPin.Address}" Style="{StaticResource DescriptionLabel}"/>
+	  
+<!--	  <svg:SvgImage 
+	   	 RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=.05}" 
+		 RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=.51}" 
+		 RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=.9}" 
+		 RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=1}" 
+		 SvgPath="ExtendedMap.Forms.Plugin.Abstractions.Images.navigate-icon.svg" SvgAssembly="{Binding SvgAssembly}"
+		 HeightRequest="200" WidthRequest="200"/>-->
+	   	
+	</RelativeLayout>
+	</ContentView.Content>
+</ContentView>
