@@ -115,6 +115,7 @@ namespace ExtendedMap.Forms.Plugin.Abstractions
 				});
 
 
+
 			relativeLayout.Children.Add (callImageButton,
 				Constraint.RelativeToParent ((parent) => (parent.Width * 0.08)),
 				Constraint.RelativeToParent ((parent) => (parent.Height * 0.2)),

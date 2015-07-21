@@ -50,17 +50,20 @@ namespace ExtendedMap.Forms.Plugin.Abstractions.Services
 
 			relativeLayout.GestureRecognizers.Add (new TapGestureRecognizer (tappedCallback));
 
-			var navImage = new SvgImage {
+			var svgImage = new SvgImage {
 				SvgPath = string.Format ("ExtendedMap.Forms.Plugin.Abstractions.Images.{0}", buttonImage),
 				SvgAssembly = typeof(CustomMapContentView).GetTypeInfo ().Assembly,
 				HeightRequest = height,
 				WidthRequest = width
 			};
 
-			relativeLayout.Children.Add (navImage,
-				Constraint.RelativeToParent ((parent) => (parent.Width * 0.3)),
+			var svgImageX = Device.OnPlatform (0.3,0.36,0.45);
+			var svgImageWidth = Device.OnPlatform (0.45,0.3,0.45);
+
+			relativeLayout.Children.Add (svgImage,
+				Constraint.RelativeToParent ((parent) => (parent.Width * svgImageX)),
 				Constraint.RelativeToParent ((parent) => (parent.Height * 0)),
-				Constraint.RelativeToParent ((parent) => (parent.Width * 0.45)),
+				Constraint.RelativeToParent ((parent) => (parent.Width * svgImageWidth)),
 				Constraint.RelativeToParent ((parent) => (parent.Height * 0.45))
 			);
 
@@ -83,9 +86,6 @@ namespace ExtendedMap.Forms.Plugin.Abstractions.Services
 				Constraint.RelativeToParent ((parent) => (parent.Height * 0.4))
 			);
 
-
-//			grid.Children.Add (navImageGrid, 0, 0);
-//			grid.Children.Add (label, 0, 1);
 
 			return new ContentView { Content = relativeLayout };
 		}
