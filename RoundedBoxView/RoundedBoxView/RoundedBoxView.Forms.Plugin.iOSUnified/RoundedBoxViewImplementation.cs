@@ -2,6 +2,7 @@
 using RoundedBoxView.Forms.Plugin.iOSUnified;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.iOS;
+using RoundedBoxView.Forms.Plugin.iOSUnified.ExtensionMethods;
 
 [assembly:
     ExportRenderer(typeof (RoundedBoxView.Forms.Plugin.Abstractions.RoundedBoxView), typeof (RoundedBoxViewRenderer))]
@@ -20,29 +21,25 @@ namespace RoundedBoxView.Forms.Plugin.iOSUnified
         {
         }
 
+		private RoundedBoxView.Forms.Plugin.Abstractions.RoundedBoxView _formControl {
+			get{
+				return Element as RoundedBoxView.Forms.Plugin.Abstractions.RoundedBoxView;
+			}
+		}
+
         protected override void OnElementChanged(ElementChangedEventArgs<BoxView> e)
         {
             base.OnElementChanged(e);
 
-            if (Element == null) return;
+			this.UpdateFrom (_formControl);
 
-            Layer.MasksToBounds = true;
-            UpdateCornerRadius(Element as Abstractions.RoundedBoxView);
         }
 
         protected override void OnElementPropertyChanged(object sender, PropertyChangedEventArgs e)
         {
             base.OnElementPropertyChanged(sender, e);
 
-            if (e.PropertyName == Abstractions.RoundedBoxView.CornerRadiusProperty.PropertyName)
-            {
-                UpdateCornerRadius(Element as Abstractions.RoundedBoxView);
-            }
-        }
-
-        private void UpdateCornerRadius(Abstractions.RoundedBoxView box)
-        {
-            Layer.CornerRadius = (float) box.CornerRadius;
+			this.UpdateFrom (_formControl);
         }
     }
 }

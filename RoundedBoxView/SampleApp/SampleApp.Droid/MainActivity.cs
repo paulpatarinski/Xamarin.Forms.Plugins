@@ -16,7 +16,7 @@ namespace SampleApp.Droid
 
             Forms.Init(this, bundle);
 
-            RoundedBoxViewRenderer.Init();
+			RoundedBoxView.Forms.Plugin.Droid.RoundedBoxViewRenderer.Init();
 
             LoadApplication(new App());
         }
