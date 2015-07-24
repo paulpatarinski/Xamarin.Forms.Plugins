@@ -63,6 +63,7 @@
     <Compile Include="RoundedBoxViewImplementation.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ExtensionMethods\ViewExtensions.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -89,4 +90,7 @@
   <Target Name="AfterBuild">
   </Target>
   -->
+  <ItemGroup>
+    <Folder Include="ExtensionMethods\" />
+  </ItemGroup>
 </Project>
