@@ -1,6 +1,6 @@
 ﻿using System.Windows.Media;
 
-namespace RoundedBoxView.Forms.Plugin.WindowsPhone.Extensions
+namespace RoundedBoxView.Forms.Plugin.WindowsPhone.ExtensionMethods
 {
     /// <summary>
     /// From Xam Forms Labs https://github.com/XLabs/Xamarin-Forms-Labs/blob/248cfcfc5b5803f5c3a157e51df57c08706a84ba/src/Forms/XLabs.Forms.WP8/Extensions/ColorExtensions.cs

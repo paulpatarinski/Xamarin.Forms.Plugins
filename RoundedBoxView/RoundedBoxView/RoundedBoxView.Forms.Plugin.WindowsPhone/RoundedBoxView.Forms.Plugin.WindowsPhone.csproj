@@ -88,7 +88,7 @@
     <DocumentationFile>bin\Release\RoundedBoxView.Forms.Plugin.WindowsPhone.XML</DocumentationFile>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Extensions\ColorExtensions.cs" />
+    <Compile Include="ExtensionMethods\ColorExtensions.cs" />
     <Compile Include="RoundedBoxViewImplementation.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
