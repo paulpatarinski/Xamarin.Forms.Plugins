@@ -8,26 +8,42 @@
     <ResourceDictionary>
       <Style x:Key="LabelStyle" TargetType="Label">
         <Setter Property="TextColor" Value="White" />
-        <Setter Property="HorizontalOptions" Value="Center" />
       </Style>
+
       <Style x:Key="RoundedBoxViewStyle" TargetType="abstractions:RoundedBoxView">
         <Setter Property="BackgroundColor" Value="Red" />
-        <Setter Property="HorizontalOptions" Value="Center" />
         <Setter Property="HeightRequest" Value="100" />
         <Setter Property="WidthRequest" Value="100" />
       </Style>
+      <Style x:Key="RoundedBoxViewStyleWithBorder" TargetType="abstractions:RoundedBoxView">
+        <Setter Property="BackgroundColor" Value="Red" />
+        <Setter Property="BorderColor" Value="Green" />
+        <Setter Property="HeightRequest" Value="100" />
+        <Setter Property="WidthRequest" Value="100" />
+      </Style>
+
     </ResourceDictionary>
   </ContentPage.Resources>
+  <ScrollView>
+    <StackLayout VerticalOptions="Center" Orientation="Horizontal">
 
-  <StackLayout Spacing="20">
-    <Label Style="{StaticResource LabelStyle}" Text="Default" />
-    <abstractions:RoundedBoxView Style="{StaticResource RoundedBoxViewStyle}" />
+      <StackLayout HorizontalOptions="CenterAndExpand" Spacing="20">
+        <Label Style="{StaticResource LabelStyle}" Text="No Border" HorizontalOptions="Center" />
+        <abstractions:RoundedBoxView Style="{StaticResource RoundedBoxViewStyle}" />
+        <abstractions:RoundedBoxView Style="{StaticResource RoundedBoxViewStyle}" CornerRadius="10" />
+        <abstractions:RoundedBoxView Style="{StaticResource RoundedBoxViewStyle}" CornerRadius="25" />
+        <abstractions:RoundedBoxView Style="{StaticResource RoundedBoxViewStyle}" CornerRadius="50" />
+      </StackLayout>
 
-    <Label Style="{StaticResource LabelStyle}" Text="Slightly Rounded" />
-    <abstractions:RoundedBoxView Style="{StaticResource RoundedBoxViewStyle}" CornerRadius="10" />
+      <StackLayout HorizontalOptions="CenterAndExpand" Spacing="20">
+        <Label Style="{StaticResource LabelStyle}" Text="Border" HorizontalOptions="Center" />
+        <abstractions:RoundedBoxView Style="{StaticResource RoundedBoxViewStyleWithBorder}"  />
+        <abstractions:RoundedBoxView Style="{StaticResource RoundedBoxViewStyleWithBorder}" CornerRadius="10" BorderThickness="5" />
+        <abstractions:RoundedBoxView Style="{StaticResource RoundedBoxViewStyleWithBorder}" CornerRadius="25" BorderThickness="10" />
+        <abstractions:RoundedBoxView Style="{StaticResource RoundedBoxViewStyleWithBorder}" CornerRadius="50" BorderThickness="20" />
+      </StackLayout>
 
-    <Label Style="{StaticResource LabelStyle}" Text="Circle" />
-    <abstractions:RoundedBoxView Style="{StaticResource RoundedBoxViewStyle}" CornerRadius="50" />
+    </StackLayout>
 
-  </StackLayout>
+  </ScrollView>
 </ContentPage>

@@ -82,12 +82,12 @@
       <HintPath>..\..\packages\Xam.Plugins.Forms.Svg.1.0.0.23\lib\MonoAndroid10\NGraphics.Custom.dll</HintPath>
     </Reference>
     <Reference Include="RoundedBoxView.Forms.Plugin.Abstractions, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Xam.Plugins.Forms.RoundedBoxView.1.0.0.2\lib\MonoAndroid10\RoundedBoxView.Forms.Plugin.Abstractions.dll</HintPath>
-      <Private>True</Private>
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\Xam.Plugins.Forms.RoundedBoxView.1.0.0.3\lib\MonoAndroid10\RoundedBoxView.Forms.Plugin.Abstractions.dll</HintPath>
     </Reference>
     <Reference Include="RoundedBoxView.Forms.Plugin.Android, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Xam.Plugins.Forms.RoundedBoxView.1.0.0.2\lib\MonoAndroid10\RoundedBoxView.Forms.Plugin.Android.dll</HintPath>
-      <Private>True</Private>
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\Xam.Plugins.Forms.RoundedBoxView.1.0.0.3\lib\MonoAndroid10\RoundedBoxView.Forms.Plugin.Android.dll</HintPath>
     </Reference>
     <Reference Include="SVG.Forms.Plugin.Abstractions">
       <HintPath>..\..\packages\Xam.Plugins.Forms.Svg.1.0.0.23\lib\MonoAndroid10\SVG.Forms.Plugin.Abstractions.dll</HintPath>

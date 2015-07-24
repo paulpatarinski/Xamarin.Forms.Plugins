@@ -174,12 +174,12 @@
       <HintPath>..\..\packages\WPtoolkit.4.2013.08.16\lib\wp8\Microsoft.Phone.Controls.Toolkit.dll</HintPath>
     </Reference>
     <Reference Include="RoundedBoxView.Forms.Plugin.Abstractions, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Xam.Plugins.Forms.RoundedBoxView.1.0.0.2\lib\wp8\RoundedBoxView.Forms.Plugin.Abstractions.dll</HintPath>
-      <Private>True</Private>
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\Xam.Plugins.Forms.RoundedBoxView.1.0.0.3\lib\wp8\RoundedBoxView.Forms.Plugin.Abstractions.dll</HintPath>
     </Reference>
     <Reference Include="RoundedBoxView.Forms.Plugin.WindowsPhone, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Xam.Plugins.Forms.RoundedBoxView.1.0.0.2\lib\wp8\RoundedBoxView.Forms.Plugin.WindowsPhone.dll</HintPath>
-      <Private>True</Private>
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\Xam.Plugins.Forms.RoundedBoxView.1.0.0.3\lib\wp8\RoundedBoxView.Forms.Plugin.WindowsPhone.dll</HintPath>
     </Reference>
     <Reference Include="SVG.Forms.Plugin.Abstractions">
       <HintPath>..\..\packages\Xam.Plugins.Forms.Svg.1.0.0.23\lib\wp8\SVG.Forms.Plugin.Abstractions.dll</HintPath>

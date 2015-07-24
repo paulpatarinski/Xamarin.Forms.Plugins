@@ -139,11 +139,13 @@
     <Reference Include="NGraphics.iOS.Custom">
       <HintPath>..\..\packages\Xam.Plugins.Forms.Svg.1.0.0.23\lib\Xamarin.iOS10\NGraphics.iOS.Custom.dll</HintPath>
     </Reference>
-    <Reference Include="RoundedBoxView.Forms.Plugin.Abstractions">
-      <HintPath>..\..\packages\Xam.Plugins.Forms.RoundedBoxView.1.0.0.2\lib\Xamarin.iOS10\RoundedBoxView.Forms.Plugin.Abstractions.dll</HintPath>
+    <Reference Include="RoundedBoxView.Forms.Plugin.Abstractions, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\Xam.Plugins.Forms.RoundedBoxView.1.0.0.3\lib\Xamarin.iOS10\RoundedBoxView.Forms.Plugin.Abstractions.dll</HintPath>
     </Reference>
-    <Reference Include="RoundedBoxView.Forms.Plugin.iOSUnified">
-      <HintPath>..\..\packages\Xam.Plugins.Forms.RoundedBoxView.1.0.0.2\lib\Xamarin.iOS10\RoundedBoxView.Forms.Plugin.iOSUnified.dll</HintPath>
+    <Reference Include="RoundedBoxView.Forms.Plugin.iOSUnified, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\Xam.Plugins.Forms.RoundedBoxView.1.0.0.3\lib\Xamarin.iOS10\RoundedBoxView.Forms.Plugin.iOSUnified.dll</HintPath>
     </Reference>
     <Reference Include="SVG.Forms.Plugin.Abstractions">
       <HintPath>..\..\packages\Xam.Plugins.Forms.Svg.1.0.0.23\lib\Xamarin.iOS10\SVG.Forms.Plugin.Abstractions.dll</HintPath>
