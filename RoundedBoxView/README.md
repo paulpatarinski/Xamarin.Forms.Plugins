@@ -16,7 +16,8 @@ You must do this AFTER you call Xamarin.Forms.Init().
 Use RoundedBoxView instead of a regular BoxView :
 
 ```
-   <abstractions:RoundedBoxView BackgroundColor="Red" BorderColor="Blue" HeightRequest="100" WidthRequest="100" CornerRadius="50" BorderThickness="20" />
+   <abstractions:RoundedBoxView BackgroundColor="Red" HeightRequest="100" WidthRequest="100"  
+   BorderColor="Blue" CornerRadius="50" BorderThickness="20" />
 ```
 
 For a detailed example clone the repo and take a look at the Sample App.
