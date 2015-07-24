@@ -7,7 +7,7 @@ namespace RoundedBoxView.Forms.Plugin.Droid.ExtensionMethods
 {
   public static class UIViewExtensions
   {
-    public static void CreateFrom(this View nativeControl, Abstractions.RoundedBoxView formsControl)
+    public static void InitializeFrom(this View nativeControl, Abstractions.RoundedBoxView formsControl)
     {
       if (nativeControl == null || formsControl == null)
         return;

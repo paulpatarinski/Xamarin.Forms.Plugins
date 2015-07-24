@@ -25,7 +25,7 @@ namespace RoundedBoxView.Forms.Plugin.Droid
     {
       base.OnElementChanged(e);
 
-      this.CreateFrom(_formControl);
+      this.InitializeFrom(_formControl);
     }
 
     protected override void OnElementPropertyChanged(object sender, PropertyChangedEventArgs e)
