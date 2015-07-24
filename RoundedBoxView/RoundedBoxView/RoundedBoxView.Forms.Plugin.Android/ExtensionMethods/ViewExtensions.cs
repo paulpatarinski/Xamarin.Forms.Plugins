@@ -1,76 +1,78 @@
-﻿using Xamarin.Forms;
-using System;
-using Android.Graphics.Drawables;
+﻿using Android.Graphics.Drawables;
+using Xamarin.Forms;
 using Xamarin.Forms.Platform.Android;
+using View = Android.Views.View;
 
-namespace RoundedBoxView.Forms.Plugin.iOSUnified.ExtensionMethods
+namespace RoundedBoxView.Forms.Plugin.Droid.ExtensionMethods
 {
-	public static class UIViewExtensions
-	{
-		public static void UpdateFrom(this Android.Views.View nativeControl, RoundedBoxView.Forms.Plugin.Abstractions.RoundedBoxView formsControl, string propertyChanged = null )
-		{
-			if (nativeControl == null || formsControl == null)
-				return;
-			
-			if(propertyChanged == null)
-			{
-				var background = new GradientDrawable ();
+  public static class UIViewExtensions
+  {
+    public static void CreateFrom(this View nativeControl, Abstractions.RoundedBoxView formsControl)
+    {
+      if (nativeControl == null || formsControl == null)
+        return;
 
-				background.SetColor (formsControl.BackgroundColor.ToAndroid ());
+      var background = new GradientDrawable();
 
-				nativeControl.Background = background;
+      background.SetColor(formsControl.BackgroundColor.ToAndroid());
 
-				nativeControl.UpdateCornerRadius (formsControl.CornerRadius);
-				nativeControl.UpdateBorder (formsControl.BorderColor, formsControl.BorderThickness);
-			}
-			else
-			{
-				if (propertyChanged == Abstractions.RoundedBoxView.CornerRadiusProperty.PropertyName)
-				{
-					nativeControl.UpdateCornerRadius (formsControl.CornerRadius);
-				}
-				if (propertyChanged == Abstractions.RoundedBoxView.BackgroundColorProperty.PropertyName)
-				{
-					var background = nativeControl.Background as GradientDrawable;
+      nativeControl.Background = background;
 
-					if(background != null)
-					{
-						background.SetColor (formsControl.BackgroundColor.ToAndroid ());
-					}
-				}
+      nativeControl.UpdateCornerRadius(formsControl.CornerRadius);
+      nativeControl.UpdateBorder(formsControl.BorderColor, formsControl.BorderThickness);
+    }
 
-				if (propertyChanged == Abstractions.RoundedBoxView.BorderColorProperty.PropertyName) 
-				{
-					nativeControl.UpdateBorder (formsControl.BorderColor, formsControl.BorderThickness);
-				}
+    public static void UpdateFrom(this View nativeControl, Abstractions.RoundedBoxView formsControl,
+      string propertyChanged)
+    {
+      if (nativeControl == null || formsControl == null)
+        return;
 
-				if (propertyChanged == Abstractions.RoundedBoxView.BorderThicknessProperty.PropertyName) 
-				{
-					nativeControl.UpdateBorder (formsControl.BorderColor, formsControl.BorderThickness);
-				}
-			}
-		}
+      if (propertyChanged == Abstractions.RoundedBoxView.CornerRadiusProperty.PropertyName)
+      {
+        nativeControl.UpdateCornerRadius(formsControl.CornerRadius);
+      }
+      if (propertyChanged == VisualElement.BackgroundColorProperty.PropertyName)
+      {
+        var background = nativeControl.Background as GradientDrawable;
 
-		public static void UpdateBorder(this Android.Views.View nativeControl, Color color, int thickness)
-		{
-			var backgroundGradient = nativeControl.Background as GradientDrawable;
+        if (background != null)
+        {
+          background.SetColor(formsControl.BackgroundColor.ToAndroid());
+        }
+      }
 
-			if(backgroundGradient != null)
-			{
-				var relativeBorderThickness = thickness * 3;
-				backgroundGradient.SetStroke (relativeBorderThickness, color.ToAndroid ());
-			}
-		}
+      if (propertyChanged == Abstractions.RoundedBoxView.BorderColorProperty.PropertyName)
+      {
+        nativeControl.UpdateBorder(formsControl.BorderColor, formsControl.BorderThickness);
+      }
 
-		public static void UpdateCornerRadius(this Android.Views.View nativeControl, double cornerRadius)
-		{
-			var backgroundGradient = nativeControl.Background as GradientDrawable;
+      if (propertyChanged == Abstractions.RoundedBoxView.BorderThicknessProperty.PropertyName)
+      {
+        nativeControl.UpdateBorder(formsControl.BorderColor, formsControl.BorderThickness);
+      }
+    }
 
-			if(backgroundGradient != null)
-			{
-				var relativeCornerRadius = (float)(cornerRadius * 3.7);
-				backgroundGradient.SetCornerRadius (relativeCornerRadius);
-			}
-		}
-	}
+    public static void UpdateBorder(this View nativeControl, Color color, int thickness)
+    {
+      var backgroundGradient = nativeControl.Background as GradientDrawable;
+
+      if (backgroundGradient != null)
+      {
+        var relativeBorderThickness = thickness*3;
+        backgroundGradient.SetStroke(relativeBorderThickness, color.ToAndroid());
+      }
+    }
+
+    public static void UpdateCornerRadius(this View nativeControl, double cornerRadius)
+    {
+      var backgroundGradient = nativeControl.Background as GradientDrawable;
+
+      if (backgroundGradient != null)
+      {
+        var relativeCornerRadius = (float) (cornerRadius*3.7);
+        backgroundGradient.SetCornerRadius(relativeCornerRadius);
+      }
+    }
+  }
 }
