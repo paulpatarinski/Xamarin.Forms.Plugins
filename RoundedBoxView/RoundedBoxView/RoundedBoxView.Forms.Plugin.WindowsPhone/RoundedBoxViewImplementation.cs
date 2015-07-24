@@ -1,11 +1,12 @@
-﻿using System.Windows;
+﻿using System.ComponentModel;
+using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Media;
 using RoundedBoxView.Forms.Plugin.WindowsPhone;
-using RoundedBoxView.Forms.Plugin.WindowsPhone.Extensions;
+using RoundedBoxView.Forms.Plugin.WindowsPhone.ExtensionMethods;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.WinPhone;
 using Rectangle = System.Windows.Shapes.Rectangle;
-using Thickness = System.Windows.Thickness;
 
 [assembly:
   ExportRenderer(typeof (RoundedBoxView.Forms.Plugin.Abstractions.RoundedBoxView), typeof (RoundedBoxViewRenderer))]
@@ -24,7 +25,7 @@ namespace RoundedBoxView.Forms.Plugin.WindowsPhone
     {
     }
 
-    public Abstractions.RoundedBoxView FormsControl
+    private Abstractions.RoundedBoxView _formControl
     {
       get { return Element; }
     }
@@ -33,39 +34,18 @@ namespace RoundedBoxView.Forms.Plugin.WindowsPhone
     {
       base.OnElementChanged(e);
 
-      var relativeBorderThickness = FormsControl.BorderThickness * 1.7;
-      var relativeBorderCornerRadius = FormsControl.CornerRadius * 1.25;
+      var border = new Border();
 
-      var border = new Border
-      {
-        Height = FormsControl.HeightRequest,
-        Width =  FormsControl.WidthRequest,
-        CornerRadius = new CornerRadius(relativeBorderCornerRadius),
-        Background = FormsControl.BorderColor.ToBrush(),
-      };
-
-      var rectHeight = FormsControl.HeightRequest - relativeBorderThickness;
-      var rectWidth = FormsControl.WidthRequest - relativeBorderThickness;
-
-      var rectangle = new Rectangle
-      {
-        Height  = rectHeight,
-        Width = rectWidth,
-        RadiusX = relativeBorderCornerRadius,
-        RadiusY = relativeBorderCornerRadius,
-        Fill = FormsControl.BackgroundColor.ToBrush()
-      };
-
-      border.Child = rectangle;
+      border.InitializeFrom(_formControl);
 
       SetNativeControl(border);
     }
 
-    /// <summary>
-    ///   THIS NEEDS TO BE OVERWRITTEN OTHERWISE THE COLOR GETS SET INCORRECTLY
-    /// </summary>
-    protected override void UpdateBackgroundColor()
+    protected override void OnElementPropertyChanged(object sender, PropertyChangedEventArgs e)
     {
+      base.OnElementPropertyChanged(sender, e);
+
+      Control.UpdateFrom(_formControl, e.PropertyName);
     }
   }
 }
