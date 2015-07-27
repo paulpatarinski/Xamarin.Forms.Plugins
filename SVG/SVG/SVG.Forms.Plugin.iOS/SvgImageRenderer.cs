@@ -47,8 +47,8 @@ namespace SVG.Forms.Plugin.iOS
 
           var graphics = r.Graphic;
 
-          var width = _formsControl.WidthRequest == 0 ? 100 : _formsControl.WidthRequest;
-          var height = _formsControl.HeightRequest == 0 ? 100 : _formsControl.HeightRequest;
+          var width = _formsControl.WidthRequest <= 0 ? 100 : _formsControl.WidthRequest;
+          var height = _formsControl.HeightRequest <= 0 ? 100 : _formsControl.HeightRequest;
 
           var scale = 1.0;
 
