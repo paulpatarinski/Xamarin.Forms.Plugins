@@ -35,11 +35,17 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="App.cs" />
+    <Compile Include="Models\ListviewSampleModel.cs" />
+    <Compile Include="Pages\Listview.xaml.cs">
+      <DependentUpon>Listview.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\ViaCode.cs" />
     <Compile Include="Pages\ViaXaml.xaml.cs">
       <DependentUpon>ViaXaml.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModel\ListviewViewModel.cs" />
+    <Compile Include="ViewModel\ObservableCollection.cs" />
     <Compile Include="ViewModel\ViaXamlViewModel.cs" />
     <Compile Include="Pages\ViaResources.xaml.cs">
       <DependentUpon>ViaResources.xaml</DependentUpon>
@@ -102,6 +108,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Pages\Listview.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <Import Project="..\..\packages\Xamarin.Forms.1.3.3.6323\build\portable-win+net45+wp80+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets" Condition="Exists('..\..\packages\Xamarin.Forms.1.3.3.6323\build\portable-win+net45+wp80+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets')" />
