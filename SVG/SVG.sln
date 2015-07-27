@@ -121,7 +121,6 @@ Global
 		{D525F236-6A2D-4010-B1CC-4A4B8581C90B}.Release|Nuget.ActiveCfg = Release|Any CPU
 		{D525F236-6A2D-4010-B1CC-4A4B8581C90B}.Release|Nuget.Build.0 = Release|Any CPU
 		{D525F236-6A2D-4010-B1CC-4A4B8581C90B}.Release|WinPhone.ActiveCfg = Release|Any CPU
-		{D525F236-6A2D-4010-B1CC-4A4B8581C90B}.Release|WinPhone.Build.0 = Release|Any CPU
 		{AD2D2DB4-E781-4CF1-9B62-3AAD264F196D}.Ad-Hoc|Android.ActiveCfg = Release|Any CPU
 		{AD2D2DB4-E781-4CF1-9B62-3AAD264F196D}.Ad-Hoc|Android.Build.0 = Release|Any CPU
 		{AD2D2DB4-E781-4CF1-9B62-3AAD264F196D}.Ad-Hoc|iPhone.ActiveCfg = Release|Any CPU
@@ -158,7 +157,6 @@ Global
 		{AD2D2DB4-E781-4CF1-9B62-3AAD264F196D}.Release|Nuget.ActiveCfg = Release|Any CPU
 		{AD2D2DB4-E781-4CF1-9B62-3AAD264F196D}.Release|Nuget.Build.0 = Release|Any CPU
 		{AD2D2DB4-E781-4CF1-9B62-3AAD264F196D}.Release|WinPhone.ActiveCfg = Release|Any CPU
-		{AD2D2DB4-E781-4CF1-9B62-3AAD264F196D}.Release|WinPhone.Build.0 = Release|Any CPU
 		{983B7EFF-7E75-4A87-890A-744A0B4C5232}.Ad-Hoc|Android.ActiveCfg = Release|Any CPU
 		{983B7EFF-7E75-4A87-890A-744A0B4C5232}.Ad-Hoc|Android.Build.0 = Release|Any CPU
 		{983B7EFF-7E75-4A87-890A-744A0B4C5232}.Ad-Hoc|iPhone.ActiveCfg = Release|Any CPU
@@ -233,6 +231,7 @@ Global
 		{EBD9C7E2-C5C5-47E3-A7F0-6A6BC41FCC12}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
 		{EBD9C7E2-C5C5-47E3-A7F0-6A6BC41FCC12}.Release|Nuget.ActiveCfg = Release|Any CPU
 		{EBD9C7E2-C5C5-47E3-A7F0-6A6BC41FCC12}.Release|WinPhone.ActiveCfg = Release|Any CPU
+		{EBD9C7E2-C5C5-47E3-A7F0-6A6BC41FCC12}.Release|WinPhone.Build.0 = Release|Any CPU
 		{63BFB494-492C-42D1-A66C-68FAED7EB5C6}.Ad-Hoc|Android.ActiveCfg = Ad-Hoc|iPhone
 		{63BFB494-492C-42D1-A66C-68FAED7EB5C6}.Ad-Hoc|iPhone.ActiveCfg = Ad-Hoc|iPhone
 		{63BFB494-492C-42D1-A66C-68FAED7EB5C6}.Ad-Hoc|iPhone.Build.0 = Ad-Hoc|iPhone
@@ -355,6 +354,7 @@ Global
 		{90C968B7-E0B3-448F-89BD-49DA7BB2D3DA}.Release|iPhoneSimulator.Deploy.0 = Release|Any CPU
 		{90C968B7-E0B3-448F-89BD-49DA7BB2D3DA}.Release|Nuget.ActiveCfg = Release|Any CPU
 		{90C968B7-E0B3-448F-89BD-49DA7BB2D3DA}.Release|WinPhone.ActiveCfg = Release|Any CPU
+		{90C968B7-E0B3-448F-89BD-49DA7BB2D3DA}.Release|WinPhone.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
