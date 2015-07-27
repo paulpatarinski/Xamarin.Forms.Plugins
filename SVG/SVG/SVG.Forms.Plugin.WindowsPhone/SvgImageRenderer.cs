@@ -34,7 +34,7 @@ namespace SVG.Forms.Plugin.WindowsPhone
         {
             base.OnElementChanged(e);
 
-          if (_formsControl != null)
+            if (_formsControl != null && !string.IsNullOrWhiteSpace(_formsControl.SvgPath))
           {
             var xamlFilePath = _formsControl.SvgPath.Replace(".svg", ".xaml");
             var xamlStream = _formsControl.SvgAssembly.GetManifestResourceStream(xamlFilePath);
