@@ -163,7 +163,6 @@ Global
 		{63BFB494-492C-42D1-A66C-68FAED7EB5C6}.Release|Mixed Platforms.ActiveCfg = Release|iPhone
 		{63BFB494-492C-42D1-A66C-68FAED7EB5C6}.Release|Mixed Platforms.Build.0 = Release|iPhone
 		{63BFB494-492C-42D1-A66C-68FAED7EB5C6}.Release|WinPhone.ActiveCfg = Release|iPhone
-		{63BFB494-492C-42D1-A66C-68FAED7EB5C6}.Release|WinPhone.Build.0 = Release|iPhone
 		{63BFB494-492C-42D1-A66C-68FAED7EB5C6}.Release|x86.ActiveCfg = Release|iPhone
 		{937453F4-4FEC-45C9-8964-38971D0F3726}.Ad-Hoc|Android.ActiveCfg = WinPhoneRelease|Any CPU
 		{937453F4-4FEC-45C9-8964-38971D0F3726}.Ad-Hoc|Any CPU.ActiveCfg = Release|Any CPU
@@ -245,8 +244,6 @@ Global
 		{937453F4-4FEC-45C9-8964-38971D0F3726}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{937453F4-4FEC-45C9-8964-38971D0F3726}.Release|Mixed Platforms.Deploy.0 = Release|Any CPU
 		{937453F4-4FEC-45C9-8964-38971D0F3726}.Release|WinPhone.ActiveCfg = Release|Any CPU
-		{937453F4-4FEC-45C9-8964-38971D0F3726}.Release|WinPhone.Build.0 = Release|Any CPU
-		{937453F4-4FEC-45C9-8964-38971D0F3726}.Release|WinPhone.Deploy.0 = Release|Any CPU
 		{937453F4-4FEC-45C9-8964-38971D0F3726}.Release|x86.ActiveCfg = Release|Any CPU
 		{937453F4-4FEC-45C9-8964-38971D0F3726}.Release|x86.Build.0 = Release|Any CPU
 		{937453F4-4FEC-45C9-8964-38971D0F3726}.Release|x86.Deploy.0 = Release|Any CPU
@@ -330,7 +327,6 @@ Global
 		{90C968B7-E0B3-448F-89BD-49DA7BB2D3DA}.Release|Mixed Platforms.Deploy.0 = Release|Any CPU
 		{90C968B7-E0B3-448F-89BD-49DA7BB2D3DA}.Release|WinPhone.ActiveCfg = Release|Any CPU
 		{90C968B7-E0B3-448F-89BD-49DA7BB2D3DA}.Release|WinPhone.Build.0 = Release|Any CPU
-		{90C968B7-E0B3-448F-89BD-49DA7BB2D3DA}.Release|WinPhone.Deploy.0 = Release|Any CPU
 		{90C968B7-E0B3-448F-89BD-49DA7BB2D3DA}.Release|x86.ActiveCfg = Release|x86
 		{90C968B7-E0B3-448F-89BD-49DA7BB2D3DA}.Release|x86.Build.0 = Release|x86
 		{90C968B7-E0B3-448F-89BD-49DA7BB2D3DA}.Release|x86.Deploy.0 = Release|x86
@@ -377,6 +373,7 @@ Global
 		{14C534B6-1984-41A9-A384-D3A5508588E3}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{14C534B6-1984-41A9-A384-D3A5508588E3}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{14C534B6-1984-41A9-A384-D3A5508588E3}.Release|WinPhone.ActiveCfg = Release|Any CPU
+		{14C534B6-1984-41A9-A384-D3A5508588E3}.Release|WinPhone.Build.0 = Release|Any CPU
 		{14C534B6-1984-41A9-A384-D3A5508588E3}.Release|x86.ActiveCfg = Release|Any CPU
 		{AD2D2DB4-E781-4CF1-9B62-3AAD264F196D}.Ad-Hoc|Android.ActiveCfg = WinPhoneRelease|Any CPU
 		{AD2D2DB4-E781-4CF1-9B62-3AAD264F196D}.Ad-Hoc|Any CPU.ActiveCfg = Release|Any CPU
@@ -467,6 +464,7 @@ Global
 		{983B7EFF-7E75-4A87-890A-744A0B4C5232}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{983B7EFF-7E75-4A87-890A-744A0B4C5232}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{983B7EFF-7E75-4A87-890A-744A0B4C5232}.Release|WinPhone.ActiveCfg = Release|Any CPU
+		{983B7EFF-7E75-4A87-890A-744A0B4C5232}.Release|WinPhone.Build.0 = Release|Any CPU
 		{983B7EFF-7E75-4A87-890A-744A0B4C5232}.Release|x86.ActiveCfg = Release|x86
 		{983B7EFF-7E75-4A87-890A-744A0B4C5232}.Release|x86.Build.0 = Release|x86
 		{D525F236-6A2D-4010-B1CC-4A4B8581C90B}.Ad-Hoc|Android.ActiveCfg = WinPhoneRelease|Any CPU
