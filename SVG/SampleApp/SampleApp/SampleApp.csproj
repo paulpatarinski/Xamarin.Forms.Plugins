@@ -45,7 +45,6 @@
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModel\ListviewViewModel.cs" />
-    <Compile Include="ViewModel\ObservableCollection.cs" />
     <Compile Include="ViewModel\ViaXamlViewModel.cs" />
     <Compile Include="Pages\ViaResources.xaml.cs">
       <DependentUpon>ViaResources.xaml</DependentUpon>
