@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android" android:installLocation="auto" package="com.simpleproductionsinc.roundedBoxView">
-	<uses-sdk android:minSdkVersion="16" android:targetSdkVersion="21" />
-	<application android:label="Rounded BoxVIew" android:icon="@drawable/icon"></application>
+	<uses-sdk android:minSdkVersion="15" android:targetSdkVersion="21" />
+	<application android:label="Rounded BoxView" android:icon="@drawable/icon">
+	</application>
 </manifest>
