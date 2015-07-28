@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
     <metadata>
         <id>Xam.Plugins.Forms.RoundedBoxView</id>
-        <version>1.0.0.4</version>
+        <version>1.0.0.5</version>
         <title>RoundedBoxView for Xamarin.Forms</title>
         <authors>Paul Patarinski</authors>
         <owners>Paul Patarinski</owners>
@@ -12,7 +12,7 @@
         <requireLicenseAcceptance>false</requireLicenseAcceptance>
         <description>Rounded BoxView for your Xamarin.Forms project to allow you to create circles. Ensure you call RoundedBoxViewRenderer.Init() on each platform! VISIT THE PROJECT URL for more info.</description>
         <summary>Use an RoundedBoxView in your Xamarin.Forms projects! Ensure you call RoundedBoxViewRenderer.Init() on each platform! VISIT THE PROJECT URL for more info.</summary>
-        <releaseNotes>Upgrading to Forms 1.4.3.6372</releaseNotes>
+        <releaseNotes>Fixing an issue with Android 4.0.4</releaseNotes>
         <tags>boxview, rounded,xamarin, pcl, xam.pcl, windows phone, winphone, wp8, android, xamarin.forms</tags>
         <dependencies>
             <dependency id="Xamarin.Forms" version="1.4.3.6372" />
@@ -20,23 +20,11 @@
     </metadata>
     <files>
         <file src="RoundedBoxView.Forms.Plugin.Abstractions\bin\Release\RoundedBoxView.Forms.Plugin.Abstractions.dll" target="lib\MonoAndroid10\RoundedBoxView.Forms.Plugin.Abstractions.dll" />
-        <file src="RoundedBoxView.Forms.Plugin.Abstractions\bin\Release\RoundedBoxView.Forms.Plugin.Abstractions.pdb" target="lib\MonoAndroid10\RoundedBoxView.Forms.Plugin.Abstractions.pdb" />
-        <file src="RoundedBoxView.Forms.Plugin.Abstractions\bin\Release\RoundedBoxView.Forms.Plugin.Abstractions.XML" target="lib\MonoAndroid10\RoundedBoxView.Forms.Plugin.Abstractions.xml" />
         <file src="RoundedBoxView.Forms.Plugin.Android\bin\Release\RoundedBoxView.Forms.Plugin.Android.dll" target="lib\MonoAndroid10\RoundedBoxView.Forms.Plugin.Android.dll" />
-        <file src="RoundedBoxView.Forms.Plugin.Android\bin\Release\RoundedBoxView.Forms.Plugin.Android.pdb" target="lib\MonoAndroid10\RoundedBoxView.Forms.Plugin.Android.pdb" />
-        <file src="RoundedBoxView.Forms.Plugin.Android\bin\Release\RoundedBoxView.Forms.Plugin.Android.XML" target="lib\MonoAndroid10\RoundedBoxView.Forms.Plugin.Android.xml" />
         <file src="RoundedBoxView.Forms.Plugin.Abstractions\bin\Release\RoundedBoxView.Forms.Plugin.Abstractions.dll" target="lib\portable-net45+wp8+win8+MonoAndroid10+MonoTouch10+Xamarin.iOS10\RoundedBoxView.Forms.Plugin.Abstractions.dll" />
-        <file src="RoundedBoxView.Forms.Plugin.Abstractions\bin\Release\RoundedBoxView.Forms.Plugin.Abstractions.pdb" target="lib\portable-net45+wp8+win8+MonoAndroid10+MonoTouch10+Xamarin.iOS10\RoundedBoxView.Forms.Plugin.Abstractions.pdb" />
-        <file src="RoundedBoxView.Forms.Plugin.Abstractions\bin\Release\RoundedBoxView.Forms.Plugin.Abstractions.XML" target="lib\portable-net45+wp8+win8+MonoAndroid10+MonoTouch10+Xamarin.iOS10\RoundedBoxView.Forms.Plugin.Abstractions.xml" />
         <file src="RoundedBoxView.Forms.Plugin.Abstractions\bin\Release\RoundedBoxView.Forms.Plugin.Abstractions.dll" target="lib\wp8\RoundedBoxView.Forms.Plugin.Abstractions.dll" />
-        <file src="RoundedBoxView.Forms.Plugin.Abstractions\bin\Release\RoundedBoxView.Forms.Plugin.Abstractions.pdb" target="lib\wp8\RoundedBoxView.Forms.Plugin.Abstractions.pdb" />
-        <file src="RoundedBoxView.Forms.Plugin.Abstractions\bin\Release\RoundedBoxView.Forms.Plugin.Abstractions.XML" target="lib\wp8\RoundedBoxView.Forms.Plugin.Abstractions.xml" />
         <file src="RoundedBoxView.Forms.Plugin.WindowsPhone\bin\Release\RoundedBoxView.Forms.Plugin.WindowsPhone.dll" target="lib\wp8\RoundedBoxView.Forms.Plugin.WindowsPhone.dll" />
-        <file src="RoundedBoxView.Forms.Plugin.WindowsPhone\bin\Release\RoundedBoxView.Forms.Plugin.WindowsPhone.pdb" target="lib\wp8\RoundedBoxView.Forms.Plugin.WindowsPhone.pdb" />
-        <file src="RoundedBoxView.Forms.Plugin.WindowsPhone\bin\Release\RoundedBoxView.Forms.Plugin.WindowsPhone.XML" target="lib\wp8\RoundedBoxView.Forms.Plugin.WindowsPhone.xml" />
         <file src="RoundedBoxView.Forms.Plugin.Abstractions\bin\Release\RoundedBoxView.Forms.Plugin.Abstractions.dll" target="lib\Xamarin.iOS10\RoundedBoxView.Forms.Plugin.Abstractions.dll" />
-        <file src="RoundedBoxView.Forms.Plugin.Abstractions\bin\Release\RoundedBoxView.Forms.Plugin.Abstractions.XML" target="lib\Xamarin.iOS10\RoundedBoxView.Forms.Plugin.Abstractions.xml" />
         <file src="RoundedBoxView.Forms.Plugin.iOSUnified\bin\iPhone\Release\RoundedBoxView.Forms.Plugin.iOSUnified.dll" target="lib\Xamarin.iOS10\RoundedBoxView.Forms.Plugin.iOSUnified.dll" />
-        <file src="RoundedBoxView.Forms.Plugin.iOSUnified\bin\iPhone\Release\RoundedBoxView.Forms.Plugin.iOSUnified.XML" target="lib\Xamarin.iOS10\RoundedBoxView.Forms.Plugin.iOSUnified.xml" />
     </files>
 </package>
