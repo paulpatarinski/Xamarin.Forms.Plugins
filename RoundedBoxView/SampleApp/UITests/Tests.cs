@@ -28,7 +28,7 @@ namespace UITests
 		[Test]
 		public void AppLaunches ()
 		{
-			app.Screenshot ("Landing Page");
+			app.Screenshot ("Rounded BoxViews");
 		}
 	}
 }
