@@ -2,6 +2,7 @@
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.Android;
 using View = Android.Views.View;
+using Android.OS;
 
 namespace RoundedBoxView.Forms.Plugin.Droid.ExtensionMethods
 {
@@ -16,7 +17,11 @@ namespace RoundedBoxView.Forms.Plugin.Droid.ExtensionMethods
 
       background.SetColor(formsControl.BackgroundColor.ToAndroid());
 
-      nativeControl.Background = background;
+	  if (Build.VERSION.SdkInt >= BuildVersionCodes.JellyBean) {
+		nativeControl.Background = background;
+	  } else {
+		nativeControl.SetBackgroundDrawable(background);
+	  }
 
       nativeControl.UpdateCornerRadius(formsControl.CornerRadius);
       nativeControl.UpdateBorder(formsControl.BorderColor, formsControl.BorderThickness);
