@@ -23,6 +23,7 @@ namespace SVG.Forms.Plugin.WindowsPhone
         /// </summary>
         public static void Init()
         {
+            var temp = DateTime.Now;
         }
 
         private SvgImage _formsControl

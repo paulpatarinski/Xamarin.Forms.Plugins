@@ -8,6 +8,7 @@ using UIKit;
 using NGraphics.Parsers;
 using System;
 using CoreGraphics;
+using Foundation;
 
 [assembly: ExportRenderer(typeof(SVG.Forms.Plugin.Abstractions.SvgImage), typeof(SvgImageRenderer))]
 namespace SVG.Forms.Plugin.iOS
@@ -15,6 +16,7 @@ namespace SVG.Forms.Plugin.iOS
     /// <summary>
     /// SVG Renderer
     /// </summary>
+    [Preserve(AllMembers = true)]
     public class SvgImageRenderer : ImageRenderer
     {
       /// <summary>
@@ -22,6 +24,7 @@ namespace SVG.Forms.Plugin.iOS
       /// </summary>
       public static void Init()
       {
+          var temp = DateTime.Now;
       }
 
       private SvgImage _formsControl
