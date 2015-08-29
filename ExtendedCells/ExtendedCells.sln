@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.31101.0
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SampleApps", "SampleApps", "{69D62C9F-0FC1-47BA-80B1-92628ECD3622}"
 EndProject
@@ -113,7 +113,6 @@ Global
 		{EBD9C7E2-C5C5-47E3-A7F0-6A6BC41FCC12}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
 		{EBD9C7E2-C5C5-47E3-A7F0-6A6BC41FCC12}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
 		{EBD9C7E2-C5C5-47E3-A7F0-6A6BC41FCC12}.Release|Nuget.ActiveCfg = Release|Any CPU
-		{EBD9C7E2-C5C5-47E3-A7F0-6A6BC41FCC12}.Release|Nuget.Build.0 = Release|Any CPU
 		{EBD9C7E2-C5C5-47E3-A7F0-6A6BC41FCC12}.Release|WinPhone.ActiveCfg = Release|Any CPU
 		{EBD9C7E2-C5C5-47E3-A7F0-6A6BC41FCC12}.Release|WinPhone.Build.0 = Release|Any CPU
 		{EBD9C7E2-C5C5-47E3-A7F0-6A6BC41FCC12}.Release|x86.ActiveCfg = Release|Any CPU
@@ -240,7 +239,6 @@ Global
 		{937453F4-4FEC-45C9-8964-38971D0F3726}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
 		{937453F4-4FEC-45C9-8964-38971D0F3726}.Release|iPhoneSimulator.Deploy.0 = Release|Any CPU
 		{937453F4-4FEC-45C9-8964-38971D0F3726}.Release|Nuget.ActiveCfg = Release|Any CPU
-		{937453F4-4FEC-45C9-8964-38971D0F3726}.Release|Nuget.Build.0 = Release|Any CPU
 		{937453F4-4FEC-45C9-8964-38971D0F3726}.Release|WinPhone.ActiveCfg = Release|Any CPU
 		{937453F4-4FEC-45C9-8964-38971D0F3726}.Release|x86.ActiveCfg = Release|Any CPU
 		{937453F4-4FEC-45C9-8964-38971D0F3726}.Release|x86.Build.0 = Release|Any CPU
@@ -321,7 +319,6 @@ Global
 		{90C968B7-E0B3-448F-89BD-49DA7BB2D3DA}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
 		{90C968B7-E0B3-448F-89BD-49DA7BB2D3DA}.Release|iPhoneSimulator.Deploy.0 = Release|Any CPU
 		{90C968B7-E0B3-448F-89BD-49DA7BB2D3DA}.Release|Nuget.ActiveCfg = Release|Any CPU
-		{90C968B7-E0B3-448F-89BD-49DA7BB2D3DA}.Release|Nuget.Build.0 = Release|Any CPU
 		{90C968B7-E0B3-448F-89BD-49DA7BB2D3DA}.Release|WinPhone.ActiveCfg = Release|Any CPU
 		{90C968B7-E0B3-448F-89BD-49DA7BB2D3DA}.Release|WinPhone.Build.0 = Release|Any CPU
 		{90C968B7-E0B3-448F-89BD-49DA7BB2D3DA}.Release|x86.ActiveCfg = Release|x86
@@ -502,6 +499,7 @@ Global
 		{D525F236-6A2D-4010-B1CC-4A4B8581C90B}.Release|iPhone.ActiveCfg = Release|Any CPU
 		{D525F236-6A2D-4010-B1CC-4A4B8581C90B}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
 		{D525F236-6A2D-4010-B1CC-4A4B8581C90B}.Release|Nuget.ActiveCfg = Release|Any CPU
+		{D525F236-6A2D-4010-B1CC-4A4B8581C90B}.Release|Nuget.Build.0 = Release|Any CPU
 		{D525F236-6A2D-4010-B1CC-4A4B8581C90B}.Release|WinPhone.ActiveCfg = Release|Any CPU
 		{D525F236-6A2D-4010-B1CC-4A4B8581C90B}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
