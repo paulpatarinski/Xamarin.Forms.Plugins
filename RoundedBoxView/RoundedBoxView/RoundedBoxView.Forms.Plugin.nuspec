@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
     <metadata>
         <id>Xam.Plugins.Forms.RoundedBoxView</id>
-        <version>1.0.0.5</version>
+        <version>1.0.0.6</version>
         <title>RoundedBoxView for Xamarin.Forms</title>
         <authors>Paul Patarinski</authors>
         <owners>Paul Patarinski</owners>
@@ -12,10 +12,10 @@
         <requireLicenseAcceptance>false</requireLicenseAcceptance>
         <description>Rounded BoxView for your Xamarin.Forms project to allow you to create circles. Ensure you call RoundedBoxViewRenderer.Init() on each platform! VISIT THE PROJECT URL for more info.</description>
         <summary>Use an RoundedBoxView in your Xamarin.Forms projects! Ensure you call RoundedBoxViewRenderer.Init() on each platform! VISIT THE PROJECT URL for more info.</summary>
-        <releaseNotes>Fixing an issue with Android 4.0.4</releaseNotes>
+        <releaseNotes>Updating to forms 1.4.4.6392</releaseNotes>
         <tags>boxview, rounded,xamarin, pcl, xam.pcl, windows phone, winphone, wp8, android, xamarin.forms</tags>
         <dependencies>
-            <dependency id="Xamarin.Forms" version="1.4.3.6372" />
+            <dependency id="Xamarin.Forms" version="1.4.4.6392" />
         </dependencies>
     </metadata>
     <files>
