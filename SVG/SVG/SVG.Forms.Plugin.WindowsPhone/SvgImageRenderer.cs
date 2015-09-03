@@ -1,5 +1,5 @@
 ﻿using System;
-using System.IO;
+//using System.IO;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Markup;
@@ -8,9 +8,11 @@ using SVG.Forms.Plugin.Abstractions;
 using Xamarin.Forms;
 using SVG.Forms.Plugin.WindowsPhone;
 using Xamarin.Forms.Platform.WinPhone;
+using System.Collections.Generic;
+using System.Windows.Shapes;
+using System.Linq;
 
 [assembly: ExportRenderer(typeof(SvgImage), typeof(SvgImageRenderer))]
-
 namespace SVG.Forms.Plugin.WindowsPhone
 {
     /// <summary>
@@ -44,14 +46,18 @@ namespace SVG.Forms.Plugin.WindowsPhone
                             "Not able to retrieve xaml file {0}. Make sure the Build Action is set to Embedded Resource",
                             xamlFilePath));
 
-                using( var reader = new StreamReader(xamlStream) )
+                using( var reader = new System.IO.StreamReader(xamlStream) )
                 {
                     var xamlString = reader.ReadToEnd( );
 
                     try
                     {
-                        var xaml = (Viewbox)XamlReader.Load(xamlString);
-
+                        Viewbox xaml = (Viewbox)XamlReader.Load(xamlString);
+                        if( Element.ReplacementColors != null )
+                        {
+                            if( Element.ReplacementColors.Count > 0 )
+                                SvgImageRendererExtensions.ReplaceColors(xaml, Element.ReplacementColors);
+                        }
                         switch( _formsControl.Aspect )
                         {
                             case Aspect.AspectFill:
@@ -84,7 +90,6 @@ namespace SVG.Forms.Plugin.WindowsPhone
         protected override void OnElementChanged(ElementChangedEventArgs<SvgImage> e)
         {
             base.OnElementChanged(e);
-
             Render( );
         }
     }
