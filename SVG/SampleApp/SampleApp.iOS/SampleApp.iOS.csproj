@@ -97,6 +97,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\SVG\SVG.Forms.Plugin.Abstractions\SVG.Forms.Plugin.Abstractions.csproj">
+      <Project>{14c534b6-1984-41a9-a384-d3a5508588e3}</Project>
+      <Name>SVG.Forms.Plugin.Abstractions</Name>
+    </ProjectReference>
     <ProjectReference Include="..\SampleApp\SampleApp.csproj">
       <Name>SampleApp</Name>
       <Project>{EBD9C7E2-C5C5-47E3-A7F0-6A6BC41FCC12}</Project>

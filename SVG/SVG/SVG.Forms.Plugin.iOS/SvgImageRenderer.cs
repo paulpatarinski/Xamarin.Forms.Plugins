@@ -46,7 +46,7 @@ namespace SVG.Forms.Plugin.iOS
               }
 
               var r = new SvgReader(new StreamReader(svgStream), new StylesParser(new ValuesParser( )), new ValuesParser( ));
-              this.ReplaceColors(r.Graphic, Element.ReplacementColors);
+              this.ReplaceColors(r.Graphic, _formsControl.ReplacementColors);
 
               var graphics = r.Graphic;
 
