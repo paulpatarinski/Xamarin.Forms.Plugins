@@ -11,8 +11,9 @@ namespace SampleApp
 
 			tabbedPage.Children.Add (new ViaCode ());
 			tabbedPage.Children.Add (new ViaXaml ());
-      tabbedPage.Children.Add(new ViaResources());
-      tabbedPage.Children.Add(new Listview());
+            tabbedPage.Children.Add(new ViaResources());
+            tabbedPage.Children.Add(new Listview());
+            tabbedPage.Children.Add(new ColorReplacementView( ));
 
 			MainPage = tabbedPage;
 		}

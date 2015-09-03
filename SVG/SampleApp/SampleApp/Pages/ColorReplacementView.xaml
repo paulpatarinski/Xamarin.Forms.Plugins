@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+					   xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+					   xmlns:abstractions="clr-namespace:SVG.Forms.Plugin.Abstractions;assembly=SVG.Forms.Plugin.Abstractions"
+					   x:Class="SampleApp.Pages.ColorReplacementView" Title="Replacement Colors">
+
+  <ScrollView Orientation="Horizontal">
+    <ScrollView Orientation="Vertical">
+      <Grid>
+        <Grid.RowDefinitions>
+          <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+          <ColumnDefinition Width="Auto"/>
+          <ColumnDefinition Width="Auto"/>
+          <ColumnDefinition Width="Auto"/>
+          <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+
+        <abstractions:SvgImage Grid.Row="0" Grid.Column="0" SvgAssembly="{Binding SvgAssembly}" SvgPath="{Binding TigerSvgPath}" HeightRequest="50" WidthRequest="50" BackgroundColor="White" HorizontalOptions="Center" VerticalOptions="Center">
+        </abstractions:SvgImage>
+        <abstractions:SvgImage Grid.Row="0" Grid.Column="1" SvgAssembly="{Binding SvgAssembly}" SvgPath="{Binding TigerSvgPath}" HeightRequest="100" WidthRequest="100" BackgroundColor="White" HorizontalOptions="Center" VerticalOptions="Center">
+          <abstractions:SvgImage.ReplacementColors>
+            <abstractions:ColorPair OldColor="#FF000000" NewColor="#FF0000FF"/>
+            <abstractions:ColorPair OldColor="#FFB2B2B2" NewColor="#FF000080"/>
+          </abstractions:SvgImage.ReplacementColors>
+        </abstractions:SvgImage>
+        <abstractions:SvgImage Grid.Row="0" Grid.Column="2" SvgAssembly="{Binding SvgAssembly}" SvgPath="{Binding TigerSvgPath}" HeightRequest="150" WidthRequest="150" BackgroundColor="White" HorizontalOptions="Center" VerticalOptions="Center">
+          <abstractions:SvgImage.ReplacementColors>
+            <abstractions:ColorPair OldColor="#FF000000" NewColor="#FF00FF00"/>
+            <abstractions:ColorPair OldColor="#FFB2B2B2" NewColor="#FF008000"/>
+          </abstractions:SvgImage.ReplacementColors>
+        </abstractions:SvgImage>
+        <abstractions:SvgImage Grid.Row="0" Grid.Column="3" SvgAssembly="{Binding SvgAssembly}" SvgPath="{Binding TigerSvgPath}" HeightRequest="200" WidthRequest="200" BackgroundColor="White" HorizontalOptions="Center" VerticalOptions="Center">
+          <abstractions:SvgImage.ReplacementColors>
+            <abstractions:ColorPair OldColor="#FF000000" NewColor="#FFFF0000"/>
+            <abstractions:ColorPair OldColor="#FFB2B2B2" NewColor="#FF800000"/>
+          </abstractions:SvgImage.ReplacementColors>
+        </abstractions:SvgImage>
+      </Grid>
+    </ScrollView>
+  </ScrollView>
+
+</ContentPage>
