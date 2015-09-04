@@ -6,17 +6,10 @@
     <ContentPage.Resources>
         <ResourceDictionary>
             <Color x:Key="White">White</Color>
-            <Color x:Key="Red">Red</Color>
             <Color x:Key="Black">Black</Color>
             <Color x:Key="Gray">Gray</Color>
-            <Color x:Key="Blue">Blue</Color>
-            <Color x:Key="Lime">Lime</Color>
-            <Color x:Key="Aqua">Aqua</Color>
             <Font x:Key="Large">26</Font>
-            <Font x:Key="LargeItalic">26,Italic</Font>
             <Font x:Key="Medium">20</Font>
-            <Font x:Key="MediumBold">20,Bold</Font>
-            <Font x:Key="Micro">12</Font>
             <Style x:Key="DefaultStyle" TargetType="abstractions:ExtendedTextCell">
                 <Setter Property="BackgroundColor" Value="{StaticResource Black}"/>
 
