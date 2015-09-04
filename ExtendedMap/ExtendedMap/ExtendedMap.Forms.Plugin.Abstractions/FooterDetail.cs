@@ -89,7 +89,7 @@ namespace ExtendedMap.Forms.Plugin.Abstractions
 			var relativeLayout = new RelativeLayout {BackgroundColor = Color.White};
 
 			var callImageButton = _uiHelper.CreateImageButton ("phone-icon.svg", "CALL", (footerTopSectionHeight / 2),
-				(footerTopSectionHeight / 2), (view, o) => {
+				(footerTopSectionHeight / 2), () => {
 					var phoneNumber = _extendedMap.SelectedPin.PhoneNumber;
 					var name = _extendedMap.SelectedPin.Label;
 					DependencyService.Get<IPhoneService> ().DialNumber (phoneNumber, name);
@@ -97,7 +97,7 @@ namespace ExtendedMap.Forms.Plugin.Abstractions
 
 
 			var shareImageButton = _uiHelper.CreateImageButton ("share-icon.svg", "SHARE", (footerTopSectionHeight / 2),
-				(footerTopSectionHeight / 2), (view, o) => {
+				(footerTopSectionHeight / 2), () => {
 					var selectedPin = _extendedMap.SelectedPin;
 					var shareText =
 						string.IsNullOrEmpty(_extendedMap.ShareText)
@@ -108,7 +108,7 @@ namespace ExtendedMap.Forms.Plugin.Abstractions
 				});
 
 			var websiteButton = _uiHelper.CreateImageButton ("browser-icon.svg", "WEBSITE", (footerTopSectionHeight / 2),
-				(footerTopSectionHeight / 2), (view, o) => {
+				(footerTopSectionHeight / 2), () => {
 					var websiteUrl = _extendedMap.SelectedPin.Website;
 
 					DependencyService.Get<IPhoneService> ().OpenBrowser (websiteUrl);
