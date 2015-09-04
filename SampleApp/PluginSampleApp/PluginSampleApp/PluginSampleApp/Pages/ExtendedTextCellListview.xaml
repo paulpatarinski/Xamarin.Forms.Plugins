@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:abstractions="clr-namespace:ExtendedCells.Forms.Plugin.Abstractions;assembly=ExtendedCells.Forms.Plugin.Abstractions"
+             x:Class="PluginSampleApp.Pages.ExtendedTextCellListview">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Color x:Key="White">White</Color>
+            <Color x:Key="Red">Red</Color>
+            <Color x:Key="Black">Black</Color>
+            <Color x:Key="Gray">Gray</Color>
+            <Color x:Key="Blue">Blue</Color>
+            <Color x:Key="Lime">Lime</Color>
+            <Color x:Key="Aqua">Aqua</Color>
+            <Font x:Key="Large">26</Font>
+            <Font x:Key="LargeItalic">26,Italic</Font>
+            <Font x:Key="Medium">20</Font>
+            <Font x:Key="MediumBold">20,Bold</Font>
+            <Font x:Key="Micro">12</Font>
+            <Style x:Key="DefaultStyle" TargetType="abstractions:ExtendedTextCell">
+                <Setter Property="BackgroundColor" Value="{StaticResource Black}"/>
+
+                <Setter Property="LeftTextColor" Value="{StaticResource White}"/>
+                <Setter Property="LeftTextFont" Value="{StaticResource Large}"/>
+
+                <Setter Property="RightTextColor" Value="{StaticResource White}"/>
+                <Setter Property="RightTextFont" Value="{StaticResource Large}"/>
+
+                <Setter Property="LeftDetailColor" Value="{StaticResource Gray}"/>
+                <Setter Property="LeftDetailFont" Value="{StaticResource Medium}"/>
+
+                <Setter Property="RightDetailColor" Value="{StaticResource Gray}"/>
+                <Setter Property="RightDetailFont" Value="{StaticResource Medium}"/>
+
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <ListView ItemsSource="{Binding People}" RowHeight="60">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+
+                    <abstractions:ExtendedTextCell Style="{StaticResource DefaultStyle}" LeftText="{Binding FirstName}"
+                                    LeftDetail="{Binding PhoneNumber}" 
+                                    RightText="{Binding LastName}" 
+                                    RightDetail="{Binding Address}" />
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </ContentPage.Content>
+   
+</ContentPage>

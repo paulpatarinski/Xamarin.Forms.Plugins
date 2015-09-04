@@ -57,12 +57,12 @@ namespace PluginSampleApp
                 }
                 case PageTitle.ExtendedCellListview:
                 {
-                    await _navigationPage.Navigation.PushAsync(new TwoColumnCellListview());
+                    await _navigationPage.Navigation.PushAsync(new ExtendedTextCellListview());
                     break;
                 }
                 case PageTitle.ExtendedCellTableView:
                 {
-                    await _navigationPage.Navigation.PushAsync(new TwoColumnCellTableView());
+                    await _navigationPage.Navigation.PushAsync(new ExtendedTextCellTableView());
                     break;
                 }
                 case PageTitle.RoundedBoxView:
