@@ -46,7 +46,7 @@ namespace ExtendedMap.Forms.Plugin.Abstractions.Services
 		public ContentView CreateImageButton (string buttonImage, string buttonText, double height, double width,
 			Action tappedCallback)
 		{
-			var relativeLayout = new RelativeLayout ();
+			var relativeLayout = new RelativeLayout {BackgroundColor = Color.Transparent};
 
 			relativeLayout.GestureRecognizers.Add(new TapGestureRecognizer { Command = new Command(tappedCallback) });
 
