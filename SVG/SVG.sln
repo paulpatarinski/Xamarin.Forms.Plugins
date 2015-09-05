@@ -225,6 +225,7 @@ Global
 		{EBD9C7E2-C5C5-47E3-A7F0-6A6BC41FCC12}.Debug|WinPhone.ActiveCfg = Debug|Any CPU
 		{EBD9C7E2-C5C5-47E3-A7F0-6A6BC41FCC12}.Debug|WinPhone.Build.0 = Debug|Any CPU
 		{EBD9C7E2-C5C5-47E3-A7F0-6A6BC41FCC12}.Release|Android.ActiveCfg = Release|Any CPU
+		{EBD9C7E2-C5C5-47E3-A7F0-6A6BC41FCC12}.Release|Android.Build.0 = Release|Any CPU
 		{EBD9C7E2-C5C5-47E3-A7F0-6A6BC41FCC12}.Release|iPhone.ActiveCfg = Release|Any CPU
 		{EBD9C7E2-C5C5-47E3-A7F0-6A6BC41FCC12}.Release|iPhone.Build.0 = Release|Any CPU
 		{EBD9C7E2-C5C5-47E3-A7F0-6A6BC41FCC12}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
@@ -298,6 +299,8 @@ Global
 		{937453F4-4FEC-45C9-8964-38971D0F3726}.Debug|Nuget.ActiveCfg = Debug|Any CPU
 		{937453F4-4FEC-45C9-8964-38971D0F3726}.Debug|WinPhone.ActiveCfg = Debug|Any CPU
 		{937453F4-4FEC-45C9-8964-38971D0F3726}.Release|Android.ActiveCfg = Release|Any CPU
+		{937453F4-4FEC-45C9-8964-38971D0F3726}.Release|Android.Build.0 = Release|Any CPU
+		{937453F4-4FEC-45C9-8964-38971D0F3726}.Release|Android.Deploy.0 = Release|Any CPU
 		{937453F4-4FEC-45C9-8964-38971D0F3726}.Release|iPhone.ActiveCfg = Release|Any CPU
 		{937453F4-4FEC-45C9-8964-38971D0F3726}.Release|iPhone.Build.0 = Release|Any CPU
 		{937453F4-4FEC-45C9-8964-38971D0F3726}.Release|iPhone.Deploy.0 = Release|Any CPU

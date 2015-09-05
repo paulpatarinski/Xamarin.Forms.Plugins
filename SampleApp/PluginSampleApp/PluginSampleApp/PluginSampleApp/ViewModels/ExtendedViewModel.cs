@@ -24,6 +24,7 @@ namespace PluginSampleApp.ViewModels
                     Label = string.Format("Test Label {0}",i),
                     PhoneNumber = string.Format("(773)233-123{0}",i),
                     Position = new Position(latitude + (0.01 * i), longitude + (0.01 * i)),
+                    Website = "https://www.google.com",
                     ScheduleEntries = new List<ScheduleEntry>
                     {
                         new ScheduleEntry { Day = "Monday", HoursOfOperation = "8 am - 5 pm" },

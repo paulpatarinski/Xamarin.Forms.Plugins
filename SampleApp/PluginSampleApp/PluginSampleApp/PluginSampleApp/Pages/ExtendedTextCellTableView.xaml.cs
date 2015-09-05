@@ -8,9 +8,9 @@ using Xamarin.Forms;
 
 namespace PluginSampleApp.Pages
 {
-    public partial class TwoColumnCellTableView : ContentPage
+    public partial class ExtendedTextCellTableView : ContentPage
     {
-        public TwoColumnCellTableView()
+        public ExtendedTextCellTableView()
         {
             InitializeComponent();
         }

@@ -17,7 +17,7 @@ namespace PluginSampleApp.WinPhone
             Xamarin.Forms.Forms.Init();
             FormsMaps.Init();
             SvgImageRenderer.Init();
-            TwoColumnCellRenderer.Init();
+            ExtendedTextCellRenderer.Init();
             ExtendedMapRenderer.Init();
             RoundedBoxViewRenderer.Init();
 

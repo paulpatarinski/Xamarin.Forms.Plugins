@@ -6,19 +6,22 @@ using SVG.Forms.Plugin.Droid;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.Android;
 using System.Threading.Tasks;
+using Android.Runtime;
 using NGraphics;
 using NGraphics.Parsers;
 
 [assembly: ExportRenderer (typeof(SvgImage), typeof(SvgImageRenderer))]
 namespace SVG.Forms.Plugin.Droid
 {
-	public class SvgImageRenderer : ViewRenderer<SvgImage,ImageView>
+    [Preserve(AllMembers = true)]
+    public class SvgImageRenderer : ViewRenderer<SvgImage,ImageView>
 	{
 		public static void Init ()
 		{
-		}
+            var temp = DateTime.Now;
+        }
 
-		private SvgImage _formsControl {
+        private SvgImage _formsControl {
 			get {
 				return Element as SvgImage;
 			}

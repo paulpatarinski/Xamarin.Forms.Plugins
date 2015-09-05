@@ -44,20 +44,20 @@ namespace ExtendedMap.Forms.Plugin.Abstractions.Services
 		}
 
 		public ContentView CreateImageButton (string buttonImage, string buttonText, double height, double width,
-			Action<View, Object> tappedCallback)
+			Action tappedCallback)
 		{
-			var relativeLayout = new RelativeLayout ();
+			var relativeLayout = new RelativeLayout {BackgroundColor = Color.Transparent};
 
-			relativeLayout.GestureRecognizers.Add (new TapGestureRecognizer (tappedCallback));
+			relativeLayout.GestureRecognizers.Add(new TapGestureRecognizer { Command = new Command(tappedCallback) });
 
-			var svgImage = new SvgImage {
+            var svgImage = new SvgImage {
 				SvgPath = string.Format ("ExtendedMap.Forms.Plugin.Abstractions.Images.{0}", buttonImage),
 				SvgAssembly = typeof(CustomMapContentView).GetTypeInfo ().Assembly,
 				HeightRequest = height,
 				WidthRequest = width
 			};
 
-			var svgImageX = Device.OnPlatform (0.3,0.36,0.45);
+			var svgImageX = Device.OnPlatform (0.3,0.36,0.36);
 			var svgImageWidth = Device.OnPlatform (0.45,0.3,0.45);
 
 			relativeLayout.Children.Add (svgImage,
