@@ -49,7 +49,7 @@ Win Phone does not support SVGs by default and there are no good SVG to Win Phon
 
 # Screenshots
 
-![ScreenShot](https://raw.githubusercontent.com/paulpatarinski/Xamarin.Forms.Plugins/master/SampleApp/Images/Screenshots/SVG.JPG)
+![ScreenShot](https://raw.githubusercontent.com/paulpatarinski/Xamarin.Forms.Plugins/master/SampleApp/Images/Screenshots/SVG_ALL.PNG)
 
 # License
 Licensed under main repo license
