@@ -87,13 +87,7 @@ For a detailed example clone the repo and take a look at the Sample App.
 
 # Screenshots
 
-![ScreenShot](https://raw.githubusercontent.com/paulpatarinski/Xamarin.Forms.Plugins/master/SampleApp/Images/Screenshots/Droid_TwoColumnCell_Listview.png)
-![ScreenShot](https://raw.githubusercontent.com/paulpatarinski/Xamarin.Forms.Plugins/master/SampleApp/Images/Screenshots/Droid_TwoColumnCell_TableView1.png)
-![ScreenShot](https://raw.githubusercontent.com/paulpatarinski/Xamarin.Forms.Plugins/master/SampleApp/Images/Screenshots/Droid_TwoColumnCell_TableView2.png)
-
-![ScreenShot](https://raw.githubusercontent.com/paulpatarinski/Xamarin.Forms.Plugins/master/SampleApp/Images/Screenshots/WP_TwoColumnCell_Listview.png)
-![ScreenShot](https://raw.githubusercontent.com/paulpatarinski/Xamarin.Forms.Plugins/master/SampleApp/Images/Screenshots/WP_TwoColumnCell_TableView1.png)
-![ScreenShot](https://raw.githubusercontent.com/paulpatarinski/Xamarin.Forms.Plugins/master/SampleApp/Images/Screenshots/WP_TwoColumnCell_TableView2.png)
+![ScreenShot](https://raw.githubusercontent.com/paulpatarinski/Xamarin.Forms.Plugins/master/SampleApp/Images/Screenshots/ExtendedTextCell_All.png)
 
 # License
 Licensed under main repo license
