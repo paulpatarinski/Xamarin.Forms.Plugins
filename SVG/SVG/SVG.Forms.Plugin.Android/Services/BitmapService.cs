@@ -1,8 +1,8 @@
 ﻿using System.Threading.Tasks;
 using Android.Graphics;
 using System.IO;
-using NGraphics;
-using NGraphics.Parsers;
+using NGraphics.Android.Custom;
+using NGraphics.Custom.Parsers;
 using SVG.Forms.Plugin.Abstractions;
 
 namespace SVG.Forms.Plugin.Droid

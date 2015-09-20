@@ -7,8 +7,8 @@ using Xamarin.Forms;
 using Xamarin.Forms.Platform.Android;
 using System.Threading.Tasks;
 using Android.Runtime;
-using NGraphics;
-using NGraphics.Parsers;
+using NGraphics.Android.Custom;
+using NGraphics.Custom.Parsers;
 
 [assembly: ExportRenderer (typeof(SvgImage), typeof(SvgImageRenderer))]
 namespace SVG.Forms.Plugin.Droid

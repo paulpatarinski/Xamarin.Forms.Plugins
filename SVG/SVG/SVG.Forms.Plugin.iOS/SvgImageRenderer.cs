@@ -5,10 +5,11 @@ using System.IO;
 using SVG.Forms.Plugin.Abstractions;
 using NGraphics;
 using UIKit;
-using NGraphics.Parsers;
 using System;
 using CoreGraphics;
 using Foundation;
+using NGraphics.Custom.Parsers;
+using NGraphics.iOS.Custom;
 
 [assembly: ExportRenderer(typeof(SVG.Forms.Plugin.Abstractions.SvgImage), typeof(SvgImageRenderer))]
 namespace SVG.Forms.Plugin.iOS
