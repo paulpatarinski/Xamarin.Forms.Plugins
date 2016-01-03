@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
     <metadata>
         <id>Xam.Plugins.Forms.ExtendedMap</id>
-        <version>1.5.0.0</version>
+        <version>1.5.0.1</version>
         <title>ExtendedMap Control Plugin for Xamarin.Forms</title>
         <authors>Paul Patarinski</authors>
         <owners>Paul Patarinski</owners>
@@ -12,13 +12,13 @@
         <requireLicenseAcceptance>false</requireLicenseAcceptance>
         <description>Custom control for your Xamarin.Forms project to give you a better Map experience. Ensure you call SvgImageRenderer.Init(), TwoColumnCellRenderer.Init(), ExtendedMapRenderer.Init() on each platform!</description>
         <summary>Use an ExtendedMap in your Xamarin.Forms projects! Ensure you call ExtendedMapRenderer.Init() on each platform!</summary>
-        <releaseNotes>Major UI and functionality improvements to all aspects of the control.</releaseNotes>
+        <releaseNotes>Upgrading to latest nugets</releaseNotes>
         <tags>xamarin, pcl, xam.pcl, windows phone, winphone, wp8, android, xamarin.forms, ios</tags>
         <dependencies>
-            <dependency id="Xamarin.Forms" version="1.4.4.6392" />
-            <dependency id="Xamarin.Forms.Maps" version="1.4.4.6392" />
-            <dependency id="Xam.Plugins.Forms.SVG" version="1.0.0.25" />
-            <dependency id="Xam.Plugins.Forms.ExtendedCell" version="1.0.0.19" />
+            <dependency id="Xamarin.Forms" version="2.0.0.6490" />
+            <dependency id="Xamarin.Forms.Maps" version="2.0.0.6490" />
+            <dependency id="Xam.Plugins.Forms.SVG" version="1.0.0.27" />
+            <dependency id="Xam.Plugins.Forms.ExtendedCell" version="1.0.0.20" />
         </dependencies>
     </metadata>
     <files>
