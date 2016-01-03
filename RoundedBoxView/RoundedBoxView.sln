@@ -84,6 +84,7 @@ Global
 		{14C534B6-1984-41A9-A384-D3A5508588E3}.Debug|iPhone.ActiveCfg = Debug|Any CPU
 		{14C534B6-1984-41A9-A384-D3A5508588E3}.Debug|iPhone.Build.0 = Debug|Any CPU
 		{14C534B6-1984-41A9-A384-D3A5508588E3}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
+		{14C534B6-1984-41A9-A384-D3A5508588E3}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
 		{14C534B6-1984-41A9-A384-D3A5508588E3}.Debug|Nuget.ActiveCfg = Debug|Any CPU
 		{14C534B6-1984-41A9-A384-D3A5508588E3}.Debug|Nuget.Build.0 = Debug|Any CPU
 		{14C534B6-1984-41A9-A384-D3A5508588E3}.Debug|WinPhone.ActiveCfg = Debug|Any CPU
@@ -353,6 +354,7 @@ Global
 		{BB864987-FD1A-4303-A4FC-B1F7E120E78D}.Debug|iPhone.ActiveCfg = Debug|Any CPU
 		{BB864987-FD1A-4303-A4FC-B1F7E120E78D}.Debug|iPhone.Build.0 = Debug|Any CPU
 		{BB864987-FD1A-4303-A4FC-B1F7E120E78D}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
+		{BB864987-FD1A-4303-A4FC-B1F7E120E78D}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
 		{BB864987-FD1A-4303-A4FC-B1F7E120E78D}.Debug|Nuget.ActiveCfg = Debug|Any CPU
 		{BB864987-FD1A-4303-A4FC-B1F7E120E78D}.Debug|Nuget.Build.0 = Debug|Any CPU
 		{BB864987-FD1A-4303-A4FC-B1F7E120E78D}.Debug|WinPhone.ActiveCfg = Debug|Any CPU
@@ -450,6 +452,7 @@ Global
 		{D525F236-6A2D-4010-B1CC-4A4B8581C90B}.Debug|Android.ActiveCfg = Debug|Any CPU
 		{D525F236-6A2D-4010-B1CC-4A4B8581C90B}.Debug|iPhone.ActiveCfg = Debug|Any CPU
 		{D525F236-6A2D-4010-B1CC-4A4B8581C90B}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
+		{D525F236-6A2D-4010-B1CC-4A4B8581C90B}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
 		{D525F236-6A2D-4010-B1CC-4A4B8581C90B}.Debug|Nuget.ActiveCfg = Debug|Any CPU
 		{D525F236-6A2D-4010-B1CC-4A4B8581C90B}.Debug|Nuget.Build.0 = Debug|Any CPU
 		{D525F236-6A2D-4010-B1CC-4A4B8581C90B}.Debug|WinPhone.ActiveCfg = Debug|Any CPU
@@ -491,6 +494,7 @@ Global
 		{EBD9C7E2-C5C5-47E3-A7F0-6A6BC41FCC12}.Debug|iPhone.ActiveCfg = Debug|Any CPU
 		{EBD9C7E2-C5C5-47E3-A7F0-6A6BC41FCC12}.Debug|iPhone.Build.0 = Debug|Any CPU
 		{EBD9C7E2-C5C5-47E3-A7F0-6A6BC41FCC12}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
+		{EBD9C7E2-C5C5-47E3-A7F0-6A6BC41FCC12}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
 		{EBD9C7E2-C5C5-47E3-A7F0-6A6BC41FCC12}.Debug|Nuget.ActiveCfg = Debug|Any CPU
 		{EBD9C7E2-C5C5-47E3-A7F0-6A6BC41FCC12}.Debug|WinPhone.ActiveCfg = Debug|Any CPU
 		{EBD9C7E2-C5C5-47E3-A7F0-6A6BC41FCC12}.Debug|WinPhone.Build.0 = Debug|Any CPU
