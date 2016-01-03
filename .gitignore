@@ -7,3 +7,6 @@ SVG/SVG.sln.ide/
 Resource.Designer.cs
 .DS_Store
 .userprefs
+.suo
+*.user
+*.bak
