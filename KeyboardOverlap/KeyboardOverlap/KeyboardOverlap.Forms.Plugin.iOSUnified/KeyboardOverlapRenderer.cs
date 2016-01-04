@@ -5,10 +5,12 @@ using UIKit;
 using Xamarin.Forms;
 using CoreGraphics;
 using KeyboardOverlap.Forms.Plugin.iOSUnified;
+using System.Diagnostics;
 
 [assembly: ExportRenderer (typeof(Page), typeof(KeyboardOverlapRenderer))]
 namespace KeyboardOverlap.Forms.Plugin.iOSUnified
 {
+	[Preserve (AllMembers = true)]
 	public class KeyboardOverlapRenderer : PageRenderer
 	{
 		NSObject _keyboardShowObserver;
@@ -18,6 +20,8 @@ namespace KeyboardOverlap.Forms.Plugin.iOSUnified
 
 		public static void Init ()
 		{
+			var now = DateTime.Now;
+			Debug.WriteLine ("Keyboard Overlap plugin initialized {0}", now);
 		}
 
 		public override void ViewWillAppear (bool animated)
