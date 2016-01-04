@@ -5,19 +5,24 @@ using UIKit;
 using Xamarin.Forms;
 using CoreGraphics;
 using KeyboardOverlap.Forms.Plugin.iOSUnified;
+using System.Diagnostics;
 
 [assembly: ExportRenderer (typeof(Page), typeof(KeyboardOverlapRenderer))]
 namespace KeyboardOverlap.Forms.Plugin.iOSUnified
 {
+	[Preserve (AllMembers = true)]
 	public class KeyboardOverlapRenderer : PageRenderer
 	{
 		NSObject _keyboardShowObserver;
 		NSObject _keyboardHideObserver;
 		private bool _pageWasShiftedUp;
 		private double _activeViewBottom;
+		private bool _isKeyboardShown;
 
 		public static void Init ()
 		{
+			var now = DateTime.Now;
+			Debug.WriteLine ("Keyboard Overlap plugin initialized {0}", now);
 		}
 
 		public override void ViewWillAppear (bool animated)
@@ -53,6 +58,7 @@ namespace KeyboardOverlap.Forms.Plugin.iOSUnified
 
 		void UnregisterForKeyboardNotifications ()
 		{
+			_isKeyboardShown = false;
 			if (_keyboardShowObserver != null) {
 				NSNotificationCenter.DefaultCenter.RemoveObserver (_keyboardShowObserver);
 				_keyboardShowObserver.Dispose ();
@@ -68,9 +74,10 @@ namespace KeyboardOverlap.Forms.Plugin.iOSUnified
 
 		protected virtual void OnKeyboardShow (NSNotification notification)
 		{
-			if (!IsViewLoaded)
+			if (!IsViewLoaded || _isKeyboardShown)
 				return;
-			
+
+			_isKeyboardShown = true;
 			var activeView = View.FindFirstResponder ();
 
 			if (activeView == null)
@@ -83,7 +90,6 @@ namespace KeyboardOverlap.Forms.Plugin.iOSUnified
 				return;
 
 			if (isOverlapping) {
-				
 				_activeViewBottom = activeView.GetViewRelativeBottom (View);
 				ShiftPageUp (keyboardFrame.Height, _activeViewBottom);
 			}
@@ -94,7 +100,8 @@ namespace KeyboardOverlap.Forms.Plugin.iOSUnified
 			if (!IsViewLoaded)
 				return;
 
-			var keyboardFrame = UIKeyboard.FrameBeginFromNotification (notification);
+			_isKeyboardShown = false;
+			var keyboardFrame = UIKeyboard.FrameEndFromNotification (notification);
 
 			if (_pageWasShiftedUp) {
 				ShiftPageDown (keyboardFrame.Height, _activeViewBottom);
