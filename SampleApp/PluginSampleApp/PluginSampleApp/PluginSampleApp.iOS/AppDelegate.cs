@@ -31,7 +31,7 @@ namespace PluginSampleApp.iOS
 			global::Xamarin.Forms.Forms.Init ();
       FormsMaps.Init();
       SvgImageRenderer.Init();
-      TwoColumnCellRenderer.Init();
+      ExtendedTextCellRenderer.Init();
       RoundedBoxViewRenderer.Init();
     
 			global::Xamarin.Forms.Forms.ViewInitialized += (object sender, ViewInitializedEventArgs e) => {
