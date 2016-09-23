@@ -34,5 +34,13 @@ namespace RoundedBoxView.Forms.Plugin.Droid
 
       this.UpdateFrom(_formControl, e.PropertyName);
     }
+
+    public override void SetBackgroundColor(Android.Graphics.Color color)
+    {
+      //Fix for #100, will prevent background from getting overriden on BackgroundColor property changed by Forms.
+      //Alternative fix would be to check propertyname in OnElementPropertyChanged, and skip if it's BackgroundColor.
+      //        if(e.PropertyName != nameof(VisualElement.BackgroundColor))
+      //          base.OnElementPropertyChanged(sender, e);
+    }
   }
 }

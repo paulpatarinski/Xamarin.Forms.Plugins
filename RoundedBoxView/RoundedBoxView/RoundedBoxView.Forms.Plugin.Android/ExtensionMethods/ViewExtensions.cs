@@ -64,7 +64,7 @@ namespace RoundedBoxView.Forms.Plugin.Droid.ExtensionMethods
 
       if (backgroundGradient != null)
       {
-        var relativeBorderThickness = thickness*3;
+        var relativeBorderThickness = (int)System.Math.Round(Xamarin.Forms.Forms.Context.ToPixels(thickness)); //#46
         backgroundGradient.SetStroke(relativeBorderThickness, color.ToAndroid());
       }
     }
@@ -75,7 +75,7 @@ namespace RoundedBoxView.Forms.Plugin.Droid.ExtensionMethods
 
       if (backgroundGradient != null)
       {
-        var relativeCornerRadius = (float) (cornerRadius*3.7);
+        var relativeCornerRadius = Xamarin.Forms.Forms.Context.ToPixels(cornerRadius); //#46
         backgroundGradient.SetCornerRadius(relativeCornerRadius);
       }
     }
