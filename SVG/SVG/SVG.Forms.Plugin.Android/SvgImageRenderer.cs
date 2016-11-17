@@ -72,7 +72,7 @@ namespace SVG.Forms.Plugin.Droid
           {
             var imageView = new ImageView(Context);
 
-            imageView.SetScaleType(ImageView.ScaleType.FitXy);
+            imageView.SetScaleType(ImageView.ScaleType.CenterInside);
             imageView.SetImageBitmap(taskResult.Result.Bitmap);
 
             SetNativeControl(imageView);
