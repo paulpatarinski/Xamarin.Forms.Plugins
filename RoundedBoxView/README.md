@@ -13,7 +13,13 @@ You must do this AFTER you call Xamarin.Forms.Init().
 
 # Usage
 
-Use RoundedBoxView instead of a regular BoxView :
+Add the RoundedBoxView declaration to your XAML page:
+
+```
+xmlns:abstractions="clr-namespace:RoundedBoxView.Forms.Plugin.Abstractions;assembly=RoundedBoxView.Forms.Plugin.Abstractions"
+```
+
+Use RoundedBoxView instead of a regular BoxView:
 
 ```
    <abstractions:RoundedBoxView BackgroundColor="Red" HeightRequest="100" WidthRequest="100"  
