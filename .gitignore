@@ -10,3 +10,4 @@ Resource.Designer.cs
 .suo
 *.user
 *.bak
+/RoundedBoxView/SampleApp/SampleApp.UWP/project.lock.json
