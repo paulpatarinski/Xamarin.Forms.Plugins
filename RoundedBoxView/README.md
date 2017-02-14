@@ -13,6 +13,12 @@ You must do this AFTER you call Xamarin.Forms.Init().
 
 # Usage
 
+Add this line of code to your Xaml File
+
+...
+xmlns:abstractions="clr-namespace:RoundedBoxView.Forms.Plugin.Abstractions;assembly=RoundedBoxView.Forms.Plugin.Abstractions"
+...
+
 Use RoundedBoxView instead of a regular BoxView :
 
 ```
