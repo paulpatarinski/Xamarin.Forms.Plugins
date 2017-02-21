@@ -211,6 +211,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <ITunesArtwork Include="iTunesArtwork" />
     <ITunesArtwork Include="iTunesArtwork%402x" />
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\RoundedBoxView\RoundedBoxView.Forms.Plugin.iOSUnified\RoundedBoxView.Forms.Plugin.iOSUnified.csproj">

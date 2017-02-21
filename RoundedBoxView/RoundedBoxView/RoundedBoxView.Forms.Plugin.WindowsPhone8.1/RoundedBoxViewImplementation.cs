@@ -1,13 +1,14 @@
-﻿using System.ComponentModel;
-using RoundedBoxView.Forms.Plugin.WindowsPhone;
-using Xamarin.Forms;
+﻿using RoundedBoxView.Forms.Plugin.WindowsPhone8._1;
+using Xamarin.Forms.Platform.WinRT;
 
 [assembly: ExportRenderer(typeof(RoundedBoxView.Forms.Plugin.Abstractions.RoundedBoxView), typeof(RoundedBoxViewRenderer))]
-namespace RoundedBoxView.Forms.Plugin.WindowsPhone
+namespace RoundedBoxView.Forms.Plugin.WindowsPhone8._1
 {
-    using System.Windows.Controls;
+    using System.ComponentModel;
+    using Windows.UI.Xaml.Controls;
     using ExtensionMethods;
-    using Xamarin.Forms.Platform.WinPhone;
+    using Xamarin.Forms;
+    using Xamarin.Forms.Platform.WinRT;
 
     /// <summary>
     ///   RoundedBoxView Renderer
@@ -21,7 +22,7 @@ namespace RoundedBoxView.Forms.Plugin.WindowsPhone
         {
         }
 
-        private Abstractions.RoundedBoxView _formControl
+        private Abstractions.RoundedBoxView FormControl
         {
             get { return Element; }
         }
@@ -32,7 +33,9 @@ namespace RoundedBoxView.Forms.Plugin.WindowsPhone
 
             var border = new Border();
 
-            border.InitializeFrom(_formControl);
+            border.InitializeFrom(FormControl);
+
+            Element.BackgroundColor = Color.Transparent;
 
             SetNativeControl(border);
         }
@@ -41,7 +44,7 @@ namespace RoundedBoxView.Forms.Plugin.WindowsPhone
         {
             base.OnElementPropertyChanged(sender, e);
 
-            Control.UpdateFrom(_formControl, e.PropertyName);
+            Control.UpdateFrom(FormControl, e.PropertyName);
         }
     }
 }
