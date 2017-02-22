@@ -1,33 +1,29 @@
-﻿using System.Collections.Generic;
-using SampleApp.Pages;
-using Xamarin.Forms;
+﻿using SampleApp.Pages;
 
 namespace SampleApp
 {
-  public partial class App : Application
-  {
-    public App()
+    public partial class App
     {
-      InitializeComponent();
+        public App()
+        {
+            InitializeComponent();
 
-      MainPage = new RoundedBoxViewPage();
+            MainPage = new RoundedBoxViewPage();
+        }
+
+        protected override void OnStart()
+        {
+            // Handle when your app starts
+        }
+
+        protected override void OnSleep()
+        {
+            // Handle when your app sleeps
+        }
+
+        protected override void OnResume()
+        {
+            // Handle when your app resumes
+        }
     }
-
-
-
-    protected override void OnStart()
-    {
-      // Handle when your app starts
-    }
-
-    protected override void OnSleep()
-    {
-      // Handle when your app sleeps
-    }
-
-    protected override void OnResume()
-    {
-      // Handle when your app resumes
-    }
-  }
 }
