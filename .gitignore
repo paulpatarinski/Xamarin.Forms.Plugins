@@ -10,3 +10,6 @@ Resource.Designer.cs
 .suo
 *.user
 *.bak
+
+# Visual Studio 2015 cache/options directory
+.vs/
