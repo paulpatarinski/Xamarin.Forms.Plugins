@@ -6,6 +6,8 @@ using Xamarin.Forms;
 using CoreGraphics;
 using KeyboardOverlap.Forms.Plugin.iOSUnified;
 using System.Diagnostics;
+using System.Threading.Tasks;
+using System.Threading;
 
 [assembly: ExportRenderer (typeof(Page), typeof(KeyboardOverlapRenderer))]
 namespace KeyboardOverlap.Forms.Plugin.iOSUnified
@@ -18,8 +20,10 @@ namespace KeyboardOverlap.Forms.Plugin.iOSUnified
 		private bool _pageWasShiftedUp;
 		private double _activeViewBottom;
 		private bool _isKeyboardShown;
+        private UIView _lastActiveView;
+        private nfloat _lastKeyboardHeight;
 
-		public static void Init ()
+        public static void Init ()
 		{
 			var now = DateTime.Now;
 			Debug.WriteLine ("Keyboard Overlap plugin initialized {0}", now);
@@ -90,8 +94,10 @@ namespace KeyboardOverlap.Forms.Plugin.iOSUnified
 				return;
 
 			if (isOverlapping) {
+                _lastActiveView = activeView;
 				_activeViewBottom = activeView.GetViewRelativeBottom (View);
-				ShiftPageUp (keyboardFrame.Height, _activeViewBottom);
+                _lastKeyboardHeight = keyboardFrame.Height;
+				ShiftPageUp (_lastKeyboardHeight, _activeViewBottom);
 			}
 		}
 
@@ -104,7 +110,18 @@ namespace KeyboardOverlap.Forms.Plugin.iOSUnified
 			var keyboardFrame = UIKeyboard.FrameEndFromNotification (notification);
 
 			if (_pageWasShiftedUp) {
-				ShiftPageDown (keyboardFrame.Height, _activeViewBottom);
+                // Recalc active view as it may have changed since last keyboard shown
+                var activeView = View.FindFirstResponder();
+
+                if (activeView != null && activeView != _lastActiveView)
+                {
+                    _lastActiveView = activeView;
+                    _activeViewBottom = activeView.GetViewRelativeBottom(View);
+                }
+                else
+                    _lastKeyboardHeight = keyboardFrame.Height;
+                
+                ShiftPageDown ();
 			}
 		}
 
@@ -114,25 +131,35 @@ namespace KeyboardOverlap.Forms.Plugin.iOSUnified
 
 			var newY = pageFrame.Y + CalculateShiftByAmount (pageFrame.Height, keyboardHeight, activeViewBottom);
 
-			Element.LayoutTo (new Rectangle (pageFrame.X, newY,
-				pageFrame.Width, pageFrame.Height));
+			Element.LayoutTo (new Rectangle (pageFrame.X, newY, pageFrame.Width, pageFrame.Height));
 
 			_pageWasShiftedUp = true;
 		}
 
-		private void ShiftPageDown (nfloat keyboardHeight, double activeViewBottom)
-		{
-			var pageFrame = Element.Bounds;
+		private void ShiftPageDown ()
+        {
+            var pageFrame = Element.Bounds;
+            pageFrame.Y = 0;
 
-			var newY = pageFrame.Y - CalculateShiftByAmount (pageFrame.Height, keyboardHeight, activeViewBottom);
+            AnimatePageShitfingTo(pageFrame);
 
-			Element.LayoutTo (new Rectangle (pageFrame.X, newY,
-				pageFrame.Width, pageFrame.Height));
+            _pageWasShiftedUp = false;
+        }
 
-			_pageWasShiftedUp = false;
-		}
+        private void AnimatePageShitfingTo(Rectangle pageFrame)
+        {
+            Task.Factory.StartNew(async () =>
+            {
+                var page = Element as ContentPage;
+                page.InputTransparent = true;
 
-		private double CalculateShiftByAmount (double pageHeight, nfloat keyboardHeight, double activeViewBottom)
+                await Element.LayoutTo(pageFrame);
+
+                page.InputTransparent = false;
+            }, CancellationToken.None, TaskCreationOptions.None, TaskScheduler.FromCurrentSynchronizationContext());
+        }
+
+        private double CalculateShiftByAmount (double pageHeight, nfloat keyboardHeight, double activeViewBottom)
 		{
 			return (pageHeight - activeViewBottom) - keyboardHeight;
 		}
