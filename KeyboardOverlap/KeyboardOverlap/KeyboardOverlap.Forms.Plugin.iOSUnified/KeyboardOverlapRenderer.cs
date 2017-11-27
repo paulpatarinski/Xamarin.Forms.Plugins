@@ -17,7 +17,6 @@ namespace KeyboardOverlap.Forms.Plugin.iOSUnified
 		NSObject _keyboardHideObserver;
 		private bool _pageWasShiftedUp;
 		private double _activeViewBottom;
-		private bool _isKeyboardShown;
 
 		public static void Init ()
 		{
@@ -58,7 +57,6 @@ namespace KeyboardOverlap.Forms.Plugin.iOSUnified
 
 		void UnregisterForKeyboardNotifications ()
 		{
-			_isKeyboardShown = false;
 			if (_keyboardShowObserver != null) {
 				NSNotificationCenter.DefaultCenter.RemoveObserver (_keyboardShowObserver);
 				_keyboardShowObserver.Dispose ();
@@ -74,10 +72,9 @@ namespace KeyboardOverlap.Forms.Plugin.iOSUnified
 
 		protected virtual void OnKeyboardShow (NSNotification notification)
 		{
-			if (!IsViewLoaded || _isKeyboardShown)
+			if (!IsViewLoaded)
 				return;
 
-			_isKeyboardShown = true;
 			var activeView = View.FindFirstResponder ();
 
 			if (activeView == null)
@@ -100,7 +97,6 @@ namespace KeyboardOverlap.Forms.Plugin.iOSUnified
 			if (!IsViewLoaded)
 				return;
 
-			_isKeyboardShown = false;
 			var keyboardFrame = UIKeyboard.FrameEndFromNotification (notification);
 
 			if (_pageWasShiftedUp) {
