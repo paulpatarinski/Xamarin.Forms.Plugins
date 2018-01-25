@@ -10,3 +10,4 @@ Resource.Designer.cs
 .suo
 *.user
 *.bak
+/SVG/.vs/SVG/v15/Server/sqlite3
