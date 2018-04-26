@@ -1,4 +1,4 @@
-﻿using Android.Graphics.Drawables;
+using Android.Graphics.Drawables;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.Android;
 using View = Android.Views.View;
@@ -15,7 +15,7 @@ namespace RoundedBoxView.Forms.Plugin.Droid.ExtensionMethods
 
       var background = new GradientDrawable();
 
-      background.SetColor(formsControl.BackgroundColor.ToAndroid());
+      background.SetColor(formsControl.Color != Color.Default ? formsControl.Color.ToAndroid() : formsControl.BackgroundColor.ToAndroid());
 
 	  if (Build.VERSION.SdkInt >= BuildVersionCodes.JellyBean) {
 		nativeControl.Background = background;
@@ -37,13 +37,13 @@ namespace RoundedBoxView.Forms.Plugin.Droid.ExtensionMethods
       {
         nativeControl.UpdateCornerRadius(formsControl.CornerRadius);
       }
-      if (propertyChanged == VisualElement.BackgroundColorProperty.PropertyName)
+      if (propertyChanged == VisualElement.BackgroundColorProperty.PropertyName || propertyChanged == BoxView.ColorProperty.PropertyName)
       {
         var background = nativeControl.Background as GradientDrawable;
 
         if (background != null)
         {
-          background.SetColor(formsControl.BackgroundColor.ToAndroid());
+          background.SetColor(formsControl.Color != Color.Default ? formsControl.Color.ToAndroid() : formsControl.BackgroundColor.ToAndroid());
         }
       }
 
