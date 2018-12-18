@@ -33,7 +33,7 @@ namespace SVG.Forms.Plugin.Droid
             var formsControl = _formsControl;
             if (formsControl != null)
             {
-                await Task.Run(async () =>
+                await Task.Run(() =>
                 {
                     var svgStream = formsControl.SvgAssembly.GetManifestResourceStream(formsControl.SvgPath);
 
