@@ -70,6 +70,17 @@ namespace SVG.Forms.Plugin.Droid
                 {
                     Device.BeginInvokeOnMainThread(() =>
                     {
+                        // PixelToDP can throw an ObjectDisposedException when the
+                        // renderer is disposed while loading and rendering the SVG
+                        // on the thread pool.
+                        var taskExceptions = taskResult.Exception?.InnerExceptions;
+                        if (taskExceptions != null &&
+                            taskExceptions.Count == 1 &&
+                            taskExceptions[0] is ObjectDisposedException)
+                        {
+                            return;
+                        }
+
                         // The renderer can already be disposed when we reach this block,
                         // e.g. when the SvgImage is removed from the view hierarchy
                         // immediately after being added.
