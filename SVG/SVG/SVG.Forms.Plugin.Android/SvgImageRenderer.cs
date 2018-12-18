@@ -30,24 +30,25 @@ namespace SVG.Forms.Plugin.Droid
         {
             base.OnElementChanged(e);
 
-            if (_formsControl != null)
+            var formsControl = _formsControl;
+            if (formsControl != null)
             {
                 await Task.Run(async () =>
                 {
-                    var svgStream = _formsControl.SvgAssembly.GetManifestResourceStream(_formsControl.SvgPath);
+                    var svgStream = formsControl.SvgAssembly.GetManifestResourceStream(formsControl.SvgPath);
 
                     if (svgStream == null)
                     {
                         throw new Exception(string.Format("Error retrieving {0} make sure Build Action is Embedded Resource",
-                  _formsControl.SvgPath));
+                  formsControl.SvgPath));
                     }
 
                     var r = new SvgReader(new StreamReader(svgStream), new StylesParser(new ValuesParser()), new ValuesParser());
 
                     var graphics = r.Graphic;
 
-                    var width = PixelToDP((int)_formsControl.WidthRequest <= 0 ? 100 : (int)_formsControl.WidthRequest);
-                    var height = PixelToDP((int)_formsControl.HeightRequest <= 0 ? 100 : (int)_formsControl.HeightRequest);
+                    var width = PixelToDP((int)formsControl.WidthRequest <= 0 ? 100 : (int)formsControl.WidthRequest);
+                    var height = PixelToDP((int)formsControl.HeightRequest <= 0 ? 100 : (int)formsControl.HeightRequest);
 
                     var scale = 1.0;
 
