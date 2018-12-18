@@ -69,12 +69,21 @@ namespace SVG.Forms.Plugin.Droid
                 {
                     Device.BeginInvokeOnMainThread(() =>
                     {
-                        var imageView = new ImageView(Context);
+                        // The renderer can already be disposed when we reach this block,
+                        // e.g. when the SvgImage is removed from the view hierarchy
+                        // immediately after being added.
+                        try
+                        {
+                            var imageView = new ImageView(Context);
 
-                        imageView.SetScaleType(ImageView.ScaleType.FitXy);
-                        imageView.SetImageBitmap(taskResult.Result.Bitmap);
+                            imageView.SetScaleType(ImageView.ScaleType.FitXy);
+                            imageView.SetImageBitmap(taskResult.Result.Bitmap);
 
-                        SetNativeControl(imageView);
+                            SetNativeControl(imageView);
+                        }
+                        catch (ObjectDisposedException)
+                        {
+                        }
                     });
                 });
             }
